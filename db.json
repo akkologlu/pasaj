@@ -1,0 +1,879 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "stock": 45,
+      "configration": [
+        {
+          "title": "Renk",
+          "options": ["Mavi", "Siyah", "Gri"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["128 GB", "256 GB", "512 GB"]
+        }
+      ],
+      "price": 89999,
+      "creditCard": true,
+      "installmentCount": 3,
+      "installmentPrice": 26333,
+      "limit": 1,
+      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Vatan Bilgisayar",
+          "price": 89999,
+          "rating": 10,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 50
+        },
+        {
+          "seller": "Hepsiburada",
+          "price": 89999,
+          "rating": 9,
+          "stock": 3
+        },
+        {
+          "seller": "MediaMarkt",
+          "price": 89999,
+          "rating": 9.5,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 2
+        }
+      ],
+      "description": "iPhone 15 Pro Max 256 GB, 6.7 inç Super Retina XDR ekran, 5G desteği, A15 Bionic çip, 256 GB depolama alanı, 12 MP geniş, ultra geniş ve telefoto kameralar, 4K Dolby Vision HDR kayıt, 12 MP TrueDepth ön kamera, Face ID, iOS 15 işletim sistemi, 5G desteği, 4.352 mAh batarya kapasitesi, 20W hızlı şarj, 15W kablosuz şarj, 7.4 mm kalınlık, 238 gram ağırlık, IP68 su ve toz dayanıklılık.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "6.7 inç Super Retina XDR ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "A15 Bionic çip"
+        },
+        {
+          "title": "Depolama Alanı",
+          "value": "256 GB"
+        },
+        {
+          "title": "Kamera",
+          "value": "12 MP geniş, ultra geniş ve telefoto kameralar"
+        },
+        {
+          "title": "Kayıt",
+          "value": "4K Dolby Vision HDR kayıt"
+        },
+        {
+          "title": "Ön Kamera",
+          "value": "12 MP TrueDepth ön kamera"
+        },
+        {
+          "title": "Güvenlik",
+          "value": "Face ID"
+        },
+        {
+          "title": "İşletim Sistemi",
+          "value": "iOS 15"
+        },
+        {
+          "title": "Batarya",
+          "value": "4.352 mAh"
+        },
+        {
+          "title": "Şarj",
+          "value": "20W hızlı şarj, 15W kablosuz şarj"
+        },
+        {
+          "title": "Kalınlık",
+          "value": "7.4 mm"
+        },
+        {
+          "title": "Ağırlık",
+          "value": "238 gram"
+        },
+        {
+          "title": "Dayanıklılık",
+          "value": "IP68 su ve toz dayanıklılık"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "name": "Ahmet",
+          "rating": 5,
+          "comment": "Harika bir telefon, herkese tavsiye ederim."
+        },
+        {
+          "id": 2,
+          "name": "Mehmet",
+          "rating": 4,
+          "comment": "Fiyatı biraz yüksek ama kalitesi de yüksek."
+        },
+        {
+          "id": 3,
+          "name": "Ayşe",
+          "rating": 5,
+          "comment": "Kargo hızlı geldi, teşekkürler."
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Kamerası kaç MP?",
+          "answer": "12 MP geniş, ultra geniş ve telefoto kameralar."
+        },
+        {
+          "id": 2,
+          "question": "Batarya kapasitesi ne kadar?",
+          "answer": "4.352 mAh."
+        },
+        {
+          "id": 3,
+          "question": "Kablosuz şarj desteği var mı?",
+          "answer": "Evet, 15W kablosuz şarj desteği bulunmaktadır."
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "fibabanka": true
+    },
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S22 Ultra 256 GB",
+      "rating": 4.7,
+      "stock": 50,
+      "configration": [
+        {
+          "title": "Renk",
+          "options": ["Beyaz", "Siyah", "Bordo"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["128 GB", "256 GB", "512 GB"]
+        }
+      ],
+      "price": 79999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 13333,
+      "limit": 2,
+      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "Android Telefonlar",
+      "subcategoryUrl": "android-telefonlar",
+      "images": [
+        {
+          "color": "Beyaz",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        },
+        {
+          "color": "Bordo",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Teknosa",
+          "price": 79999,
+          "rating": 9.5,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 40
+        },
+        {
+          "seller": "Hepsiburada",
+          "price": 79999,
+          "rating": 9,
+          "stock": 5
+        },
+        {
+          "seller": "MediaMarkt",
+          "price": 79999,
+          "rating": 9,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 3
+        }
+      ],
+      "description": "Samsung Galaxy S22 Ultra 256 GB, 6.8 inç Dynamic AMOLED 2X ekran, Exynos 2200 çip, 256 GB depolama alanı, 108 MP geniş, ultra geniş ve telefoto kameralar, 8K video kayıt, 40 MP ön kamera, Android 12 işletim sistemi, 5.000 mAh batarya kapasitesi, 45W hızlı şarj, 15W kablosuz şarj, 8.9 mm kalınlık, 228 gram ağırlık, IP68 su ve toz dayanıklılık.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "6.8 inç Dynamic AMOLED 2X ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Exynos 2200 çip"
+        },
+        {
+          "title": "Depolama Alanı",
+          "value": "256 GB"
+        },
+        {
+          "title": "Kamera",
+          "value": "108 MP geniş, ultra geniş ve telefoto kameralar"
+        },
+        {
+          "title": "Kayıt",
+          "value": "8K video kayıt"
+        },
+        {
+          "title": "Ön Kamera",
+          "value": "40 MP ön kamera"
+        },
+        {
+          "title": "İşletim Sistemi",
+          "value": "Android 12"
+        },
+        {
+          "title": "Batarya",
+          "value": "5.000 mAh"
+        },
+        {
+          "title": "Şarj",
+          "value": "45W hızlı şarj, 15W kablosuz şarj"
+        },
+        {
+          "title": "Kalınlık",
+          "value": "8.9 mm"
+        },
+        {
+          "title": "Ağırlık",
+          "value": "228 gram"
+        },
+        {
+          "title": "Dayanıklılık",
+          "value": "IP68 su ve toz dayanıklılık"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "name": "Ali",
+          "rating": 5,
+          "comment": "Mükemmel kamera kalitesi."
+        },
+        {
+          "id": 2,
+          "name": "Veli",
+          "rating": 4,
+          "comment": "Fiyatına göre performansı çok iyi."
+        },
+        {
+          "id": 3,
+          "name": "Elif",
+          "rating": 5,
+          "comment": "Hızlı şarj özelliği çok başarılı."
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Kamerası kaç MP?",
+          "answer": "108 MP geniş, ultra geniş ve telefoto kameralar."
+        },
+        {
+          "id": 2,
+          "question": "Batarya kapasitesi ne kadar?",
+          "answer": "5.000 mAh."
+        },
+        {
+          "id": 3,
+          "question": "Kablosuz şarj desteği var mı?",
+          "answer": "Evet, 15W kablosuz şarj desteği bulunmaktadır."
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "fibabanka": true
+    },
+    {
+      "id": 3,
+      "title": "Ütü",
+      "rating": 4.5,
+      "stock": 30,
+      "configration": [
+        {
+          "title": "Renk",
+          "options": ["Beyaz", "Mavi"]
+        },
+        {
+          "title": "Güç",
+          "options": ["2000W", "2400W"]
+        }
+      ],
+      "price": 999,
+      "creditCard": true,
+      "installmentCount": 3,
+      "installmentPrice": 333,
+      "limit": 2,
+      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "discountPrice": 99,
+      "category": "Ev Aletleri",
+      "categoryUrl": "ev-aletleri",
+      "subcategory": "Ütüler",
+      "subcategoryUrl": "utuler",
+      "images": [
+        {
+          "color": "Beyaz",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        },
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Arçelik",
+          "price": 999,
+          "rating": 9,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 20
+        },
+        {
+          "seller": "Beko",
+          "price": 999,
+          "rating": 8.5,
+          "stock": 10
+        }
+      ],
+      "description": "Ütü, 2400W gücünde, seramik tabanlı, buhar çıkışı, otomatik kapanma özelliği ile güvenli ve pratik kullanım sunar.",
+      "specifications": [
+        {
+          "title": "Güç",
+          "value": "2400W"
+        },
+        {
+          "title": "Taban",
+          "value": "Seramik"
+        },
+        {
+          "title": "Buhar Çıkışı",
+          "value": "50 g/dk"
+        },
+        {
+          "title": "Otomatik Kapanma",
+          "value": "Evet"
+        },
+        {
+          "title": "Su Kapasitesi",
+          "value": "300 ml"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "name": "Zeynep",
+          "rating": 5,
+          "comment": "Ütü yapmak artık daha kolay."
+        },
+        {
+          "id": 2,
+          "name": "Deniz",
+          "rating": 4,
+          "comment": "Kaliteli ve dayanıklı."
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Gücü ne kadar?",
+          "answer": "2400W."
+        },
+        {
+          "id": 2,
+          "question": "Otomatik kapanma özelliği var mı?",
+          "answer": "Evet, otomatik kapanma özelliği bulunmaktadır."
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "fibabanka": true
+    },
+    {
+      "id": 4,
+      "title": "Buzdolabı",
+      "rating": 4.6,
+      "stock": 25,
+      "configration": [
+        {
+          "title": "Renk",
+          "options": ["Beyaz", "Gri"]
+        },
+        {
+          "title": "Kapasite",
+          "options": ["500L", "600L"]
+        }
+      ],
+      "price": 14999,
+      "creditCard": true,
+      "installmentCount": 12,
+      "installmentPrice": 1249,
+      "limit": 1,
+      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "discountPrice": 1999,
+      "category": "Beyaz Eşya",
+      "categoryUrl": "beyaz-esya",
+      "subcategory": "Buzdolapları",
+      "subcategoryUrl": "buzdolaplari",
+      "images": [
+        {
+          "color": "Beyaz",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00HRNS/00HRNS-1/00HRNS-1_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/Cihaz/aksesuar/Samsung/rb50rs334ww-tr-543-l-no-frost-buzdolabi/cg/1/1_600x450.png?1720095274003"
+        }
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Arçelik",
+          "price": 14999,
+          "rating": 9,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 15
+        },
+        {
+          "seller": "Vestel",
+          "price": 14999,
+          "rating": 8.5,
+          "stock": 10
+        }
+      ],
+      "description": "Buzdolabı, 600L kapasitesi, no-frost özelliği, enerji tasarruflu, hızlı soğutma ve dondurma özellikleri ile pratik ve verimli bir kullanım sunar.",
+      "specifications": [
+        {
+          "title": "Kapasite",
+          "value": "600L"
+        },
+        {
+          "title": "Özellik",
+          "value": "No-frost"
+        },
+        {
+          "title": "Enerji Sınıfı",
+          "value": "A++"
+        },
+        {
+          "title": "Genişlik",
+          "value": "70 cm"
+        },
+        {
+          "title": "Yükseklik",
+          "value": "185 cm"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "name": "Selin",
+          "rating": 5,
+          "comment": "Çok geniş ve kullanışlı."
+        },
+        {
+          "id": 2,
+          "name": "Murat",
+          "rating": 4,
+          "comment": "Enerji tasarrufu yapıyor, çok memnun kaldım."
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Kapasitesi ne kadar?",
+          "answer": "600L."
+        },
+        {
+          "id": 2,
+          "question": "No-frost özelliği var mı?",
+          "answer": "Evet, no-frost özelliği bulunmaktadır."
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "fibabanka": true
+    },
+    {
+      "id": 5,
+      "title": "Macbook Pro 2022 512 GB",
+      "rating": 4.9,
+      "stock": 20,
+      "configration": [
+        {
+          "title": "Renk",
+          "options": ["Gri", "Gümüş"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["256 GB", "512 GB", "1 TB"]
+        }
+      ],
+      "price": 34999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 5833,
+      "limit": 1,
+      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "discountPrice": 3999,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Macbook",
+      "subcategoryUrl": "macbook",
+      "images": [
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gümüş",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Apple Store",
+          "price": 34999,
+          "rating": 10,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 15
+        },
+        {
+          "seller": "Hepsiburada",
+          "price": 34999,
+          "rating": 9,
+          "stock": 5
+        }
+      ],
+      "description": "Macbook Pro 2022, 512 GB depolama alanı, Apple M1 çip, 16 inç Retina ekran, 16 GB RAM, macOS işletim sistemi, 20 saat pil ömrü, Touch Bar ve Touch ID ile yüksek performans ve kullanıcı dostu bir deneyim sunar.",
+      "specifications": [
+        {
+          "title": "Depolama Alanı",
+          "value": "512 GB"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Apple M1 çip"
+        },
+        {
+          "title": "RAM",
+          "value": "16 GB"
+        },
+        {
+          "title": "Ekran",
+          "value": "16 inç Retina ekran"
+        },
+        {
+          "title": "İşletim Sistemi",
+          "value": "macOS"
+        },
+        {
+          "title": "Pil Ömrü",
+          "value": "20 saat"
+        },
+        {
+          "title": "Touch Bar ve Touch ID",
+          "value": "Evet"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "name": "Cem",
+          "rating": 5,
+          "comment": "Performansı harika, tasarımı şık."
+        },
+        {
+          "id": 2,
+          "name": "Ayça",
+          "rating": 4.5,
+          "comment": "Fiyatı biraz yüksek ama değer."
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Depolama alanı ne kadar?",
+          "answer": "512 GB."
+        },
+        {
+          "id": 2,
+          "question": "Pil ömrü ne kadar?",
+          "answer": "20 saat."
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "fibabanka": true
+    },
+    {
+      "id": 6,
+      "title": "Çamaşır Makinesi",
+      "rating": 4.7,
+      "stock": 15,
+      "configration": [
+        {
+          "title": "Renk",
+          "options": ["Beyaz", "Gri"]
+        },
+        {
+          "title": "Kapasite",
+          "options": ["7 kg", "9 kg", "11 kg"]
+        }
+      ],
+      "price": 7999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 1333,
+      "limit": 2,
+      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "discountPrice": 0,
+      "category": "Beyaz Eşya",
+      "categoryUrl": "beyaz-esya",
+      "subcategory": "Çamaşır Makineleri",
+      "subcategoryUrl": "camasir-makineleri",
+      "images": [
+        {
+          "color": "Beyaz",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Bosch",
+          "price": 7999,
+          "rating": 9,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 10
+        },
+        {
+          "seller": "Siemens",
+          "price": 7999,
+          "rating": 8.5,
+          "stock": 5
+        }
+      ],
+      "description": "Çamaşır Makinesi, 11 kg kapasite, 1400 devir, A+++ enerji sınıfı, kısa programlar ve akıllı sensörler ile etkili ve enerji tasarruflu bir yıkama sunar.",
+      "specifications": [
+        {
+          "title": "Kapasite",
+          "value": "11 kg"
+        },
+        {
+          "title": "Devir",
+          "value": "1400"
+        },
+        {
+          "title": "Enerji Sınıfı",
+          "value": "A+++"
+        },
+        {
+          "title": "Programlar",
+          "value": "Kısa programlar"
+        },
+        {
+          "title": "Sensörler",
+          "value": "Akıllı sensörler"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "name": "Burak",
+          "rating": 5,
+          "comment": "Çok sessiz çalışıyor, memnun kaldım."
+        },
+        {
+          "id": 2,
+          "name": "Ezgi",
+          "rating": 4,
+          "comment": "Yıkama performansı çok iyi."
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Kapasitesi ne kadar?",
+          "answer": "11 kg."
+        },
+        {
+          "id": 2,
+          "question": "Enerji sınıfı nedir?",
+          "answer": "A+++."
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "fibabanka": true
+    },
+    {
+      "id": 7,
+      "title": "Xiaomi Redmi Note 11 Pro 128 GB",
+      "rating": 4.6,
+      "stock": 35,
+      "configration": [
+        {
+          "title": "Renk",
+          "options": ["Mavi", "Siyah", "Beyaz"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["128 GB", "256 GB"]
+        }
+      ],
+      "price": 12999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 2166,
+      "limit": 2,
+      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "discountPrice": 999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "Android Telefonlar",
+      "subcategoryUrl": "android-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        },
+        {
+          "color": "Beyaz",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Mi Store",
+          "price": 12999,
+          "rating": 9,
+          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "stock": 20
+        },
+        {
+          "seller": "Hepsiburada",
+          "price": 12999,
+          "rating": 8.5,
+          "stock": 10
+        }
+      ],
+      "description": "Xiaomi Redmi Note 11 Pro 128 GB, 6.67 inç AMOLED ekran, Snapdragon 732G çip, 128 GB depolama alanı, 108 MP geniş, ultra geniş ve makro kameralar, 4K video kayıt, 16 MP ön kamera, Android 11 işletim sistemi, 5.020 mAh batarya kapasitesi, 33W hızlı şarj, 8.1 mm kalınlık, 202 gram ağırlık.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "6.67 inç AMOLED ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Snapdragon 732G çip"
+        },
+        {
+          "title": "Depolama Alanı",
+          "value": "128 GB"
+        },
+        {
+          "title": "Kamera",
+          "value": "108 MP geniş, ultra geniş ve makro kameralar"
+        },
+        {
+          "title": "Kayıt",
+          "value": "4K video kayıt"
+        },
+        {
+          "title": "Ön Kamera",
+          "value": "16 MP ön kamera"
+        },
+        {
+          "title": "İşletim Sistemi",
+          "value": "Android 11"
+        },
+        {
+          "title": "Batarya",
+          "value": "5.020 mAh"
+        },
+        {
+          "title": "Şarj",
+          "value": "33W hızlı şarj"
+        },
+        {
+          "title": "Kalınlık",
+          "value": "8.1 mm"
+        },
+        {
+          "title": "Ağırlık",
+          "value": "202 gram"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "name": "Can",
+          "rating": 5,
+          "comment": "Fiyat performans ürünü, tavsiye ederim."
+        },
+        {
+          "id": 2,
+          "name": "Leyla",
+          "rating": 4,
+          "comment": "Kamerası çok iyi, bataryası uzun süre gidiyor."
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Kamerası kaç MP?",
+          "answer": "108 MP geniş, ultra geniş ve makro kameralar."
+        },
+        {
+          "id": 2,
+          "question": "Batarya kapasitesi ne kadar?",
+          "answer": "5.020 mAh."
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "fibabanka": true
+    }
+  ]
+}
