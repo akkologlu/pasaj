@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Swiper } from "swiper/react";
 
 export const StyledContainer = styled.div`
   max-width: 1200px;
@@ -39,14 +40,18 @@ export const StyledCol = styled.div<StyledColProps>`
   width: 100%;
 `;
 
-export const StyledHeader = styled.header`
+export const StyledHeaderComp = styled.header`
   background-color: #fafbfd;
-  min-height: 180px;
+  position: relative;
 `;
 
 export const StyledFlexBetween = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+export const StyledFlexEvenly = styled.div`
+  display: flex;
+  justify-content: space-evenly;
 `;
 export const StyledUl = styled.ul`
   display: flex;
@@ -60,7 +65,7 @@ export const StyledUl = styled.ul`
 `;
 
 export const StyledBanner = styled(StyledFlexBetween)`
-  padding: 10px 0;
+  padding: 20px 0;
 `;
 interface StyledImageProps {
   $height?: string;
@@ -149,6 +154,7 @@ export const StyledSearchForm = styled.form`
     width: 100%;
     height: 100%;
     border: none;
+    outline: none;
     background-color: transparent;
     &::placeholder {
       color: gray;
@@ -189,4 +195,139 @@ export const StyledCartCount = styled.div`
   transform: translateY(-50%);
   right: -15px;
   border: 3px solid #fff;
+`;
+
+export const StyledList = styled.ul`
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+`;
+export const StyledCenterText = styled.div`
+  text-align: center;
+  padding-top: 0.5rem;
+`;
+
+export const StyledHeader = styled.div`
+  margin-bottom: 1rem;
+`;
+
+export const StyledShowcase = styled.div`
+  margin-top: 5rem;
+  img {
+    border-radius: 0.5rem;
+  }
+`;
+
+export const StyledWhyPassage = styled.div`
+  padding: 5rem 0;
+  margin-top: 5rem;
+  background-color: #eff2f5;
+  h3 {
+    font-weight: 500;
+  }
+`;
+
+export const StyledRoundedDiv = styled.div`
+  border-radius: 50%;
+  background-color: #27356f;
+  width: 92px;
+  padding: 1rem;
+  margin: 3rem auto 1rem auto;
+`;
+export const StyledFooter = styled.footer`
+  background-color: #27356f;
+  padding: 5rem 0;
+  * {
+    color: #fff;
+  }
+`;
+export const StyledFooterUl = styled.ul`
+  list-style-type: none;
+  li {
+    font-size: 14px;
+    margin-bottom: 0.75rem;
+  }
+`;
+export const StyledFooterMiddle = styled.div`
+  padding: 2rem 0;
+  margin: 1rem 0;
+  border-top: 1px solid #5f6b76;
+  border-bottom: 1px solid #5f6b76;
+`;
+export const StyledLogoSwiper = styled(Swiper)`
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 10px;
+  }
+  .swiper-pagination-bullets {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    padding: 2px 5px;
+  }
+  .swiper-pagination-bullet.custom-bullet {
+    background-color: #8e9fad;
+    width: 30px;
+    opacity: 1;
+    border-radius: 0.25rem;
+  }
+  .swiper-pagination-bullet.custom-bullet-active {
+    background-color: #ffc900;
+    width: 30px;
+  }
+`;
+
+interface BackgroundImageProps {
+  $src: string;
+}
+
+export const BackgroundImage = styled.div<BackgroundImageProps>`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-image: url(${(props) => props.$src});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(20px);
+  z-index: -1;
+  transition: background-image 0.3s ease-in-out;
+`;
+export const StyledRelativeDiv = styled.div`
+  position: relative;
+`;
+export const StyledSection = styled.section`
+  padding: 5rem 0;
+`;
+export const StyledNavBottom = styled(StyledFlexBetween)`
+  padding: 1rem;
+  text-align: center;
+  a {
+    &:hover {
+      color: #ffc900;
+    }
+  }
+`;
+export const StyledLoginModal = styled.div`
+  position: absolute;
+  top: 160px;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-color: #f6f5f8;
+  z-index: 2;
+  padding: 4rem;
 `;

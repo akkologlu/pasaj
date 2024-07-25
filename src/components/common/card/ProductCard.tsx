@@ -10,7 +10,7 @@ import { Product } from "@/types/productType";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import Link from "next/link";
-import CustomSwiper from "../CustomSwiper";
+import CustomSwiper from "../CardSwiper";
 type ProductCardProps = {
   product: Product;
 };

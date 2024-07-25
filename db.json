@@ -875,5 +875,269 @@
       "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
       "fibabanka": true
     }
+  ],
+  "popularCategories": [
+    {
+      "title": "Hediye Çeklerim",
+      "url": "telefon",
+      "image": "/hediye-ceki-icon.webp"
+    },
+    {
+      "title": "En Çok Favorilenenler",
+      "url": "bilgisayar",
+      "image": "/fav.webp"
+    },
+    {
+      "title": "Fırsatlar Kapısı",
+      "url": "beyaz-esya",
+      "image": "/firsat-kapisi.webp"
+    },
+    {
+      "title": "Çok Satanlar",
+      "url": "ev-aletleri",
+      "image": "/coksatan.webp"
+    },
+    {
+      "title": "Kulaklıklar",
+      "url": "ev-aletleri",
+      "image": "/kulakliklar.webp"
+    },
+    {
+      "title": "Apple Telefonlar",
+      "url": "ev-aletleri",
+      "image": "/iostelefonlar.webp"
+    },
+    {
+      "title": "Powerbank",
+      "url": "ev-aletleri",
+      "image": "/powerbankler.webp"
+    },
+    {
+      "title": "Kahve Makineleri",
+      "url": "ev-aletleri",
+      "image": "/kahvemakineleri.webp"
+    },
+    {
+      "title": "Apple Tabletler",
+      "url": "ev-aletleri",
+      "image": "/tabletler.webp"
+    },
+    {
+      "title": "Bilgisayarlar",
+      "url": "ev-aletleri",
+      "image": "/bilgisayarlar.webp"
+    }
+  ],
+  "bestOffers": [
+    {
+      "id": 1,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "price": 89999,
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+    },
+    {
+      "id": 2,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "price": 89999,
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+    },
+    {
+      "id": 3,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "price": 89999,
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+    },
+    {
+      "id": 4,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "price": 89999,
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+    }
+  ],
+  "newOnPasaj": [
+    {
+      "id": 1,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "price": 89999,
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+    },
+    {
+      "id": 2,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "price": 89999,
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+    },
+    {
+      "id": 3,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "price": 89999,
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+    },
+    {
+      "id": 4,
+      "title": "iPhone 15 Pro Max 256 GB",
+      "rating": 4.8,
+      "price": 89999,
+      "discountPrice": 7999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        {
+          "color": "Mavi",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+        },
+        {
+          "color": "Siyah",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+        },
+        {
+          "color": "Gri",
+          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        }
+      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+    }
   ]
 }

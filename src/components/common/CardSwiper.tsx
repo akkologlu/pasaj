@@ -11,7 +11,7 @@ type ImageType = {
   url: string;
 };
 
-type CustomSwiperProps = {
+type CardSwiperProps = {
   image: ImageType[];
 };
 const StyledSwiper = styled(Swiper)`
@@ -37,7 +37,7 @@ const StyledSwiper = styled(Swiper)`
   }
 `;
 
-const CustomSwiper: React.FC<CustomSwiperProps> = ({ image }) => {
+const CardSwiper: React.FC<CardSwiperProps> = ({ image }) => {
   return (
     <div>
       <StyledSwiper
@@ -60,4 +60,4 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({ image }) => {
   );
 };
 
-export default CustomSwiper;
+export default CardSwiper;

@@ -1,5 +1,38 @@
+import Footer from "@/components/footer/Footer";
 import Header from "@/components/header";
+import Campaigns from "@/components/homepage/Campaigns";
+import Landing from "@/components/homepage/Landing";
+import Opportunities from "@/components/homepage/Opportunities";
+import PopularCategories from "@/components/homepage/PopularCategories";
+import Showcase from "@/components/homepage/Showcase";
+import WhyPasaj from "@/components/homepage/WhyPasaj";
+import { fetchPopularCategories, fetchShowcaseProducts } from "@/lib/api";
+import { StyledContainer } from "@/styles/styled";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import Head from "next/head";
+
+export const getServerSideProps = async () => {
+  const queryClient = new QueryClient();
+  await Promise.all([
+    queryClient.prefetchQuery({
+      queryKey: ["popularCategories"],
+      queryFn: fetchPopularCategories,
+    }),
+    queryClient.prefetchQuery({
+      queryKey: ["bestOffers"],
+      queryFn: () => fetchShowcaseProducts("bestOffers"),
+    }),
+    queryClient.prefetchQuery({
+      queryKey: ["newOnPasaj"],
+      queryFn: () => fetchShowcaseProducts("newOnPasaj"),
+    }),
+  ]);
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};
 
 export default function Home() {
   return (
@@ -12,6 +45,24 @@ export default function Home() {
       </Head>
       <main>
         <Header />
+        <Landing />
+        <StyledContainer>
+          <PopularCategories />
+          <Showcase
+            title="En İyi Teklifler"
+            queryKey="bestOffers"
+            queryFn={() => fetchShowcaseProducts("bestOffers")}
+          />
+          <Campaigns />
+          <Opportunities />
+          <Showcase
+            title="Pasaj'ın Yenileri"
+            queryKey="newOnPasaj"
+            queryFn={() => fetchShowcaseProducts("newOnPasaj")}
+          />
+        </StyledContainer>
+        <WhyPasaj />
+        <Footer />
       </main>
     </>
   );
