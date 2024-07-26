@@ -157,7 +157,10 @@
         }
       ],
       "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
-      "fibabanka": true
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
     },
     {
       "id": 2,
@@ -236,42 +239,6 @@
         {
           "title": "Depolama Alanı",
           "value": "256 GB"
-        },
-        {
-          "title": "Kamera",
-          "value": "108 MP geniş, ultra geniş ve telefoto kameralar"
-        },
-        {
-          "title": "Kayıt",
-          "value": "8K video kayıt"
-        },
-        {
-          "title": "Ön Kamera",
-          "value": "40 MP ön kamera"
-        },
-        {
-          "title": "İşletim Sistemi",
-          "value": "Android 12"
-        },
-        {
-          "title": "Batarya",
-          "value": "5.000 mAh"
-        },
-        {
-          "title": "Şarj",
-          "value": "45W hızlı şarj, 15W kablosuz şarj"
-        },
-        {
-          "title": "Kalınlık",
-          "value": "8.9 mm"
-        },
-        {
-          "title": "Ağırlık",
-          "value": "228 gram"
-        },
-        {
-          "title": "Dayanıklılık",
-          "value": "IP68 su ve toz dayanıklılık"
         }
       ],
       "comments": [
@@ -280,18 +247,6 @@
           "name": "Ali",
           "rating": 5,
           "comment": "Mükemmel kamera kalitesi."
-        },
-        {
-          "id": 2,
-          "name": "Veli",
-          "rating": 4,
-          "comment": "Fiyatına göre performansı çok iyi."
-        },
-        {
-          "id": 3,
-          "name": "Elif",
-          "rating": 5,
-          "comment": "Hızlı şarj özelliği çok başarılı."
         }
       ],
       "qa": [
@@ -299,20 +254,13 @@
           "id": 1,
           "question": "Kamerası kaç MP?",
           "answer": "108 MP geniş, ultra geniş ve telefoto kameralar."
-        },
-        {
-          "id": 2,
-          "question": "Batarya kapasitesi ne kadar?",
-          "answer": "5.000 mAh."
-        },
-        {
-          "id": 3,
-          "question": "Kablosuz şarj desteği var mı?",
-          "answer": "Evet, 15W kablosuz şarj desteği bulunmaktadır."
         }
       ],
       "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
-      "fibabanka": true
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": false,
+      "bestOffers": true
     },
     {
       "id": 3,
@@ -396,12 +344,6 @@
           "name": "Zeynep",
           "rating": 5,
           "comment": "Ütü yapmak artık daha kolay."
-        },
-        {
-          "id": 2,
-          "name": "Deniz",
-          "rating": 4,
-          "comment": "Kaliteli ve dayanıklı."
         }
       ],
       "qa": [
@@ -409,15 +351,13 @@
           "id": 1,
           "question": "Gücü ne kadar?",
           "answer": "2400W."
-        },
-        {
-          "id": 2,
-          "question": "Otomatik kapanma özelliği var mı?",
-          "answer": "Evet, otomatik kapanma özelliği bulunmaktadır."
         }
       ],
       "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
-      "fibabanka": true
+      "fibabanka": true,
+      "specialForYou": false,
+      "newProduct": false,
+      "bestOffers": true
     },
     {
       "id": 4,
@@ -481,18 +421,6 @@
         {
           "title": "Özellik",
           "value": "No-frost"
-        },
-        {
-          "title": "Enerji Sınıfı",
-          "value": "A++"
-        },
-        {
-          "title": "Genişlik",
-          "value": "70 cm"
-        },
-        {
-          "title": "Yükseklik",
-          "value": "185 cm"
         }
       ],
       "comments": [
@@ -501,12 +429,6 @@
           "name": "Selin",
           "rating": 5,
           "comment": "Çok geniş ve kullanışlı."
-        },
-        {
-          "id": 2,
-          "name": "Murat",
-          "rating": 4,
-          "comment": "Enerji tasarrufu yapıyor, çok memnun kaldım."
         }
       ],
       "qa": [
@@ -522,7 +444,10 @@
         }
       ],
       "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
-      "fibabanka": true
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
     },
     {
       "id": 5,
@@ -586,26 +511,6 @@
         {
           "title": "İşlemci",
           "value": "Apple M1 çip"
-        },
-        {
-          "title": "RAM",
-          "value": "16 GB"
-        },
-        {
-          "title": "Ekran",
-          "value": "16 inç Retina ekran"
-        },
-        {
-          "title": "İşletim Sistemi",
-          "value": "macOS"
-        },
-        {
-          "title": "Pil Ömrü",
-          "value": "20 saat"
-        },
-        {
-          "title": "Touch Bar ve Touch ID",
-          "value": "Evet"
         }
       ],
       "comments": [
@@ -635,7 +540,10 @@
         }
       ],
       "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
-      "fibabanka": true
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": false
     },
     {
       "id": 6,
@@ -703,14 +611,6 @@
         {
           "title": "Enerji Sınıfı",
           "value": "A+++"
-        },
-        {
-          "title": "Programlar",
-          "value": "Kısa programlar"
-        },
-        {
-          "title": "Sensörler",
-          "value": "Akıllı sensörler"
         }
       ],
       "comments": [
@@ -719,12 +619,6 @@
           "name": "Burak",
           "rating": 5,
           "comment": "Çok sessiz çalışıyor, memnun kaldım."
-        },
-        {
-          "id": 2,
-          "name": "Ezgi",
-          "rating": 4,
-          "comment": "Yıkama performansı çok iyi."
         }
       ],
       "qa": [
@@ -740,7 +634,10 @@
         }
       ],
       "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
-      "fibabanka": true
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
     },
     {
       "id": 7,
@@ -808,42 +705,6 @@
         {
           "title": "İşlemci",
           "value": "Snapdragon 732G çip"
-        },
-        {
-          "title": "Depolama Alanı",
-          "value": "128 GB"
-        },
-        {
-          "title": "Kamera",
-          "value": "108 MP geniş, ultra geniş ve makro kameralar"
-        },
-        {
-          "title": "Kayıt",
-          "value": "4K video kayıt"
-        },
-        {
-          "title": "Ön Kamera",
-          "value": "16 MP ön kamera"
-        },
-        {
-          "title": "İşletim Sistemi",
-          "value": "Android 11"
-        },
-        {
-          "title": "Batarya",
-          "value": "5.020 mAh"
-        },
-        {
-          "title": "Şarj",
-          "value": "33W hızlı şarj"
-        },
-        {
-          "title": "Kalınlık",
-          "value": "8.1 mm"
-        },
-        {
-          "title": "Ağırlık",
-          "value": "202 gram"
         }
       ],
       "comments": [
@@ -852,12 +713,6 @@
           "name": "Can",
           "rating": 5,
           "comment": "Fiyat performans ürünü, tavsiye ederim."
-        },
-        {
-          "id": 2,
-          "name": "Leyla",
-          "rating": 4,
-          "comment": "Kamerası çok iyi, bataryası uzun süre gidiyor."
         }
       ],
       "qa": [
@@ -873,7 +728,10 @@
         }
       ],
       "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
-      "fibabanka": true
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
     }
   ],
   "popularCategories": [
@@ -928,216 +786,194 @@
       "image": "/bilgisayarlar.webp"
     }
   ],
-  "bestOffers": [
+  "bestSellersCategories": [
     {
       "id": 1,
-      "title": "iPhone 15 Pro Max 256 GB",
-      "rating": 4.8,
-      "price": 89999,
-      "discountPrice": 7999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
-        {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
-        },
-        {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
-      ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+      "title": "Cep Telefonu - Aksesuar",
+      "productUrl": "telefon",
+      "image": "/bstelefon.webp"
     },
     {
       "id": 2,
-      "title": "iPhone 15 Pro Max 256 GB",
-      "rating": 4.8,
-      "price": 89999,
-      "discountPrice": 7999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
-        {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
-        },
-        {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
-      ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+      "title": "Bilgisayar - Tablet",
+      "productUrl": "bilgisayar",
+      "image": "/bsbilgisayar.webp"
     },
     {
       "id": 3,
-      "title": "iPhone 15 Pro Max 256 GB",
-      "rating": 4.8,
-      "price": 89999,
-      "discountPrice": 7999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
-        {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
-        },
-        {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
-      ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+      "title": "Elektrikli Ev Aletleri",
+      "productUrl": "ev-aletleri",
+      "image": "/bsevaletleri.webp"
     },
     {
       "id": 4,
-      "title": "iPhone 15 Pro Max 256 GB",
-      "rating": 4.8,
-      "price": 89999,
-      "discountPrice": 7999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
-        {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
-        },
-        {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
-      ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+      "title": "Sağlık - Kişsel Bakım",
+      "productUrl": "telefon",
+      "image": "/bssaglik.webp"
+    },
+    {
+      "id": 5,
+      "title": "Beyaz Eşya",
+      "productUrl": "beyaz-esya",
+      "image": "/bsbeyazesya.webp"
+    },
+    {
+      "id": 6,
+      "title": "Cep Telefonu - Aksesuar",
+      "productUrl": "telefon",
+      "image": "/bstelefon.webp"
+    },
+    {
+      "id": 7,
+      "title": "Bilgisayar - Tablet",
+      "productUrl": "bilgisayar",
+      "image": "/bsbilgisayar.webp"
+    },
+    {
+      "id": 8,
+      "title": "Elektrikli Ev Aletleri",
+      "productUrl": "ev-aletleri",
+      "image": "/bsevaletleri.webp"
+    },
+    {
+      "id": 9,
+      "title": "Sağlık - Kişsel Bakım",
+      "productUrl": "telefon",
+      "image": "/bssaglik.webp"
+    },
+    {
+      "id": 10,
+      "title": "Beyaz Eşya",
+      "productUrl": "beyaz-esya",
+      "image": "/bsbeyazesya.webp"
     }
   ],
-  "newOnPasaj": [
+  "navBottomCategories": [
     {
-      "id": 1,
-      "title": "iPhone 15 Pro Max 256 GB",
-      "rating": 4.8,
-      "price": 89999,
-      "discountPrice": 7999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
+      "title": "Cep Telefonu - Aksesuar",
+      "url": "telefon",
+      "subCategories": [
         {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+          "subTitle": "IOS Telefonlar",
+          "subUrl": "ios-telefonlar"
         },
         {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+          "subTitle": "Android Telefonlar",
+          "subUrl": "android-telefonlar"
         }
-      ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+      ]
     },
     {
-      "id": 2,
-      "title": "iPhone 15 Pro Max 256 GB",
-      "rating": 4.8,
-      "price": 89999,
-      "discountPrice": 7999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
+      "title": "Bilgisayar - Tablet",
+      "url": "bilgisayar",
+      "subCategories": [
         {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+          "subTitle": "Macbook",
+          "subUrl": "macbook"
         },
         {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+          "subTitle": "İpad",
+          "subUrl": "ipad"
         }
-      ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+      ]
     },
     {
-      "id": 3,
-      "title": "iPhone 15 Pro Max 256 GB",
-      "rating": 4.8,
-      "price": 89999,
-      "discountPrice": 7999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
+      "title": "Elektrikli Ev Aletleri",
+      "url": "ev-aletleri",
+      "subCategories": [
         {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+          "subTitle": "Ütüler",
+          "subUrl": "utuler"
         },
         {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+          "subTitle": "Çamaşır Makineleri",
+          "subUrl": "camasir-makineleri"
         }
-      ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+      ]
     },
     {
-      "id": 4,
-      "title": "iPhone 15 Pro Max 256 GB",
-      "rating": 4.8,
-      "price": 89999,
-      "discountPrice": 7999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
+      "title": "Beyaz Eşya",
+      "url": "beyaz-esya",
+      "subCategories": [
         {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+          "subTitle": "Buzdolapları",
+          "subUrl": "buzdolaplari"
         },
         {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+          "subTitle": "Bulaşık Makineleri",
+          "subUrl": "bulasik-makineleri"
         }
-      ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"]
+      ]
+    },
+    {
+      "title": "Hobi - Oyun",
+      "url": "oyun",
+      "subCategories": [
+        {
+          "subTitle": "Oyun Konsolları",
+          "subUrl": "oyun-konsollar"
+        },
+        {
+          "subTitle": "Oyun Bilgisayarları",
+          "subUrl": "oyun-bilgisayarlar"
+        }
+      ]
+    },
+    {
+      "title": "Sağlık - Kişisel Bakım",
+      "url": "kisisel-bakim",
+      "subCategories": [
+        {
+          "subTitle": "Saç Bakım",
+          "subUrl": "sac-bakim"
+        },
+        {
+          "subTitle": "Cilt Bakım",
+          "subUrl": "cilt-bakim"
+        }
+      ]
+    },
+    {
+      "title": "TV - Ses Sistemleri",
+      "url": "tv",
+      "subCategories": [
+        {
+          "subTitle": "Televizyonlar",
+          "subUrl": "televizyonlar"
+        },
+        {
+          "subTitle": "Soundbar",
+          "subUrl": "soundbar"
+        }
+      ]
+    },
+    {
+      "title": "Ev - Yaşam",
+      "url": "ev-yasam",
+      "subCategories": [
+        {
+          "subTitle": "Mutfak",
+          "subUrl": "mutfak"
+        },
+        {
+          "subTitle": "Banyo",
+          "subUrl": "banyo"
+        }
+      ]
+    },
+    {
+      "title": "Anne - Bebek - Oyuncak",
+      "url": "anne-bebek",
+      "subCategories": [
+        {
+          "subTitle": "Bebek Arabaları",
+          "subUrl": "bebek-arabalari"
+        },
+        {
+          "subTitle": "Oyuncaklar",
+          "subUrl": "oyuncaklar"
+        }
+      ]
     }
   ]
 }

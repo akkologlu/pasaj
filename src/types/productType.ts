@@ -61,4 +61,7 @@ export type Product = {
   qa: QA[];
   badges: string[];
   fibabanka: boolean;
+  specialForYou: boolean;
+  newProduct: boolean;
+  bestOffers: boolean;
 };

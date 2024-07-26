@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import "swiper/css";
-import React from "react";
+import { useState } from "react";
 import {
   HydrationBoundary,
   QueryClient,
@@ -10,7 +10,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [queryClient] = React.useState(
+  const [queryClient] = useState(
     () =>
       new QueryClient({
         defaultOptions: {

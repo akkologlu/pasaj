@@ -53,6 +53,11 @@ export const StyledFlexEvenly = styled.div`
   display: flex;
   justify-content: space-evenly;
 `;
+export const StyledFlexCenter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export const StyledUl = styled.ul`
   display: flex;
   font-size: 13px;
@@ -164,12 +169,13 @@ export const StyledSearchForm = styled.form`
 
 type StyledCustomButtonProps = {
   $bgcolor?: string;
+  $padding?: string;
 };
 
 export const StyledCustomButton = styled.button<StyledCustomButtonProps>`
   width: 100%;
-  height: 100%;
   background-color: ${(props) => props.$bgcolor};
+  padding: ${(props) => props.$padding};
   color: black;
   border: none;
   border-radius: 0.25rem;
@@ -330,4 +336,36 @@ export const StyledLoginModal = styled.div`
   background-color: #f6f5f8;
   z-index: 2;
   padding: 4rem;
+`;
+export const StyledBlueBanner = styled(StyledFlexBetween)`
+  background-color: #3aa6d8;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: max-content;
+    border-radius: 1rem;
+    p {
+      margin-right: 1rem;
+    }
+  }
+`;
+export const StyledBestSellerTab = styled(StyledFlexCenter)`
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+`;
+export const StyledCategoryModal = styled.div`
+  position: absolute;
+  top: 170px;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-color: #f6f5f8;
+  z-index: 2;
+  padding: 4rem;
+  .subCategories {
+  }
 `;

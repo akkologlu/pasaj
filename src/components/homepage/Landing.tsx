@@ -6,7 +6,7 @@ import {
   StyledRelativeDiv,
 } from "@/styles/styled";
 import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import CustomImage from "../common/CustomImage";
 
 const Landing: React.FC = () => {
