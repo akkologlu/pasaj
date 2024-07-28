@@ -1,4 +1,3 @@
-// pages/cart.tsx
 import { getSession, signOut } from "next-auth/react";
 import { GetServerSideProps } from "next";
 
