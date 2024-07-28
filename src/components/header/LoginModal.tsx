@@ -6,6 +6,7 @@ import {
   StyledLoginModal,
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
+import Link from "next/link";
 
 const LoginModal: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const LoginModal: React.FC = () => {
       <StyledContainer>
         <StyledFlexEvenly>
           <StyledCol $sizemd={4}>
-            <CustomImage src="/login-image.webp" alt="login" height="200px" />
+            <CustomImage src="/login-image.webp" alt="login" height={200} />
             <StyledHeader as="h3">
               Turkcell Pasaj’ın fırsatlarla dolu dünyasına hoş geldiniz!
             </StyledHeader>
@@ -31,6 +32,7 @@ const LoginModal: React.FC = () => {
               Size özel ödeme avantajları ve size özel tekliflerden faydalanmak
               için Giriş Yap/Üye Ol seçeneği ile devam edebilirsiniz.
             </p>
+            <Link href="/signin">Giriş Yap / Üye Ol</Link>
           </StyledCol>
         </StyledFlexEvenly>
       </StyledContainer>

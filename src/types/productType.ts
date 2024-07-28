@@ -64,4 +64,5 @@ export type Product = {
   specialForYou: boolean;
   newProduct: boolean;
   bestOffers: boolean;
+  image: string;
 };

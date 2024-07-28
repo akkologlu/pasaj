@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProductCard from "../common/card/ProductCard";
 import { Product } from "@/types/productType";
+import { Category } from "@/types/categoryType";
 
 const NavBottom: React.FC = () => {
   const { data: categories } = useQuery({
@@ -22,7 +23,6 @@ const NavBottom: React.FC = () => {
     queryKey: ["products"],
     queryFn: fetchAllProducts,
   });
-
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState(categories[0]);
   const [showProduct, setShowProduct] = useState(categories[0].url);
@@ -48,22 +48,15 @@ const NavBottom: React.FC = () => {
   return (
     <>
       <StyledNavBottom>
-        {categories.map(
-          (cat: {
-            title: string;
-            url: string;
-
-            subcategories: { subTitle: string; subUrl: string }[];
-          }) => (
-            <StyledCol
-              $sizemd={1}
-              key={cat.title}
-              onMouseEnter={() => handleMouseEnter(cat)}
-            >
-              <Link href="#">{cat.title}</Link>
-            </StyledCol>
-          )
-        )}
+        {categories.map((cat: Category) => (
+          <StyledCol
+            $sizemd={1}
+            key={cat.title}
+            onMouseEnter={() => handleMouseEnter(cat)}
+          >
+            <Link href={`/products/${cat.url}`}>{cat.title}</Link>
+          </StyledCol>
+        ))}
       </StyledNavBottom>
       {showModal && (
         <StyledCategoryModal
@@ -72,15 +65,24 @@ const NavBottom: React.FC = () => {
         >
           <StyledContainer>
             <StyledFlexBetween>
-              <div>
-                {modalContent.subCategories.map((cat) => (
-                  <p
-                    key={cat.subUrl}
-                    onMouseEnter={() => setShowProduct(cat.subUrl)}
-                  >
-                    {cat.subTitle}
-                  </p>
-                ))}
+              <div className="subcategories">
+                {modalContent.subCategories.map(
+                  (cat: { subTitle: string; subUrl: string }) => (
+                    <Link
+                      href={`/products/${modalContent.url}/${cat.subUrl}`}
+                      key={cat.subUrl}
+                      onMouseEnter={() => setShowProduct(cat.subUrl)}
+                    >
+                      {cat.subTitle}
+                    </Link>
+                  )
+                )}
+                <Link
+                  className="viewAll"
+                  href={`/products/${modalContent.url}`}
+                >
+                  Tüm {modalContent.title} &gt;
+                </Link>
               </div>
               <StyledCol $sizemd={6}>
                 <StyledRow>

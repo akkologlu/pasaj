@@ -28,7 +28,22 @@ const BestSellers = () => {
   return (
     <div>
       <StyledHeader as="h1">Çok Satanlar</StyledHeader>
-      <StyledLogoSwiper modules={[Navigation]} slidesPerView={7} navigation>
+      <StyledLogoSwiper
+        modules={[Navigation]}
+        slidesPerView={7}
+        navigation
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 5,
+          },
+          1024: {
+            slidesPerView: 7,
+          },
+        }}
+      >
         {bestSellers.map(
           (cat: {
             id: number;
@@ -42,7 +57,7 @@ const BestSellers = () => {
               key={cat.id}
             >
               <StyledBestSellerTab>
-                <CustomImage src={cat.image} alt={cat.title} height="30px" />
+                <CustomImage src={cat.image} alt={cat.title} height={30} />
                 <p>{cat.title}</p>
               </StyledBestSellerTab>
             </SwiperSlide>
@@ -52,6 +67,7 @@ const BestSellers = () => {
       <StyledRow>
         {products
           .filter((product: Product) => product.categoryUrl === activeTab)
+          .slice(0, 8)
           .map((product: Product) => (
             <StyledCol key={product.id} $sizemd={3}>
               <ProductCard product={product} size={12} />

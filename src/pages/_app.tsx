@@ -8,6 +8,9 @@ import {
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { AppProps } from "next/app";
+import { SessionProvider } from "next-auth/react";
+import Header from "@/components/header";
+import Footer from "@/components/footer/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -23,7 +26,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
-        <Component {...pageProps} />
+        <SessionProvider session={pageProps.session}>
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </SessionProvider>
       </HydrationBoundary>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

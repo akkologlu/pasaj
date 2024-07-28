@@ -14,7 +14,7 @@ export const StyledContainer = styled.div`
     max-width: 576px;
   }
   @media (max-width: 576px) {
-    max-width: 100%;
+    max-width: 90%;
   }
 `;
 
@@ -28,6 +28,7 @@ interface StyledColProps {
   $sizexl?: number;
   $sizelg?: number;
   $sizemd?: number;
+  $sizesm?: number;
 }
 
 export const StyledCol = styled.div<StyledColProps>`
@@ -37,6 +38,7 @@ export const StyledCol = styled.div<StyledColProps>`
   @media (min-width: 992px) {
     width: ${(props) => (props.$sizemd ? (props.$sizemd / 12) * 100 : "100")}%;
   }
+
   width: 100%;
 `;
 
@@ -48,6 +50,9 @@ export const StyledHeaderComp = styled.header`
 export const StyledFlexBetween = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 export const StyledFlexEvenly = styled.div`
   display: flex;
@@ -71,14 +76,27 @@ export const StyledUl = styled.ul`
 
 export const StyledBanner = styled(StyledFlexBetween)`
   padding: 20px 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+export const StyledFlexColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: row;
+  }
 `;
 interface StyledImageProps {
-  $height?: string;
+  $height?: number;
   $width?: string;
 }
 export const StyledImageDiv = styled.div<StyledImageProps>`
   width: ${(props) => props.$width || "100%"};
-  height: ${(props) => props.$height || "200px"};
+  height: ${(props) => props.$height + "px" || "200px"};
   position: relative;
 `;
 export const StyledProductCard = styled.div`
@@ -146,6 +164,8 @@ export const StyledBluePrice = styled.h3`
 `;
 
 export const StyledSearchForm = styled.form`
+  z-index: 5;
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -172,7 +192,7 @@ type StyledCustomButtonProps = {
   $padding?: string;
 };
 
-export const StyledCustomButton = styled.button<StyledCustomButtonProps>`
+export const StyledCustomButton = styled.span<StyledCustomButtonProps>`
   width: 100%;
   background-color: ${(props) => props.$bgcolor};
   padding: ${(props) => props.$padding};
@@ -180,7 +200,7 @@ export const StyledCustomButton = styled.button<StyledCustomButtonProps>`
   border: none;
   border-radius: 0.25rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
   align-items: center;
   border: 1px solid #e5e5e5;
@@ -207,10 +227,14 @@ export const StyledList = styled.ul`
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 export const StyledCenterText = styled.div`
   text-align: center;
   padding-top: 0.5rem;
+  @media (max-width: 768px) {
+    text-align: left;
+  }
 `;
 
 export const StyledHeader = styled.div`
@@ -311,6 +335,9 @@ export const BackgroundImage = styled.div<BackgroundImageProps>`
   filter: blur(20px);
   z-index: -1;
   transition: background-image 0.3s ease-in-out;
+  @media (max-width: 768px) {
+    height: 150px;
+  }
 `;
 export const StyledRelativeDiv = styled.div`
   position: relative;
@@ -336,6 +363,16 @@ export const StyledLoginModal = styled.div`
   background-color: #f6f5f8;
   z-index: 2;
   padding: 4rem;
+  a {
+    background-color: #ffc900;
+    padding: 1rem 2rem;
+    width: 100%;
+    border-radius: 5rem;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
 `;
 export const StyledBlueBanner = styled(StyledFlexBetween)`
   background-color: #3aa6d8;
@@ -366,6 +403,90 @@ export const StyledCategoryModal = styled.div`
   background-color: #f6f5f8;
   z-index: 2;
   padding: 4rem;
-  .subCategories {
+  .subcategories {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  a {
+    &:hover {
+      color: #ffc900;
+    }
+  }
+  .viewAll {
+    color: #144296;
+    font-weight: 700;
+  }
+`;
+
+export const StyledShowArea = styled.div`
+  height: 350px;
+  width: 100%;
+  position: absolute;
+  top: 90%;
+  left: 0;
+  p {
+    margin-top: 0.75rem;
+  }
+  .sanaOzel {
+    background-color: #eff2f5;
+    padding: 1rem;
+  }
+  .searches {
+    background-color: #fff;
+    padding: 1rem;
+  }
+  small {
+    color: #5f6b76;
+    small {
+      color: #00bafc;
+    }
+  }
+`;
+export const StyledSearchBadge = styled.div`
+  border-radius: 50%;
+  width: max-content;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 0.5rem 0.75rem;
+  font-size: 14px;
+  margin: 1rem 0;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  &:hover {
+    background-color: #144296;
+    color: #fff;
+  }
+`;
+export const StyledBackdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+`;
+
+export const StyledCardSwiper = styled(Swiper)`
+  .swiper-pagination-bullets {
+    background-color: #ecf0f2;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    padding: 2px 5px;
+    border-radius: 1rem;
+  }
+  .swiper-pagination-bullet.custom-bullet {
+    background-color: #8e9091;
+    width: 9px;
+    height: 9px;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet.custom-bullet-active {
+    background-color: #253342;
+    width: 16px;
   }
 `;

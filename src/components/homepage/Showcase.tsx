@@ -4,7 +4,6 @@ import {
   StyledRow,
   StyledShowcase,
 } from "@/styles/styled";
-import { useQuery } from "@tanstack/react-query";
 import ProductCard from "../common/card/ProductCard";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
@@ -13,27 +12,35 @@ import CustomImage from "../common/CustomImage";
 
 type ShowcaseProps = {
   title: string;
-  // queryKey: string;
-  // queryFn: () => void;
   details?: boolean;
   data: Product[];
   isProductsCard?: boolean;
 };
-
 const Showcase: React.FC<ShowcaseProps> = ({
   title,
   data,
   details = true,
   isProductsCard = true,
 }) => {
-  // const { data } = useQuery({
-  //   queryKey: [queryKey],
-  //   queryFn: queryFn,
-  // });
   return (
     <StyledShowcase>
       <StyledHeader as="h1">{title}</StyledHeader>
-      <StyledLogoSwiper modules={[Navigation]} slidesPerView={4} navigation>
+      <StyledLogoSwiper
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
+        modules={[Navigation]}
+        slidesPerView={4}
+        navigation
+      >
         <StyledRow>
           {data.map((product) => (
             <SwiperSlide key={product.id}>
@@ -43,7 +50,7 @@ const Showcase: React.FC<ShowcaseProps> = ({
                 <CustomImage
                   src={product.image}
                   alt={product.title}
-                  height="420px"
+                  height={420}
                 />
               )}
             </SwiperSlide>

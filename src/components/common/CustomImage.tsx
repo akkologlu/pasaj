@@ -3,7 +3,8 @@ import Image from "next/image";
 
 type CustomImageProps = {
   src: string;
-  height: string;
+  height: number;
+  smheight?: number;
   alt: string;
   width?: string;
   objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";

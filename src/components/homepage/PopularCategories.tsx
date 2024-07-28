@@ -4,11 +4,14 @@ import {
   StyledCol,
   StyledHeader,
   StyledList,
+  StyledLogoSwiper,
   StyledSection,
 } from "@/styles/styled";
 import { useQuery } from "@tanstack/react-query";
 import CustomImage from "../common/CustomImage";
 import Link from "next/link";
+import { Navigation } from "swiper/modules";
+import { SwiperSlide } from "swiper/react";
 
 type PopularCategoriesProps = {
   title: string;
@@ -23,15 +26,30 @@ const PopularCategories = () => {
   return (
     <StyledSection>
       <StyledHeader as="h1">Popüler Kategoriler</StyledHeader>
-      <StyledList>
-        {data.map((category: PopularCategoriesProps) => (
-          <StyledCol key={category.image} $sizemd={1}>
-            <li>
+      <div>
+        <StyledLogoSwiper
+          modules={[Navigation]}
+          slidesPerView={10}
+          breakpoints={{
+            0: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 5,
+            },
+            1024: {
+              slidesPerView: 10,
+            },
+          }}
+          navigation
+        >
+          {data.map((category: PopularCategoriesProps, index: number) => (
+            <SwiperSlide key={index} style={{ padding: "1rem " }}>
               <Link href="#">
                 <CustomImage
                   src={category.image}
                   alt={category.title}
-                  height="88px"
+                  height={88}
                   style={{
                     borderRadius: "50%",
                     boxShadow: "0 0 10px 0 #0000001a",
@@ -40,10 +58,10 @@ const PopularCategories = () => {
                 />
                 <StyledCenterText as="p">{category.title}</StyledCenterText>
               </Link>
-            </li>
-          </StyledCol>
-        ))}
-      </StyledList>
+            </SwiperSlide>
+          ))}
+        </StyledLogoSwiper>
+      </div>
     </StyledSection>
   );
 };

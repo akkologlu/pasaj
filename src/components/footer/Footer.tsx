@@ -101,11 +101,22 @@ const Footer: React.FC = () => {
             <StyledLogoSwiper
               modules={[Navigation]}
               slidesPerView={10}
+              breakpoints={{
+                0: {
+                  slidesPerView: 3,
+                },
+                768: {
+                  slidesPerView: 5,
+                },
+                1024: {
+                  slidesPerView: 7,
+                },
+              }}
               navigation
             >
               {logos.map((logo, index) => (
                 <SwiperSlide style={{ padding: "1rem 2rem" }} key={index}>
-                  <CustomImage src={logo} height="50px" alt={logo} />
+                  <CustomImage src={logo} height={50} alt={logo} />
                 </SwiperSlide>
               ))}
             </StyledLogoSwiper>
@@ -117,7 +128,7 @@ const Footer: React.FC = () => {
             <div>
               <CustomImage
                 src="/guven-damgasi-icon.webp"
-                height="30px"
+                height={30}
                 width="30px"
                 alt="damga"
               />
@@ -125,7 +136,7 @@ const Footer: React.FC = () => {
             <div>
               <CustomImage
                 src="/etbis-qr-code.webp"
-                height="30px"
+                height={30}
                 width="30px"
                 alt="damga"
               />

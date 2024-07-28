@@ -9,7 +9,7 @@ const BlueBanner = () => {
         <CustomImage
           src="/teknoloji-group-18.webp"
           alt="blue banner"
-          height="150px"
+          height={150}
         />
       </StyledCol>
       <StyledCol $sizemd={8}>
