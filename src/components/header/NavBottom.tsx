@@ -3,9 +3,10 @@ import {
   StyledCategoryModal,
   StyledCol,
   StyledContainer,
-  StyledFlexBetween,
+  StyledDiv,
   StyledNavBottom,
   StyledRow,
+  StyledText,
 } from "@/styles/styled";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -15,31 +16,40 @@ import { Product } from "@/types/productType";
 import { Category } from "@/types/categoryType";
 
 const NavBottom: React.FC = () => {
-  const { data: categories } = useQuery({
+  const { data: categories = [] } = useQuery({
     queryKey: ["navBottomCategories"],
     queryFn: fetchNavBottomCategories,
   });
-  const { data: products } = useQuery({
+  const { data: products = [] } = useQuery({
     queryKey: ["products"],
     queryFn: fetchAllProducts,
   });
   const [showModal, setShowModal] = useState(false);
-  const [modalContent, setModalContent] = useState(categories[0]);
-  const [showProduct, setShowProduct] = useState(categories[0].url);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [modalContent, setModalContent] = useState<Category | null>(null);
+  const [showProduct, setShowProduct] = useState<string | null>(null);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    const filtered = products
-      .filter(
-        (product: Product) =>
-          product.categoryUrl === showProduct ||
-          product.subcategoryUrl === showProduct
-      )
-      .slice(0, 2);
-    setFilteredProducts(filtered);
+    if (categories.length > 0) {
+      setModalContent(categories[0]);
+      setShowProduct(categories[0].url);
+    }
+  }, [categories]);
+
+  useEffect(() => {
+    if (showProduct && products.length > 0) {
+      const filtered = products
+        .filter(
+          (product: Product) =>
+            product.categoryUrl === showProduct ||
+            product.subcategoryUrl === showProduct
+        )
+        .slice(0, 2);
+      setFilteredProducts(filtered);
+    }
   }, [showProduct, products]);
 
-  const handleMouseEnter = (option: any) => {
+  const handleMouseEnter = (option: Category) => {
     setModalContent(option);
     setShowProduct(option.url);
     setShowModal(true);
@@ -47,7 +57,7 @@ const NavBottom: React.FC = () => {
 
   return (
     <>
-      <StyledNavBottom>
+      <StyledNavBottom $display="flex" $justify="space-between">
         {categories.map((cat: Category) => (
           <StyledCol
             $sizemd={1}
@@ -58,14 +68,17 @@ const NavBottom: React.FC = () => {
           </StyledCol>
         ))}
       </StyledNavBottom>
-      {showModal && (
+      {showModal && modalContent && (
         <StyledCategoryModal
+          $pos="absolute"
+          $bgcolor="#f6f5f8"
+          $padding="4rem"
           onMouseEnter={() => setShowModal(true)}
           onMouseLeave={() => setShowModal(false)}
         >
           <StyledContainer>
-            <StyledFlexBetween>
-              <div className="subcategories">
+            <StyledDiv $display="flex" $justify="space-between">
+              <StyledDiv $display="flex" $direction="column" $gap="1rem">
                 {modalContent.subCategories.map(
                   (cat: { subTitle: string; subUrl: string }) => (
                     <Link
@@ -77,13 +90,12 @@ const NavBottom: React.FC = () => {
                     </Link>
                   )
                 )}
-                <Link
-                  className="viewAll"
-                  href={`/products/${modalContent.url}`}
-                >
-                  Tüm {modalContent.title} &gt;
+                <Link href={`/products/${modalContent.url}`}>
+                  <StyledText $color="#144296" $fw="700">
+                    Tüm {modalContent.title} &gt;
+                  </StyledText>
                 </Link>
-              </div>
+              </StyledDiv>
               <StyledCol $sizemd={6}>
                 <StyledRow>
                   {filteredProducts.map((product: Product) => (
@@ -95,7 +107,7 @@ const NavBottom: React.FC = () => {
                   ))}
                 </StyledRow>
               </StyledCol>
-            </StyledFlexBetween>
+            </StyledDiv>
           </StyledContainer>
         </StyledCategoryModal>
       )}

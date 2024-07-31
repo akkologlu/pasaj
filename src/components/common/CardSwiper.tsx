@@ -27,6 +27,7 @@ const CardSwiper: React.FC<CardSwiperProps> = ({ image }) => {
         }}
         modules={[Pagination]}
         style={{ height: "200px", width: "100%" }}
+        spaceBetween={10}
       >
         {image.map((img) => (
           <SwiperSlide key={img.color}>

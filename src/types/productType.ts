@@ -39,6 +39,7 @@ export type Product = {
   title: string;
   rating: number;
   stock: number;
+  brand: string;
   configration: Option[];
   price: number;
   creditCard: boolean;
@@ -54,6 +55,7 @@ export type Product = {
   images: Image[];
   freeShipping: boolean;
   guarantee: boolean;
+  colors: string[];
   otherSellers: Seller[];
   description: string;
   specifications: Specification[];

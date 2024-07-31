@@ -1,3 +1,11 @@
+export const bannerLinks = [
+  "Favorilerim",
+  "Kampanyalar",
+  "Yardım",
+  "Neden Pasaj",
+  "Pasaj Blog",
+  "Sipariş Sorgulama",
+];
 export const opps = [
   {
     id: 1,
@@ -60,5 +68,59 @@ export const popularSearches = [
   {
     id: 6,
     title: "Spor Paketleri",
+  },
+];
+
+export const landing = [
+  "/landing1.jpeg",
+  "/landing2.jpeg",
+  "/landing3.jpeg",
+  "/landing4.jpeg",
+  "/landing5.jpeg",
+  "/landing6.jpeg",
+  "/landing7.jpeg",
+  "/landing8.jpeg",
+  "/landing9.jpeg",
+  "/landing10.jpeg",
+  "/landing11.jpeg",
+  "/landing12.jpeg",
+  "/landing13.jpeg",
+];
+
+export const priceRanges: { label: string; range: [number, number] | null }[] =
+  [
+    { label: "0 - 500 TL", range: [0, 500] },
+    { label: "500 - 1500 TL", range: [500, 1500] },
+    { label: "1500 - 3000 TL", range: [1500, 3000] },
+    { label: "3000 TL ve üzeri", range: [3000, Infinity] },
+  ];
+
+export const sortOptions = [
+  { label: "En Popüler", value: "initial" },
+  { label: "En Düşük Fiyat", value: "lowest_price" },
+  { label: "En Yüksek Fiyat", value: "highest_price" },
+  { label: "Puan Yüksek Puan", value: "highest_rating" },
+  { label: "Puan Düşük Puan", value: "lowest_rating" },
+];
+export const tabOptions = [
+  {
+    id: 1,
+    title: "Ürün Açıklamaları",
+    url: "aciklamalar",
+  },
+  {
+    id: 2,
+    title: "Değerlendirmeler",
+    url: "degerlendirmeler",
+  },
+  {
+    id: 4,
+    title: "Ürün Soru&Cevapları",
+    url: "sorular",
+  },
+  {
+    id: 5,
+    title: "Kredi Kartı Kampanyaları",
+    url: "kredi-karti-kampanyalari",
   },
 ];

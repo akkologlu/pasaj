@@ -1,26 +1,35 @@
-import { StyledCartCount, StyledCol, StyledRow } from "@/styles/styled";
+import {
+  StyledCartCount,
+  StyledCol,
+  StyledMyAccountModal,
+  StyledRow,
+} from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
 import CustomButton from "../common/CustomButton";
 import SearchForm from "./SearchForm";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 type NavbarProps = {
   loginModal: boolean;
-  setLoginModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setloginModal: React.Dispatch<React.SetStateAction<boolean>>;
+  session: object | null;
 };
-const Navbar: React.FC<NavbarProps> = ({ loginModal, setLoginModal }) => {
+const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
   const { data: session } = useSession();
   return (
     <nav>
       <StyledRow>
         <StyledCol $sizemd={1.25}>
-          <CustomImage src="/logo.png" alt="logo" height={45} />
+          <Link href="/">
+            <CustomImage src="/logo.png" alt="logo" height={45} />
+          </Link>
         </StyledCol>
         <SearchForm />
 
         <StyledCol $sizemd={1.5}>
           <CustomButton
             bgcolor="#fff"
-            onclick={() => setLoginModal(!loginModal)}
+            onclick={() => setloginModal(!loginModal)}
           >
             <CustomImage
               src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
@@ -36,6 +45,13 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setLoginModal }) => {
               height={14}
               width="14px"
             />
+            {session && loginModal && (
+              <StyledMyAccountModal $pos="absolute" $bgcolor="#f6f5f8">
+                <button onClick={() => signOut({ callbackUrl: "/" })}>
+                  Sign Out
+                </button>
+              </StyledMyAccountModal>
+            )}
           </CustomButton>
         </StyledCol>
         <StyledCol $sizemd={1.5}>
@@ -47,7 +63,17 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setLoginModal }) => {
               width="20px"
             />
             <p>Sepet</p>
-            <StyledCartCount>0</StyledCartCount>
+            <StyledCartCount
+              $bgcolor="#ed6060"
+              $color="#fff"
+              $radius="50%"
+              $display="flex"
+              $justify="center"
+              $align="center"
+              $pos="absolute"
+            >
+              0
+            </StyledCartCount>
           </CustomButton>
         </StyledCol>
       </StyledRow>

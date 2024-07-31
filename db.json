@@ -5,14 +5,23 @@
       "title": "iPhone 15 Pro Max 256 GB",
       "rating": 4.8,
       "stock": 45,
+      "brand": "Apple",
       "configration": [
         {
           "title": "Renk",
-          "options": ["Mavi", "Siyah", "Gri"]
+          "options": [
+            "Mavi",
+            "Siyah",
+            "Gri"
+          ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB", "512 GB"]
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
         }
       ],
       "price": 89999,
@@ -42,6 +51,11 @@
       ],
       "freeShipping": true,
       "guarantee": true,
+      "colors": [
+        "Mavi",
+        "Siyah",
+        "Gri"
+      ],
       "otherSellers": [
         {
           "seller": "Vatan Bilgisayar",
@@ -156,7 +170,11 @@
           "answer": "Evet, 15W kablosuz şarj desteği bulunmaktadır."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -167,14 +185,28 @@
       "title": "Samsung Galaxy S22 Ultra 256 GB",
       "rating": 4.7,
       "stock": 50,
+      "brand": "Samsung",
       "configration": [
         {
           "title": "Renk",
-          "options": ["Beyaz", "Siyah", "Bordo"]
+          "options": [
+            "Beyaz",
+            "Siyah",
+            "Bordo"
+          ],
+          "colorCodes": [
+            "#ffffff",
+            "#000000",
+            "#800000"
+          ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB", "512 GB"]
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
         }
       ],
       "price": 79999,
@@ -204,6 +236,11 @@
       ],
       "freeShipping": true,
       "guarantee": true,
+      "colors": [
+        "Beyaz",
+        "Siyah",
+        "Bordo"
+      ],
       "otherSellers": [
         {
           "seller": "Teknosa",
@@ -256,7 +293,11 @@
           "answer": "108 MP geniş, ultra geniş ve telefoto kameralar."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": false,
@@ -267,14 +308,21 @@
       "title": "Ütü",
       "rating": 4.5,
       "stock": 30,
+      "brand": "Philips",
       "configration": [
         {
           "title": "Renk",
-          "options": ["Beyaz", "Mavi"]
+          "options": [
+            "Beyaz",
+            "Mavi"
+          ]
         },
         {
           "title": "Güç",
-          "options": ["2000W", "2400W"]
+          "options": [
+            "2000W",
+            "2400W"
+          ]
         }
       ],
       "price": 999,
@@ -300,6 +348,10 @@
       ],
       "freeShipping": true,
       "guarantee": true,
+      "colors": [
+        "Beyaz",
+        "Mavi"
+      ],
       "otherSellers": [
         {
           "seller": "Arçelik",
@@ -353,7 +405,11 @@
           "answer": "2400W."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": false,
       "newProduct": false,
@@ -364,14 +420,21 @@
       "title": "Buzdolabı",
       "rating": 4.6,
       "stock": 25,
+      "brand": "Samsung",
       "configration": [
         {
           "title": "Renk",
-          "options": ["Beyaz", "Gri"]
+          "options": [
+            "Beyaz",
+            "Gri"
+          ]
         },
         {
           "title": "Kapasite",
-          "options": ["500L", "600L"]
+          "options": [
+            "500L",
+            "600L"
+          ]
         }
       ],
       "price": 14999,
@@ -397,6 +460,10 @@
       ],
       "freeShipping": true,
       "guarantee": true,
+      "colors": [
+        "Beyaz",
+        "Gri"
+      ],
       "otherSellers": [
         {
           "seller": "Arçelik",
@@ -443,7 +510,11 @@
           "answer": "Evet, no-frost özelliği bulunmaktadır."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -454,14 +525,22 @@
       "title": "Macbook Pro 2022 512 GB",
       "rating": 4.9,
       "stock": 20,
+      "brand": "Apple",
       "configration": [
         {
           "title": "Renk",
-          "options": ["Gri", "Gümüş"]
+          "options": [
+            "Gri",
+            "Gümüş"
+          ]
         },
         {
           "title": "Hafıza",
-          "options": ["256 GB", "512 GB", "1 TB"]
+          "options": [
+            "256 GB",
+            "512 GB",
+            "1 TB"
+          ]
         }
       ],
       "price": 34999,
@@ -487,6 +566,10 @@
       ],
       "freeShipping": true,
       "guarantee": true,
+      "colors": [
+        "Gri",
+        "Gümüş"
+      ],
       "otherSellers": [
         {
           "seller": "Apple Store",
@@ -539,7 +622,11 @@
           "answer": "20 saat."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -550,14 +637,22 @@
       "title": "Çamaşır Makinesi",
       "rating": 4.7,
       "stock": 15,
+      "brand": "Arçelik",
       "configration": [
         {
           "title": "Renk",
-          "options": ["Beyaz", "Gri"]
+          "options": [
+            "Beyaz",
+            "Gri"
+          ]
         },
         {
           "title": "Kapasite",
-          "options": ["7 kg", "9 kg", "11 kg"]
+          "options": [
+            "7 kg",
+            "9 kg",
+            "11 kg"
+          ]
         }
       ],
       "price": 7999,
@@ -583,6 +678,10 @@
       ],
       "freeShipping": true,
       "guarantee": true,
+      "colors": [
+        "Beyaz",
+        "Gri"
+      ],
       "otherSellers": [
         {
           "seller": "Bosch",
@@ -633,7 +732,11 @@
           "answer": "A+++."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -644,14 +747,22 @@
       "title": "Xiaomi Redmi Note 11 Pro 128 GB",
       "rating": 4.6,
       "stock": 35,
+      "brand": "Xiaomi",
       "configration": [
         {
           "title": "Renk",
-          "options": ["Mavi", "Siyah", "Beyaz"]
+          "options": [
+            "Mavi",
+            "Siyah",
+            "Beyaz"
+          ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
       "price": 12999,
@@ -681,6 +792,11 @@
       ],
       "freeShipping": true,
       "guarantee": true,
+      "colors": [
+        "Mavi",
+        "Siyah",
+        "Beyaz"
+      ],
       "otherSellers": [
         {
           "seller": "Mi Store",
@@ -727,7 +843,11 @@
           "answer": "5.020 mAh."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -974,6 +1094,28 @@
           "subUrl": "oyuncaklar"
         }
       ]
+    }
+  ],
+  "users": [
+    {
+      "id": "dqXZJbDFQCM0XbzGu4qTj4KDSzi1",
+      "email": "abdullah@gmail.com",
+      "cart": []
+    },
+    {
+      "id": "f1oETlSzDGQG9zk3QDFR70MZLmD3",
+      "email": "bilal@gmail.com",
+      "cart": []
+    },
+    {
+      "id": "E2rnwGbpDHboC7lKz98asay00YU2",
+      "email": "bilal@gmail.com",
+      "cart": []
+    },
+    {
+      "id": "knlV2nhLQVN3edp9Bv9eySUXZg13",
+      "email": "admin@admin.com",
+      "cart": []
     }
   ]
 }

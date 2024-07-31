@@ -1,12 +1,5 @@
 import { fetchPopularCategories } from "@/lib/api";
-import {
-  StyledCenterText,
-  StyledCol,
-  StyledHeader,
-  StyledList,
-  StyledLogoSwiper,
-  StyledSection,
-} from "@/styles/styled";
+import { StyledDiv, StyledSwiper, StyledText } from "@/styles/styled";
 import { useQuery } from "@tanstack/react-query";
 import CustomImage from "../common/CustomImage";
 import Link from "next/link";
@@ -24,10 +17,12 @@ const PopularCategories = () => {
     queryFn: fetchPopularCategories,
   });
   return (
-    <StyledSection>
-      <StyledHeader as="h1">Popüler Kategoriler</StyledHeader>
+    <StyledDiv $padding="5rem 0">
+      <StyledText as="h2" $fs="24px" $fw="700">
+        Popüler Kategoriler
+      </StyledText>
       <div>
-        <StyledLogoSwiper
+        <StyledSwiper
           modules={[Navigation]}
           slidesPerView={10}
           breakpoints={{
@@ -56,13 +51,15 @@ const PopularCategories = () => {
                   }}
                   imageStyle={{ borderRadius: "50%" }}
                 />
-                <StyledCenterText as="p">{category.title}</StyledCenterText>
+                <StyledText $center={true} as="p">
+                  {category.title}
+                </StyledText>
               </Link>
             </SwiperSlide>
           ))}
-        </StyledLogoSwiper>
+        </StyledSwiper>
       </div>
-    </StyledSection>
+    </StyledDiv>
   );
 };
 

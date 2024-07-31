@@ -15,6 +15,13 @@ export const fetchAllProducts = async () => {
   }
   return res.json();
 };
+export const fetchProduct = async (id: string) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`);
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
 export const fetchPopularCategories = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DB_URL}/popularCategories`
@@ -57,6 +64,53 @@ export const fetchSearchProducts = async (search: string) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DB_URL}/products?q=${search}`
   );
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
+
+export const addUser = async (data: any) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
+
+export const getUser = async (id: string) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${id}`);
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
+
+export const fetchUserCart = async (id: string) => {
+  const user = await getUser(id);
+  return user.cart;
+};
+
+export const addToCart = async ({
+  userId,
+  cartData,
+}: {
+  userId: string;
+  cartData: any;
+}) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${userId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(cartData),
+  });
   if (!res.ok) {
     throw new Error("Network response was not ok");
   }

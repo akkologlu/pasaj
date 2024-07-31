@@ -1,40 +1,46 @@
 import {
   StyledCol,
   StyledContainer,
-  StyledFlexEvenly,
-  StyledHeader,
+  StyledDiv,
   StyledLoginModal,
+  StyledText,
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
 import Link from "next/link";
-
-const LoginModal: React.FC = () => {
+type LoginModalProps = {
+  setloginModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const LoginModal: React.FC<LoginModalProps> = ({ setloginModal }) => {
   return (
-    <StyledLoginModal>
+    <StyledLoginModal $pos="absolute" $bgcolor="#f6f5f8" $padding="4rem">
       <StyledContainer>
-        <StyledFlexEvenly>
+        <StyledDiv $display="flex" $justify="space-evenly">
           <StyledCol $sizemd={4}>
             <CustomImage src="/login-image.webp" alt="login" height={200} />
-            <StyledHeader as="h3">
+            <StyledText as="h3" $fs="24px">
               Turkcell Pasaj’ın fırsatlarla dolu dünyasına hoş geldiniz!
-            </StyledHeader>
-            <p>
+            </StyledText>
+            <StyledText $fs="14px">
               Turkcell Pasaj’da fırsatlar bitmez! İhtiyacınız olan bir çok
               ürüne, güvenli ve esnek ödeme seçenekleri ile hem de kredi kartı
               limitinize takılmadan sahip olabilirsiniz. Favorilediğiniz ürünler
               için bilgilendirmelerden, siparişlerinizle ilgili tüm işlemlere ve
               daha da fazlasına kolaylıkla erişim sağlayabilirsiniz.
-            </p>
+            </StyledText>
           </StyledCol>
           <StyledCol $sizemd={4}>
-            <StyledHeader as="h2">Giriş</StyledHeader>
-            <p>
+            <StyledText $fs="2rem" as="h2">
+              Giriş
+            </StyledText>
+            <StyledText $fs="14px">
               Size özel ödeme avantajları ve size özel tekliflerden faydalanmak
               için Giriş Yap/Üye Ol seçeneği ile devam edebilirsiniz.
-            </p>
-            <Link href="/signin">Giriş Yap / Üye Ol</Link>
+            </StyledText>
+            <Link href="/signin" onClick={() => setloginModal(false)}>
+              Giriş Yap / Üye Ol
+            </Link>
           </StyledCol>
-        </StyledFlexEvenly>
+        </StyledDiv>
       </StyledContainer>
     </StyledLoginModal>
   );

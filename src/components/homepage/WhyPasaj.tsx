@@ -1,89 +1,93 @@
 import {
-  StyledCenterText,
   StyledCol,
   StyledContainer,
-  StyledFlexBetween,
-  StyledFlexColumn,
-  StyledHeader,
+  StyledDiv,
   StyledRoundedDiv,
-  StyledWhyPassage,
+  StyledText,
 } from "@/styles/styled";
-import CustomImage from "../common/CustomImage";
+import { TbTruckDelivery } from "react-icons/tb";
+import { MdPayments } from "react-icons/md";
+import { RiRefund2Fill } from "react-icons/ri";
 
 const WhyPasaj: React.FC = () => {
   return (
-    <StyledWhyPassage>
+    <StyledDiv $padding="5rem 0" $bgcolor="#eff2f5" $textAlign="center">
       <StyledContainer>
-        <StyledCenterText>
-          <StyledHeader as="h1">Neden Pasaj?</StyledHeader>
-          <h3>
-            Akıllı telefondan elektrikli süpürgeye, hobi ürünlerinden akıllı
-            saatlere binlerce çeşit elektronik ürünü Turkcell Pasaj güvencesi ve
-            Turkcell Pasaj ayrıcalığıyla keşfedin.
-          </h3>
-        </StyledCenterText>
-        <StyledFlexBetween>
+        <StyledText as="h2" $fw="700" $fs="24px" $center={true}>
+          Neden Pasaj?
+        </StyledText>
+        <StyledText $fw="500" $fs="18px" $center={true}>
+          Akıllı telefondan elektrikli süpürgeye, hobi ürünlerinden akıllı
+          saatlere binlerce çeşit elektronik ürünü Turkcell Pasaj güvencesi ve
+          Turkcell Pasaj ayrıcalığıyla keşfedin.
+        </StyledText>
+        <StyledDiv $display="flex" $justify="space-between">
           <StyledCol $sizemd={3}>
-            <StyledFlexColumn>
-              <StyledRoundedDiv>
-                <CustomImage
-                  src="https://cdn-icons-png.flaticon.com/512/6831/6831000.png"
-                  alt="Neden Pasaj?"
-                  height={60}
-                  width="60px"
-                />
-              </StyledRoundedDiv>
-              <StyledCenterText>
-                <StyledHeader as="h2">Hızlı ve Kolay Teslimat</StyledHeader>
-                <p>
-                  Siparişiniz isterseniz gün içinde gelsin, isterseniz bir tıkla
-                  gelin ve mağazadan teslim alın.
-                </p>
-              </StyledCenterText>
-            </StyledFlexColumn>
+            <StyledRoundedDiv
+              $radius="50%"
+              $bgcolor="#27356f"
+              $padding="1rem"
+              $margin="3rem auto 1rem auto"
+              $color="#fff"
+              $display="flex"
+              $justify="center"
+              $align="center"
+            >
+              <TbTruckDelivery />
+            </StyledRoundedDiv>
+            <StyledText as="h2" $fw="700" $fs="24px" $center={true}>
+              Hızlı ve Kolay Teslimat
+            </StyledText>
+            <StyledText $center={true}>
+              Siparişiniz isterseniz gün içinde gelsin, isterseniz bir tıkla
+              gelin ve mağazadan teslim alın.
+            </StyledText>
           </StyledCol>
           <StyledCol $sizemd={3}>
-            <StyledFlexColumn>
-              <StyledRoundedDiv>
-                <CustomImage
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSghdOGxXowbnHJ94R2Xpz5sz4PDluu9ZaCRM6h3F4sioCwDN6pxRx1E1skIul7AOWCZ5g&usqp=CAU"
-                  alt="Neden Pasaj?"
-                  height={60}
-                  width="60px"
-                />
-              </StyledRoundedDiv>
-              <StyledCenterText>
-                <StyledHeader as="h2">Hızlı ve Kolay Teslimat</StyledHeader>
-                <p>
-                  Siparişiniz isterseniz gün içinde gelsin, isterseniz bir tıkla
-                  gelin ve mağazadan teslim alın.
-                </p>
-              </StyledCenterText>
-            </StyledFlexColumn>
+            <StyledRoundedDiv
+              $radius="50%"
+              $bgcolor="#27356f"
+              $padding="1rem"
+              $margin="3rem auto 1rem auto"
+              $color="#fff"
+              $display="flex"
+              $justify="center"
+              $align="center"
+            >
+              <MdPayments />
+            </StyledRoundedDiv>
+            <StyledText as="h2" $fw="700" $fs="24px" $center={true}>
+              Esnek Ödeme Seçenekleri
+            </StyledText>
+            <StyledText $center={true}>
+              Alışverişlerinizi ister kredi kartınıza taksitlendirin ister
+              Turkcell faturanıza ek, 36 aya varan vade imkanından faydalanın.
+            </StyledText>
           </StyledCol>
           <StyledCol $sizemd={3}>
-            <StyledFlexColumn>
-              <StyledRoundedDiv>
-                <CustomImage
-                  src="https://icons.veryicon.com/png/o/miscellaneous/cook-design-catering-b-end-icon-library/cancellation-of-order-1.png"
-                  alt="Neden Pasaj?"
-                  height={60}
-                  width="60px"
-                />
-              </StyledRoundedDiv>
-              <StyledCenterText>
-                <StyledHeader as="h2">Hızlı ve Kolay Teslimat</StyledHeader>
-                <p>
-                  Siparişiniz isterseniz gün içinde gelsin, isterseniz bir tıkla
-                  gelin ve mağazadan teslim alın.
-                </p>
-              </StyledCenterText>
-            </StyledFlexColumn>
+            <StyledRoundedDiv
+              $radius="50%"
+              $bgcolor="#27356f"
+              $padding="1rem"
+              $margin="3rem auto 1rem auto"
+              $color="#fff"
+              $display="flex"
+              $justify="center"
+              $align="center"
+            >
+              <RiRefund2Fill />
+            </StyledRoundedDiv>
+            <StyledText as="h2" $fw="700" $fs="24px" $center={true}>
+              Ücretsiz İptal ve İade
+            </StyledText>
+            <StyledText $center={true}>
+              Ürünlerinizi kolayca ve hiçbir ücret ödemeden iptal ve iade
+              edebilirsiniz.
+            </StyledText>
           </StyledCol>
-        </StyledFlexBetween>
+        </StyledDiv>
       </StyledContainer>
-    </StyledWhyPassage>
+    </StyledDiv>
   );
 };
-
 export default WhyPasaj;

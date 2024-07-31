@@ -1,10 +1,15 @@
-import { StyledBlueBanner, StyledCol } from "@/styles/styled";
+import { StyledBlueBanner, StyledCol, StyledText } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
 import CustomButton from "../common/CustomButton";
 
 const BlueBanner = () => {
   return (
-    <StyledBlueBanner>
+    <StyledBlueBanner
+      $display="flex"
+      $justify="space-evenly"
+      $bgcolor="#3aa6d8"
+      $align="center"
+    >
       <StyledCol $sizemd={2}>
         <CustomImage
           src="/teknoloji-group-18.webp"
@@ -13,7 +18,9 @@ const BlueBanner = () => {
         />
       </StyledCol>
       <StyledCol $sizemd={8}>
-        <h3>Turkcell Faturana Ek Alabileceğin Cihazlar</h3>
+        <StyledText as="h2" $fs="24px" $color="#fff" $center={true} $fw="700">
+          Turkcell Faturana Ek Alabileceğin Cihazlar
+        </StyledText>
       </StyledCol>
       <StyledCol $sizemd={1}>
         <CustomButton bgcolor="#FFC900" padding="0.5rem">

@@ -2,12 +2,12 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import { auth } from "@/lib/firebase";
+import { addUser } from "@/lib/api";
 
 const schema = z.object({
   email: z.string().email(),
@@ -32,8 +32,13 @@ export default function Register() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      await createUserWithEmailAndPassword(auth, data.email, data.password);
+      const { user } = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      );
       alert("User registered successfully");
+      await addUser({ id: user.uid, email: data.email, cart: [] });
       router.push("/");
     } catch (error: any) {
       alert(error.message);

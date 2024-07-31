@@ -18,9 +18,16 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   return (
     <Link href={href}>
       <StyledCustomButton
+        as="span"
         onClick={onclick}
         $bgcolor={bgcolor}
         $padding={padding}
+        $radius="0.25rem"
+        $display="flex"
+        $justify="center"
+        $align="center"
+        $pos="relative"
+        $gap="0.75rem"
       >
         {children}
       </StyledCustomButton>

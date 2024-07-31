@@ -1,9 +1,9 @@
 import {
   StyledContainer,
-  StyledFlexBetween,
+  StyledDiv,
   StyledFooter,
   StyledFooterMiddle,
-  StyledLogoSwiper,
+  StyledSwiper,
   StyledRow,
 } from "@/styles/styled";
 import FooterCol from "./FooterCol";
@@ -29,9 +29,9 @@ const Footer: React.FC = () => {
     "/wiyo.webp",
   ];
   return (
-    <StyledFooter>
+    <StyledFooter as="footer" $bgcolor="#27356f" $padding="5rem 0">
       <StyledContainer>
-        <StyledFlexBetween>
+        <StyledDiv $display="flex" $justify="space-between">
           <FooterCol
             title="Hakkımızda"
             list={[
@@ -91,14 +91,14 @@ const Footer: React.FC = () => {
               "iphone 14 Pro Max",
             ]}
           />
-        </StyledFlexBetween>
-        <StyledFooterMiddle>
-          <StyledFlexBetween>
+        </StyledDiv>
+        <StyledFooterMiddle $padding="2rem 0" $margin="1rem 0">
+          <StyledDiv $display="flex" $justify="space-between">
             <div>Türkçe English العربية pyccĸий</div>
             <div>Bizi Takip Edin</div>
-          </StyledFlexBetween>
+          </StyledDiv>
           <div>
-            <StyledLogoSwiper
+            <StyledSwiper
               modules={[Navigation]}
               slidesPerView={10}
               breakpoints={{
@@ -119,10 +119,10 @@ const Footer: React.FC = () => {
                   <CustomImage src={logo} height={50} alt={logo} />
                 </SwiperSlide>
               ))}
-            </StyledLogoSwiper>
+            </StyledSwiper>
           </div>
         </StyledFooterMiddle>
-        <StyledFlexBetween>
+        <StyledDiv $display="flex" $justify="space-between">
           <div>Gizlilik ve Güvenlik</div>
           <StyledRow>
             <div>
@@ -145,7 +145,7 @@ const Footer: React.FC = () => {
               © 2024 <br /> Turkcell
             </small>
           </StyledRow>
-        </StyledFlexBetween>
+        </StyledDiv>
       </StyledContainer>
     </StyledFooter>
   );

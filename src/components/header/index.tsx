@@ -1,21 +1,28 @@
-import { StyledContainer, StyledHeaderComp } from "@/styles/styled";
+import { StyledContainer, StyledDiv } from "@/styles/styled";
 import Banner from "./Banner";
 import Navbar from "./Navbar";
 import NavBottom from "./NavBottom";
 import LoginModal from "./LoginModal";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 const Header: React.FC = () => {
+  const { data: session } = useSession();
+
   const [loginModal, setloginModal] = useState(false);
   return (
-    <StyledHeaderComp>
+    <StyledDiv as="header" $bgcolor="#fafbfd" $pos="relative">
       <StyledContainer>
         <Banner />
-        <Navbar loginModal={loginModal} setLoginModal={setloginModal} />
+        <Navbar
+          loginModal={loginModal}
+          setloginModal={setloginModal}
+          session={session}
+        />
         <NavBottom />
-        {loginModal && <LoginModal />}
+        {loginModal && !session && <LoginModal setloginModal={setloginModal} />}
       </StyledContainer>
-    </StyledHeaderComp>
+    </StyledDiv>
   );
 };
 

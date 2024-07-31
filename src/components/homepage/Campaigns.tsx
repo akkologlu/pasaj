@@ -1,15 +1,17 @@
 import {
   StyledCol,
-  StyledHeader,
   StyledRow,
   StyledShowcase,
+  StyledText,
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
 
 const Campaigns: React.FC = () => {
   return (
-    <StyledShowcase>
-      <StyledHeader as="h1">Kampanyalar</StyledHeader>
+    <StyledShowcase $padding="5rem 0">
+      <StyledText as="h2" $fs="34px" $fw="700">
+        Kampanyalar
+      </StyledText>
       <StyledRow>
         <StyledCol $sizemd={8}>
           <StyledCol>

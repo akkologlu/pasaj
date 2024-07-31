@@ -1,16 +1,16 @@
-import { StyledBanner, StyledUl } from "@/styles/styled";
+import { bannerLinks } from "@/lib/mockData";
+import { StyledBanner, StyledText, StyledUl } from "@/styles/styled";
 
 const Banner: React.FC = () => {
   return (
-    <StyledBanner>
+    <StyledBanner $display="flex" $padding="20px 0" $justify="space-between">
       <small>turkcell.com.tr</small>
       <StyledUl>
-        <li>Favorilerim</li>
-        <li>Kampanyalar</li>
-        <li>Yardım</li>
-        <li>Neden Pasaj</li>
-        <li>Pasaj Blog</li>
-        <li>Sipariş Sorgulama</li>
+        {bannerLinks.map((link) => (
+          <StyledText key={link} as="li" $fs="10px">
+            {link}
+          </StyledText>
+        ))}
       </StyledUl>
     </StyledBanner>
   );

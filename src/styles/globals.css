@@ -1,7 +1,5 @@
 body {
   font-family: GreycliffCF, Helvetica, Calibri, sans-serif;
-  color: #253342;
-  background-color: #fafbfd;
 }
 
 * {
@@ -12,4 +10,17 @@ body {
 a {
   text-decoration: none;
   color: #253342;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+input {
+  border: none;
+  outline: none;
+}
+ul {
+  list-style-type: none;
 }

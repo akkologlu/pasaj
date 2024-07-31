@@ -19,7 +19,7 @@ import { Product } from "@/types/productType";
 
 export const getStaticProps = async () => {
   const queryClient = new QueryClient();
-  await Promise.all([
+  const queries = [
     queryClient.prefetchQuery({
       queryKey: ["popularCategories"],
       queryFn: fetchPopularCategories,
@@ -36,13 +36,16 @@ export const getStaticProps = async () => {
       queryKey: ["navBottomCategories"],
       queryFn: fetchNavBottomCategories,
     }),
-  ]);
+  ];
+  await Promise.all(queries);
+
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
     },
   };
 };
+
 export default function Home() {
   const { data } = useQuery({
     queryKey: ["products"],

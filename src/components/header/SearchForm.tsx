@@ -1,12 +1,13 @@
 import {
   StyledBackdrop,
   StyledCol,
-  StyledFlexBetween,
-  StyledLogoSwiper,
+  StyledDiv,
+  StyledSwiper,
   StyledRow,
   StyledSearchBadge,
   StyledSearchForm,
   StyledShowArea,
+  StyledText,
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
 import { Navigation } from "swiper/modules";
@@ -44,7 +45,16 @@ const SearchForm = () => {
         <StyledBackdrop onClick={() => setShowSearchArea(false)} />
       )}
 
-      <StyledSearchForm>
+      <StyledSearchForm
+        as="form"
+        $display="flex"
+        $align="center"
+        $bgcolor="#eff2f5"
+        $padding="0 1rem"
+        $gap="1rem"
+        $radius="0.5rem"
+        $pos="relative"
+      >
         <CustomImage
           src={"https://cdn.hugeicons.com/icons/search-01-stroke-rounded.svg"}
           alt="search"
@@ -58,62 +68,79 @@ const SearchForm = () => {
           onChange={handleSearchChange}
         />
         {showSearchArea && (
-          <StyledShowArea>
-            <div className="sanaOzel">
+          <StyledShowArea $pos="absolute">
+            <StyledDiv $bgcolor="#eff2f5" $padding="1rem">
               <small>Sana Özel Kategoriler</small>
-              <StyledFlexBetween>
-                <StyledSearchBadge>6 Taksit + 0 Faiz</StyledSearchBadge>
-                <StyledSearchBadge>Hediye Çeklerim</StyledSearchBadge>
-                <StyledSearchBadge>Faizsiz 25.000 TL</StyledSearchBadge>
-                <StyledSearchBadge>Faturaya Ek Telefonlar</StyledSearchBadge>
-              </StyledFlexBetween>
-            </div>
-            <div className="searches">
+              <StyledDiv $display="flex" $justify="space-between">
+                <StyledSearchBadge $fs="14px" $margin="1rem 0">
+                  6 Taksit + 0 Faiz
+                </StyledSearchBadge>
+                <StyledSearchBadge $fs="14px" $margin="1rem 0">
+                  Hediye Çeklerim
+                </StyledSearchBadge>
+                <StyledSearchBadge $fs="14px" $margin="1rem 0">
+                  Faizsiz 25.000 TL
+                </StyledSearchBadge>
+                <StyledSearchBadge $fs="14px" $margin="1rem 0">
+                  Faturaya Ek Telefonlar
+                </StyledSearchBadge>
+              </StyledDiv>
+            </StyledDiv>
+            <StyledDiv $bgcolor="#fff" $padding="1rem">
               <small>Popüler Aramalar</small>
-              <StyledLogoSwiper
+              <StyledSwiper
                 modules={[Navigation]}
                 slidesPerView={5}
                 navigation
+                spaceBetween={10}
               >
                 {popularSearches.map((cat: { id: number; title: string }) => (
                   <SwiperSlide style={{ padding: "1rem 2rem" }} key={cat.id}>
-                    <StyledSearchBadge>
-                      <p>{cat.title}</p>
+                    <StyledSearchBadge $fs="14px" $margin="1rem 0">
+                      {cat.title}
                     </StyledSearchBadge>
                   </SwiperSlide>
                 ))}
-              </StyledLogoSwiper>
+              </StyledSwiper>
               <div>
                 {searchedProducts.length > 0 &&
                   searchedProducts.slice(0, 5).map((product: Product) => (
                     <Link href="#" key={product.id}>
-                      <StyledFlexBetween>
-                        <StyledRow>
-                          <CustomImage
-                            src={product.images[0].url}
-                            alt={product.title}
-                            height={70}
-                            width="70px"
-                          />
-                          <p>{product.title}</p>
-                        </StyledRow>
+                      <StyledDiv $display="flex" $justify="space-between">
+                        <StyledCol $sizemd={9}>
+                          <StyledRow>
+                            <CustomImage
+                              src={product.images[0].url}
+                              alt={product.title}
+                              height={70}
+                              width="70px"
+                            />
+                            <StyledText $fs="16px">{product.title}</StyledText>
+                          </StyledRow>
+                        </StyledCol>
                         <StyledCol $sizemd={3}>
                           <h3>
                             {product.price - product.discountPrice}{" "}
                             <sup>TL</sup>
                           </h3>
                           {product.discountPrice ? (
-                            <small>
+                            <StyledText as="small" $fs="14px" $color="#5f6b76">
                               <del>{product.price} TL</del>{" "}
-                              <small>{product.discountPrice} TL İndirim</small>
-                            </small>
+                              <StyledText
+                                as="small"
+                                $color="#00bafc"
+                                $fs="11px"
+                              >
+                                {product.discountPrice} TL İndirim
+                              </StyledText>
+                            </StyledText>
                           ) : null}
                         </StyledCol>
-                      </StyledFlexBetween>
+                      </StyledDiv>
                     </Link>
                   ))}
               </div>
-            </div>
+            </StyledDiv>
           </StyledShowArea>
         )}
       </StyledSearchForm>

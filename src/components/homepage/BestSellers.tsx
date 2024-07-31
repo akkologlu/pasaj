@@ -1,10 +1,10 @@
 import { fetchAllProducts, fetchBestSellersCategories } from "@/lib/api";
 import {
-  StyledBestSellerTab,
   StyledCol,
-  StyledHeader,
-  StyledLogoSwiper,
+  StyledDiv,
+  StyledSwiper,
   StyledRow,
+  StyledText,
 } from "@/styles/styled";
 import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "swiper/modules";
@@ -26,9 +26,11 @@ const BestSellers = () => {
   });
   const [activeTab, setActiveTab] = useState(bestSellers[0].productUrl);
   return (
-    <div>
-      <StyledHeader as="h1">Çok Satanlar</StyledHeader>
-      <StyledLogoSwiper
+    <StyledDiv $padding="5rem 0">
+      <StyledText as="h2" $fs="2rem" $fw="700">
+        Çok Satanlar
+      </StyledText>
+      <StyledSwiper
         modules={[Navigation]}
         slidesPerView={7}
         navigation
@@ -56,14 +58,21 @@ const BestSellers = () => {
               style={{ padding: "1rem 2rem" }}
               key={cat.id}
             >
-              <StyledBestSellerTab>
+              <StyledDiv
+                $display="flex"
+                $justify="center"
+                $align="center"
+                $direction="column"
+                $textAlign="center"
+                $gap="1rem"
+              >
                 <CustomImage src={cat.image} alt={cat.title} height={30} />
-                <p>{cat.title}</p>
-              </StyledBestSellerTab>
+                <StyledText $center={true}>{cat.title}</StyledText>
+              </StyledDiv>
             </SwiperSlide>
           )
         )}
-      </StyledLogoSwiper>
+      </StyledSwiper>
       <StyledRow>
         {products
           .filter((product: Product) => product.categoryUrl === activeTab)
@@ -74,7 +83,7 @@ const BestSellers = () => {
             </StyledCol>
           ))}
       </StyledRow>
-    </div>
+    </StyledDiv>
   );
 };
 

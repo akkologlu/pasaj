@@ -1,8 +1,8 @@
 import {
-  StyledHeader,
-  StyledLogoSwiper,
+  StyledSwiper,
   StyledRow,
   StyledShowcase,
+  StyledText,
 } from "@/styles/styled";
 import ProductCard from "../common/card/ProductCard";
 import { Navigation } from "swiper/modules";
@@ -23,9 +23,11 @@ const Showcase: React.FC<ShowcaseProps> = ({
   isProductsCard = true,
 }) => {
   return (
-    <StyledShowcase>
-      <StyledHeader as="h1">{title}</StyledHeader>
-      <StyledLogoSwiper
+    <StyledShowcase $padding="5rem 0">
+      <StyledText $fs="24px" $fw="700" as="h2">
+        {title}
+      </StyledText>
+      <StyledSwiper
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -40,6 +42,7 @@ const Showcase: React.FC<ShowcaseProps> = ({
         modules={[Navigation]}
         slidesPerView={4}
         navigation
+        spaceBetween={10}
       >
         <StyledRow>
           {data.map((product) => (
@@ -56,7 +59,7 @@ const Showcase: React.FC<ShowcaseProps> = ({
             </SwiperSlide>
           ))}
         </StyledRow>
-      </StyledLogoSwiper>
+      </StyledSwiper>
     </StyledShowcase>
   );
 };
