@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Swiper } from "swiper/react";
-export const StyledContainer = styled.div`
+type StyledContainerProps = {
+  $padding?: string;
+};
+export const StyledContainer = styled.div<StyledContainerProps>`
+  padding: ${(props) => props.$padding};
   max-width: 1200px;
   margin: 0 auto;
   @media (max-width: 1200px) {
@@ -46,17 +50,18 @@ type StyledTextProps = {
   $center?: boolean;
   $letterSpacing?: string;
   $lineHeight?: string;
+  $align?: string;
 };
 export const StyledText = styled.p<StyledTextProps>`
-  font-size: ${(props) => (props.$fs ? props.$fs : "1rem")};
-  font-weight: ${(props) => (props.$fw ? props.$fw : "400")};
-  color: ${(props) => (props.$color ? props.$color : "#253342")};
-  margin: ${(props) => (props.$margin ? props.$margin : "0")};
-  padding: ${(props) => (props.$padding ? props.$padding : "0")};
+  font-size: ${(props) => props.$fs};
+  font-weight: ${(props) => props.$fw};
+  color: ${(props) => props.$color};
+  margin: ${(props) => props.$margin};
+  padding: ${(props) => props.$padding};
   text-align: ${(props) => (props.$center ? "center" : "left")};
-  letter-spacing: ${(props) =>
-    props.$letterSpacing ? props.$letterSpacing : "0"};
+  letter-spacing: ${(props) => props.$letterSpacing};
   line-height: ${(props) => (props.$lineHeight ? props.$lineHeight : "1.2")};
+  text-align: ${(props) => props.$align};
 `;
 type StyledDivProps = {
   $display?: string;
@@ -73,25 +78,54 @@ type StyledDivProps = {
   $color?: string;
   $pos?: string;
   $textAlign?: string;
+  $fs?: string;
 };
 export const StyledDiv = styled.div<StyledDivProps>`
   display: ${(props) => props.$display};
-  flex-direction: ${(props) => (props.$direction ? props.$direction : "row")};
-  align-items: ${(props) => (props.$align ? props.$align : "flex-start")};
-  justify-content: ${(props) =>
-    props.$justify ? props.$justify : "flex-start"};
+  flex-direction: ${(props) => props.$direction};
+  align-items: ${(props) => props.$align};
+  justify-content: ${(props) => props.$justify};
   gap: ${(props) => props.$gap};
   margin: ${(props) => props.$margin};
   padding: ${(props) => props.$padding};
-  background-color: ${(props) =>
-    props.$bgcolor ? props.$bgcolor : "transparent"};
+  background-color: ${(props) => props.$bgcolor};
   border-radius: ${(props) => props.$radius};
   width: ${(props) => props.$width};
   height: ${(props) => props.$height};
-  color: ${(props) => (props.$color ? props.$color : "#253342")};
-  position: ${(props) => (props.$pos ? props.$pos : "static")};
-  text-align: ${(props) => (props.$textAlign ? props.$textAlign : "left")};
-  width: 100%;
+  color: ${(props) => props.$color};
+  position: ${(props) => props.$pos};
+  text-align: ${(props) => props.$textAlign};
+  font-size: ${(props) => props.$fs};
+`;
+export const Flex = styled(StyledDiv)`
+  display: flex;
+`;
+export const FlexCol = styled(Flex)`
+  flex-direction: column;
+`;
+export const SpaceBetween = styled(Flex)`
+  justify-content: space-between;
+`;
+export const AlignCenter = styled(Flex)`
+  align-items: center;
+`;
+export const JustifyCenter = styled(Flex)`
+  justify-content: center;
+`;
+export const JustifyBetweenAlignCenter = styled(SpaceBetween)`
+  align-items: center;
+`;
+export const FullCenter = styled(JustifyCenter)`
+  align-items: center;
+`;
+export const SpaceEvenly = styled(Flex)`
+  justify-content: space-evenly;
+`;
+export const FlexEnd = styled(Flex)`
+  justify-content: flex-end;
+`;
+export const FullCenterCol = styled(FullCenter)`
+  flex-direction: column;
 `;
 
 export const StyledUl = styled.ul`
@@ -134,7 +168,7 @@ export const PriceSection = styled(StyledDiv)`
     padding-left: 0.5rem;
   }
 `;
-export const StyledBadge = styled(StyledDiv)`
+export const StyledBadge = styled(FullCenter)`
   width: 50px;
   margin-right: 5px;
 `;
@@ -142,7 +176,7 @@ export const StyledBluePrice = styled(StyledText)`
   padding-top: 0.25rem;
   text-align: right;
 `;
-export const StyledSearchForm = styled(StyledDiv)`
+export const StyledSearchForm = styled(AlignCenter)`
   z-index: 5;
   width: 100%;
   height: 100%;
@@ -157,12 +191,12 @@ export const StyledSearchForm = styled(StyledDiv)`
     }
   }
 `;
-export const StyledCustomButton = styled(StyledDiv)`
+export const StyledCustomButton = styled(FullCenter)`
   width: 100%;
   border: 1px solid #e5e5e5;
   cursor: pointer;
 `;
-export const StyledCartCount = styled(StyledDiv)`
+export const StyledCartCount = styled(FullCenter)`
   width: 30px;
   height: 30px;
   top: 50%;
@@ -175,7 +209,7 @@ export const StyledShowcase = styled(StyledDiv)`
     border-radius: 0.5rem;
   }
 `;
-export const StyledRoundedDiv = styled(StyledDiv)`
+export const StyledRoundedDiv = styled(FullCenter)`
   width: 90px;
   height: 90px;
   font-size: 3rem;
@@ -242,7 +276,7 @@ export const BackgroundImage = styled.div<BackgroundImageProps>`
     height: 150px;
   }
 `;
-export const StyledNavBottom = styled(StyledDiv)`
+export const StyledNavBottom = styled(SpaceBetween)`
   padding: 1rem;
   text-align: center;
   a {
@@ -268,7 +302,7 @@ export const StyledLoginModal = styled(StyledDiv)`
     margin-top: 1rem;
   }
 `;
-export const StyledBlueBanner = styled(StyledDiv)`
+export const StyledBlueBanner = styled(SpaceEvenly)`
   button {
     width: max-content;
     border-radius: 1rem;
@@ -347,7 +381,7 @@ export const StyledMyAccountModal = styled(StyledDiv)`
 export const StyledLimitBadge = styled(StyledDiv)`
   width: 70%;
 `;
-export const StyledConfigurator = styled(StyledDiv)`
+export const StyledConfigurator = styled(FlexCol)`
   button {
     background-color: #ffc900;
     padding: 1rem;
@@ -387,7 +421,9 @@ export const StyledSelect = styled(StyledCol)`
 type OptionWrapperProps = {
   $selected: boolean;
 };
-export const OptionWrapper = styled(StyledDiv)<OptionWrapperProps>`
+export const OptionWrapper = styled(
+  JustifyBetweenAlignCenter
+)<OptionWrapperProps>`
   border: 1px solid #ccc;
   background-color: ${(props) => (props.$selected ? "#EFF5FF" : "white")};
   border-color: ${(props) => (props.$selected ? "#2855AC" : "#ccc")};
@@ -534,4 +570,92 @@ export const StyledSwitchLabel = styled.label`
   input:checked + .switch:before {
     transform: translateX(1rem);
   }
+`;
+export const StyledInput = styled.input`
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+`;
+export const StyledFormButton = styled.button`
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  text-align: center;
+`;
+export const StyledPrimaryFormButton = styled(StyledFormButton)`
+  background-color: #27356f;
+  color: white;
+`;
+export const StyledSecondaryFormButton = styled(StyledFormButton)`
+  border: 1px solid #27356f;
+  color: black;
+  background-color: white;
+  a {
+    display: block;
+  }
+`;
+export const StyledCartItem = styled(StyledDiv)`
+  border: 1px solid #e5e5e5;
+`;
+export const StyledCartItemBottom = styled(FlexEnd)`
+  border-top: 1px solid #e5e5e5;
+`;
+export const StyledTimes = styled(StyledText)`
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+`;
+export const StyledOrderSummary = styled(FlexCol)`
+  border: 1px solid #e5e5e5;
+  .detail {
+    border-top: 1px solid #e5e5e5;
+  }
+`;
+export const StyledCounter = styled(JustifyBetweenAlignCenter)`
+  border: 1px solid #e5e5e5;
+`;
+export const StyledComment = styled(FlexCol)`
+  border-top: 1px solid #e5e5e5;
+`;
+export const StyledReviewSection = styled(FlexCol)`
+  border: 1px solid #e5e5e5;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+`;
+export const StyledCommentButton = styled(StyledPrimaryFormButton)`
+  width: 220px;
+  background-color: #2855ac;
+  padding: 0.75rem;
+  font-size: 1rem;
+`;
+export const StyledSortSelect = styled.select`
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  color: #5b5b5b;
+`;
+export const StyledQuestionCard = styled(StyledDiv)`
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #5f6b76;
+`;
+export const StyledDate = styled.span`
+  font-weight: 400;
+  margin: 0 1rem;
+  font-size: 14px;
+`;
+export const StyledSellerText = styled.span`
+  color: #27356f;
+  font-weight: 700;
+`;
+export const StyledQuestionSection = styled(StyledComment)`
+  padding: 1.5rem 0 0 0;
+  margin-top: 1.5rem;
 `;

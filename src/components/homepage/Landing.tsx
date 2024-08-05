@@ -9,14 +9,12 @@ import { Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import CustomImage from "../common/CustomImage";
 import { landing } from "@/lib/mockData";
-
+import { Swiper } from "swiper";
 const Landing: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(landing[0]);
-
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: Swiper) => {
     setActiveSlide(landing[swiper.activeIndex]);
   };
-
   return (
     <StyledDiv $pos="relative">
       <StyledContainer>

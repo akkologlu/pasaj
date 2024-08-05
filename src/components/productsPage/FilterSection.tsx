@@ -1,4 +1,10 @@
-import { StyledDiv, StyledFilterSection, StyledText } from "@/styles/styled";
+import {
+  FlexCol,
+  SpaceBetween,
+  StyledDiv,
+  StyledFilterSection,
+  StyledText,
+} from "@/styles/styled";
 import { useState } from "react";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 type FilterSectionProps = {
@@ -19,25 +25,16 @@ const FilterSection: React.FC<FilterSectionProps> = ({
       $margin="1rem 0"
       $bgcolor="#f5f7f9"
     >
-      <StyledDiv
-        $display="flex"
-        $justify="space-between"
-        onClick={() => setToggle(!toggle)}
-      >
+      <SpaceBetween onClick={() => setToggle(!toggle)}>
         <StyledText $color="#8e9fad" $fw="700">
           {title}
         </StyledText>
         <span>{toggle ? <IoChevronUp /> : <IoChevronDown />}</span>
-      </StyledDiv>
+      </SpaceBetween>
       {toggle && (
-        <StyledDiv
-          $display="flex"
-          $direction="column"
-          $gap="1rem"
-          $margin="2rem 0"
-        >
+        <FlexCol $gap="1rem" $margin="2rem 0">
           {children}
-        </StyledDiv>
+        </FlexCol>
       )}
     </StyledFilterSection>
   );

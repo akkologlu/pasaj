@@ -1,6 +1,7 @@
 import {
   AddButton,
   RatingBadge,
+  SpaceBetween,
   StyledDiv,
   StyledOtherSellerCard,
   StyledText,
@@ -19,7 +20,7 @@ const OtherSellerCard: React.FC<OtherSellerCardProps> = ({
 }) => {
   return (
     <StyledOtherSellerCard>
-      <StyledDiv $display="flex" $justify="space-between">
+      <SpaceBetween>
         <RatingBadge $fs="12px" $fw="500" $color="#fff">
           {rating.toFixed(1)}
         </RatingBadge>
@@ -32,8 +33,8 @@ const OtherSellerCard: React.FC<OtherSellerCardProps> = ({
         >
           {storeName.length > 30 ? `${storeName.slice(0, 30)}...` : storeName}
         </StyledText>
-      </StyledDiv>
-      <StyledDiv $display="flex" $justify="space-between">
+      </SpaceBetween>
+      <SpaceBetween>
         <StyledText $fs="1.5rem" $fw="700" $color="#5f6b76" $margin="8px 0">
           {price.toLocaleString("tr-TR")}
           <StyledText as="sup" $fs="12px">
@@ -46,7 +47,7 @@ const OtherSellerCard: React.FC<OtherSellerCardProps> = ({
             {deliveryTime}
           </StyledText>
         </StyledDiv>
-      </StyledDiv>
+      </SpaceBetween>
     </StyledOtherSellerCard>
   );
 };

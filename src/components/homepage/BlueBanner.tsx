@@ -4,12 +4,7 @@ import CustomButton from "../common/CustomButton";
 
 const BlueBanner = () => {
   return (
-    <StyledBlueBanner
-      $display="flex"
-      $justify="space-evenly"
-      $bgcolor="#3aa6d8"
-      $align="center"
-    >
+    <StyledBlueBanner $bgcolor="#3aa6d8" $align="center">
       <StyledCol $sizemd={2}>
         <CustomImage
           src="/teknoloji-group-18.webp"

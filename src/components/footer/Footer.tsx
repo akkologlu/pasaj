@@ -5,6 +5,7 @@ import {
   StyledFooterMiddle,
   StyledSwiper,
   StyledRow,
+  SpaceBetween,
 } from "@/styles/styled";
 import FooterCol from "./FooterCol";
 import { SwiperSlide } from "swiper/react";
@@ -31,7 +32,7 @@ const Footer: React.FC = () => {
   return (
     <StyledFooter as="footer" $bgcolor="#27356f" $padding="5rem 0">
       <StyledContainer>
-        <StyledDiv $display="flex" $justify="space-between">
+        <SpaceBetween>
           <FooterCol
             title="Hakkımızda"
             list={[
@@ -91,12 +92,12 @@ const Footer: React.FC = () => {
               "iphone 14 Pro Max",
             ]}
           />
-        </StyledDiv>
+        </SpaceBetween>
         <StyledFooterMiddle $padding="2rem 0" $margin="1rem 0">
-          <StyledDiv $display="flex" $justify="space-between">
+          <SpaceBetween>
             <div>Türkçe English العربية pyccĸий</div>
             <div>Bizi Takip Edin</div>
-          </StyledDiv>
+          </SpaceBetween>
           <div>
             <StyledSwiper
               modules={[Navigation]}
@@ -122,7 +123,7 @@ const Footer: React.FC = () => {
             </StyledSwiper>
           </div>
         </StyledFooterMiddle>
-        <StyledDiv $display="flex" $justify="space-between">
+        <SpaceBetween>
           <div>Gizlilik ve Güvenlik</div>
           <StyledRow>
             <div>
@@ -145,7 +146,7 @@ const Footer: React.FC = () => {
               © 2024 <br /> Turkcell
             </small>
           </StyledRow>
-        </StyledDiv>
+        </SpaceBetween>
       </StyledContainer>
     </StyledFooter>
   );

@@ -1,7 +1,24 @@
-import { getSession, signOut } from "next-auth/react";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
+import { getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
-import { useQuery, QueryClient, dehydrate } from "@tanstack/react-query";
-import { fetchUserCart } from "@/lib/api";
+import { fetchUserCart, addToCart } from "@/lib/api";
+import {
+  StyledContainer,
+  StyledRow,
+  StyledCol,
+  StyledText,
+  StyledDiv,
+  FlexCol,
+} from "@/styles/styled";
+import CartItem from "@/components/cart/CartItem";
+import OrderSummary from "@/components/cart/OrderSummary";
+import { Cart } from "@/types/cartType";
 interface CartPageProps {
   user: {
     email: string;
@@ -41,45 +58,80 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 const CartPage: React.FC<CartPageProps> = ({ user }) => {
+  const queryClient = useQueryClient();
+  const { mutate } = useMutation({
+    mutationFn: ({ userId, cartData }) => addToCart({ userId, cartData }),
+    onSuccess: (cartData) => {
+      queryClient.setQueryData(["cart"], cartData.cart);
+    },
+  });
+
   const {
     data: cart,
     error,
     isLoading,
   } = useQuery({
-    queryKey: ["userCart"],
+    queryKey: ["cart"],
     queryFn: () => fetchUserCart(user.id),
   });
 
-  if (!user) {
-    return <p>Access Denied</p>;
-  }
+  const handleDelete = async (id: string) => {
+    const updatedCart = cart.filter((item: Cart) => item.cartId !== id);
+    const updatedUser = {
+      ...user,
+      cart: updatedCart,
+    };
+    mutate({
+      userId: user.id,
+      cartData: updatedUser,
+    });
+  };
+
+  const updateQuantity = (cartId: string, quantity: number) => {
+    const updatedCart = cart.map((item) =>
+      item.cartId === cartId ? { ...item, quantity } : item
+    );
+    const updatedUser = {
+      ...user,
+      cart: updatedCart,
+    };
+    mutate({
+      userId: user.id,
+      cartData: updatedUser,
+    });
+  };
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
-  if (error) {
-    return <p>Error loading cart</p>;
-  }
-
   return (
-    <div>
-      <p>Welcome, {user.email}</p>
-      <p>This is the cart page. Only logged-in users can see this.</p>
-      <button onClick={() => signOut({ callbackUrl: "/" })}>Sign Out</button>
-      <div>
-        <h2>Your Cart</h2>
-        {cart.length > 0 ? (
-          <ul>
-            {cart.map((item, index) => (
-              <li key={index}>{item.title}</li>
-            ))}
-          </ul>
-        ) : (
-          <p>Your cart is empty</p>
-        )}
-      </div>
-    </div>
+    <StyledContainer $padding="0 0 5rem 0">
+      <StyledText as="h2" $fs="21px" $margin="2rem 0 1rem 0" $fw="700">
+        Sepetim
+      </StyledText>
+      <StyledRow>
+        <StyledCol $sizemd={7.75}>
+          <FlexCol $gap="1rem">
+            {cart.length > 0 ? (
+              cart.map((item, index) => (
+                <CartItem
+                  key={index}
+                  item={item}
+                  handleDelete={handleDelete}
+                  updateQuantity={updateQuantity}
+                />
+              ))
+            ) : (
+              <p>Your cart is empty</p>
+            )}
+          </FlexCol>
+        </StyledCol>
+        <StyledCol $sizemd={4}>
+          <OrderSummary cart={cart} />
+        </StyledCol>
+      </StyledRow>
+    </StyledContainer>
   );
 };
 

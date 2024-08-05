@@ -1,4 +1,5 @@
 import {
+  SpaceBetween,
   StyledCol,
   StyledContainer,
   StyledDiv,
@@ -21,7 +22,7 @@ const WhyPasaj: React.FC = () => {
           saatlere binlerce çeşit elektronik ürünü Turkcell Pasaj güvencesi ve
           Turkcell Pasaj ayrıcalığıyla keşfedin.
         </StyledText>
-        <StyledDiv $display="flex" $justify="space-between">
+        <SpaceBetween>
           <StyledCol $sizemd={3}>
             <StyledRoundedDiv
               $radius="50%"
@@ -29,9 +30,6 @@ const WhyPasaj: React.FC = () => {
               $padding="1rem"
               $margin="3rem auto 1rem auto"
               $color="#fff"
-              $display="flex"
-              $justify="center"
-              $align="center"
             >
               <TbTruckDelivery />
             </StyledRoundedDiv>
@@ -50,9 +48,6 @@ const WhyPasaj: React.FC = () => {
               $padding="1rem"
               $margin="3rem auto 1rem auto"
               $color="#fff"
-              $display="flex"
-              $justify="center"
-              $align="center"
             >
               <MdPayments />
             </StyledRoundedDiv>
@@ -71,9 +66,6 @@ const WhyPasaj: React.FC = () => {
               $padding="1rem"
               $margin="3rem auto 1rem auto"
               $color="#fff"
-              $display="flex"
-              $justify="center"
-              $align="center"
             >
               <RiRefund2Fill />
             </StyledRoundedDiv>
@@ -85,7 +77,7 @@ const WhyPasaj: React.FC = () => {
               edebilirsiniz.
             </StyledText>
           </StyledCol>
-        </StyledDiv>
+        </SpaceBetween>
       </StyledContainer>
     </StyledDiv>
   );

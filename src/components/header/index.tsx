@@ -14,11 +14,7 @@ const Header: React.FC = () => {
     <StyledDiv as="header" $bgcolor="#fafbfd" $pos="relative">
       <StyledContainer>
         <Banner />
-        <Navbar
-          loginModal={loginModal}
-          setloginModal={setloginModal}
-          session={session}
-        />
+        <Navbar loginModal={loginModal} setloginModal={setloginModal} />
         <NavBottom />
         {loginModal && !session && <LoginModal setloginModal={setloginModal} />}
       </StyledContainer>

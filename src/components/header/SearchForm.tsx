@@ -8,6 +8,7 @@ import {
   StyledSearchForm,
   StyledShowArea,
   StyledText,
+  SpaceBetween,
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
 import { Navigation } from "swiper/modules";
@@ -47,8 +48,6 @@ const SearchForm = () => {
 
       <StyledSearchForm
         as="form"
-        $display="flex"
-        $align="center"
         $bgcolor="#eff2f5"
         $padding="0 1rem"
         $gap="1rem"
@@ -71,7 +70,7 @@ const SearchForm = () => {
           <StyledShowArea $pos="absolute">
             <StyledDiv $bgcolor="#eff2f5" $padding="1rem">
               <small>Sana Özel Kategoriler</small>
-              <StyledDiv $display="flex" $justify="space-between">
+              <SpaceBetween>
                 <StyledSearchBadge $fs="14px" $margin="1rem 0">
                   6 Taksit + 0 Faiz
                 </StyledSearchBadge>
@@ -84,7 +83,7 @@ const SearchForm = () => {
                 <StyledSearchBadge $fs="14px" $margin="1rem 0">
                   Faturaya Ek Telefonlar
                 </StyledSearchBadge>
-              </StyledDiv>
+              </SpaceBetween>
             </StyledDiv>
             <StyledDiv $bgcolor="#fff" $padding="1rem">
               <small>Popüler Aramalar</small>
@@ -106,7 +105,7 @@ const SearchForm = () => {
                 {searchedProducts.length > 0 &&
                   searchedProducts.slice(0, 5).map((product: Product) => (
                     <Link href="#" key={product.id}>
-                      <StyledDiv $display="flex" $justify="space-between">
+                      <SpaceBetween>
                         <StyledCol $sizemd={9}>
                           <StyledRow>
                             <CustomImage
@@ -136,7 +135,7 @@ const SearchForm = () => {
                             </StyledText>
                           ) : null}
                         </StyledCol>
-                      </StyledDiv>
+                      </SpaceBetween>
                     </Link>
                   ))}
               </div>

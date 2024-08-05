@@ -1,18 +1,4 @@
-export interface FilterState {
-  brands: string[];
-  priceRange: [number, number] | null;
-  inStock: boolean;
-  sellers: string[];
-  sortBy: string;
-}
-
-type FilterAction =
-  | { type: "TOGGLE_BRAND"; brand: string }
-  | { type: "SET_PRICE_RANGE"; priceRange: [number, number] | null }
-  | { type: "TOGGLE_IN_STOCK" }
-  | { type: "TOGGLE_SELLER"; seller: string }
-  | { type: "SET_SORT_BY"; sortBy: string };
-
+import { FilterAction, FilterState } from "@/types/filterType";
 export const initialFilterState: FilterState = {
   brands: [],
   priceRange: null,

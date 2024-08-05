@@ -3,7 +3,7 @@ type Option = {
   options: string[];
 };
 
-type Image = {
+export type Image = {
   color: string;
   url: string;
 };
@@ -16,26 +16,34 @@ type Seller = {
   stock: number;
 };
 
-type Specification = {
+export type Specification = {
   title: string;
   value: string;
 };
 
-type Comments = {
-  id: number;
+export type Comments = {
+  id: number | string;
   name: string;
   rating: number;
   comment: string;
+  date: string;
 };
 
-type QA = {
-  id: number;
-  question: string;
-  answer: string;
+export type QA = {
+  id: number | string;
+  question: {
+    content: string;
+    date: string;
+  };
+  answer: {
+    content: string;
+    date: string;
+    seller: string;
+  };
 };
 
 export type Product = {
-  id: number;
+  id: number | string;
   title: string;
   rating: number;
   stock: number;

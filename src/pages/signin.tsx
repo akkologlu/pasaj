@@ -5,6 +5,14 @@ import { z } from "zod";
 import { signIn, getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import {
+  FullCenterCol,
+  StyledContainer,
+  StyledInput,
+  StyledPrimaryFormButton,
+  StyledSecondaryFormButton,
+} from "@/styles/styled";
+import Link from "next/link";
 
 const schema = z.object({
   email: z.string().email(),
@@ -40,13 +48,34 @@ export default function SignIn() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("email")} placeholder="Email" />
-      {errors.email && <span>{errors.email.message}</span>}
-      <input {...register("password")} type="password" placeholder="Password" />
-      {errors.password && <span>{errors.password.message}</span>}
-      <button type="submit">Sign In</button>
-    </form>
+    <StyledContainer>
+      <FullCenterCol
+        as="form"
+        $margin="3rem auto"
+        onSubmit={handleSubmit(onSubmit)}
+        $gap=".5rem"
+        $width="300px"
+      >
+        <div>
+          <StyledInput {...register("email")} placeholder="Email" />
+          {errors.email && <span>{errors.email.message}</span>}
+        </div>
+        <div>
+          <StyledInput
+            {...register("password")}
+            type="password"
+            placeholder="Password"
+          />
+          {errors.password && <span>{errors.password.message}</span>}
+        </div>
+        <StyledPrimaryFormButton type="submit">
+          Giriş Yap
+        </StyledPrimaryFormButton>
+        <StyledSecondaryFormButton>
+          <Link href="/register">Kayıt Ol</Link>
+        </StyledSecondaryFormButton>
+      </FullCenterCol>
+    </StyledContainer>
   );
 }
 

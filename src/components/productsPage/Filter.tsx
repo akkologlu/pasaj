@@ -8,8 +8,9 @@ import {
   StyledSwitchLabel,
 } from "@/styles/styled";
 import { priceRanges, sortOptions } from "@/lib/mockData";
+import { FilterState } from "@/types/filterType";
 interface FilterProps {
-  onFilterChange: (filters: any) => void;
+  onFilterChange: (filters: FilterState) => void;
   data: Product[];
 }
 const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {

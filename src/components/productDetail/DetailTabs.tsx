@@ -1,15 +1,52 @@
-import { StyledContainer, StyledDiv, StyledSwiper } from "@/styles/styled";
+import {
+  FullCenterCol,
+  StyledContainer,
+  StyledDiv,
+  StyledSwiper,
+} from "@/styles/styled";
 import { useState } from "react";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import Description from "./tabs/Description";
 import { Product } from "@/types/productType";
 import { tabOptions } from "@/lib/mockData";
+import Reviews from "./tabs/Reviews";
+import { useSession } from "next-auth/react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { updateProduct } from "@/lib/api";
+import Questions from "./tabs/Questions";
+import Specifications from "./tabs/Specifications";
 type DetailTabsProps = {
   data: Product;
 };
 const DetailTabs: React.FC<DetailTabsProps> = ({ data }) => {
+  const queryClient = useQueryClient();
+  const session = useSession();
   const [activeTab, setActiveTab] = useState(tabOptions[0].url);
+
+  const { mutate } = useMutation({
+    mutationFn: ({ id, data }: { id: string | number; data: Product }) =>
+      updateProduct({ id, data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries(["product"]);
+    },
+  });
+  const handleAddNewComment = (newComment: {
+    rating: number;
+    comment: string;
+  }) => {
+    const newComments = [
+      ...data.comments,
+      {
+        id: crypto.randomUUID(),
+        name: session?.data?.user?.email,
+        date: new Date().toISOString(),
+        ...newComment,
+      },
+    ];
+    const updatedProduct = { ...data, comments: newComments };
+    mutate({ id: data.id, data: updatedProduct });
+  };
   return (
     <StyledContainer>
       <StyledSwiper
@@ -43,25 +80,24 @@ const DetailTabs: React.FC<DetailTabsProps> = ({ data }) => {
             }}
             key={tab.id}
           >
-            <StyledDiv
-              $display="flex"
-              $justify="center"
-              $align="center"
-              $direction="column"
-              $textAlign="center"
-              $gap="1rem"
-            >
+            <FullCenterCol $textAlign="center" $gap="1rem">
               {tab.title}
-            </StyledDiv>
+            </FullCenterCol>
           </SwiperSlide>
         ))}
       </StyledSwiper>
       <div>
         {activeTab === "aciklamalar" && <Description desc={data.description} />}
-        {activeTab === "degerlendirmeler" && <p>Yorumlar</p>}
-        {activeTab === "sorular" && <p>Sorular</p>}
-        {activeTab === "kredi-karti-kampanyalari" && (
-          <p>Kredi Kartı Kampanyaları</p>
+        {activeTab === "degerlendirmeler" && (
+          <Reviews
+            reviews={data.comments}
+            onRating={data.rating}
+            handleAddNewComment={handleAddNewComment}
+          />
+        )}
+        {activeTab === "sorular" && <Questions qas={data.qa} />}
+        {activeTab === "urun-ozellikleri" && (
+          <Specifications specs={data.specifications} />
         )}
       </div>
     </StyledContainer>

@@ -11,14 +11,15 @@ import {
   StyledSwiper,
   StyledRow,
   StyledText,
+  SpaceBetween,
 } from "@/styles/styled";
 import Filter from "@/components/productsPage/Filter";
-import { FilterState } from "@/components/productsPage/FilterReducer";
 import { Navigation, Pagination } from "swiper/modules";
 import { landing } from "@/lib/mockData";
 import { SwiperSlide } from "swiper/react";
 import CustomImage from "@/components/common/CustomImage";
 import Breadcrumb from "@/components/common/Breadcrumb";
+import { FilterState } from "@/types/filterType";
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params as { slug: string[] };
   const queryClient = new QueryClient();
@@ -85,14 +86,14 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
       <Breadcrumb
         links={[
           {
-            name: sortedData[0].category,
-            url: `/products/${sortedData[0].categoryUrl}`,
+            name: data[0].category,
+            url: `/products/${data[0].categoryUrl}`,
           },
           ...(slug.length > 1
             ? [
                 {
-                  name: sortedData[0].subcategory,
-                  url: `/products/${sortedData[0].categoryUrl}/${sortedData[0].subcategoryUrl}`,
+                  name: data[0].subcategory,
+                  url: `/products/${data[0].categoryUrl}/${data[0].subcategoryUrl}`,
                 },
               ]
             : []),
@@ -145,7 +146,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
             </StyledRow>
           </StyledSwiper>
         </div>
-        <StyledDiv $display="flex" $justify="space-between">
+        <SpaceBetween>
           <StyledCol $sizemd={2.75}>
             <Filter onFilterChange={handleFilterChange} data={data} />
           </StyledCol>
@@ -173,7 +174,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
               ))}
             </StyledRow>
           </StyledCol>
-        </StyledDiv>
+        </SpaceBetween>
       </StyledContainer>
     </>
   );

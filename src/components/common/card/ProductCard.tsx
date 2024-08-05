@@ -1,4 +1,5 @@
 import {
+  AlignCenter,
   PriceSection,
   StyledBadge,
   StyledCol,
@@ -33,14 +34,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </StyledText>
             {details && (
               <>
-                <StyledDiv $display="flex" $align="center" $gap="0.5rem">
+                <AlignCenter $gap="0.5rem">
                   <Rating
                     style={{ maxWidth: 80 }}
                     value={product.rating}
                     readOnly
                   />
                   <StyledText $fs="10px">{product.rating}</StyledText>
-                </StyledDiv>
+                </AlignCenter>
                 <StyledRow>
                   {product.badges.map((badge) => (
                     <StyledBadge
@@ -49,9 +50,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
                       $bgcolor="#FDF7E7"
                       $textAlign="center"
                       $radius="5px"
-                      $display="flex"
-                      $justify="center"
-                      $align="center"
                       $padding="0.25rem"
                     >
                       <StyledText

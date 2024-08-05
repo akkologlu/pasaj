@@ -9,13 +9,19 @@ import CustomButton from "../common/CustomButton";
 import SearchForm from "./SearchForm";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { fetchUserCart } from "@/lib/api";
+import { useQuery } from "@tanstack/react-query";
 type NavbarProps = {
   loginModal: boolean;
   setloginModal: React.Dispatch<React.SetStateAction<boolean>>;
-  session: object | null;
 };
 const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
   const { data: session } = useSession();
+  const { data: cart } = useQuery({
+    queryKey: ["cart"],
+    queryFn: () => fetchUserCart(session?.user?.id as string),
+    enabled: !!session,
+  });
   return (
     <nav>
       <StyledRow>
@@ -67,12 +73,9 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
               $bgcolor="#ed6060"
               $color="#fff"
               $radius="50%"
-              $display="flex"
-              $justify="center"
-              $align="center"
               $pos="absolute"
             >
-              0
+              {cart?.length ? cart.length : 0}
             </StyledCartCount>
           </CustomButton>
         </StyledCol>

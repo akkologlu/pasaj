@@ -1,4 +1,5 @@
 import {
+  SpaceEvenly,
   StyledCol,
   StyledContainer,
   StyledDiv,
@@ -14,7 +15,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ setloginModal }) => {
   return (
     <StyledLoginModal $pos="absolute" $bgcolor="#f6f5f8" $padding="4rem">
       <StyledContainer>
-        <StyledDiv $display="flex" $justify="space-evenly">
+        <SpaceEvenly>
           <StyledCol $sizemd={4}>
             <CustomImage src="/login-image.webp" alt="login" height={200} />
             <StyledText as="h3" $fs="24px">
@@ -40,7 +41,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ setloginModal }) => {
               Giriş Yap / Üye Ol
             </Link>
           </StyledCol>
-        </StyledDiv>
+        </SpaceEvenly>
       </StyledContainer>
     </StyledLoginModal>
   );

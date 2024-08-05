@@ -120,7 +120,7 @@ export const tabOptions = [
   },
   {
     id: 5,
-    title: "Kredi Kartı Kampanyaları",
-    url: "kredi-karti-kampanyalari",
+    title: "Ürün Özellikleri",
+    url: "urun-ozellikleri",
   },
 ];

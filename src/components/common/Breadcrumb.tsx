@@ -1,4 +1,9 @@
-import { StyledContainer, StyledDiv, StyledText } from "@/styles/styled";
+import {
+  AlignCenter,
+  StyledContainer,
+  StyledDiv,
+  StyledText,
+} from "@/styles/styled";
 import Link from "next/link";
 import { IoChevronForwardSharp } from "react-icons/io5";
 type BreadcrumbProps = {
@@ -8,7 +13,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ links }) => {
   return (
     <StyledDiv $bgcolor="#f8f8f8" $padding="1rem 0">
       <StyledContainer>
-        <StyledDiv $display="flex" $align="center">
+        <AlignCenter>
           <Link href="/">
             <StyledText as="span">Pasaj</StyledText>
           </Link>
@@ -22,7 +27,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ links }) => {
               </Link>
             </span>
           ))}
-        </StyledDiv>
+        </AlignCenter>
       </StyledContainer>
     </StyledDiv>
   );

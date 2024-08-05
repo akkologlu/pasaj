@@ -1,3 +1,6 @@
+import { User } from "@/types/cartType";
+import { Product } from "@/types/productType";
+
 export const fetchProducts = async (slug: string[]) => {
   const baseUrl = `${process.env.NEXT_PUBLIC_DB_URL}/products?categoryUrl=${slug[0]}`;
   const url = slug[1] ? `${baseUrl}&subcategoryUrl=${slug[1]}` : baseUrl;
@@ -70,7 +73,7 @@ export const fetchSearchProducts = async (search: string) => {
   return res.json();
 };
 
-export const addUser = async (data: any) => {
+export const addUser = async (data: User) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users`, {
     method: "POST",
     headers: {
@@ -102,7 +105,7 @@ export const addToCart = async ({
   cartData,
 }: {
   userId: string;
-  cartData: any;
+  cartData: User;
 }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${userId}`, {
     method: "PATCH",
@@ -110,6 +113,25 @@ export const addToCart = async ({
       "Content-Type": "application/json",
     },
     body: JSON.stringify(cartData),
+  });
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
+export const updateProduct = async ({
+  id,
+  data,
+}: {
+  id: string | number;
+  data: Product;
+}) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
   });
   if (!res.ok) {
     throw new Error("Network response was not ok");

@@ -1,6 +1,5 @@
 import Breadcrumb from "@/components/common/Breadcrumb";
 import ProductCard from "@/components/common/card/ProductCard";
-import CustomButton from "@/components/common/CustomButton";
 import CustomImage from "@/components/common/CustomImage";
 import DetailTabs from "@/components/productDetail/DetailTabs";
 import OtherSellers from "@/components/productDetail/OtherSellers";
@@ -20,8 +19,10 @@ import {
   StyledRow,
   StyledSelect,
   StyledText,
+  SpaceBetween,
+  AlignCenter,
 } from "@/styles/styled";
-import type { Product } from "@/types/productType";
+import type { Image, Product } from "@/types/productType";
 import { Rating } from "@smastrom/react-rating";
 import {
   dehydrate,
@@ -31,8 +32,10 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { GetServerSideProps } from "next";
+import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 
@@ -44,48 +47,35 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     queryKey: ["product"],
     queryFn: () => fetchProduct(slug),
   });
-  // session &&
-  //   (await queryClient.prefetchQuery({
-  //     queryKey: ["userCart"],
-  //     queryFn: () => fetchUserCart(session.user.id),
-  //   }));
   return {
     props: { dehydratedState: dehydrate(queryClient), slug, session },
   };
 };
 
-const Product = ({ slug, session }: { slug: string; session: any }) => {
-  // const queryClient = useQueryClient();
-  // const { mutate } = useMutation({
-  //   mutationFn: addToCart,
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries({ queryKey: ["userCart"] });
-  //   },
-  // });
-  // const { data: cartData } = useQuery({
-  //   queryKey: ["userCart"],
-  //   queryFn: () => fetchUserCart(session.user.id),
-  // });
-  // const handleAddCart = (data: Product) => {
-  //   if (!session) {
-  //     alert("Ürünü sepete eklemek için giriş yapmalısınız");
-  //     return;
-  //   }
-  //   mutate({
-  //     userId: session.user.id,
-  //     cartData: { ...session.user, cart: [...cartData, data] },
-  //   });
-  // };
+const Product = ({ slug, session }: { slug: string; session: Session }) => {
+  const queryClient = useQueryClient();
   const { data, isLoading } = useQuery({
     queryKey: ["product"],
     queryFn: () => fetchProduct(slug),
   });
+  const { data: cart } = useQuery({
+    queryKey: ["cart"],
+    queryFn: () => fetchUserCart(session.user.id),
+  });
+  const { mutate } = useMutation({
+    mutationFn: ({ userId, cartData }) => addToCart({ userId, cartData }),
+    onSuccess: (cartData) => {
+      queryClient.setQueryData(["cart"], cartData.cart);
+    },
+  });
   const [selectedOption, setSelectedOption] = useState(2);
+
   const options = [
     {
       id: 1,
       label: "Alışveriş Kredisi",
       price: data.installmentPrice,
+      fullPrice: data.installmentPrice * data.installmentCount,
       installmentCount: `TL x ${data.installmentCount} AY`,
       delivery:
         "Kredi sorgulama sonucunuza göre tutarlar değişiklik gösterebilir.",
@@ -93,12 +83,26 @@ const Product = ({ slug, session }: { slug: string; session: any }) => {
     {
       id: 2,
       label: "Turkcell Satış A.Ş.",
-      price: "66.399 TL",
+      price: data.price - data.discountPrice,
+      fullPrice: data.price - data.discountPrice,
       oldPrice: data.price,
       discount: "75.499 TL %12 İndirim",
       delivery: "1 iş gününde kargoda",
     },
   ];
+  const defaultOption = options.find((option) => option.id === selectedOption);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      price: defaultOption ? defaultOption.fullPrice : 0,
+    },
+  });
 
   return (
     <>
@@ -110,7 +114,7 @@ const Product = ({ slug, session }: { slug: string; session: any }) => {
           },
           {
             name: data.subcategory,
-            url: `/products/${data.subcategoryUrl}`,
+            url: `/products/${data.categoryUrl}/${data.subcategoryUrl}`,
           },
           {
             name: data.title,
@@ -120,7 +124,7 @@ const Product = ({ slug, session }: { slug: string; session: any }) => {
       />
       <StyledDiv $padding="5rem 0">
         <StyledContainer>
-          <StyledDiv $display="flex" $justify="space-between">
+          <SpaceBetween>
             <StyledCol $sizemd={6}>
               <StyledSwiper
                 pagination={{
@@ -133,7 +137,7 @@ const Product = ({ slug, session }: { slug: string; session: any }) => {
                 slidesPerView={1}
                 navigation
               >
-                {data.images.map((image, index) => (
+                {data.images.map((image: Image, index: number) => (
                   <SwiperSlide style={{ padding: "1rem 2rem" }} key={index}>
                     <CustomImage
                       src={image.url}
@@ -191,22 +195,67 @@ const Product = ({ slug, session }: { slug: string; session: any }) => {
             </StyledCol>
             <StyledCol $sizemd={5.75}>
               <StyledConfigurator
-                $display="flex"
-                $direction="column"
                 $gap="1.5rem"
+                as="form"
+                onSubmit={handleSubmit((formData) => {
+                  if (!session) {
+                    return console.log("Please login first");
+                  }
+                  const productConfig = data.configration.reduce(
+                    (acc: object, config: object) => {
+                      acc[config.title] = formData[config.title];
+                      return acc;
+                    },
+                    {}
+                  );
+                  let isProductInCart = false;
+                  const updatedCartItems = cart.map((item) => {
+                    if (
+                      item.productId === data.id &&
+                      Object.keys(productConfig).every(
+                        (key) => item[key] === productConfig[key]
+                      )
+                    ) {
+                      isProductInCart = true;
+                      return { ...item, quantity: item.quantity + 1 };
+                    }
+                    return item;
+                  });
+                  if (!isProductInCart) {
+                    updatedCartItems.push({
+                      cartId: crypto.randomUUID(),
+                      productId: data.id,
+                      title: data.title,
+                      image: data.images[0].url,
+                      seller: data.seller,
+                      oldPrice: data.price,
+                      discount: data.discountPrice,
+                      quantity: 1,
+                      ...productConfig,
+                    });
+                  }
+                  const updatedCart = {
+                    ...session.user,
+                    cart: updatedCartItems,
+                  };
+                  mutate({
+                    userId: session.user.id,
+                    cartData: updatedCart,
+                  });
+                })}
               >
                 <StyledText as="h1" $fs="42px" $fw="700">
                   {data.title}
                 </StyledText>
-                <StyledDiv $display="flex" $align="center" $gap="0.5rem">
+                <AlignCenter $gap="0.5rem">
                   <Rating
                     style={{ maxWidth: 80 }}
                     value={data.rating}
                     readOnly
                   />
                   <small>{data.rating}</small>
-                </StyledDiv>
-                <StyledDiv $display="flex" $justify="space-between">
+                </AlignCenter>
+                <SpaceBetween>
                   <StyledText $fw="700">
                     İndirim bitmesine{" "}
                     <StyledCountDown as="span" $color="#5f6b76" $fs="12px">
@@ -217,12 +266,16 @@ const Product = ({ slug, session }: { slug: string; session: any }) => {
                   <StyledText $fw="700" $color="#eeb116">
                     {data.stock}&apos;dan az ürün kalmıştır.
                   </StyledText>
-                </StyledDiv>
-                <StyledDiv $display="flex" $justify="space-between" $gap="1rem">
+                </SpaceBetween>
+                <SpaceBetween $gap="1rem">
                   {data.configration.map((config, index) => (
                     <StyledSelect $sizemd={5.75} key={index}>
                       <label htmlFor={config.title}>{config.title}</label>
-                      <select name={config.title} id={config.title}>
+                      <select
+                        {...register(config.title)}
+                        name={config.title}
+                        id={config.title}
+                      >
                         {config.options.map((option, index) => (
                           <option key={index} value={option}>
                             {option}
@@ -231,18 +284,18 @@ const Product = ({ slug, session }: { slug: string; session: any }) => {
                       </select>
                     </StyledSelect>
                   ))}
-                </StyledDiv>
+                </SpaceBetween>
                 {options.map((option) => (
                   <OptionWrapper
                     $radius="5px"
-                    $display="flex"
-                    $justify="space-between"
-                    $align="center"
                     $padding="0 0.5rem"
                     $textAlign="center"
                     key={option.id}
                     $selected={selectedOption === option.id}
-                    onClick={() => setSelectedOption(option.id)}
+                    onClick={() => {
+                      setSelectedOption(option.id);
+                      setValue("price", option.fullPrice);
+                    }}
                   >
                     <Label $selected={selectedOption === option.id}>
                       <div className="selectRound"></div> {option.label}
@@ -258,10 +311,10 @@ const Product = ({ slug, session }: { slug: string; session: any }) => {
                     </PriceSection>
                   </OptionWrapper>
                 ))}
-                <button>Sepete Ekle</button>
+                <button type="submit">Sepete Ekle</button>
               </StyledConfigurator>
             </StyledCol>
-          </StyledDiv>
+          </SpaceBetween>
         </StyledContainer>
         <OtherSellers data={data.otherSellers} />
         <DetailTabs data={data} />

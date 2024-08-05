@@ -1,9 +1,9 @@
 import { bannerLinks } from "@/lib/mockData";
-import { StyledBanner, StyledText, StyledUl } from "@/styles/styled";
+import { SpaceBetween, StyledText, StyledUl } from "@/styles/styled";
 
 const Banner: React.FC = () => {
   return (
-    <StyledBanner $display="flex" $padding="20px 0" $justify="space-between">
+    <SpaceBetween $padding="20px 0">
       <small>turkcell.com.tr</small>
       <StyledUl>
         {bannerLinks.map((link) => (
@@ -12,7 +12,7 @@ const Banner: React.FC = () => {
           </StyledText>
         ))}
       </StyledUl>
-    </StyledBanner>
+    </SpaceBetween>
   );
 };
 

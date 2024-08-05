@@ -1,5 +1,7 @@
 import { fetchAllProducts, fetchNavBottomCategories } from "@/lib/api";
 import {
+  FlexCol,
+  SpaceBetween,
   StyledCategoryModal,
   StyledCol,
   StyledContainer,
@@ -57,7 +59,7 @@ const NavBottom: React.FC = () => {
 
   return (
     <>
-      <StyledNavBottom $display="flex" $justify="space-between">
+      <StyledNavBottom>
         {categories.map((cat: Category) => (
           <StyledCol
             $sizemd={1}
@@ -77,8 +79,8 @@ const NavBottom: React.FC = () => {
           onMouseLeave={() => setShowModal(false)}
         >
           <StyledContainer>
-            <StyledDiv $display="flex" $justify="space-between">
-              <StyledDiv $display="flex" $direction="column" $gap="1rem">
+            <SpaceBetween>
+              <FlexCol $gap="1rem">
                 {modalContent.subCategories.map(
                   (cat: { subTitle: string; subUrl: string }) => (
                     <Link
@@ -95,7 +97,7 @@ const NavBottom: React.FC = () => {
                     Tüm {modalContent.title} &gt;
                   </StyledText>
                 </Link>
-              </StyledDiv>
+              </FlexCol>
               <StyledCol $sizemd={6}>
                 <StyledRow>
                   {filteredProducts.map((product: Product) => (
@@ -107,7 +109,7 @@ const NavBottom: React.FC = () => {
                   ))}
                 </StyledRow>
               </StyledCol>
-            </StyledDiv>
+            </SpaceBetween>
           </StyledContainer>
         </StyledCategoryModal>
       )}
