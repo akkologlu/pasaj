@@ -150,7 +150,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
               <StyledLimitBadge
                 $padding="0.75rem 2rem"
                 $radius="0.5rem"
-                $bgcolor="#44b1e5"
+                $bgcolor="cyan"
                 $margin="1rem auto 3rem auto"
               >
                 <StyledText $fw="700" $color="white">

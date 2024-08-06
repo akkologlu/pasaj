@@ -1,5 +1,6 @@
 import {
   AddButton,
+  Flex,
   RatingBadge,
   SpaceBetween,
   StyledDiv,
@@ -20,20 +21,14 @@ const OtherSellerCard: React.FC<OtherSellerCardProps> = ({
 }) => {
   return (
     <StyledOtherSellerCard>
-      <SpaceBetween>
+      <Flex $gap="1rem">
         <RatingBadge $fs="12px" $fw="500" $color="white">
           {rating.toFixed(1)}
         </RatingBadge>
-        <StyledText
-          as="h5"
-          $fw="700"
-          $margin="8px 0"
-          $color="blue"
-          $center="center"
-        >
+        <StyledText as="h5" $fw="700" $margin="8px 0" $color="blue">
           {storeName.length > 30 ? `${storeName.slice(0, 30)}...` : storeName}
         </StyledText>
-      </SpaceBetween>
+      </Flex>
       <SpaceBetween>
         <StyledText as="h3" $color="grey" $margin="8px 0">
           {price.toLocaleString("tr-TR")}

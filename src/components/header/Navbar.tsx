@@ -9,8 +9,10 @@ import CustomButton from "../common/CustomButton";
 import SearchForm from "./SearchForm";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import { fetchUserCart } from "@/lib/api";
+import { fetchFavs, fetchUserCart } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
+import { useFavStore } from "@/store/FavStore";
+import { useEffect } from "react";
 type NavbarProps = {
   loginModal: boolean;
   setloginModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -22,6 +24,18 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
     queryFn: () => fetchUserCart(session?.user?.id as string),
     enabled: !!session,
   });
+  const { setFavs } = useFavStore();
+  const { data: favs, isSuccess } = useQuery({
+    queryKey: ["favs"],
+    queryFn: () => fetchFavs(session?.user?.id as string),
+    enabled: !!session,
+  });
+  useEffect(() => {
+    if (isSuccess && favs) {
+      setFavs(favs.map((item) => item.id));
+    }
+  }, [favs]);
+
   return (
     <nav>
       <StyledRow>
@@ -34,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
 
         <StyledCol $sizemd={1.5}>
           <CustomButton
-            bgcolor="#fff"
+            bgcolor="white"
             onclick={() => setloginModal(!loginModal)}
           >
             <CustomImage
@@ -52,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
               width="14px"
             />
             {session && loginModal && (
-              <StyledMyAccountModal $pos="absolute" $bgcolor="#f6f5f8">
+              <StyledMyAccountModal $pos="absolute" $bgcolor="modal">
                 <button onClick={() => signOut({ callbackUrl: "/" })}>
                   Sign Out
                 </button>
@@ -61,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
           </CustomButton>
         </StyledCol>
         <StyledCol $sizemd={1.5}>
-          <CustomButton bgcolor="#FFC900" href="/cart">
+          <CustomButton bgcolor="yellow" href="/cart">
             <CustomImage
               src="https://www.freeiconspng.com/thumbs/cart-icon/basket-cart-icon-27.png"
               alt="icon"
@@ -70,8 +84,8 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
             />
             <p>Sepet</p>
             <StyledCartCount
-              $bgcolor="#ed6060"
-              $color="#fff"
+              $bgcolor="red"
+              $color="white"
               $radius="50%"
               $pos="absolute"
             >

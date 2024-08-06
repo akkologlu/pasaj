@@ -1,9 +1,10 @@
 import {
   AlignCenter,
+  FlexCol,
   PriceSection,
   StyledBadge,
   StyledCol,
-  StyledDiv,
+  StyledHeart,
   StyledProductCard,
   StyledRow,
   StyledText,
@@ -13,6 +14,13 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import Link from "next/link";
 import CustomSwiper from "../CardSwiper";
+import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
+import { useState } from "react";
+import { useFavStore } from "@/store/FavStore";
+import { useSession } from "next-auth/react";
+import { updateFavs } from "@/lib/api";
+
 type ProductCardProps = {
   product: Product;
   details?: boolean;
@@ -23,11 +31,32 @@ const ProductCard: React.FC<ProductCardProps> = ({
   details = true,
   size = 3,
 }) => {
+  //const session = useSession();
+  const favs = useFavStore((state) => state.favs);
+  const { deleteFav, addFav } = useFavStore();
+  const isFav = favs.includes(product.id);
+  const [fav, setFav] = useState(isFav);
+  const handleFav = async () => {
+    setFav(!fav);
+    fav ? deleteFav(product.id) : addFav(product.id);
+  };
   return (
     <StyledCol $sizemd={size}>
-      <Link href={`/product/${product.id}`}>
-        <StyledProductCard $radius="0.75rem" $margin="10px" $bgcolor="white">
-          <div className="body">
+      <StyledProductCard
+        $radius="0.75rem"
+        $margin="10px"
+        $bgcolor="white"
+        $pos="relative"
+      >
+        <StyledHeart onClick={handleFav}>
+          {fav ? (
+            <FaHeart size={24} color="#ffc900" />
+          ) : (
+            <CiHeart size={30} color="#ffc900" />
+          )}
+        </StyledHeart>
+        <Link href={`/product/${product.id}`}>
+          <FlexCol $gap="0.75rem" $padding="1.75rem 1rem">
             <CustomSwiper image={product.images} />
             <h4>{product.title}</h4>
             {details && (
@@ -58,7 +87,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 </StyledRow>
               </>
             )}
-          </div>
+          </FlexCol>
           <PriceSection $padding="1rem" $textAlign="right">
             <StyledText $color="blue" $fw="700">
               {product.price - product.discountPrice} <sup>TL</sup>
@@ -74,8 +103,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
               </StyledText>
             ) : null}
           </PriceSection>
-        </StyledProductCard>
-      </Link>
+        </Link>
+      </StyledProductCard>
     </StyledCol>
   );
 };

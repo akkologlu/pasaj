@@ -7,7 +7,6 @@ import ProductCard from "@/components/common/card/ProductCard";
 import {
   StyledCol,
   StyledContainer,
-  StyledDiv,
   StyledSwiper,
   StyledRow,
   StyledText,

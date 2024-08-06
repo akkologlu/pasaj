@@ -158,16 +158,9 @@ export const StyledImageDiv = styled.div<StyledImageProps>`
 `;
 export const StyledProductCard = styled(StyledDiv)`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  .body {
-    padding: 1rem;
-    gap: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
 `;
 export const PriceSection = styled(StyledDiv)`
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
   strong {
     padding-left: 0.5rem;
   }
@@ -197,7 +190,7 @@ export const StyledSearchForm = styled(AlignCenter)`
 `;
 export const StyledCustomButton = styled(FullCenter)`
   width: 100%;
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   cursor: pointer;
 `;
 export const StyledCartCount = styled(FullCenter)`
@@ -206,7 +199,7 @@ export const StyledCartCount = styled(FullCenter)`
   top: 50%;
   transform: translateY(-50%);
   right: -15px;
-  border: 3px solid #fff;
+  border: 3px solid ${({ theme }) => theme.colors.white};
 `;
 export const StyledShowcase = styled(StyledDiv)`
   img {
@@ -220,12 +213,12 @@ export const StyledRoundedDiv = styled(FullCenter)`
 `;
 export const StyledFooter = styled(StyledDiv)`
   * {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
 export const StyledFooterMiddle = styled(StyledDiv)`
-  border-top: 1px solid #5f6b76;
-  border-bottom: 1px solid #5f6b76;
+  border-top: 1px solid ${({ theme }) => theme.colors.grey};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
 `;
 export const StyledSwiper = styled(Swiper)`
   .swiper-button-next,
@@ -256,7 +249,7 @@ export const StyledSwiper = styled(Swiper)`
     border-radius: 0.25rem;
   }
   .swiper-pagination-bullet.custom-bullet-active {
-    background-color: #ffc900;
+    background-color: ${({ theme }) => theme.colors.yellow};
     width: 30px;
   }
 `;
@@ -285,7 +278,7 @@ export const StyledNavBottom = styled(SpaceBetween)`
   text-align: center;
   a {
     &:hover {
-      color: #ffc900;
+      color: ${({ theme }) => theme.colors.yellow};
     }
   }
 `;
@@ -296,7 +289,7 @@ export const StyledLoginModal = styled(StyledDiv)`
   height: 600px;
   z-index: 2;
   a {
-    background-color: #ffc900;
+    background-color: ${({ theme }) => theme.colors.yellow};
     padding: 1rem 2rem;
     width: 100%;
     border-radius: 5rem;
@@ -320,7 +313,7 @@ export const StyledCategoryModal = styled(StyledDiv)`
   z-index: 2;
   a {
     &:hover {
-      color: #ffc900;
+      color: ${({ theme }) => theme.colors.light};
     }
   }
 `;
@@ -334,14 +327,14 @@ export const StyledShowArea = styled(StyledDiv)`
 export const StyledSearchBadge = styled(StyledText)`
   border-radius: 50%;
   width: max-content;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 50px;
   padding: 0.5rem 0.75rem;
   cursor: pointer;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   &:hover {
-    background-color: #144296;
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
 export const StyledBackdrop = styled.div`
@@ -355,7 +348,7 @@ export const StyledBackdrop = styled.div`
 `;
 export const StyledCardSwiper = styled(Swiper)`
   .swiper-pagination-bullets {
-    background-color: #ecf0f2;
+    background-color: ${({ theme }) => theme.colors.comment};
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -371,7 +364,7 @@ export const StyledCardSwiper = styled(Swiper)`
     opacity: 1;
   }
   .swiper-pagination-bullet.custom-bullet-active {
-    background-color: #253342;
+    background-color: ${({ theme }) => theme.colors.dark};
     width: 16px;
   }
 `;
@@ -387,17 +380,17 @@ export const StyledLimitBadge = styled(StyledDiv)`
 `;
 export const StyledConfigurator = styled(FlexCol)`
   button {
-    background-color: #ffc900;
+    background-color: ${({ theme }) => theme.colors.yellow};
     padding: 1rem;
     border-radius: 2rem;
   }
 `;
 export const StyledCountDown = styled(StyledText)`
-  border: 1px solid #5f6b76;
+  border: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 1rem;
   padding: 0.25rem 0.5rem;
   span {
-    color: #2855ac;
+    color: ${({ theme }) => theme.colors.blue};
     font-size: 14px;
     font-weight: 700;
   }
@@ -430,7 +423,8 @@ export const OptionWrapper = styled(
 )<OptionWrapperProps>`
   border: 1px solid #ccc;
   background-color: ${(props) => (props.$selected ? "#EFF5FF" : "white")};
-  border-color: ${(props) => (props.$selected ? "#2855AC" : "#ccc")};
+  border-color: ${(props) =>
+    props.$selected ? ({ theme }) => theme.colors.blue : "#ccc"};
   cursor: pointer;
   width: 100%;
   small {
@@ -439,7 +433,8 @@ export const OptionWrapper = styled(
 `;
 export const Label = styled.div<OptionWrapperProps>`
   font-size: 14px;
-  color: ${(props) => (props.$selected ? "#2855AC" : "#333")};
+  color: ${(props) =>
+    props.$selected ? ({ theme }) => theme.colors.blue : "#333"};
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -447,22 +442,23 @@ export const Label = styled.div<OptionWrapperProps>`
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: ${(props) => (props.$selected ? "#FFC900" : "white")};
-    border: 1px solid #2855ac;
+    background-color: ${(props) =>
+      props.$selected ? ({ theme }) => theme.colors.yellow : "white"};
+    border: 1px solid ${({ theme }) => theme.colors.blue};
   }
 `;
 export const StyledOtherSellerCard = styled.div`
-  border: 1px solid #e1e1e1;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 8px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   max-width: 300px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   gap: 1rem;
 `;
 export const RatingBadge = styled(StyledText)`
-  background-color: #0bc15c;
+  background-color: ${({ theme }) => theme.colors.green};
   border-radius: 0.5rem;
   padding: 0.1rem 0.4rem;
   display: flex;
@@ -470,14 +466,14 @@ export const RatingBadge = styled(StyledText)`
   justify-content: center;
 `;
 export const AddButton = styled.button`
-  background-color: #ffd700;
+  background-color: ${({ theme }) => theme.colors.yellow};
   border-radius: 1rem;
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
 `;
 export const StyledFilterSection = styled(StyledDiv)`
-  border: 1px solid #e5e5e5;
+  border: 1px solid #${({ theme }) => theme.colors.border};
 `;
 export const StyledLabel = styled(StyledText)`
   display: flex;
@@ -488,7 +484,7 @@ export const StyledLabel = styled(StyledText)`
     appearance: none;
     width: 1.5em;
     height: 1.25rem;
-    border: 2px solid #ccc;
+    border: 2px solid ${({ theme }) => theme.colors.border};
     border-radius: 4px;
     margin-right: 0.5rem;
     position: relative;
@@ -497,7 +493,7 @@ export const StyledLabel = styled(StyledText)`
       content: "\\2713";
       font-size: 0.8rem;
       font-weight: 900;
-      color: #f0b90b;
+      color: ${({ theme }) => theme.colors.yellow};
       position: absolute;
       left: 4px;
     }
@@ -512,7 +508,7 @@ export const StyledRadioLabel = styled(StyledText)`
     appearance: none;
     width: 1.5rem;
     height: 1.5rem;
-    border: 2px solid #ccc;
+    border: 2px solid ${({ theme }) => theme.colors.border};
     border-radius: 50%;
     margin-right: 0.5rem;
     position: relative;
@@ -521,7 +517,7 @@ export const StyledRadioLabel = styled(StyledText)`
       content: "";
       width: 0.75rem;
       height: 0.75rem;
-      background-color: #f0b90b;
+      background-color: ${({ theme }) => theme.colors.yellow};
       border-radius: 50%;
       position: absolute;
       top: 50%;
@@ -532,10 +528,10 @@ export const StyledRadioLabel = styled(StyledText)`
 `;
 export const StyledSwitchLabel = styled.label`
   padding: 1rem;
-  background-color: #f5f7f9;
+  background-color: ${({ theme }) => theme.colors.lightgrey};
   border-radius: 0.5rem;
   margin: 1rem 0;
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -569,7 +565,7 @@ export const StyledSwitchLabel = styled.label`
     transition: transform 0.2s;
   }
   input:checked + .switch {
-    background-color: #f0b90b;
+    background-color: ${({ theme }) => theme.colors.yellow};
   }
   input:checked + .switch:before {
     transform: translateX(1rem);
@@ -578,7 +574,7 @@ export const StyledSwitchLabel = styled.label`
 export const StyledInput = styled.input`
   width: 100%;
   padding: 1rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 0.5rem;
   margin: 0.5rem 0;
 `;
@@ -591,11 +587,11 @@ export const StyledFormButton = styled.button`
   text-align: center;
 `;
 export const StyledPrimaryFormButton = styled(StyledFormButton)`
-  background-color: #27356f;
+  background-color: ${({ theme }) => theme.colors.darkBlue};
   color: white;
 `;
 export const StyledSecondaryFormButton = styled(StyledFormButton)`
-  border: 1px solid #27356f;
+  border: 1px solid ${({ theme }) => theme.colors.darkBlue};
   color: black;
   background-color: white;
   a {
@@ -603,10 +599,10 @@ export const StyledSecondaryFormButton = styled(StyledFormButton)`
   }
 `;
 export const StyledCartItem = styled(StyledDiv)`
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 export const StyledCartItemBottom = styled(FlexEnd)`
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
 `;
 export const StyledTimes = styled(StyledText)`
   font-size: 1.5rem;
@@ -616,24 +612,24 @@ export const StyledTimes = styled(StyledText)`
   right: 0.5rem;
 `;
 export const StyledOrderSummary = styled(FlexCol)`
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   .detail {
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid ${({ theme }) => theme.colors.border};
   }
 `;
 export const StyledCounter = styled(JustifyBetweenAlignCenter)`
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 export const StyledComment = styled(FlexCol)`
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
 `;
 export const StyledReviewSection = styled(FlexCol)`
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 export const StyledCommentButton = styled(StyledPrimaryFormButton)`
   width: 220px;
-  background-color: #2855ac;
+  background-color: ${({ theme }) => theme.colors.blue};
   padding: 0.75rem;
   font-size: 1rem;
 `;
@@ -648,7 +644,7 @@ export const StyledSortSelect = styled.select`
 export const StyledQuestionCard = styled(StyledDiv)`
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: #5f6b76;
+  color: ${({ theme }) => theme.colors.grey};
 `;
 export const StyledDate = styled.span`
   font-weight: 400;
@@ -656,7 +652,7 @@ export const StyledDate = styled.span`
   font-size: 14px;
 `;
 export const StyledSellerText = styled.span`
-  color: #27356f;
+  color: ${({ theme }) => theme.colors.darkBlue};
   font-weight: 700;
 `;
 export const StyledQuestionSection = styled(StyledComment)`
@@ -667,4 +663,11 @@ export const StyledWhyPassage = styled(StyledDiv)`
   * {
     text-align: center;
   }
+`;
+export const StyledHeart = styled(StyledDiv)`
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
 `;

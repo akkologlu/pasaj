@@ -15,4 +15,5 @@ export type User = {
   id: string;
   email: string;
   cart: Cart[];
+  fav: string[];
 };

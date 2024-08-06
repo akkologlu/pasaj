@@ -138,3 +138,26 @@ export const updateProduct = async ({
   }
   return res.json();
 };
+export const fetchFavs = async (id: string) => {
+  const user = await getUser(id);
+  return user.fav;
+};
+export const updateFavs = async ({
+  userId,
+  favData,
+}: {
+  userId: string;
+  favData: User;
+}) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${userId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(favData),
+  });
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};

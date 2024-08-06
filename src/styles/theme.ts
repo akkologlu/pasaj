@@ -15,6 +15,9 @@ const theme = {
     modal: "#f6f5f8",
     form: "#eff2f5",
     comment: "#ECF0F2BF",
+    border: "#e5e5e5",
+    green: "#0bc15c",
+    red: "#ed6060",
   },
 };
 

@@ -45,7 +45,7 @@ export default function Register() {
         data.password
       );
       alert("User registered successfully");
-      await addUser({ id: user.uid, email: data.email, cart: [] });
+      await addUser({ id: user.uid, email: data.email, cart: [], fav: [] });
       router.push("/");
     } catch (error: any) {
       alert(error.message);
