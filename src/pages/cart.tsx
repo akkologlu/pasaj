@@ -77,13 +77,9 @@ const CartPage: React.FC<CartPageProps> = ({ user }) => {
 
   const handleDelete = async (id: string) => {
     const updatedCart = cart.filter((item: Cart) => item.cartId !== id);
-    const updatedUser = {
-      ...user,
-      cart: updatedCart,
-    };
     mutate({
       userId: user.id,
-      cartData: updatedUser,
+      cartData: updatedCart,
     });
   };
 

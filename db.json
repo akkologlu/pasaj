@@ -10,11 +10,19 @@
       "configration": [
         {
           "title": "Renk",
-          "options": ["Mavi", "Siyah", "Gri"]
+          "options": [
+            "Mavi",
+            "Siyah",
+            "Gri"
+          ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB", "512 GB"]
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
         }
       ],
       "price": 89999,
@@ -44,7 +52,11 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": ["Mavi", "Siyah", "Gri"],
+      "colors": [
+        "Mavi",
+        "Siyah",
+        "Gri"
+      ],
       "otherSellers": [
         {
           "seller": "Vatan Bilgisayar",
@@ -187,7 +199,11 @@
           }
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -203,12 +219,24 @@
       "configration": [
         {
           "title": "Renk",
-          "options": ["Beyaz", "Siyah", "Bordo"],
-          "colorCodes": ["#ffffff", "#000000", "#800000"]
+          "options": [
+            "Beyaz",
+            "Siyah",
+            "Bordo"
+          ],
+          "colorCodes": [
+            "#ffffff",
+            "#000000",
+            "#800000"
+          ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB", "512 GB"]
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
         }
       ],
       "price": 79999,
@@ -238,7 +266,11 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": ["Beyaz", "Siyah", "Bordo"],
+      "colors": [
+        "Beyaz",
+        "Siyah",
+        "Bordo"
+      ],
       "otherSellers": [
         {
           "seller": "Teknosa",
@@ -291,7 +323,11 @@
           "answer": "108 MP geniş, ultra geniş ve telefoto kameralar."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": false,
@@ -307,11 +343,17 @@
       "configration": [
         {
           "title": "Renk",
-          "options": ["Beyaz", "Mavi"]
+          "options": [
+            "Beyaz",
+            "Mavi"
+          ]
         },
         {
           "title": "Güç",
-          "options": ["2000W", "2400W"]
+          "options": [
+            "2000W",
+            "2400W"
+          ]
         }
       ],
       "price": 999,
@@ -337,7 +379,10 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": ["Beyaz", "Mavi"],
+      "colors": [
+        "Beyaz",
+        "Mavi"
+      ],
       "otherSellers": [
         {
           "seller": "Arçelik",
@@ -391,7 +436,11 @@
           "answer": "2400W."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": false,
       "newProduct": false,
@@ -407,11 +456,17 @@
       "configration": [
         {
           "title": "Renk",
-          "options": ["Beyaz", "Gri"]
+          "options": [
+            "Beyaz",
+            "Gri"
+          ]
         },
         {
           "title": "Kapasite",
-          "options": ["500L", "600L"]
+          "options": [
+            "500L",
+            "600L"
+          ]
         }
       ],
       "price": 14999,
@@ -437,7 +492,10 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": ["Beyaz", "Gri"],
+      "colors": [
+        "Beyaz",
+        "Gri"
+      ],
       "otherSellers": [
         {
           "seller": "Arçelik",
@@ -484,7 +542,11 @@
           "answer": "Evet, no-frost özelliği bulunmaktadır."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -500,11 +562,18 @@
       "configration": [
         {
           "title": "Renk",
-          "options": ["Gri", "Gümüş"]
+          "options": [
+            "Gri",
+            "Gümüş"
+          ]
         },
         {
           "title": "Hafıza",
-          "options": ["256 GB", "512 GB", "1 TB"]
+          "options": [
+            "256 GB",
+            "512 GB",
+            "1 TB"
+          ]
         }
       ],
       "price": 34999,
@@ -530,7 +599,10 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": ["Gri", "Gümüş"],
+      "colors": [
+        "Gri",
+        "Gümüş"
+      ],
       "otherSellers": [
         {
           "seller": "Apple Store",
@@ -583,7 +655,11 @@
           "answer": "20 saat."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -599,11 +675,18 @@
       "configration": [
         {
           "title": "Renk",
-          "options": ["Beyaz", "Gri"]
+          "options": [
+            "Beyaz",
+            "Gri"
+          ]
         },
         {
           "title": "Kapasite",
-          "options": ["7 kg", "9 kg", "11 kg"]
+          "options": [
+            "7 kg",
+            "9 kg",
+            "11 kg"
+          ]
         }
       ],
       "price": 7999,
@@ -629,7 +712,10 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": ["Beyaz", "Gri"],
+      "colors": [
+        "Beyaz",
+        "Gri"
+      ],
       "otherSellers": [
         {
           "seller": "Bosch",
@@ -680,7 +766,11 @@
           "answer": "A+++."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -696,11 +786,18 @@
       "configration": [
         {
           "title": "Renk",
-          "options": ["Mavi", "Siyah", "Beyaz"]
+          "options": [
+            "Mavi",
+            "Siyah",
+            "Beyaz"
+          ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
       "price": 12999,
@@ -730,7 +827,11 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": ["Mavi", "Siyah", "Beyaz"],
+      "colors": [
+        "Mavi",
+        "Siyah",
+        "Beyaz"
+      ],
       "otherSellers": [
         {
           "seller": "Mi Store",
@@ -777,7 +878,11 @@
           "answer": "5.020 mAh."
         }
       ],
-      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -1032,36 +1137,56 @@
       "email": "abdullah@gmail.com",
       "cart": [
         {
-          "cartId": "b73ca37f-ddda-4b95-8512-d47f71392da6",
-          "productId": 6,
-          "title": "Çamaşır Makinesi",
+          "cartId": "30473204-3152-4bd3-911c-97bffc891b48",
+          "productId": 7,
+          "title": "Xiaomi Redmi Note 11 Pro 128 GB",
           "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Gürsoylar İletişim - Turkcell Mağazası",
-          "oldPrice": 7999,
-          "discount": 0,
-          "quantity": 2,
-          "Renk": "Beyaz",
-          "Kapasite": "7 kg"
-        },
-        {
-          "cartId": "79eddb57-05a3-46e9-b5d4-08f86f4b9329",
-          "productId": 1,
-          "title": "iPhone 15 Pro Max 256 GB",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
-          "seller": "Terminal İletişim - Turkcell Mağazası",
-          "oldPrice": 89999,
-          "discount": 7999,
+          "seller": "Turkcell Satış A.Ş.",
+          "oldPrice": 12999,
+          "discount": 999,
           "quantity": 1,
           "Renk": "Mavi",
           "Hafıza": "128 GB"
+        },
+        {
+          "cartId": "a46febae-6bc2-48f1-a01c-3efacd1c9298",
+          "productId": 4,
+          "title": "Buzdolabı",
+          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00HRNS/00HRNS-1/00HRNS-1_600x450.png?1720095274003",
+          "seller": "Ayaz İletişim - Turkcell Mağazası",
+          "oldPrice": 14999,
+          "discount": 1999,
+          "quantity": 1,
+          "Renk": "Mavi",
+          "Kapasite": "500L"
         }
       ],
       "fav": [
         {
+          "id": 7,
+          "title": "Xiaomi Redmi Note 11 Pro 128 GB",
+          "price": 12999,
+          "discountPrice": 999,
+          "images": [
+            {
+              "color": "Mavi",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+            },
+            {
+              "color": "Siyah",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+            },
+            {
+              "color": "Beyaz",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+            }
+          ]
+        },
+        {
           "id": 1,
           "title": "iPhone 15 Pro Max 256 GB",
-          "price": "89999",
-          "discountPrice": "7999",
+          "price": 89999,
+          "discountPrice": 7999,
           "images": [
             {
               "color": "Mavi",
@@ -1073,6 +1198,26 @@
             },
             {
               "color": "Gri",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Samsung Galaxy S22 Ultra 256 GB",
+          "price": 79999,
+          "discountPrice": 7999,
+          "images": [
+            {
+              "color": "Beyaz",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+            },
+            {
+              "color": "Siyah",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+            },
+            {
+              "color": "Bordo",
               "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
             }
           ]

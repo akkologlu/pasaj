@@ -16,7 +16,7 @@ import Link from "next/link";
 import CustomSwiper from "../CardSwiper";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFavStore } from "@/store/FavStore";
 import { useSession } from "next-auth/react";
 import { updateFavs } from "@/lib/api";
@@ -26,20 +26,51 @@ type ProductCardProps = {
   details?: boolean;
   size?: number;
 };
+
 const ProductCard: React.FC<ProductCardProps> = ({
   product,
   details = true,
   size = 3,
 }) => {
-  //const session = useSession();
-  const favs = useFavStore((state) => state.favs);
-  const { deleteFav, addFav } = useFavStore();
-  const isFav = favs.includes(product.id);
-  const [fav, setFav] = useState(isFav);
+  const { data: session } = useSession();
+  const { favs, setFavs } = useFavStore();
+  const [isFav, setIsFav] = useState(false);
+
+  useEffect(() => {
+    const favStatus = favs.some((fav) => fav.id === product.id);
+    setIsFav(favStatus);
+  }, [favs, product.id]);
+
   const handleFav = async () => {
-    setFav(!fav);
-    fav ? deleteFav(product.id) : addFav(product.id);
+    if (!session) {
+      return alert("Favorilere eklemek için giriş yapmalısınız.");
+    }
+    const updatedFavs = isFav
+      ? favs.filter((fav) => fav.id !== product.id)
+      : [
+          ...favs,
+          {
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            discountPrice: product.discountPrice,
+            images: product.images,
+          },
+        ];
+    setFavs(updatedFavs);
+    setIsFav(!isFav);
+    try {
+      await updateFavs({
+        userId: session.user.id,
+        favData: { fav: updatedFavs },
+      });
+    } catch (error) {
+      console.error("Failed to update favorites on server:", error);
+      setFavs(isFav ? [...favs, { ...product }] : updatedFavs);
+      setIsFav(isFav);
+    }
   };
+
   return (
     <StyledCol $sizemd={size}>
       <StyledProductCard
@@ -49,7 +80,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         $pos="relative"
       >
         <StyledHeart onClick={handleFav}>
-          {fav ? (
+          {isFav ? (
             <FaHeart size={24} color="#ffc900" />
           ) : (
             <CiHeart size={30} color="#ffc900" />

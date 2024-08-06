@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
   });
   useEffect(() => {
     if (isSuccess && favs) {
-      setFavs(favs.map((item) => item.id));
+      setFavs(favs.map((item) => item));
     }
   }, [favs]);
 

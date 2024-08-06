@@ -105,14 +105,14 @@ export const addToCart = async ({
   cartData,
 }: {
   userId: string;
-  cartData: User;
+  cartData: Product;
 }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${userId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(cartData),
+    body: JSON.stringify({ cart: cartData }),
   });
   if (!res.ok) {
     throw new Error("Network response was not ok");
@@ -147,7 +147,7 @@ export const updateFavs = async ({
   favData,
 }: {
   userId: string;
-  favData: User;
+  favData: any;
 }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${userId}`, {
     method: "PATCH",

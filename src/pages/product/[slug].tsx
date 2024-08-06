@@ -232,13 +232,9 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                       ...productConfig,
                     });
                   }
-                  const updatedCart = {
-                    ...session.user,
-                    cart: updatedCartItems,
-                  };
                   mutate({
                     userId: session.user.id,
-                    cartData: updatedCart,
+                    cartData: updatedCartItems,
                   });
                 })}
               >
