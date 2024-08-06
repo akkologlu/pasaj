@@ -11,7 +11,7 @@ const Header: React.FC = () => {
 
   const [loginModal, setloginModal] = useState(false);
   return (
-    <StyledDiv as="header" $bgcolor="#fafbfd" $pos="relative">
+    <StyledDiv as="header" $bgcolor="header" $pos="relative">
       <StyledContainer>
         <Banner />
         <Navbar loginModal={loginModal} setloginModal={setloginModal} />

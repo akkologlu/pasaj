@@ -5,7 +5,6 @@ import {
   StyledCategoryModal,
   StyledCol,
   StyledContainer,
-  StyledDiv,
   StyledNavBottom,
   StyledRow,
   StyledText,
@@ -73,7 +72,7 @@ const NavBottom: React.FC = () => {
       {showModal && modalContent && (
         <StyledCategoryModal
           $pos="absolute"
-          $bgcolor="#f6f5f8"
+          $bgcolor="modal"
           $padding="4rem"
           onMouseEnter={() => setShowModal(true)}
           onMouseLeave={() => setShowModal(false)}
@@ -93,7 +92,7 @@ const NavBottom: React.FC = () => {
                   )
                 )}
                 <Link href={`/products/${modalContent.url}`}>
-                  <StyledText $color="#144296" $fw="700">
+                  <StyledText $color="blue" $fw="700">
                     Tüm {modalContent.title} &gt;
                   </StyledText>
                 </Link>

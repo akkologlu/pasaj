@@ -5,6 +5,7 @@ import {
   StyledSwiper,
   StyledRow,
   StyledText,
+  FullCenterCol,
 } from "@/styles/styled";
 import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "swiper/modules";
@@ -27,9 +28,7 @@ const BestSellers = () => {
   const [activeTab, setActiveTab] = useState(bestSellers[0].productUrl);
   return (
     <StyledDiv $padding="5rem 0">
-      <StyledText as="h2" $fs="2rem" $fw="700">
-        Çok Satanlar
-      </StyledText>
+      <h2>Çok Satanlar</h2>
       <StyledSwiper
         modules={[Navigation]}
         slidesPerView={7}
@@ -58,17 +57,10 @@ const BestSellers = () => {
               style={{ padding: "1rem 2rem" }}
               key={cat.id}
             >
-              <StyledDiv
-                $display="flex"
-                $justify="center"
-                $align="center"
-                $direction="column"
-                $textAlign="center"
-                $gap="1rem"
-              >
+              <FullCenterCol $textAlign="center" $gap="1rem">
                 <CustomImage src={cat.image} alt={cat.title} height={30} />
-                <StyledText $center={true}>{cat.title}</StyledText>
-              </StyledDiv>
+                <StyledText $center="center">{cat.title}</StyledText>
+              </FullCenterCol>
             </SwiperSlide>
           )
         )}

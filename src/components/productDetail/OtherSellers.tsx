@@ -19,15 +19,9 @@ type OtherSellerProps = {
 };
 const OtherSellers: React.FC<OtherSellerProps> = ({ data }) => {
   return (
-    <StyledDiv $bgcolor="#f6f5f8" $padding="5rem 0" $margin="3rem 0">
+    <StyledDiv $bgcolor="modal" $padding="5rem 0" $margin="3rem 0">
       <StyledContainer>
-        <StyledText
-          as="h2"
-          $fs="1.5rem"
-          $fw="700"
-          $center={true}
-          $margin="1rem 0"
-        >
+        <StyledText as="h3" $center="center" $margin="1rem 0">
           Diğer Satıcılar
         </StyledText>
         <StyledSwiper

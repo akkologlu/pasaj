@@ -9,9 +9,7 @@ import CustomImage from "../common/CustomImage";
 const Campaigns: React.FC = () => {
   return (
     <StyledShowcase $padding="5rem 0">
-      <StyledText as="h2" $fs="34px" $fw="700">
-        Kampanyalar
-      </StyledText>
+      <h2>Kampanyalar</h2>
       <StyledRow>
         <StyledCol $sizemd={8}>
           <StyledCol>

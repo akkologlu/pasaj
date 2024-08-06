@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
     "/wiyo.webp",
   ];
   return (
-    <StyledFooter as="footer" $bgcolor="#27356f" $padding="5rem 0">
+    <StyledFooter as="footer" $bgcolor="darkBlue" $padding="5rem 0">
       <StyledContainer>
         <SpaceBetween>
           <FooterCol

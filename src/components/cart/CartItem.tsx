@@ -61,24 +61,22 @@ const CartItem: React.FC<CartItemProps> = ({
           <CustomImage src={item.image} alt={item.title} height={75} />
         </StyledCol>
         <StyledCol $sizemd={2}>
-          <StyledText $fw="600">{item.title}</StyledText>
-          <StyledText $color="#8e9fad">{item.Renk}</StyledText>
+          <p>{item.title}</p>
+          <StyledText $color="light">{item.Renk}</StyledText>
         </StyledCol>
         <StyledCol $sizemd={2}>
-          <StyledText $color="#8e9fad" $fs="14px" $fw="400">
-            Birim Fiyat
-          </StyledText>
-          <StyledText $color="#8e9fad" $fw="600">
+          <StyledText $color="light">Birim Fiyat</StyledText>
+          <StyledText $color="light" $fw="700">
             {item.oldPrice.toLocaleString("tr-TR")} <small>TL</small>
           </StyledText>
           {item.discount > 0 && (
-            <StyledText $fs="18px" $color="#00bafc" $fw="600">
+            <StyledText $fs="18px" $color="cyan" $fw="600">
               - {item.discount.toLocaleString("tr-TR")} <small>TL</small>
             </StyledText>
           )}
         </StyledCol>
         <StyledCol $sizemd={2}>
-          <StyledText $fs="14px" $fw="600" $margin="0 0 0.5rem" $center={true}>
+          <StyledText $margin="0 0 0.5rem" $center="center">
             Adet
           </StyledText>
           <StyledCounter
@@ -108,20 +106,15 @@ const CartItem: React.FC<CartItemProps> = ({
           <StyledText $align="right" $fs="12px" $margin="0 0 .5rem 0">
             Tutar
           </StyledText>
-          <StyledText $color="#253342" $align="right" $fs="18px" $fw="600">
+          <StyledText $align="right" as="h4">
             {(price * quantity).toLocaleString("tr-TR")}
-            <StyledText as="sup" $fs="8px">
-              TL
-            </StyledText>
+            <sup>TL</sup>
           </StyledText>
         </StyledCol>
       </SpaceBetween>
       <StyledCartItemBottom $padding="1rem">
-        <StyledText $fw="400" $fs="12px" $color="#2855ac">
-          Satıcı:
-          <StyledText as="span" $fw="600">
-            {item.seller}
-          </StyledText>
+        <StyledText as="small" $color="blue">
+          Satıcı: {item.seller}
         </StyledText>
       </StyledCartItemBottom>
     </StyledCartItem>

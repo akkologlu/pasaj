@@ -5,9 +5,7 @@ import {
   SpaceBetween,
   StyledCol,
   StyledCommentButton,
-  StyledDiv,
   StyledInput,
-  StyledSortSelect,
 } from "@/styles/styled";
 
 type DetailTabsProps = {

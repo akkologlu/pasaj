@@ -100,16 +100,10 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
         ]}
       />
       <StyledContainer>
-        <StyledText as="h2" $fs="32px" $fw="700" $center={true}>
+        <StyledText as="h2" $center="center">
           {slug.length > 1 ? data[0].subcategory : data[0].category}
         </StyledText>
-        <StyledText
-          as="h2"
-          $fs="32px"
-          $fw="700"
-          $center={true}
-          $margin="1rem 0"
-        >
+        <StyledText as="h2" $center="center" $margin="1rem 0">
           Kategorinin En Sevilenleri
         </StyledText>
         <div>

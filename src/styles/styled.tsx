@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Swiper } from "swiper/react";
+import theme from "./theme";
 type StyledContainerProps = {
   $padding?: string;
 };
@@ -38,16 +39,15 @@ export const StyledCol = styled.div<StyledColProps>`
   @media (min-width: 992px) {
     width: ${(props) => (props.$sizemd ? (props.$sizemd / 12) * 100 : "100")}%;
   }
-
   width: 100%;
 `;
 type StyledTextProps = {
   $fs?: string;
   $fw?: string;
-  $color?: string;
+  $color?: keyof typeof theme.colors;
   $margin?: string;
   $padding?: string;
-  $center?: boolean;
+  $center?: string;
   $letterSpacing?: string;
   $lineHeight?: string;
   $align?: string;
@@ -55,12 +55,15 @@ type StyledTextProps = {
 export const StyledText = styled.p<StyledTextProps>`
   font-size: ${(props) => props.$fs};
   font-weight: ${(props) => props.$fw};
-  color: ${(props) => props.$color};
+  * {
+    color: ${({ theme, $color }) => theme.colors[$color || "dark"]};
+  }
+  color: ${({ theme, $color }) => theme.colors[$color || "dark"]};
   margin: ${(props) => props.$margin};
   padding: ${(props) => props.$padding};
-  text-align: ${(props) => (props.$center ? "center" : "left")};
+  text-align: ${(props) => (props.$center ? props.$center : "left")};
   letter-spacing: ${(props) => props.$letterSpacing};
-  line-height: ${(props) => (props.$lineHeight ? props.$lineHeight : "1.2")};
+  line-height: ${(props) => props.$lineHeight};
   text-align: ${(props) => props.$align};
 `;
 type StyledDivProps = {
@@ -88,11 +91,12 @@ export const StyledDiv = styled.div<StyledDivProps>`
   gap: ${(props) => props.$gap};
   margin: ${(props) => props.$margin};
   padding: ${(props) => props.$padding};
-  background-color: ${(props) => props.$bgcolor};
+  background-color: ${({ theme, $bgcolor }) =>
+    theme.colors[$bgcolor || "transparent"]};
   border-radius: ${(props) => props.$radius};
   width: ${(props) => props.$width};
   height: ${(props) => props.$height};
-  color: ${(props) => props.$color};
+  color: ${({ theme, $color }) => theme.colors[$color || "dark"]};
   position: ${(props) => props.$pos};
   text-align: ${(props) => props.$textAlign};
   font-size: ${(props) => props.$fs};
@@ -246,7 +250,7 @@ export const StyledSwiper = styled(Swiper)`
     padding: 2px 5px;
   }
   .swiper-pagination-bullet.custom-bullet {
-    background-color: #8e9fad;
+    background-color: ${({ theme }) => theme.colors.light};
     width: 30px;
     opacity: 1;
     border-radius: 0.25rem;
@@ -403,7 +407,7 @@ export const StyledSelect = styled(StyledCol)`
   label {
     font-weight: 700;
     font-size: 12px;
-    color: #8e9fad;
+    color: ${({ theme }) => theme.colors.light};
     position: absolute;
     top: 0.25rem;
     left: 0.75rem;
@@ -430,7 +434,7 @@ export const OptionWrapper = styled(
   cursor: pointer;
   width: 100%;
   small {
-    color: #8e9fad;
+    color: ${({ theme }) => theme.colors.light};
   }
 `;
 export const Label = styled.div<OptionWrapperProps>`
@@ -535,7 +539,7 @@ export const StyledSwitchLabel = styled.label`
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #8e9fad;
+  color: ${({ theme }) => theme.colors.light};
   font-weight: 700;
   input {
     position: absolute;
@@ -658,4 +662,9 @@ export const StyledSellerText = styled.span`
 export const StyledQuestionSection = styled(StyledComment)`
   padding: 1.5rem 0 0 0;
   margin-top: 1.5rem;
+`;
+export const StyledWhyPassage = styled(StyledDiv)`
+  * {
+    text-align: center;
+  }
 `;

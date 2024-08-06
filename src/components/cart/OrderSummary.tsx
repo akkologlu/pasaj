@@ -28,50 +28,39 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ cart }) => {
   return (
     <StyledOrderSummary
       $width="100%"
-      $bgcolor="#F5F7F9"
+      $bgcolor="lightgrey"
       $radius="1rem"
       $gap="1.5rem"
     >
-      <StyledText
-        $fs="1rem"
-        $fw="600"
-        $margin="0 0 1rem"
-        $padding="1rem 0 0 1rem"
-      >
+      <StyledText $fw="700" $margin="0 0 1rem" $padding="1rem 0 0 1rem">
         Sipariş Özeti ({cart.length} Ürün)
       </StyledText>
       <SpaceBetween $padding="0 1rem">
-        <StyledText $fs="0.875rem" $color="#666">
-          Ürünler Toplamı
-        </StyledText>
-        <StyledText $fs="0.875rem" $fw="600">
+        <h5>Ürünler Toplamı</h5>
+        <StyledText as="h5" $fw="600">
           {totalOldPrice.toLocaleString("tr-TR")} TL
         </StyledText>
       </SpaceBetween>
       <FlexCol $gap="0.75rem" className="detail" $padding="1rem">
         <SpaceBetween>
-          <StyledText $fs="0.875rem" $color="#666">
-            Kargo Tutarı
-          </StyledText>
-          <StyledText $fs="0.875rem" $fw="600">
+          <h5>Kargo Tutarı</h5>
+          <StyledText as="h5" $fw="600">
             Ücretsiz
           </StyledText>
         </SpaceBetween>
         <SpaceBetween>
-          <StyledText $fs="0.875rem" $color="#007bff">
+          <StyledText as="h5" $color="blue">
             İndirimler
           </StyledText>
           {totalDiscount > 0 && (
-            <StyledText $fs="0.875rem" $color="#007bff">
+            <StyledText as="h5" $fw="600" $color="blue">
               -{totalDiscount.toLocaleString("tr-TR")} TL
             </StyledText>
           )}
         </SpaceBetween>
         <SpaceBetween>
-          <StyledText $fs="0.875rem" $color="#666">
-            Ödenecek Tutar (KDV Dahil)
-          </StyledText>
-          <StyledText $fs="0.875rem" $color="#666">
+          <h5>Ödenecek Tutar (KDV Dahil)</h5>
+          <StyledText as="h5" $fw="600">
             {finalPrice.toLocaleString("tr-TR")} TL
           </StyledText>
         </SpaceBetween>
@@ -80,24 +69,22 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ cart }) => {
         <StyledCustomButton
           as="button"
           $padding="1rem "
-          $bgcolor="#2855ac"
-          $color="#fff"
+          $bgcolor="blue"
+          $color="white"
           $radius=".5rem"
         >
           İndirim Kodu Ekle
         </StyledCustomButton>
         <StyledDiv $margin="1rem 0">
-          <StyledText $fs="0.875rem">
-            <label>
-              <input type="checkbox" style={{ marginRight: "0.5rem" }} />
-              Kullanıcı sözleşmesini okudum, onaylıyorum.
-            </label>
-          </StyledText>
+          <h5>
+            <input type="checkbox" style={{ marginRight: "0.5rem" }} />
+            Kullanıcı sözleşmesini okudum, onaylıyorum.
+          </h5>
         </StyledDiv>
         <StyledCustomButton
           as="button"
           $padding="0.75rem"
-          $bgcolor="#ffc107"
+          $bgcolor="yellow"
           $radius="2rem"
         >
           Siparişe Devam Et

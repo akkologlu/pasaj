@@ -23,10 +23,10 @@ const FilterSection: React.FC<FilterSectionProps> = ({
       $padding="1rem"
       $radius="0.5rem"
       $margin="1rem 0"
-      $bgcolor="#f5f7f9"
+      $bgcolor="lightgrey"
     >
       <SpaceBetween onClick={() => setToggle(!toggle)}>
-        <StyledText $color="#8e9fad" $fw="700">
+        <StyledText $color="light" $fw="700">
           {title}
         </StyledText>
         <span>{toggle ? <IoChevronUp /> : <IoChevronDown />}</span>

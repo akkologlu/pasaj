@@ -4,7 +4,7 @@ import CustomButton from "../common/CustomButton";
 
 const BlueBanner = () => {
   return (
-    <StyledBlueBanner $bgcolor="#3aa6d8" $align="center">
+    <StyledBlueBanner $bgcolor="cyan" $align="center">
       <StyledCol $sizemd={2}>
         <CustomImage
           src="/teknoloji-group-18.webp"
@@ -13,12 +13,12 @@ const BlueBanner = () => {
         />
       </StyledCol>
       <StyledCol $sizemd={8}>
-        <StyledText as="h2" $fs="24px" $color="#fff" $center={true} $fw="700">
+        <StyledText as="h3" $color="white" $center="center">
           Turkcell Faturana Ek Alabileceğin Cihazlar
         </StyledText>
       </StyledCol>
       <StyledCol $sizemd={1}>
-        <CustomButton bgcolor="#FFC900" padding="0.5rem">
+        <CustomButton bgcolor="yellow" padding="0.5rem">
           <p>İncele</p> <span>&gt;</span>
         </CustomButton>
       </StyledCol>

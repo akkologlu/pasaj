@@ -65,20 +65,17 @@ const Reviews: React.FC<ReviewsProps> = ({
       <SpaceBetween $margin="3rem 0">
         <StyledCol $sizemd={5}>
           <StyledReviewSection $gap="0.5rem" $padding="3rem 2rem">
-            <StyledText $color="#5f6b76" $fw="600">
-              Ürün Değerlendirmeleri
-            </StyledText>
+            <StyledText $color="grey">Ürün Değerlendirmeleri</StyledText>
             {reviews.length > 0 && (
-              <StyledText $fs="18px" $color="#8e9fad">
+              <StyledText as="h4" $color="light">
                 {reviews.length} kere puanlandı.
               </StyledText>
             )}
             <AlignCenter $gap=".5rem" $padding="0 0 1rem 0">
               <Rating style={{ maxWidth: 80 }} value={4.5} readOnly />
               <StyledDiv
-                $fs="12px"
-                as="span"
-                $bgcolor="#ECF0F2BF"
+                as="small"
+                $bgcolor="comment"
                 $padding="0 .5rem"
                 $radius=".5rem"
               >
@@ -99,7 +96,7 @@ const Reviews: React.FC<ReviewsProps> = ({
                   >
                     Yorum Yaz
                   </StyledCommentButton>
-                  <StyledText $fs="12px" $color="#5f6786">
+                  <StyledText as="small" $fw="400">
                     * Satın alınan ürünler kullanıcılar tarafından
                     değerlendirilebilir
                   </StyledText>

@@ -1,9 +1,4 @@
-import {
-  FullCenterCol,
-  StyledContainer,
-  StyledDiv,
-  StyledSwiper,
-} from "@/styles/styled";
+import { FullCenterCol, StyledContainer, StyledSwiper } from "@/styles/styled";
 import { useState } from "react";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";

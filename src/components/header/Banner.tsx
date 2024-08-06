@@ -7,7 +7,7 @@ const Banner: React.FC = () => {
       <small>turkcell.com.tr</small>
       <StyledUl>
         {bannerLinks.map((link) => (
-          <StyledText key={link} as="li" $fs="10px">
+          <StyledText key={link} as="li" $fs="0.725rem">
             {link}
           </StyledText>
         ))}

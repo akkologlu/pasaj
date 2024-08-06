@@ -21,29 +21,29 @@ const OtherSellerCard: React.FC<OtherSellerCardProps> = ({
   return (
     <StyledOtherSellerCard>
       <SpaceBetween>
-        <RatingBadge $fs="12px" $fw="500" $color="#fff">
+        <RatingBadge $fs="12px" $fw="500" $color="white">
           {rating.toFixed(1)}
         </RatingBadge>
         <StyledText
-          $fs="14px"
+          as="h5"
           $fw="700"
           $margin="8px 0"
-          $color="#2855ac"
-          $center={true}
+          $color="blue"
+          $center="center"
         >
           {storeName.length > 30 ? `${storeName.slice(0, 30)}...` : storeName}
         </StyledText>
       </SpaceBetween>
       <SpaceBetween>
-        <StyledText $fs="1.5rem" $fw="700" $color="#5f6b76" $margin="8px 0">
+        <StyledText as="h3" $color="grey" $margin="8px 0">
           {price.toLocaleString("tr-TR")}
-          <StyledText as="sup" $fs="12px">
+          <StyledText as="sup" $fs=".85rem">
             TL
           </StyledText>
         </StyledText>
         <StyledDiv $display="flex" $direction="column" $align="center">
           <AddButton>Ekle</AddButton>
-          <StyledText $fs="12px" $color="#777" $margin="4px 0">
+          <StyledText as="small" $fw="500" $margin="4px 0">
             {deliveryTime}
           </StyledText>
         </StyledDiv>

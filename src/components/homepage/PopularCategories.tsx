@@ -51,9 +51,7 @@ const PopularCategories = () => {
                   }}
                   imageStyle={{ borderRadius: "50%" }}
                 />
-                <StyledText $center={true} as="p">
-                  {category.title}
-                </StyledText>
+                <StyledText $center="center">{category.title}</StyledText>
               </Link>
             </SwiperSlide>
           ))}

@@ -24,9 +24,7 @@ const Showcase: React.FC<ShowcaseProps> = ({
 }) => {
   return (
     <StyledShowcase $padding="5rem 0">
-      <StyledText $fs="24px" $fw="700" as="h2">
-        {title}
-      </StyledText>
+      <h3>{title}</h3>
       <StyledSwiper
         breakpoints={{
           0: {

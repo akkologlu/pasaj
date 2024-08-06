@@ -10,11 +10,9 @@ const FooterCol: React.FC<FooterColProps> = ({ title, list }) => {
   return (
     <StyledCol $sizemd={1.75}>
       <ul>
-        <StyledText as="h3" $fs="16px">
-          {title}
-        </StyledText>
+        <p>{title}</p>
         {list.map((item, index) => (
-          <StyledText as="li" $fs="14px" $margin=".5rem 0" key={index}>
+          <StyledText as="li" $margin=".5rem 0" key={index}>
             <Link href="#">{item}</Link>
           </StyledText>
         ))}

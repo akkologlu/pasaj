@@ -26,12 +26,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <StyledCol $sizemd={size}>
       <Link href={`/product/${product.id}`}>
-        <StyledProductCard $radius="0.75rem" $margin="10px" $bgcolor="#fff">
+        <StyledProductCard $radius="0.75rem" $margin="10px" $bgcolor="white">
           <div className="body">
             <CustomSwiper image={product.images} />
-            <StyledText $fs="1.25rem" $fw="700">
-              {product.title}
-            </StyledText>
+            <h4>{product.title}</h4>
             {details && (
               <>
                 <AlignCenter $gap="0.5rem">
@@ -40,24 +38,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     value={product.rating}
                     readOnly
                   />
-                  <StyledText $fs="10px">{product.rating}</StyledText>
+                  <small>{product.rating}</small>
                 </AlignCenter>
                 <StyledRow>
                   {product.badges.map((badge) => (
                     <StyledBadge
                       as="span"
                       key={badge}
-                      $bgcolor="#FDF7E7"
+                      $bgcolor="sand"
                       $textAlign="center"
                       $radius="5px"
                       $padding="0.25rem"
                     >
-                      <StyledText
-                        $fs="9px"
-                        $color="#5f6b76"
-                        $center={true}
-                        $fw="700"
-                      >
+                      <StyledText as="small" $color="grey" $center="center">
                         {badge}
                       </StyledText>
                     </StyledBadge>
@@ -67,18 +60,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
             )}
           </div>
           <PriceSection $padding="1rem" $textAlign="right">
-            <StyledText $fs="16px" $color="#2855ac" $fw="700">
-              {product.price - product.discountPrice}{" "}
-              <StyledText as="sup" $fs="9px">
-                TL
-              </StyledText>
+            <StyledText $color="blue" $fw="700">
+              {product.price - product.discountPrice} <sup>TL</sup>
             </StyledText>
             {product.discountPrice && details ? (
-              <StyledText $fs="14px" $color="#5f6b7666" $fw="700">
+              <StyledText as="h5" $color="grey" $fw="700">
                 <del>
                   {product.price} <sup>TL</sup>
-                </del>
-                <StyledText as="strong" $fs="10px" $fw="700" $color="#00bafc">
+                </del>{" "}
+                <StyledText as="small" $color="cyan">
                   {product.discountPrice} TL indirim
                 </StyledText>
               </StyledText>

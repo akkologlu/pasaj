@@ -27,16 +27,10 @@ const Specifications: React.FC<SpecificationsProps> = ({ specs }) => {
           >
             {colSpecs.map((spec, specIndex) => (
               <StyledDiv key={specIndex} $margin="0 0 1.25rem 0">
-                <StyledText
-                  $fs="16px"
-                  $fw="bold"
-                  $color="#333"
-                  $margin="0 0 5px 0"
-                  $center={true}
-                >
+                <StyledText $fw="bold" $margin="0 0 5px 0" $center="center">
                   {spec.title}
                 </StyledText>
-                <StyledText $fs="14px" $color="#555" $center={true}>
+                <StyledText $fs="0.85rem" $center="center">
                   {spec.value}
                 </StyledText>
               </StyledDiv>

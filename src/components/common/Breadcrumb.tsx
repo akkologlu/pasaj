@@ -11,19 +11,19 @@ type BreadcrumbProps = {
 };
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ links }) => {
   return (
-    <StyledDiv $bgcolor="#f8f8f8" $padding="1rem 0">
+    <StyledDiv $bgcolor="breadcrumb" $padding="1rem 0">
       <StyledContainer>
         <AlignCenter>
           <Link href="/">
-            <StyledText as="span">Pasaj</StyledText>
+            <span>Pasaj</span>
           </Link>
           {links.map((link, index) => (
             <span key={index}>
-              <StyledText as="span" $color="#ffc900" $margin="0 .5rem">
+              <StyledText as="span" $color="yellow" $margin="0 .5rem">
                 <IoChevronForwardSharp />
               </StyledText>
               <Link href={link.url}>
-                <StyledText as="span">{link.name}</StyledText>
+                <span>{link.name}</span>
               </Link>
             </span>
           ))}

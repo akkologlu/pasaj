@@ -48,7 +48,7 @@ const SearchForm = () => {
 
       <StyledSearchForm
         as="form"
-        $bgcolor="#eff2f5"
+        $bgcolor="form"
         $padding="0 1rem"
         $gap="1rem"
         $radius="0.5rem"
@@ -68,7 +68,7 @@ const SearchForm = () => {
         />
         {showSearchArea && (
           <StyledShowArea $pos="absolute">
-            <StyledDiv $bgcolor="#eff2f5" $padding="1rem">
+            <StyledDiv $bgcolor="form" $padding="1rem">
               <small>Sana Özel Kategoriler</small>
               <SpaceBetween>
                 <StyledSearchBadge $fs="14px" $margin="1rem 0">
@@ -85,7 +85,7 @@ const SearchForm = () => {
                 </StyledSearchBadge>
               </SpaceBetween>
             </StyledDiv>
-            <StyledDiv $bgcolor="#fff" $padding="1rem">
+            <StyledDiv $bgcolor="white" $padding="1rem">
               <small>Popüler Aramalar</small>
               <StyledSwiper
                 modules={[Navigation]}
@@ -114,7 +114,7 @@ const SearchForm = () => {
                               height={70}
                               width="70px"
                             />
-                            <StyledText $fs="16px">{product.title}</StyledText>
+                            <p>{product.title}</p>
                           </StyledRow>
                         </StyledCol>
                         <StyledCol $sizemd={3}>
@@ -123,13 +123,9 @@ const SearchForm = () => {
                             <sup>TL</sup>
                           </h3>
                           {product.discountPrice ? (
-                            <StyledText as="small" $fs="14px" $color="#5f6b76">
+                            <StyledText as="h5" $color="grey">
                               <del>{product.price} TL</del>{" "}
-                              <StyledText
-                                as="small"
-                                $color="#00bafc"
-                                $fs="11px"
-                              >
+                              <StyledText as="small" $color="cyan">
                                 {product.discountPrice} TL İndirim
                               </StyledText>
                             </StyledText>

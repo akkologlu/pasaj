@@ -107,7 +107,7 @@ const CartPage: React.FC<CartPageProps> = ({ user }) => {
 
   return (
     <StyledContainer $padding="0 0 5rem 0">
-      <StyledText as="h2" $fs="21px" $margin="2rem 0 1rem 0" $fw="700">
+      <StyledText as="h3" $margin="2rem 0 1rem 0">
         Sepetim
       </StyledText>
       <StyledRow>

@@ -153,13 +153,11 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                 $bgcolor="#44b1e5"
                 $margin="1rem auto 3rem auto"
               >
-                <StyledText $fw="700" $color="#fff" $fs="16px">
+                <StyledText $fw="700" $color="white">
                   Ürün alımları {data.limit} adet ile sınırlıdır.
                 </StyledText>
               </StyledLimitBadge>
-              <StyledText as="h2" $fs="2rem" $fw="700">
-                Birlikte Alınanlar
-              </StyledText>
+              <h2>Birlikte Alınanlar</h2>
               <StyledSwiper
                 breakpoints={{
                   0: {
@@ -244,9 +242,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                   });
                 })}
               >
-                <StyledText as="h1" $fs="42px" $fw="700">
-                  {data.title}
-                </StyledText>
+                <h1>{data.title}</h1>
                 <AlignCenter $gap="0.5rem">
                   <Rating
                     style={{ maxWidth: 80 }}
@@ -258,12 +254,12 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                 <SpaceBetween>
                   <StyledText $fw="700">
                     İndirim bitmesine{" "}
-                    <StyledCountDown as="span" $color="#5f6b76" $fs="12px">
+                    <StyledCountDown as="span" $color="grey" $fs=".85rem">
                       <span>1</span> Gn <span>10</span> Sa <span>16</span> Dk
                     </StyledCountDown>{" "}
                     kaldı.
                   </StyledText>{" "}
-                  <StyledText $fw="700" $color="#eeb116">
+                  <StyledText $fw="700" $color="yellow">
                     {data.stock}&apos;dan az ürün kalmıştır.
                   </StyledText>
                 </SpaceBetween>
@@ -301,7 +297,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                       <div className="selectRound"></div> {option.label}
                     </Label>
                     <PriceSection $padding="1rem" $textAlign="right">
-                      <StyledBluePrice $fs="24px" $color="#2855ac" $fw="700">
+                      <StyledBluePrice as="h3" $color="blue">
                         {option.price.toLocaleString("tr-TR")}{" "}
                         <StyledText as="sup" $fs="0.75rem">
                           {option.installmentCount}
