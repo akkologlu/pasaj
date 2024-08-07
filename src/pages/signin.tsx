@@ -2,8 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { signIn, getSession } from "next-auth/react";
-import { GetServerSideProps } from "next";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import {
   FullCenterCol,
@@ -30,9 +29,7 @@ export default function SignIn() {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
-
   const router = useRouter();
-
   const onSubmit = async (data: FormData) => {
     const result = await signIn("credentials", {
       redirect: false,
@@ -46,7 +43,6 @@ export default function SignIn() {
       alert(result.error);
     }
   };
-
   return (
     <StyledContainer>
       <FullCenterCol
@@ -78,18 +74,3 @@ export default function SignIn() {
     </StyledContainer>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
-  if (session) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-  return {
-    props: {},
-  };
-};

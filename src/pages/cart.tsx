@@ -1,6 +1,4 @@
 import { QueryClient, dehydrate } from "@tanstack/react-query";
-import { getSession } from "next-auth/react";
-import { GetServerSideProps } from "next";
 import { fetchUserCart } from "@/lib/api";
 import {
   StyledContainer,
@@ -14,6 +12,8 @@ import OrderSummary from "@/components/cart/OrderSummary";
 import useCart from "@/hooks/useCart";
 import { Cart } from "@/types/cartType";
 import { useFetchUserCart } from "@/hooks/useDataFetching";
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
 interface CartPageProps {
   user: {
     email: string;
@@ -21,27 +21,19 @@ interface CartPageProps {
   };
 }
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
-  if (!session || !session.user || !session.user.id) {
-    return {
-      redirect: {
-        destination: "/signin",
-        permanent: false,
-      },
-    };
-  }
   const queryClient = new QueryClient();
+  const session = await getSession(context);
   try {
     await queryClient.prefetchQuery({
       queryKey: ["userCart"],
-      queryFn: () => fetchUserCart(session?.user?.id),
+      queryFn: () => fetchUserCart(session?.user?.id as string),
     });
     return {
       props: {
         dehydratedState: dehydrate(queryClient),
         user: {
-          email: session.user.email as string,
-          id: session.user.id as string,
+          email: session?.user.email as string,
+          id: session?.user.id as string,
         },
       },
     };
@@ -51,8 +43,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 };
+
 const CartPage: React.FC<CartPageProps> = ({ user }) => {
-  const { data: cart, error, isLoading } = useFetchUserCart(user.id);
+  const { data: cart, isLoading } = useFetchUserCart(user.id);
   const { handleUpdateQuantity, handleDelete } = useCart(user.id, cart);
   if (isLoading) {
     return <p>Loading...</p>;

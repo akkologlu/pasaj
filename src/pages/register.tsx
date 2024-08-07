@@ -3,8 +3,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { getSession } from "next-auth/react";
-import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import { auth } from "@/lib/firebase";
 import { addUser } from "@/lib/api";
@@ -82,20 +80,3 @@ export default function Register() {
     </StyledContainer>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
-
-  if (session) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {},
-  };
-};
