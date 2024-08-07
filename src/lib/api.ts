@@ -1,4 +1,4 @@
-import { User } from "@/types/cartType";
+import { Cart, User } from "@/types/cartType";
 import { Product } from "@/types/productType";
 
 export const fetchProducts = async (slug: string[]) => {
@@ -105,7 +105,7 @@ export const addToCart = async ({
   cartData,
 }: {
   userId: string;
-  cartData: Product;
+  cartData: Cart[];
 }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${userId}`, {
     method: "PATCH",

@@ -1,4 +1,4 @@
-type Option = {
+export type Option = {
   title: string;
   options: string[];
 };
@@ -75,4 +75,5 @@ export type Product = {
   newProduct: boolean;
   bestOffers: boolean;
   image: string;
+  seller: string;
 };

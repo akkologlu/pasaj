@@ -1,10 +1,9 @@
-import { fetchPopularCategories } from "@/lib/api";
 import { StyledDiv, StyledSwiper, StyledText } from "@/styles/styled";
-import { useQuery } from "@tanstack/react-query";
 import CustomImage from "../common/CustomImage";
 import Link from "next/link";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
+import { useFetchPopularCategories } from "@/hooks/useDataFetching";
 
 type PopularCategoriesProps = {
   title: string;
@@ -12,10 +11,7 @@ type PopularCategoriesProps = {
   url: string;
 };
 const PopularCategories = () => {
-  const { data } = useQuery({
-    queryKey: ["popularCategories"],
-    queryFn: fetchPopularCategories,
-  });
+  const { data } = useFetchPopularCategories();
   return (
     <StyledDiv $padding="5rem 0">
       <StyledText as="h2" $fs="24px" $fw="700">

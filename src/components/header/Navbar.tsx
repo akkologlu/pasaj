@@ -9,30 +9,21 @@ import CustomButton from "../common/CustomButton";
 import SearchForm from "./SearchForm";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import { fetchFavs, fetchUserCart } from "@/lib/api";
-import { useQuery } from "@tanstack/react-query";
 import { useFavStore } from "@/store/FavStore";
 import { useEffect } from "react";
+import { useFetchFavs, useFetchUserCart } from "@/hooks/useDataFetching";
 type NavbarProps = {
   loginModal: boolean;
   setloginModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
   const { data: session } = useSession();
-  const { data: cart } = useQuery({
-    queryKey: ["cart"],
-    queryFn: () => fetchUserCart(session?.user?.id as string),
-    enabled: !!session,
-  });
+  const { data: cart } = useFetchUserCart(session?.user?.id as string);
   const { setFavs } = useFavStore();
-  const { data: favs, isSuccess } = useQuery({
-    queryKey: ["favs"],
-    queryFn: () => fetchFavs(session?.user?.id as string),
-    enabled: !!session,
-  });
+  const { data: favs, isSuccess } = useFetchFavs(session?.user?.id as string);
   useEffect(() => {
     if (isSuccess && favs) {
-      setFavs(favs.map((item) => item));
+      setFavs(favs.map((item: any) => item));
     }
   }, [favs]);
 

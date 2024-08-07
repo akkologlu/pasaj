@@ -1,4 +1,3 @@
-import { fetchAllProducts, fetchNavBottomCategories } from "@/lib/api";
 import {
   FlexCol,
   SpaceBetween,
@@ -9,22 +8,19 @@ import {
   StyledRow,
   StyledText,
 } from "@/styles/styled";
-import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProductCard from "../common/card/ProductCard";
 import { Product } from "@/types/productType";
 import { Category } from "@/types/categoryType";
+import {
+  useFetchAllProducts,
+  useFetchNavBottomCategories,
+} from "@/hooks/useDataFetching";
 
 const NavBottom: React.FC = () => {
-  const { data: categories = [] } = useQuery({
-    queryKey: ["navBottomCategories"],
-    queryFn: fetchNavBottomCategories,
-  });
-  const { data: products = [] } = useQuery({
-    queryKey: ["products"],
-    queryFn: fetchAllProducts,
-  });
+  const { data: categories = [] } = useFetchNavBottomCategories();
+  const { data: products = [] } = useFetchAllProducts();
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState<Category | null>(null);
   const [showProduct, setShowProduct] = useState<string | null>(null);

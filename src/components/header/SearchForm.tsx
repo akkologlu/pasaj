@@ -16,17 +16,13 @@ import { SwiperSlide } from "swiper/react";
 import { Product } from "@/types/productType";
 import Link from "next/link";
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { fetchAllProducts } from "@/lib/api";
 import { popularSearches } from "@/lib/mockData";
+import { useFetchAllProducts } from "@/hooks/useDataFetching";
 
 const SearchForm = () => {
   const [showSearchArea, setShowSearchArea] = useState(false);
   const [searchedProducts, setSearchedProducts] = useState<Product[]>([]);
-  const { data: products } = useQuery({
-    queryKey: ["products"],
-    queryFn: fetchAllProducts,
-  });
+  const { data: products } = useFetchAllProducts();
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value.toLowerCase();

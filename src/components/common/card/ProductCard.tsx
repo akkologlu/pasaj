@@ -16,10 +16,7 @@ import Link from "next/link";
 import CustomSwiper from "../CardSwiper";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { useFavStore } from "@/store/FavStore";
-import { useSession } from "next-auth/react";
-import { updateFavs } from "@/lib/api";
+import useFavorite from "@/hooks/useFavorite";
 
 type ProductCardProps = {
   product: Product;
@@ -32,44 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   details = true,
   size = 3,
 }) => {
-  const { data: session } = useSession();
-  const { favs, setFavs } = useFavStore();
-  const [isFav, setIsFav] = useState(false);
-
-  useEffect(() => {
-    const favStatus = favs.some((fav) => fav.id === product.id);
-    setIsFav(favStatus);
-  }, [favs, product.id]);
-
-  const handleFav = async () => {
-    if (!session) {
-      return alert("Favorilere eklemek için giriş yapmalısınız.");
-    }
-    const updatedFavs = isFav
-      ? favs.filter((fav) => fav.id !== product.id)
-      : [
-          ...favs,
-          {
-            id: product.id,
-            title: product.title,
-            price: product.price,
-            discountPrice: product.discountPrice,
-            images: product.images,
-          },
-        ];
-    setFavs(updatedFavs);
-    setIsFav(!isFav);
-    try {
-      await updateFavs({
-        userId: session.user.id,
-        favData: { fav: updatedFavs },
-      });
-    } catch (error) {
-      console.error("Failed to update favorites on server:", error);
-      setFavs(isFav ? [...favs, { ...product }] : updatedFavs);
-      setIsFav(isFav);
-    }
-  };
+  const { isFav, handleFav } = useFavorite(product);
 
   return (
     <StyledCol $sizemd={size}>
@@ -110,7 +70,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
                       $radius="5px"
                       $padding="0.25rem"
                     >
-                      <StyledText as="small" $color="grey" $center="center">
+                      <StyledText
+                        as="small"
+                        $color="grey"
+                        $center="center"
+                        $fs="0.5rem"
+                      >
                         {badge}
                       </StyledText>
                     </StyledBadge>

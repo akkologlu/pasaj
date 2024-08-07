@@ -3,7 +3,10 @@ import ProductCard from "@/components/common/card/ProductCard";
 import CustomImage from "@/components/common/CustomImage";
 import DetailTabs from "@/components/productDetail/DetailTabs";
 import OtherSellers from "@/components/productDetail/OtherSellers";
-import { addToCart, fetchProduct, fetchUserCart } from "@/lib/api";
+import useCart from "@/hooks/useCart";
+import { useFetchProduct, useFetchUserCart } from "@/hooks/useDataFetching";
+import useFavorite from "@/hooks/useFavorite";
+import { fetchProduct } from "@/lib/api";
 import {
   Label,
   OptionWrapper,
@@ -21,21 +24,19 @@ import {
   StyledText,
   SpaceBetween,
   AlignCenter,
+  JustifyBetweenAlignCenter,
+  StyledHeartDetail,
 } from "@/styles/styled";
 import type { Image, Product } from "@/types/productType";
 import { Rating } from "@smastrom/react-rating";
-import {
-  dehydrate,
-  QueryClient,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { GetServerSideProps } from "next";
 import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
 import { Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 
@@ -53,21 +54,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 const Product = ({ slug, session }: { slug: string; session: Session }) => {
-  const queryClient = useQueryClient();
-  const { data, isLoading } = useQuery({
-    queryKey: ["product"],
-    queryFn: () => fetchProduct(slug),
-  });
-  const { data: cart } = useQuery({
-    queryKey: ["cart"],
-    queryFn: () => fetchUserCart(session.user.id),
-  });
-  const { mutate } = useMutation({
-    mutationFn: ({ userId, cartData }) => addToCart({ userId, cartData }),
-    onSuccess: (cartData) => {
-      queryClient.setQueryData(["cart"], cartData.cart);
-    },
-  });
+  const { data } = useFetchProduct(slug);
+  const { data: cart } = useFetchUserCart(session.user.id);
+  const { handleAddToCart } = useCart(session.user.id, cart);
+  const { isFav, handleFav } = useFavorite(data);
   const [selectedOption, setSelectedOption] = useState(2);
 
   const options = [
@@ -95,7 +85,6 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
   const {
     register,
     handleSubmit,
-    watch,
     setValue,
     formState: { errors },
   } = useForm({
@@ -199,46 +188,20 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                   if (!session) {
                     return console.log("Please login first");
                   }
-                  const productConfig = data.configration.reduce(
-                    (acc: object, config: object) => {
-                      acc[config.title] = formData[config.title];
-                      return acc;
-                    },
-                    {}
-                  );
-                  let isProductInCart = false;
-                  const updatedCartItems = cart.map((item) => {
-                    if (
-                      item.productId === data.id &&
-                      Object.keys(productConfig).every(
-                        (key) => item[key] === productConfig[key]
-                      )
-                    ) {
-                      isProductInCart = true;
-                      return { ...item, quantity: item.quantity + 1 };
-                    }
-                    return item;
-                  });
-                  if (!isProductInCart) {
-                    updatedCartItems.push({
-                      cartId: crypto.randomUUID(),
-                      productId: data.id,
-                      title: data.title,
-                      image: data.images[0].url,
-                      seller: data.seller,
-                      oldPrice: data.price,
-                      discount: data.discountPrice,
-                      quantity: 1,
-                      ...productConfig,
-                    });
-                  }
-                  mutate({
-                    userId: session.user.id,
-                    cartData: updatedCartItems,
-                  });
+                  handleAddToCart(data, formData);
                 })}
               >
-                <h1>{data.title}</h1>
+                <JustifyBetweenAlignCenter>
+                  <h1>{data.title}</h1>{" "}
+                  <StyledHeartDetail onClick={handleFav}>
+                    {isFav ? (
+                      <FaHeart size={30} color="#ffc900" />
+                    ) : (
+                      <CiHeart size={36} color="#ffc900" />
+                    )}
+                  </StyledHeartDetail>
+                </JustifyBetweenAlignCenter>
+
                 <AlignCenter $gap="0.5rem">
                   <Rating
                     style={{ maxWidth: 80 }}
@@ -260,7 +223,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                   </StyledText>
                 </SpaceBetween>
                 <SpaceBetween $gap="1rem">
-                  {data.configration.map((config, index) => (
+                  {data.configration.map((config: any, index: number) => (
                     <StyledSelect $sizemd={5.75} key={index}>
                       <label htmlFor={config.title}>{config.title}</label>
                       <select
@@ -268,7 +231,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                         name={config.title}
                         id={config.title}
                       >
-                        {config.options.map((option, index) => (
+                        {config.options.map((option: any, index: number) => (
                           <option key={index} value={option}>
                             {option}
                           </option>

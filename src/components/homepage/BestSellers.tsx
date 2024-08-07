@@ -1,4 +1,3 @@
-import { fetchAllProducts, fetchBestSellersCategories } from "@/lib/api";
 import {
   StyledCol,
   StyledDiv,
@@ -7,24 +6,20 @@ import {
   StyledText,
   FullCenterCol,
 } from "@/styles/styled";
-import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import CustomImage from "../common/CustomImage";
 import { useState } from "react";
 import ProductCard from "../common/card/ProductCard";
 import { Product } from "@/types/productType";
+import {
+  useFetchAllProducts,
+  useFetchBestSellersCategories,
+} from "@/hooks/useDataFetching";
 
 const BestSellers = () => {
-  const { data: products } = useQuery({
-    queryKey: ["products"],
-    queryFn: fetchAllProducts,
-  });
-
-  const { data: bestSellers } = useQuery({
-    queryKey: ["bestSellersCategories"],
-    queryFn: fetchBestSellersCategories,
-  });
+  const { data: products } = useFetchAllProducts();
+  const { data: bestSellers } = useFetchBestSellersCategories();
   const [activeTab, setActiveTab] = useState(bestSellers[0].productUrl);
   return (
     <StyledDiv $padding="5rem 0">

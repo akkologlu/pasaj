@@ -1,6 +1,6 @@
 export type Cart = {
-  cartId: string;
-  productId: string;
+  cartId: string | number;
+  productId: string | number;
   title: string;
   image: string;
   seller: string;
@@ -10,6 +10,7 @@ export type Cart = {
   Renk?: string;
   Hafıza?: string;
   Kapasite?: string;
+  [key: string]: any;
 };
 export type User = {
   id: string;

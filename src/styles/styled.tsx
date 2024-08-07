@@ -671,3 +671,13 @@ export const StyledHeart = styled(StyledDiv)`
   cursor: pointer;
   z-index: 10;
 `;
+export const StyledHeartDetail = styled(StyledDiv)`
+  position: relative;
+  cursor: pointer;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.75rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+`;

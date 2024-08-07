@@ -1137,28 +1137,28 @@
       "email": "abdullah@gmail.com",
       "cart": [
         {
-          "cartId": "30473204-3152-4bd3-911c-97bffc891b48",
-          "productId": 7,
-          "title": "Xiaomi Redmi Note 11 Pro 128 GB",
+          "cartId": "1075a244-ec79-40b9-90cd-a329bdde1722",
+          "productId": 5,
+          "title": "Macbook Pro 2022 512 GB",
           "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Turkcell Satış A.Ş.",
-          "oldPrice": 12999,
-          "discount": 999,
+          "seller": "Terminal İletişim - Turkcell Mağazası",
+          "oldPrice": 34999,
+          "discount": 3999,
           "quantity": 1,
-          "Renk": "Mavi",
-          "Hafıza": "128 GB"
+          "Renk": "Gri",
+          "Hafıza": "256 GB"
         },
         {
-          "cartId": "a46febae-6bc2-48f1-a01c-3efacd1c9298",
-          "productId": 4,
-          "title": "Buzdolabı",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00HRNS/00HRNS-1/00HRNS-1_600x450.png?1720095274003",
-          "seller": "Ayaz İletişim - Turkcell Mağazası",
-          "oldPrice": 14999,
-          "discount": 1999,
+          "cartId": "e79b2997-c7d4-4b1b-bc1c-7cb4cdd574a7",
+          "productId": 3,
+          "title": "Ütü",
+          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+          "seller": "Turkcell Satış A.Ş.",
+          "oldPrice": 999,
+          "discount": 99,
           "quantity": 1,
-          "Renk": "Mavi",
-          "Kapasite": "500L"
+          "Renk": "Beyaz",
+          "Güç": "2000W"
         }
       ],
       "fav": [
@@ -1183,21 +1183,17 @@
           ]
         },
         {
-          "id": 1,
-          "title": "iPhone 15 Pro Max 256 GB",
-          "price": 89999,
-          "discountPrice": 7999,
+          "id": 5,
+          "title": "Macbook Pro 2022 512 GB",
+          "price": 34999,
+          "discountPrice": 3999,
           "images": [
             {
-              "color": "Mavi",
-              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
-            },
-            {
-              "color": "Siyah",
-              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-            },
-            {
               "color": "Gri",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+            },
+            {
+              "color": "Gümüş",
               "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
             }
           ]
@@ -1253,7 +1249,28 @@
           "Hafıza": "128 GB"
         }
       ],
-      "fav": []
+      "fav": [
+        {
+          "id": 1,
+          "title": "iPhone 15 Pro Max 256 GB",
+          "price": 89999,
+          "discountPrice": 7999,
+          "images": [
+            {
+              "color": "Mavi",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
+            },
+            {
+              "color": "Siyah",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
+            },
+            {
+              "color": "Gri",
+              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

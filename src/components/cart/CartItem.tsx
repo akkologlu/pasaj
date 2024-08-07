@@ -10,22 +10,12 @@ import {
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
 import React, { useState } from "react";
+import { Cart } from "@/types/cartType";
 
 type CartItemProps = {
-  item: {
-    cartId: string;
-    productId: string;
-    title: string;
-    image: string;
-    seller: string;
-    oldPrice: number;
-    discount: number;
-    quantity: number;
-    Renk?: string;
-    Hafıza?: string;
-  };
-  handleDelete: (id: string) => void;
-  updateQuantity: (cartId: string, quantity: number) => void;
+  item: Cart;
+  handleDelete: (id: string | number) => void;
+  updateQuantity: (cartId: string | number, quantity: number) => void;
 };
 const CartItem: React.FC<CartItemProps> = ({
   item,

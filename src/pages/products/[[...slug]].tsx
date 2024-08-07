@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GetServerSideProps } from "next";
-import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { fetchProducts } from "@/lib/api";
 import { Product } from "@/types/productType";
 import ProductCard from "@/components/common/card/ProductCard";
@@ -19,6 +19,7 @@ import { SwiperSlide } from "swiper/react";
 import CustomImage from "@/components/common/CustomImage";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import { FilterState } from "@/types/filterType";
+import { useFetchProducts } from "@/hooks/useDataFetching";
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params as { slug: string[] };
   const queryClient = new QueryClient();
@@ -34,10 +35,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   };
 };
 const CategoryPage = ({ slug }: { slug: string[] }) => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["products", slug],
-    queryFn: () => fetchProducts(slug),
-  });
+  const { data, isLoading } = useFetchProducts(slug);
   const [filters, setFilters] = useState<FilterState>({
     brands: [],
     priceRange: null,

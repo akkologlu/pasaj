@@ -10,12 +10,13 @@ import {
   fetchPopularCategories,
 } from "@/lib/api";
 import { StyledContainer } from "@/styles/styled";
-import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import Head from "next/head";
 import BlueBanner from "@/components/homepage/BlueBanner";
 import BestSellers from "@/components/homepage/BestSellers";
 import { opps } from "@/lib/mockData";
 import { Product } from "@/types/productType";
+import { useFetchAllProducts } from "@/hooks/useDataFetching";
 
 export const getStaticProps = async () => {
   const queryClient = new QueryClient();
@@ -47,10 +48,7 @@ export const getStaticProps = async () => {
 };
 
 export default function Home() {
-  const { data } = useQuery({
-    queryKey: ["products"],
-    queryFn: fetchAllProducts,
-  });
+  const { data } = useFetchAllProducts();
   return (
     <>
       <Head>
