@@ -1137,28 +1137,28 @@
       "email": "abdullah@gmail.com",
       "cart": [
         {
-          "cartId": "1075a244-ec79-40b9-90cd-a329bdde1722",
+          "cartId": "3a9bca3d-e21d-4456-9a87-23c36a2f09a2",
           "productId": 5,
           "title": "Macbook Pro 2022 512 GB",
           "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
           "seller": "Terminal İletişim - Turkcell Mağazası",
           "oldPrice": 34999,
           "discount": 3999,
-          "quantity": 1,
+          "quantity": 2,
           "Renk": "Gri",
-          "Hafıza": "256 GB"
+          "Hafıza": "512 GB"
         },
         {
-          "cartId": "e79b2997-c7d4-4b1b-bc1c-7cb4cdd574a7",
-          "productId": 3,
-          "title": "Ütü",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Turkcell Satış A.Ş.",
-          "oldPrice": 999,
-          "discount": 99,
-          "quantity": 1,
-          "Renk": "Beyaz",
-          "Güç": "2000W"
+          "cartId": "d13951ef-c35f-4ef0-9ac4-2aefff9787da",
+          "productId": 1,
+          "title": "iPhone 15 Pro Max 256 GB",
+          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
+          "seller": "Terminal İletişim - Turkcell Mağazası",
+          "oldPrice": 89999,
+          "discount": 7999,
+          "quantity": 2,
+          "Renk": "Gri",
+          "Hafıza": "256 GB"
         }
       ],
       "fav": [

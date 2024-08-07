@@ -40,7 +40,7 @@ export const useFetchPopularCategories = () => {
 
 export const useFetchUserCart = (userId: string) => {
   return useQuery({
-    queryKey: ["userCart", userId],
+    queryKey: ["cart"],
     queryFn: () => fetchUserCart(userId),
     enabled: !!userId,
   });
@@ -55,7 +55,7 @@ export const useFetchProducts = (slug: string[]) => {
 
 export const useFetchFavs = (userId: string) => {
   return useQuery({
-    queryKey: ["favs", userId],
+    queryKey: ["favs"],
     queryFn: () => fetchFavs(userId),
     enabled: !!userId,
   });

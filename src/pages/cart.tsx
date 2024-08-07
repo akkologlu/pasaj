@@ -25,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
   try {
     await queryClient.prefetchQuery({
-      queryKey: ["userCart"],
+      queryKey: ["cart"],
       queryFn: () => fetchUserCart(session?.user?.id as string),
     });
     return {

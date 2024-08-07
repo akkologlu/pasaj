@@ -11,8 +11,9 @@ const useCart = (userId: string, cart: Cart[]) => {
   const { mutate } = useMutation({
     mutationFn: ({ userId, cartData }: MutationVariables) =>
       addToCart({ userId, cartData }),
-    onSuccess: (cartData) => {
-      queryClient.setQueryData(["cart"], cartData.cart);
+    onSuccess: (res) => {
+      console.log(res);
+      queryClient.setQueryData(["cart"], res.cart);
     },
   });
   const handleAddToCart = (

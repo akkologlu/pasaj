@@ -56,6 +56,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 const Product = ({ slug, session }: { slug: string; session: Session }) => {
   const { data } = useFetchProduct(slug);
   const { data: cart } = useFetchUserCart(session.user.id);
+  console.log("cart:", data);
   const { handleAddToCart } = useCart(session.user.id, cart);
   const { isFav, handleFav } = useFavorite(data);
   const [selectedOption, setSelectedOption] = useState(2);
