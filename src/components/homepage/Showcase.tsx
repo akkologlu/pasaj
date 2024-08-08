@@ -13,7 +13,7 @@ import CustomImage from "../common/CustomImage";
 type ShowcaseProps = {
   title: string;
   details?: boolean;
-  data: Product[];
+  data: Product[] | any;
   isProductsCard?: boolean;
 };
 const Showcase: React.FC<ShowcaseProps> = ({
@@ -45,7 +45,7 @@ const Showcase: React.FC<ShowcaseProps> = ({
         spaceBetween={10}
       >
         <StyledRow>
-          {data.map((product) => (
+          {data.map((product: Product | any) => (
             <SwiperSlide key={product.id}>
               {isProductsCard ? (
                 <ProductCard product={product} size={12} details={details} />

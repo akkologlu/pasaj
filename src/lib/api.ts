@@ -1,5 +1,5 @@
 import { Cart, User } from "@/types/cartType";
-import { Product } from "@/types/productType";
+import { Comments, Product } from "@/types/productType";
 
 export const fetchProducts = async (slug: string[]) => {
   const baseUrl = `${process.env.NEXT_PUBLIC_DB_URL}/products?categoryUrl=${slug[0]}`;
@@ -119,19 +119,19 @@ export const addToCart = async ({
   }
   return res.json();
 };
-export const updateProduct = async ({
+export const addComment = async ({
   id,
   data,
 }: {
   id: string | number;
-  data: Product;
+  data: Comments;
 }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify({ comments: data }),
   });
   if (!res.ok) {
     throw new Error("Network response was not ok");
