@@ -38,6 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         $margin="10px"
         $bgcolor="white"
         $pos="relative"
+        $details={details}
       >
         <StyledHeart onClick={handleFav}>
           {isFav ? (
@@ -47,7 +48,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </StyledHeart>
         <Link href={`/product/${product.id}`}>
-          <FlexCol $gap="0.75rem" $padding="1.75rem 1rem">
+          <FlexCol $gap="0.75rem" $padding="1.75rem 1rem" className="body">
             <CustomSwiper image={product.images} />
             <h4>{product.title}</h4>
             {details && (
@@ -84,7 +85,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               </>
             )}
           </FlexCol>
-          <PriceSection $padding="1rem" $textAlign="right">
+          <PriceSection $padding="1rem" $textAlign="right" className="footer">
             <StyledText $color="blue" $fw="700">
               {product.price - product.discountPrice} <sup>TL</sup>
             </StyledText>

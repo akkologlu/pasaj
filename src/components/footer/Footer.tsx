@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
   return (
     <StyledFooter as="footer" $bgcolor="darkBlue" $padding="5rem 0">
       <StyledContainer>
-        <SpaceBetween>
+        <SpaceBetween $wrap={true} $gap="1rem">
           <FooterCol
             title="Hakkımızda"
             list={[

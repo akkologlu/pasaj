@@ -33,7 +33,7 @@ const Landing: React.FC = () => {
         >
           {landing.map((logo, index) => (
             <SwiperSlide style={{ padding: "1rem 2rem" }} key={index}>
-              <CustomImage src={logo} height={500} alt={logo} />
+              <CustomImage src={logo} height={500} alt={logo} smheight={200} />
             </SwiperSlide>
           ))}
         </StyledSwiper>

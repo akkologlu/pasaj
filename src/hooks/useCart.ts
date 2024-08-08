@@ -12,14 +12,23 @@ const useCart = (userId: string, cart: Cart[]) => {
     mutationFn: ({ userId, cartData }: MutationVariables) =>
       addToCart({ userId, cartData }),
     onSuccess: (res) => {
-      console.log(res);
       queryClient.setQueryData(["cart"], res.cart);
     },
   });
+  const calculateProductCount = (productId: string | number) => {
+    return cart.reduce(
+      (acc, item) => (item.productId === productId ? acc + item.quantity : acc),
+      1
+    );
+  };
   const handleAddToCart = (
     product: Product,
     formData: { [key: string]: any }
   ) => {
+    const quantity = calculateProductCount(product.id);
+    if (quantity > product.limit) {
+      return alert("Alım limiti bitti.");
+    }
     const config = product.configration.reduce(
       (acc: { [key: string]: any }, config: { title: string }) => {
         acc[config.title] = formData[config.title];
@@ -47,6 +56,7 @@ const useCart = (userId: string, cart: Cart[]) => {
         seller: product.seller,
         oldPrice: product.price,
         discount: product.discountPrice,
+        limit: product.limit,
         quantity: 1,
         ...config,
       });
@@ -56,7 +66,12 @@ const useCart = (userId: string, cart: Cart[]) => {
       cartData: updatedCartItems,
     });
   };
-  const handleUpdateQuantity = (cartId: string | number, quantity: number) => {
+  const handleUpdateQuantity = (
+    cartId: string | number,
+    quantity: number,
+    productId: number | string,
+    itemLimit: number
+  ) => {
     const updatedCart = cart.map((item) =>
       item.cartId === cartId ? { ...item, quantity } : item
     );

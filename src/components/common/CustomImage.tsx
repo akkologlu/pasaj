@@ -20,9 +20,15 @@ const CustomImage: React.FC<CustomImageProps> = ({
   objectFit = "contain",
   style = {},
   imageStyle = {},
+  smheight,
 }) => {
   return (
-    <StyledImageDiv $height={height} $width={width} style={style}>
+    <StyledImageDiv
+      $height={height}
+      $width={width}
+      style={style}
+      $smheight={smheight}
+    >
       <Image
         src={src}
         alt={alt}

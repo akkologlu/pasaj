@@ -63,7 +63,7 @@ export const useFetchFavs = (userId: string) => {
 
 export const useFetchProduct = (productId: string) => {
   return useQuery({
-    queryKey: ["product"],
+    queryKey: ["product", productId],
     queryFn: () => fetchProduct(productId),
   });
 };

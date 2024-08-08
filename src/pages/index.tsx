@@ -39,7 +39,6 @@ export const getStaticProps = async () => {
     }),
   ];
   await Promise.all(queries);
-
   return {
     props: {
       dehydratedState: dehydrate(queryClient),

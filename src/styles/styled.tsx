@@ -33,8 +33,8 @@ type StyledColProps = {
   $sizesm?: number;
 };
 export const StyledCol = styled.div<StyledColProps>`
-  @media (min-width: 1200px) {
-    width: ${(props) => (props.$sizelg ? (props.$sizelg / 12) * 100 : "100")}%;
+  @media (min-width: 350px) {
+    width: ${(props) => (props.$sizesm ? (props.$sizesm / 12) * 100 : "100")}%;
   }
   @media (min-width: 992px) {
     width: ${(props) => (props.$sizemd ? (props.$sizemd / 12) * 100 : "100")}%;
@@ -82,6 +82,7 @@ type StyledDivProps = {
   $pos?: string;
   $textAlign?: string;
   $fs?: string;
+  $wrap?: boolean;
 };
 export const StyledDiv = styled.div<StyledDivProps>`
   display: ${(props) => props.$display};
@@ -100,6 +101,7 @@ export const StyledDiv = styled.div<StyledDivProps>`
   position: ${(props) => props.$pos};
   text-align: ${(props) => props.$textAlign};
   font-size: ${(props) => props.$fs};
+  flex-wrap: ${(props) => (props.$wrap ? "wrap" : "nowrap")};
 `;
 export const Flex = styled(StyledDiv)`
   display: flex;
@@ -141,6 +143,9 @@ export const StyledUl = styled.ul`
   li {
     margin-right: 10px;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 export const StyledBanner = styled(StyledDiv)`
   @media (max-width: 768px) {
@@ -150,14 +155,27 @@ export const StyledBanner = styled(StyledDiv)`
 type StyledImageProps = {
   $height?: number;
   $width?: string;
+  $smheight?: number;
 };
 export const StyledImageDiv = styled.div<StyledImageProps>`
   width: ${(props) => props.$width || "100%"};
   height: ${(props) => props.$height + "px" || "200px"};
   position: relative;
+  @media (max-width: 768px) {
+    height: ${(props) => props.$smheight + "px"};
+  }
 `;
-export const StyledProductCard = styled(StyledDiv)`
+type StyledProductCardProps = {
+  $details?: boolean;
+};
+export const StyledProductCard = styled(StyledDiv)<StyledProductCardProps>`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  .body {
+    min-height: ${(props) => (props.$details ? "375px" : "310px")};
+  }
+  .footer {
+    min-height: ${(props) => (props.$details ? "75px" : "50px")};
+  }
 `;
 export const PriceSection = styled(StyledDiv)`
   border-top: 1px solid ${({ theme }) => theme.colors.border};
@@ -276,10 +294,14 @@ export const BackgroundImage = styled.div<BackgroundImageProps>`
 export const StyledNavBottom = styled(SpaceBetween)`
   padding: 1rem;
   text-align: center;
+  flex-wrap: wrap;
   a {
     &:hover {
       color: ${({ theme }) => theme.colors.yellow};
     }
+  }
+  @media (max-width: 768px) {
+    gap: 2rem;
   }
 `;
 export const StyledLoginModal = styled(StyledDiv)`
@@ -303,6 +325,12 @@ export const StyledBlueBanner = styled(SpaceEvenly)`
   button {
     width: max-content;
     border-radius: 1rem;
+  }
+
+  h3 {
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+    }
   }
 `;
 export const StyledCategoryModal = styled(StyledDiv)`

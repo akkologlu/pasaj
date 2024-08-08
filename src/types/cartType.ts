@@ -7,6 +7,7 @@ export type Cart = {
   oldPrice: number;
   discount: number;
   quantity: number;
+  limit: number;
   Renk?: string;
   Hafıza?: string;
   Kapasite?: string;

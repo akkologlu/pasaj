@@ -11,11 +11,17 @@ import {
 import CustomImage from "../common/CustomImage";
 import React, { useState } from "react";
 import { Cart } from "@/types/cartType";
+import { it } from "node:test";
 
 type CartItemProps = {
   item: Cart;
   handleDelete: (id: string | number) => void;
-  updateQuantity: (cartId: string | number, quantity: number) => void;
+  updateQuantity: (
+    cartId: string | number,
+    quantity: number,
+    productId: string | number,
+    itemLimit: number
+  ) => void;
 };
 const CartItem: React.FC<CartItemProps> = ({
   item,
@@ -27,7 +33,16 @@ const CartItem: React.FC<CartItemProps> = ({
   const incrementQuantity = () => {
     setQuantity((prev) => {
       const newQuantity = prev + 1;
-      updateQuantity(item.cartId, newQuantity);
+      if (newQuantity > item.limit) {
+        alert("Alım limiti bitti.");
+        return prev;
+      }
+      const isUpdated = updateQuantity(
+        item.cartId,
+        newQuantity,
+        item.productId,
+        item.limit
+      );
       return newQuantity;
     });
   };
@@ -35,7 +50,7 @@ const CartItem: React.FC<CartItemProps> = ({
     setQuantity((prev) => {
       if (prev > 1) {
         const newQuantity = prev - 1;
-        updateQuantity(item.cartId, newQuantity);
+        updateQuantity(item.cartId, newQuantity, item.productId, item.limit);
         return newQuantity;
       }
       return prev;

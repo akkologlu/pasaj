@@ -61,7 +61,7 @@ export default function App({ Component, pageProps }: AppProps) {
           </ThemeProvider>
         </SessionProvider>
       </HydrationBoundary>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   );
 }

@@ -58,6 +58,7 @@ const NavBottom: React.FC = () => {
         {categories.map((cat: Category) => (
           <StyledCol
             $sizemd={1}
+            $sizesm={3}
             key={cat.title}
             onMouseEnter={() => handleMouseEnter(cat)}
           >

@@ -3,7 +3,7 @@ import { SpaceBetween, StyledText, StyledUl } from "@/styles/styled";
 
 const Banner: React.FC = () => {
   return (
-    <SpaceBetween $padding="20px 0">
+    <SpaceBetween $padding="1.25rem 0">
       <small>turkcell.com.tr</small>
       <StyledUl>
         {bannerLinks.map((link) => (

@@ -17,6 +17,7 @@ const Campaigns: React.FC = () => {
               src="/campaign1.webp"
               alt="Kampanya 1"
               height={270}
+              smheight={100}
               objectFit="cover"
               style={{ marginBottom: "1rem" }}
             />
@@ -26,6 +27,7 @@ const Campaigns: React.FC = () => {
               src="/campaign2.webp"
               alt="Kampanya 2"
               height={270}
+              smheight={100}
               objectFit="cover"
             />
           </StyledCol>
@@ -35,6 +37,7 @@ const Campaigns: React.FC = () => {
             src="/campaign3.webp"
             alt="Kampanya 3"
             height={560}
+            smheight={500}
             objectFit="cover"
           />
         </StyledCol>

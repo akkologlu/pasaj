@@ -1,4 +1,3 @@
-// hooks/prefetchQueries.ts
 import { QueryClient, dehydrate } from "@tanstack/react-query";
 import { GetServerSidePropsContext } from "next";
 import { getSession } from "next-auth/react";
