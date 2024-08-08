@@ -16,6 +16,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  background-color: transparent;
 }
 input {
   border: none;

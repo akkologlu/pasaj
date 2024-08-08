@@ -54,7 +54,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
       />
       <StyledDiv $padding="5rem 0">
         <StyledContainer>
-          <SpaceBetween>
+          <SpaceBetween $wrap={true}>
             <StyledCol $sizemd={6}>
               <ImageSwiper images={data.images as Image[]} />
               <StyledLimitBadge
@@ -67,12 +67,14 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
                   Ürün alımları {data.limit} adet ile sınırlıdır.
                 </StyledText>
               </StyledLimitBadge>
-              <TakenTogether data={data} />
             </StyledCol>
             <StyledCol $sizemd={5.75}>
               <ProductConfigration session={session} data={data} />
             </StyledCol>
           </SpaceBetween>
+          <StyledCol $sizemd={6}>
+            <TakenTogether data={data} />
+          </StyledCol>
         </StyledContainer>
         <OtherSellers data={data.otherSellers} />
         <DetailTabs data={data} />

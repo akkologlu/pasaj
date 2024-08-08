@@ -100,7 +100,7 @@ const SearchForm = () => {
               <div>
                 {searchedProducts.length > 0 &&
                   searchedProducts.slice(0, 5).map((product: Product) => (
-                    <Link href="#" key={product.id}>
+                    <Link href={`/product/${product.id}`} key={product.id}>
                       <SpaceBetween>
                         <StyledCol $sizemd={9}>
                           <StyledRow>

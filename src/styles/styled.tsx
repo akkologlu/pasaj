@@ -628,6 +628,11 @@ export const StyledSecondaryFormButton = styled(StyledFormButton)`
 `;
 export const StyledCartItem = styled(StyledDiv)`
   border: 1px solid ${({ theme }) => theme.colors.border};
+  .top {
+    @media (max-width: 768px) {
+      margin-bottom: 1rem;
+    }
+  }
 `;
 export const StyledCartItemBottom = styled(FlexEnd)`
   border-top: 1px solid ${({ theme }) => theme.colors.border};

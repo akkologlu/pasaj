@@ -62,7 +62,7 @@ const Reviews: React.FC<ReviewsProps> = ({
 
   return (
     <FlexCol>
-      <SpaceBetween $margin="3rem 0">
+      <SpaceBetween $margin="3rem 0" $wrap={true}>
         <StyledCol $sizemd={5}>
           <StyledReviewSection $gap="0.5rem" $padding="3rem 2rem">
             <StyledText $color="grey">Ürün Değerlendirmeleri</StyledText>

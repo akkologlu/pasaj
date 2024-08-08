@@ -61,15 +61,15 @@ const CartItem: React.FC<CartItemProps> = ({
       <StyledTimes onClick={() => handleDelete(item.cartId)}>
         &times;
       </StyledTimes>
-      <SpaceBetween $padding="2rem 1rem" $gap=".5rem">
-        <StyledCol $sizemd={2}>
+      <SpaceBetween $padding="2rem 1rem" $gap=".5rem" $wrap={true}>
+        <StyledCol $sizemd={2} $sizesm={5} className="top">
           <CustomImage src={item.image} alt={item.title} height={75} />
         </StyledCol>
-        <StyledCol $sizemd={2}>
+        <StyledCol $sizemd={2} $sizesm={6} className="top">
           <p>{item.title}</p>
           <StyledText $color="light">{item.Renk}</StyledText>
         </StyledCol>
-        <StyledCol $sizemd={2}>
+        <StyledCol $sizemd={2} $sizesm={3.5}>
           <StyledText $color="light">Birim Fiyat</StyledText>
           <StyledText $color="light" $fw="700">
             {item.oldPrice.toLocaleString("tr-TR")} <small>TL</small>
@@ -80,7 +80,7 @@ const CartItem: React.FC<CartItemProps> = ({
             </StyledText>
           )}
         </StyledCol>
-        <StyledCol $sizemd={2}>
+        <StyledCol $sizemd={2} $sizesm={3.5}>
           <StyledText $margin="0 0 0.5rem" $center="center">
             Adet
           </StyledText>
@@ -90,24 +90,16 @@ const CartItem: React.FC<CartItemProps> = ({
             $width="80px"
             $margin="0 auto"
           >
-            <StyledDiv
-              as="button"
-              onClick={decrementQuantity}
-              $bgcolor="transparent"
-            >
+            <StyledDiv as="button" onClick={decrementQuantity}>
               &ndash;
             </StyledDiv>
             <StyledText $fs="14px">{quantity}</StyledText>
-            <StyledDiv
-              as="button"
-              onClick={incrementQuantity}
-              $bgcolor="transparent"
-            >
+            <StyledDiv as="button" onClick={incrementQuantity}>
               +
             </StyledDiv>
           </StyledCounter>
         </StyledCol>
-        <StyledCol $sizemd={2}>
+        <StyledCol $sizemd={2} $sizesm={3.5}>
           <StyledText $align="right" $fs="12px" $margin="0 0 .5rem 0">
             Tutar
           </StyledText>

@@ -137,7 +137,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
             </StyledRow>
           </StyledSwiper>
         </div>
-        <SpaceBetween>
+        <SpaceBetween $wrap={true}>
           <StyledCol $sizemd={2.75}>
             <Filter onFilterChange={handleFilterChange} data={data} />
           </StyledCol>
