@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm, FormProvider } from "react-hook-form";
 import { GetServerSideProps } from "next";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { fetchProducts } from "@/lib/api";
@@ -11,7 +12,6 @@ import {
   StyledRow,
   StyledText,
   SpaceBetween,
-  StyledSwitchLabel,
   StyledComporeModeSwitch,
 } from "@/styles/styled";
 import Filter from "@/components/productsPage/Filter";
@@ -23,6 +23,8 @@ import Breadcrumb from "@/components/common/Breadcrumb";
 import { FilterState } from "@/types/filterType";
 import { useFetchProducts } from "@/hooks/useDataFetching";
 import { useCompareModeStore } from "@/store/CompareModeStore";
+import LandingSwiper from "@/components/common/LandingSwiper";
+
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params as { slug: string[] };
   const queryClient = new QueryClient();
@@ -37,22 +39,27 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     },
   };
 };
+
 const CategoryPage = ({ slug }: { slug: string[] }) => {
   const { data, isLoading } = useFetchProducts(slug);
   const { compareMode, setCompareMode } = useCompareModeStore();
-  const [filters, setFilters] = useState<FilterState>({
-    brands: [],
-    priceRange: null,
-    inStock: false,
-    sellers: [],
-    sortBy: "initial",
+
+  const methods = useForm<FilterState>({
+    defaultValues: {
+      brands: [],
+      priceRange: null,
+      inStock: false,
+      sellers: [],
+      sortBy: "initial",
+    },
   });
-  const handleFilterChange = (newFilters: FilterState) => {
-    setFilters(newFilters);
-  };
+
+  const filters = methods.watch();
+
   const popularProducts = data.sort(
     (a: Product, b: Product) => b.nofSales - a.nofSales
   );
+
   const filteredData = data.filter((product: Product) => {
     const matchesBrand =
       !filters.brands.length || filters.brands.includes(product.brand);
@@ -70,6 +77,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
       );
     return matchesBrand && matchesPriceRange && matchesStock && matchesSellers;
   });
+
   const sortedData: Product[] = filteredData.sort((a: Product, b: Product) => {
     switch (filters.sortBy) {
       case "lowest_price":
@@ -84,7 +92,9 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
         return 0;
     }
   });
+
   if (isLoading) return <div>Loading...</div>;
+
   return (
     <>
       <Breadcrumb
@@ -148,26 +158,12 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
         </StyledComporeModeSwitch>
         <SpaceBetween $wrap={true}>
           <StyledCol $sizemd={2.75}>
-            <Filter onFilterChange={handleFilterChange} data={data} />
+            <FormProvider {...methods}>
+              <Filter control={methods.control} data={data} />
+            </FormProvider>
           </StyledCol>
           <StyledCol $sizemd={9}>
-            <StyledSwiper
-              pagination={{
-                clickable: true,
-                bulletClass: "swiper-pagination-bullet custom-bullet",
-                bulletActiveClass:
-                  "swiper-pagination-bullet-active custom-bullet-active",
-              }}
-              modules={[Navigation, Pagination]}
-              slidesPerView={1}
-              navigation
-            >
-              {landing.map((logo, index) => (
-                <SwiperSlide style={{ padding: "1rem 2rem" }} key={index}>
-                  <CustomImage src={logo} height={350} alt={logo} />
-                </SwiperSlide>
-              ))}
-            </StyledSwiper>
+            <LandingSwiper landing={landing} height={350} />
             <StyledRow>
               {sortedData.map((product: Product) => (
                 <ProductCard key={product.id} product={product} size={3.75} />

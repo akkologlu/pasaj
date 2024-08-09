@@ -1215,26 +1215,6 @@
           ]
         },
         {
-          "id": 2,
-          "title": "Samsung Galaxy S22 Ultra 256 GB",
-          "price": 79999,
-          "discountPrice": 7999,
-          "images": [
-            {
-              "color": "Beyaz",
-              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-            },
-            {
-              "color": "Siyah",
-              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-            },
-            {
-              "color": "Bordo",
-              "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-            }
-          ]
-        },
-        {
           "id": 1,
           "title": "iPhone 15 Pro Max 256 GB",
           "price": 89999,

@@ -1,5 +1,5 @@
-import React, { useReducer, useEffect } from "react";
-import { filterReducer, initialFilterState } from "./FilterReducer";
+import React from "react";
+import { useFormContext, Controller, Control } from "react-hook-form";
 import { Product } from "@/types/productType";
 import FilterSection from "./FilterSection";
 import {
@@ -10,14 +10,11 @@ import {
 import { priceRanges, sortOptions } from "@/lib/mockData";
 import { FilterState } from "@/types/filterType";
 interface FilterProps {
-  onFilterChange: (filters: FilterState) => void;
   data: Product[];
+  control: Control<FilterState, any>;
 }
-const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {
-  const [state, dispatch] = useReducer(filterReducer, initialFilterState);
-  useEffect(() => {
-    onFilterChange(state);
-  }, [state]);
+const Filter: React.FC<FilterProps> = ({ data }) => {
+  const { control, getValues, setValue } = useFormContext<FilterState>();
   const brands = data.map((item: Product) => item.brand);
   const uniqueBrands = Array.from(new Set(brands));
   const sellers = data.flatMap((item: Product) =>
@@ -26,14 +23,12 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {
   const uniqueSellers = Array.from(new Set(sellers));
   const handlePriceRangeChange = (range: [number, number] | null) => {
     if (
-      state.priceRange &&
-      range &&
-      state.priceRange[0] === range[0] &&
-      state.priceRange[1] === range[1]
+      getValues("priceRange")?.[0] === range?.[0] &&
+      getValues("priceRange")?.[1] === range?.[1]
     ) {
-      dispatch({ type: "SET_PRICE_RANGE", priceRange: null });
+      setValue("priceRange", null);
     } else {
-      dispatch({ type: "SET_PRICE_RANGE", priceRange: range });
+      setValue("priceRange", range);
     }
   };
   return (
@@ -41,10 +36,24 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {
       <FilterSection title="Markalar" isOpen={true}>
         {uniqueBrands.map((brand) => (
           <StyledLabel as="label" key={brand}>
-            <input
-              type="checkbox"
-              checked={state.brands.includes(brand)}
-              onChange={() => dispatch({ type: "TOGGLE_BRAND", brand: brand })}
+            <Controller
+              name="brands"
+              control={control}
+              render={({ field }) => (
+                <input
+                  type="checkbox"
+                  checked={field.value.includes(brand)}
+                  onChange={() => {
+                    if (field.value.includes(brand)) {
+                      field.onChange(
+                        field.value.filter((b: string) => b !== brand)
+                      );
+                    } else {
+                      field.onChange([...field.value, brand]);
+                    }
+                  }}
+                />
+              )}
             />
             {brand}
           </StyledLabel>
@@ -53,11 +62,17 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {
       <FilterSection title="Sırala">
         {sortOptions.map(({ label, value }) => (
           <StyledRadioLabel as="label" key={value}>
-            <input
-              type="radio"
+            <Controller
               name="sortBy"
-              checked={state.sortBy === value}
-              onChange={() => dispatch({ type: "SET_SORT_BY", sortBy: value })}
+              control={control}
+              render={({ field }) => (
+                <input
+                  type="radio"
+                  name="sortBy"
+                  checked={field.value === value}
+                  onChange={() => field.onChange(value)}
+                />
+              )}
             />
             {label}
           </StyledRadioLabel>
@@ -69,12 +84,8 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {
             <input
               type="checkbox"
               checked={
-                state.priceRange &&
-                range &&
-                state.priceRange[0] === range[0] &&
-                state.priceRange[1] === range[1]
-                  ? true
-                  : false
+                getValues("priceRange")?.[0] === range[0] &&
+                getValues("priceRange")?.[1] === range[1]
               }
               onChange={() => handlePriceRangeChange(range)}
             />
@@ -83,10 +94,16 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {
         ))}
       </FilterSection>
       <StyledSwitchLabel>
-        <input
-          type="checkbox"
-          checked={state.inStock}
-          onChange={() => dispatch({ type: "TOGGLE_IN_STOCK" })}
+        <Controller
+          name="inStock"
+          control={control}
+          render={({ field }) => (
+            <input
+              type="checkbox"
+              checked={field.value}
+              onChange={() => field.onChange(!field.value)}
+            />
+          )}
         />
         Sadece stoktakiler
         <div className="switch"></div>
@@ -94,12 +111,24 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {
       <FilterSection title="Satıcılar" isOpen={true}>
         {uniqueSellers.map((seller) => (
           <StyledLabel as="label" key={seller}>
-            <input
-              type="checkbox"
-              checked={state.sellers.includes(seller)}
-              onChange={() =>
-                dispatch({ type: "TOGGLE_SELLER", seller: seller })
-              }
+            <Controller
+              name="sellers"
+              control={control}
+              render={({ field }) => (
+                <input
+                  type="checkbox"
+                  checked={field.value.includes(seller)}
+                  onChange={() => {
+                    if (field.value.includes(seller)) {
+                      field.onChange(
+                        field.value.filter((s: string) => s !== seller)
+                      );
+                    } else {
+                      field.onChange([...field.value, seller]);
+                    }
+                  }}
+                />
+              )}
             />
             {seller}
           </StyledLabel>
@@ -108,4 +137,5 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange, data }) => {
     </div>
   );
 };
+
 export default Filter;

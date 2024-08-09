@@ -346,10 +346,10 @@ export const StyledCategoryModal = styled(StyledDiv)`
   left: 0;
   width: 100%;
   height: 600px;
-  z-index: 2;
+  z-index: 15;
   a {
     &:hover {
-      color: ${({ theme }) => theme.colors.light};
+      color: ${({ theme }) => theme.colors.yellow};
     }
   }
 `;

@@ -76,28 +76,20 @@ export const popularSearches = [
 ];
 
 export const landing = [
-  "/landing1.jpeg",
-  "/landing2.jpeg",
-  "/landing3.jpeg",
-  "/landing4.jpeg",
-  "/landing5.jpeg",
-  "/landing6.jpeg",
-  "/landing7.jpeg",
-  "/landing8.jpeg",
-  "/landing9.jpeg",
-  "/landing10.jpeg",
-  "/landing11.jpeg",
-  "/landing12.jpeg",
-  "/landing13.jpeg",
+  "/landing/landing1.webp",
+  "/landing/landing2.webp",
+  "/landing/landing3.webp",
+  "/landing/landing4.webp",
+  "/landing/landing5.webp",
+  "/landing/landing6.webp",
 ];
 
-export const priceRanges: { label: string; range: [number, number] | null }[] =
-  [
-    { label: "0 - 500 TL", range: [0, 500] },
-    { label: "500 - 1500 TL", range: [500, 1500] },
-    { label: "1500 - 3000 TL", range: [1500, 3000] },
-    { label: "3000 TL ve üzeri", range: [3000, Infinity] },
-  ];
+export const priceRanges: { label: string; range: [number, number] }[] = [
+  { label: "0 - 500 TL", range: [0, 500] },
+  { label: "500 - 1500 TL", range: [500, 1500] },
+  { label: "1500 - 3000 TL", range: [1500, 3000] },
+  { label: "3000 TL ve üzeri", range: [3000, Infinity] },
+];
 
 export const sortOptions = [
   { label: "En Popüler", value: "initial" },

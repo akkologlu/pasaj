@@ -2,12 +2,24 @@ import { useState, useEffect } from "react";
 import { useFavStore } from "@/store/FavStore";
 import { updateFavs } from "@/lib/api";
 import { useSession } from "next-auth/react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const useFavorite = (product: any) => {
   const { data: session } = useSession();
   const { favs, setFavs } = useFavStore();
   const [isFav, setIsFav] = useState(false);
-
+  const queryClient = useQueryClient();
+  const { mutate } = useMutation({
+    mutationFn: updateFavs,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["favs"] });
+    },
+    onMutate: async ({ favData }) => {
+      const prevFavs = favs;
+      setFavs(favData.fav);
+      return { prevFavs };
+    },
+  });
   useEffect(() => {
     const favStatus = favs.some((fav) => fav.id === product.id);
     setIsFav(favStatus);
@@ -32,7 +44,7 @@ const useFavorite = (product: any) => {
     setFavs(updatedFavs);
     setIsFav(!isFav);
     try {
-      await updateFavs({
+      mutate({
         userId: session.user.id,
         favData: { fav: updatedFavs },
       });
