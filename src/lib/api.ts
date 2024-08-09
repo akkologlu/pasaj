@@ -18,6 +18,15 @@ export const fetchAllProducts = async () => {
   }
   return res.json();
 };
+export const fetchSimilarProducts = async (category: string) => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_DB_URL}/products?categoryUrl=${category}`
+  );
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
 export const fetchProduct = async (id: string) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`);
   if (!res.ok) {

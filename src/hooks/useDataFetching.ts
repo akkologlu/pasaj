@@ -7,6 +7,7 @@ import {
   fetchPopularCategories,
   fetchProduct,
   fetchProducts,
+  fetchSimilarProducts,
   fetchUserCart,
 } from "@/lib/api";
 
@@ -14,6 +15,13 @@ export const useFetchAllProducts = () => {
   return useQuery({
     queryKey: ["products"],
     queryFn: fetchAllProducts,
+  });
+};
+
+export const useFetchSimilarProducts = (category: string) => {
+  return useQuery({
+    queryKey: ["similarProducts", category],
+    queryFn: () => fetchSimilarProducts(category),
   });
 };
 

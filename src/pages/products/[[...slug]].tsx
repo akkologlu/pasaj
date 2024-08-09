@@ -46,6 +46,9 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
   const handleFilterChange = (newFilters: FilterState) => {
     setFilters(newFilters);
   };
+  const popularProducts = data.sort(
+    (a: Product, b: Product) => b.nofSales - a.nofSales
+  );
   const filteredData = data.filter((product: Product) => {
     const matchesBrand =
       !filters.brands.length || filters.brands.includes(product.brand);
@@ -122,18 +125,11 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
             spaceBetween={10}
           >
             <StyledRow>
-              <SwiperSlide>
-                <ProductCard product={data[0]} size={12} details={false} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard product={data[0]} size={12} details={false} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard product={data[0]} size={12} details={false} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCard product={data[0]} size={12} details={false} />
-              </SwiperSlide>
+              {popularProducts.map((product: Product) => (
+                <SwiperSlide key={product.id}>
+                  <ProductCard product={product} size={12} details={false} />
+                </SwiperSlide>
+              ))}
             </StyledRow>
           </StyledSwiper>
         </div>

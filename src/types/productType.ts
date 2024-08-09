@@ -47,6 +47,7 @@ export type Product = {
   title: string;
   rating: number;
   stock: number;
+  nofSales: number;
   brand: string;
   configration: Option[];
   price: number;

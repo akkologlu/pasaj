@@ -4,7 +4,10 @@ import ImageSwiper from "@/components/productDetail/ImageSwiper";
 import OtherSellers from "@/components/productDetail/OtherSellers";
 import ProductConfigration from "@/components/productDetail/ProductConfigration";
 import TakenTogether from "@/components/productDetail/TakenTogether";
-import { useFetchProduct } from "@/hooks/useDataFetching";
+import {
+  useFetchProduct,
+  useFetchSimilarProducts,
+} from "@/hooks/useDataFetching";
 import { fetchProduct } from "@/lib/api";
 import {
   StyledCol,
@@ -34,6 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 const Product = ({ slug, session }: { slug: string; session: Session }) => {
   const { data } = useFetchProduct(slug);
+  const { data: similarProducts } = useFetchSimilarProducts(data.categoryUrl);
   return (
     <>
       <Breadcrumb
@@ -73,7 +77,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
             </StyledCol>
           </SpaceBetween>
           <StyledCol $sizemd={6}>
-            <TakenTogether data={data} />
+            <TakenTogether data={similarProducts} />
           </StyledCol>
         </StyledContainer>
         <OtherSellers data={data.otherSellers} />

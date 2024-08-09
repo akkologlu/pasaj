@@ -4,7 +4,7 @@ import { SwiperSlide } from "swiper/react";
 import ProductCard from "../common/card/ProductCard";
 import { Product } from "@/types/productType";
 type TakenTogetherProps = {
-  data: Product;
+  data: Product[];
 };
 const TakenTogether: React.FC<TakenTogetherProps> = ({ data }) => {
   return (
@@ -28,18 +28,11 @@ const TakenTogether: React.FC<TakenTogetherProps> = ({ data }) => {
         spaceBetween={10}
       >
         <StyledRow>
-          <SwiperSlide>
-            <ProductCard product={data} size={12} details={false} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard product={data} size={12} details={false} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard product={data} size={12} details={false} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard product={data} size={12} details={false} />
-          </SwiperSlide>
+          {data.map((product: Product) => (
+            <SwiperSlide key={product.id}>
+              <ProductCard product={product} size={12} details={false} />
+            </SwiperSlide>
+          ))}
         </StyledRow>
       </StyledSwiper>
     </>
