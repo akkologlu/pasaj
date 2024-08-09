@@ -13,6 +13,8 @@ import {
   StyledPrimaryFormButton,
   StyledSecondaryFormButton,
 } from "@/styles/styled";
+import toast from "react-hot-toast";
+import Link from "next/link";
 
 const schema = z.object({
   email: z.string().email(),
@@ -42,11 +44,11 @@ export default function Register() {
         data.email,
         data.password
       );
-      alert("User registered successfully");
+      toast.success("Hesabınız oluşturuldu.");
       await addUser({ id: user.uid, email: data.email, cart: [], fav: [] });
-      router.push("/");
+      router.push("/signin");
     } catch (error: any) {
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -75,7 +77,9 @@ export default function Register() {
         <StyledPrimaryFormButton type="submit">
           Kayıt Ol
         </StyledPrimaryFormButton>
-        <StyledSecondaryFormButton>Giriş Yap</StyledSecondaryFormButton>
+        <Link href="/signin" style={{ width: "100%" }}>
+          <StyledSecondaryFormButton>Giriş Yap</StyledSecondaryFormButton>
+        </Link>
       </FullCenterCol>
     </StyledContainer>
   );

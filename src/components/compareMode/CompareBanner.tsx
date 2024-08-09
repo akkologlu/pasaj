@@ -3,9 +3,10 @@ import {
   JustifyBetweenAlignCenter,
   StyledCompareBanner,
   StyledContainer,
+  StyledDiv,
 } from "@/styles/styled";
 import CompareBannerItem from "./CompareBannerItem";
-import CustomButton from "../common/CustomButton";
+import Link from "next/link";
 
 const CompareBanner = () => {
   const { compareProducts, removeAllFromCompare } = useCompareModeStore();
@@ -18,7 +19,7 @@ const CompareBanner = () => {
   return (
     <StyledCompareBanner>
       <StyledContainer className="compareContainer">
-        <JustifyBetweenAlignCenter>
+        <JustifyBetweenAlignCenter $padding="1rem 0">
           {displayedProducts.map((product, index) => (
             <CompareBannerItem
               key={index}
@@ -28,14 +29,20 @@ const CompareBanner = () => {
             />
           ))}
           <button onClick={() => removeAllFromCompare()}>Temizle</button>
-          <CustomButton
-            href="/compare"
-            bgcolor="yellow"
-            round="1.5rem"
-            padding=".75rem 1.5rem"
+          <StyledDiv
+            $bgcolor="yellow"
+            $radius="1.5rem"
+            $padding=".75rem 1.5rem"
+            onClick={() =>
+              compareProducts.length < 2 && alert("en az iki ürün")
+            }
           >
-            Karşılaştır
-          </CustomButton>
+            {compareProducts.length > 1 ? (
+              <Link href={`/compare`}>Karşılaştır</Link>
+            ) : (
+              <p>Karşılaştır</p>
+            )}
+          </StyledDiv>
         </JustifyBetweenAlignCenter>
       </StyledContainer>
     </StyledCompareBanner>

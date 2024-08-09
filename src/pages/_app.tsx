@@ -17,6 +17,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "@/styles/theme";
 import CompareBanner from "@/components/compareMode/CompareBanner";
 import { useCompareModeStore } from "@/store/CompareModeStore";
+import { Toaster } from "react-hot-toast";
 const greycliffCF = localFont({
   src: [
     {
@@ -56,6 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <ThemeProvider theme={theme}>
             <div className={`${greycliffCF.className}`}>
               <GlobalStyles />
+              <Toaster />
               <Header />
               <Component {...pageProps} />
               <Footer />

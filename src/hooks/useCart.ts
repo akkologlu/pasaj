@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addToCart } from "@/lib/api";
 import { Cart } from "@/types/cartType";
 import { Product } from "@/types/productType";
+import toast from "react-hot-toast";
 type MutationVariables = {
   userId: string;
   cartData: Cart[];
@@ -13,6 +14,9 @@ const useCart = (userId: string, cart: Cart[]) => {
       addToCart({ userId, cartData }),
     onSuccess: (res) => {
       queryClient.setQueryData(["cart"], res.cart);
+    },
+    onError: () => {
+      toast.error("Ürün sepete eklenirken bir hata oluştu!");
     },
   });
   const calculateProductCount = (productId: string | number) => {
@@ -27,7 +31,9 @@ const useCart = (userId: string, cart: Cart[]) => {
   ) => {
     const quantity = calculateProductCount(product.id);
     if (quantity > product.limit) {
-      return alert("Alım limiti bitti.");
+      return toast.error(
+        `Bu üründen en fazla ${product.limit} tane alabilirsiniz!`
+      );
     }
     const config = product.configration.reduce(
       (acc: { [key: string]: any }, config: { title: string }) => {
@@ -61,6 +67,7 @@ const useCart = (userId: string, cart: Cart[]) => {
         ...config,
       });
     }
+    toast.success("Ürün sepete eklendi!");
     mutate({
       userId,
       cartData: updatedCartItems,

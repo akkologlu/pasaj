@@ -20,13 +20,16 @@ const CompareBannerItem: React.FC<CompareBannerItemProps> = ({
 }) => {
   const { removeFromCompare } = useCompareModeStore();
   return (
-    <StyledCol $sizemd={2}>
+    <StyledCol $sizemd={3}>
       <StyledCompareBannerItem>
-        <CustomImage
-          src={image ? image : "/def_tel.webp"}
-          alt="compare"
-          height={50}
-        />
+        <StyledCol $sizemd={3}>
+          <CustomImage
+            src={image ? image : "/def_tel.webp"}
+            alt="compare"
+            height={75}
+          />
+        </StyledCol>
+
         <p>{title ? title : "Listeden bir cihaz seçin"}</p>
         {id && (
           <StyledTimesCompare onClick={() => removeFromCompare(id)}>

@@ -193,7 +193,11 @@ export const StyledBadge = styled(FullCenter)`
 `;
 export const StyledBluePrice = styled(StyledText)`
   padding-top: 0.25rem;
-  text-align: right;
+  color: ${({ theme }) => theme.colors.blue};
+  * {
+    color: ${({ theme }) => theme.colors.blue};
+  }
+  text-align: ${(props) => (props.$align ? props.$align : "right")};
 `;
 export const StyledSearchForm = styled(AlignCenter)`
   z-index: 5;
@@ -783,26 +787,44 @@ export const StyledCompareBanner = styled(StyledDiv)`
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 15vh;
+  height: 13vh;
   background-color: ${({ theme }) => theme.colors.white};
   z-index: 50;
-  div {
-    height: 100%;
-  }
   * {
     font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+    button {
+      display: none;
+    }
   }
 `;
 export const StyledCompareBannerItem = styled(JustifyBetweenAlignCenter)`
   position: relative;
   gap: 1rem;
-  padding: 1rem 0.5rem 1rem 0;
+  padding: 0.5rem 1rem;
+  height: max-content;
   * {
     color: ${({ theme }) => theme.colors.grey};
+  }
+  box-shadow: rgba(99, 99, 99, 0.6) 0px 2px 8px 0px;
+  @media (max-width: 768px) {
+    p {
+      display: none;
+    }
+    padding: 0;
   }
 `;
 export const StyledTimesCompare = styled(StyledTimes)`
   top: 0;
-  right: 0;
+  right: 0.5rem;
   font-size: 2rem;
+`;
+export const StyledCompareItem = styled(StyledDiv)`
+  flex: 1;
+  box-shadow: rgba(99, 99, 99, 0.6) 0px 2px 8px 0px;
+  a {
+    color: ${({ theme }) => theme.colors.blue};
+    font-weight: 700;
+  }
 `;

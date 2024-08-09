@@ -20,6 +20,7 @@ import { Rating } from "@smastrom/react-rating";
 import { Session } from "next-auth";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 type ProductConfigrationProps = {
@@ -30,8 +31,8 @@ const ProductConfigration: React.FC<ProductConfigrationProps> = ({
   session,
   data,
 }) => {
-  const { data: cart } = useFetchUserCart(session.user.id);
-  const { handleAddToCart } = useCart(session.user.id, cart);
+  const { data: cart } = useFetchUserCart(session?.user?.id);
+  const { handleAddToCart } = useCart(session?.user?.id, cart);
   const { isFav, handleFav } = useFavorite(data);
   const [selectedOption, setSelectedOption] = useState(2);
 
@@ -72,7 +73,7 @@ const ProductConfigration: React.FC<ProductConfigrationProps> = ({
       as="form"
       onSubmit={handleSubmit((formData) => {
         if (!session) {
-          return console.log("Please login first");
+          return toast.error("Lütfen giriş yapınız.");
         }
         handleAddToCart(data, formData);
       })}
