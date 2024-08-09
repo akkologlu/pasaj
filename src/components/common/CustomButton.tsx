@@ -7,6 +7,7 @@ type CustomButtonProps = {
   bgcolor: string;
   padding?: string;
   href?: string;
+  round?: string;
 };
 const CustomButton: React.FC<CustomButtonProps> = ({
   children,
@@ -14,6 +15,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   onclick,
   padding = "0.75rem",
   href = "#",
+  round = "0.25rem",
 }) => {
   return (
     <Link href={href}>
@@ -22,7 +24,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
         onClick={onclick}
         $bgcolor={bgcolor}
         $padding={padding}
-        $radius="0.25rem"
+        $radius={round}
         $pos="relative"
         $gap="0.75rem"
       >

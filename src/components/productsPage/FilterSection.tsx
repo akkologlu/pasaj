@@ -1,7 +1,6 @@
 import {
   FlexCol,
   SpaceBetween,
-  StyledDiv,
   StyledFilterSection,
   StyledText,
 } from "@/styles/styled";

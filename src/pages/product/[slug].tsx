@@ -37,7 +37,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 const Product = ({ slug, session }: { slug: string; session: Session }) => {
   const { data } = useFetchProduct(slug);
-  const { data: similarProducts } = useFetchSimilarProducts(data.categoryUrl);
+  const { data: similarProducts, isLoading } = useFetchSimilarProducts(
+    data.categoryUrl
+  );
+  if (isLoading) return <div>Loading...</div>;
   return (
     <>
       <Breadcrumb

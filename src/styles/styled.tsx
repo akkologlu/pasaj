@@ -170,11 +170,15 @@ type StyledProductCardProps = {
 };
 export const StyledProductCard = styled(StyledDiv)<StyledProductCardProps>`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 2px solid ${({ theme }) => theme.colors.border};
   .body {
     min-height: ${(props) => (props.$details ? "375px" : "310px")};
   }
   .footer {
     min-height: ${(props) => (props.$details ? "75px" : "50px")};
+  }
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.yellow};
   }
 `;
 export const PriceSection = styled(StyledDiv)`
@@ -501,7 +505,7 @@ export const AddButton = styled.button`
   cursor: pointer;
 `;
 export const StyledFilterSection = styled(StyledDiv)`
-  border: 1px solid #${({ theme }) => theme.colors.border};
+  border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 export const StyledLabel = styled(StyledText)`
   display: flex;
@@ -597,6 +601,25 @@ export const StyledSwitchLabel = styled.label`
   }
   input:checked + .switch:before {
     transform: translateX(1rem);
+  }
+`;
+export const StyledComporeModeSwitch = styled(StyledSwitchLabel)`
+  background-color: transparent;
+  border: none;
+  color: ${({ theme }) => theme.colors.dark};
+  justify-content: flex-end;
+  font-size: 1.25rem;
+  color: ${({ theme }) => theme.colors.grey};
+  .switch {
+    width: 3rem;
+    height: 1.5rem;
+  }
+  .switch:before {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  input:checked + .switch:before {
+    transform: translateX(1.5rem);
   }
 `;
 export const StyledInput = styled.input`
@@ -713,4 +736,73 @@ export const StyledHeartDetail = styled(StyledDiv)`
   justify-content: center;
   padding: 1.75rem 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+`;
+type StyledCompareModeLayerProps = {
+  $inStore: boolean;
+};
+export const StyledCompareModeLayer = styled(
+  StyledDiv
+)<StyledCompareModeLayerProps>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.colors.white};
+  &:hover {
+    background-color: ${({ $inStore, theme }) =>
+      $inStore ? theme.colors.yellow : theme.colors.grey};
+  }
+  .topright {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: ${({ $inStore, theme }) =>
+      $inStore ? theme.colors.yellow : theme.colors.grey};
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 0.75rem;
+    &:after {
+      content:${({ $inStore }) => ($inStore ? "'✔'" : "")};
+      font-size: 1rem;
+      color: ${({ theme }) => theme.colors.white};
+      position: absolute;
+      top: 40%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+    }
+`;
+export const StyledCompareBanner = styled(StyledDiv)`
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 15vh;
+  background-color: ${({ theme }) => theme.colors.white};
+  z-index: 50;
+  div {
+    height: 100%;
+  }
+  * {
+    font-size: 1rem;
+  }
+`;
+export const StyledCompareBannerItem = styled(JustifyBetweenAlignCenter)`
+  position: relative;
+  gap: 1rem;
+  padding: 1rem 0.5rem 1rem 0;
+  * {
+    color: ${({ theme }) => theme.colors.grey};
+  }
+`;
+export const StyledTimesCompare = styled(StyledTimes)`
+  top: 0;
+  right: 0;
+  font-size: 2rem;
 `;

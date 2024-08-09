@@ -4,6 +4,7 @@ import {
   PriceSection,
   StyledBadge,
   StyledCol,
+  StyledCompareModeLayer,
   StyledHeart,
   StyledProductCard,
   StyledRow,
@@ -17,6 +18,7 @@ import CustomSwiper from "../CardSwiper";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import useFavorite from "@/hooks/useFavorite";
+import { useCompareModeStore } from "@/store/CompareModeStore";
 
 type ProductCardProps = {
   product: Product;
@@ -30,7 +32,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
   size = 3,
 }) => {
   const { isFav, handleFav } = useFavorite(product);
-
+  const {
+    compareMode,
+    checkInStore,
+    addToCompare,
+    removeFromCompare,
+    compareProducts,
+  } = useCompareModeStore();
   return (
     <StyledCol $sizemd={size}>
       <StyledProductCard
@@ -40,14 +48,42 @@ const ProductCard: React.FC<ProductCardProps> = ({
         $pos="relative"
         $details={details}
       >
-        <StyledHeart onClick={handleFav}>
-          {isFav ? (
-            <FaHeart size={24} color="#ffc900" />
-          ) : (
-            <CiHeart size={30} color="#ffc900" />
-          )}
-        </StyledHeart>
-        <Link href={`/product/${product.id}`}>
+        {compareMode && (
+          <StyledCompareModeLayer
+            onClick={() => {
+              if (checkInStore(product.id)) {
+                removeFromCompare(product.id);
+              } else {
+                if (compareProducts.length >= 3) {
+                  alert("En fazla 3 ürün");
+                  return;
+                }
+                addToCompare(product);
+              }
+            }}
+            $inStore={checkInStore(product.id)}
+          >
+            <div className="topright"></div>
+          </StyledCompareModeLayer>
+        )}
+        {!compareMode && (
+          <StyledHeart onClick={handleFav}>
+            {isFav ? (
+              <FaHeart size={24} color="#ffc900" />
+            ) : (
+              <CiHeart size={30} color="#ffc900" />
+            )}
+          </StyledHeart>
+        )}
+
+        <Link
+          href={`/product/${product.id}`}
+          onClick={(e) => {
+            if (compareMode) {
+              e.preventDefault();
+            }
+          }}
+        >
           <FlexCol $gap="0.75rem" $padding="1.75rem 1rem" className="body">
             <CustomSwiper image={product.images} />
             <h4>{product.title}</h4>

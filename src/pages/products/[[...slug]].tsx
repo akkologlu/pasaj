@@ -11,6 +11,8 @@ import {
   StyledRow,
   StyledText,
   SpaceBetween,
+  StyledSwitchLabel,
+  StyledComporeModeSwitch,
 } from "@/styles/styled";
 import Filter from "@/components/productsPage/Filter";
 import { Navigation, Pagination } from "swiper/modules";
@@ -20,6 +22,7 @@ import CustomImage from "@/components/common/CustomImage";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import { FilterState } from "@/types/filterType";
 import { useFetchProducts } from "@/hooks/useDataFetching";
+import { useCompareModeStore } from "@/store/CompareModeStore";
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params as { slug: string[] };
   const queryClient = new QueryClient();
@@ -36,6 +39,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 };
 const CategoryPage = ({ slug }: { slug: string[] }) => {
   const { data, isLoading } = useFetchProducts(slug);
+  const { compareMode, setCompareMode } = useCompareModeStore();
   const [filters, setFilters] = useState<FilterState>({
     brands: [],
     priceRange: null,
@@ -133,6 +137,15 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
             </StyledRow>
           </StyledSwiper>
         </div>
+        <StyledComporeModeSwitch>
+          <input
+            type="checkbox"
+            checked={compareMode}
+            onChange={() => setCompareMode(!compareMode)}
+          />
+          Karşılaştırma Modu
+          <div className="switch"></div>
+        </StyledComporeModeSwitch>
         <SpaceBetween $wrap={true}>
           <StyledCol $sizemd={2.75}>
             <Filter onFilterChange={handleFilterChange} data={data} />

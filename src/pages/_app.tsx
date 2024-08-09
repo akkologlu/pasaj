@@ -15,6 +15,8 @@ import GlobalStyles from "@/styles/GlobalStyles";
 import localFont from "next/font/local";
 import { ThemeProvider } from "styled-components";
 import theme from "@/styles/theme";
+import CompareBanner from "@/components/compareMode/CompareBanner";
+import { useCompareModeStore } from "@/store/CompareModeStore";
 const greycliffCF = localFont({
   src: [
     {
@@ -46,7 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
         },
       })
   );
-
+  const { compareMode } = useCompareModeStore();
   return (
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
@@ -57,11 +59,12 @@ export default function App({ Component, pageProps }: AppProps) {
               <Header />
               <Component {...pageProps} />
               <Footer />
+              {compareMode && <CompareBanner />}
             </div>
           </ThemeProvider>
         </SessionProvider>
       </HydrationBoundary>
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

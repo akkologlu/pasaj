@@ -17,6 +17,8 @@ button {
   border: none;
   outline: none;
   background-color: transparent;
+  font-family: var(--font-greycliffcf), Helvetica, Calibri, sans-serif;
+  color: ${({ theme }) => theme.colors.dark};
 }
 input {
   border: none;
