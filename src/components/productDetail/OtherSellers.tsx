@@ -42,7 +42,7 @@ const OtherSellers: React.FC<OtherSellerProps> = ({ data }) => {
           spaceBetween={10}
         >
           <StyledRow>
-            {data.map((otherSeller, index) => (
+            {data?.map((otherSeller, index) => (
               <SwiperSlide key={index}>
                 <OtherSellerCard
                   rating={otherSeller.rating}

@@ -3,6 +3,7 @@ import { useFavStore } from "@/store/FavStore";
 import { updateFavs } from "@/lib/api";
 import { useSession } from "next-auth/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 const useFavorite = (product: any) => {
   const { data: session } = useSession();
@@ -27,7 +28,9 @@ const useFavorite = (product: any) => {
 
   const handleFav = async () => {
     if (!session) {
-      return alert("Favorilere eklemek için giriş yapmalısınız.");
+      return toast.error(
+        "Favorilere ekleme yapabilmek için giriş yapmalısınız."
+      );
     }
     const updatedFavs = isFav
       ? favs.filter((fav) => fav.id !== product.id)

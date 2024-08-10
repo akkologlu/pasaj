@@ -18,7 +18,6 @@ import Filter from "@/components/productsPage/Filter";
 import { Navigation, Pagination } from "swiper/modules";
 import { landing } from "@/lib/mockData";
 import { SwiperSlide } from "swiper/react";
-import CustomImage from "@/components/common/CustomImage";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import { FilterState } from "@/types/filterType";
 import { useFetchProducts } from "@/hooks/useDataFetching";
@@ -71,7 +70,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
     const matchesSellers =
       !filters.sellers.length ||
       filters.sellers.some((seller) =>
-        product.otherSellers.some(
+        product.otherSellers?.some(
           (otherSeller) => otherSeller.seller === seller
         )
       );

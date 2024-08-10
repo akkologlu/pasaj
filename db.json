@@ -11,19 +11,11 @@
       "configration": [
         {
           "title": "Renk",
-          "options": [
-            "Mavi",
-            "Siyah",
-            "Gri"
-          ]
+          "options": ["Mavi", "Siyah", "Gri"]
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB",
-            "512 GB"
-          ]
+          "options": ["128 GB", "256 GB", "512 GB"]
         }
       ],
       "price": 89999,
@@ -31,39 +23,26 @@
       "installmentCount": 3,
       "installmentPrice": 26333,
       "limit": 1,
-      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "endOfDiscount": "2024-08-08T16:13",
       "discountPrice": 7999,
       "category": "Telefon",
       "categoryUrl": "telefon",
       "subcategory": "IOS Telefonlar",
       "subcategoryUrl": "ios-telefonlar",
       "images": [
-        {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003"
-        },
-        {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Mavi",
-        "Siyah",
-        "Gri"
-      ],
+      "colors": ["Mavi", "Siyah", "Gri"],
       "otherSellers": [
         {
           "seller": "Vatan Bilgisayar",
           "price": 89999,
           "rating": 10,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 50
         },
         {
@@ -76,7 +55,7 @@
           "seller": "MediaMarkt",
           "price": 89999,
           "rating": 9.5,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 2
         }
       ],
@@ -207,11 +186,7 @@
           }
         }
       ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -228,24 +203,12 @@
       "configration": [
         {
           "title": "Renk",
-          "options": [
-            "Beyaz",
-            "Siyah",
-            "Bordo"
-          ],
-          "colorCodes": [
-            "#ffffff",
-            "#000000",
-            "#800000"
-          ]
+          "options": ["Beyaz", "Siyah", "Bordo"],
+          "colorCodes": ["#ffffff", "#000000", "#800000"]
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB",
-            "512 GB"
-          ]
+          "options": ["128 GB", "256 GB", "512 GB"]
         }
       ],
       "price": 79999,
@@ -253,39 +216,26 @@
       "installmentCount": 6,
       "installmentPrice": 13333,
       "limit": 2,
-      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "endOfDiscount": "2024-08-08T16:13",
       "discountPrice": 7999,
       "category": "Telefon",
       "categoryUrl": "telefon",
       "subcategory": "Android Telefonlar",
       "subcategoryUrl": "android-telefonlar",
       "images": [
-        {
-          "color": "Beyaz",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        },
-        {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        },
-        {
-          "color": "Bordo",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Beyaz",
-        "Siyah",
-        "Bordo"
-      ],
+      "colors": ["Beyaz", "Siyah", "Bordo"],
       "otherSellers": [
         {
           "seller": "Teknosa",
           "price": 79999,
           "rating": 9.5,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 40
         },
         {
@@ -298,7 +248,7 @@
           "seller": "MediaMarkt",
           "price": 79999,
           "rating": 9,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 3
         }
       ],
@@ -332,11 +282,7 @@
           "answer": "108 MP geniş, ultra geniş ve telefoto kameralar."
         }
       ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": false,
@@ -353,17 +299,11 @@
       "configration": [
         {
           "title": "Renk",
-          "options": [
-            "Beyaz",
-            "Mavi"
-          ]
+          "options": ["Beyaz", "Mavi"]
         },
         {
           "title": "Güç",
-          "options": [
-            "2000W",
-            "2400W"
-          ]
+          "options": ["2000W", "2400W"]
         }
       ],
       "price": 999,
@@ -371,34 +311,25 @@
       "installmentCount": 3,
       "installmentPrice": 333,
       "limit": 2,
-      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "endOfDiscount": "2024-08-08T16:13",
       "discountPrice": 99,
       "category": "Ev Aletleri",
       "categoryUrl": "ev-aletleri",
       "subcategory": "Ütüler",
       "subcategoryUrl": "utuler",
       "images": [
-        {
-          "color": "Beyaz",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        },
-        {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Beyaz",
-        "Mavi"
-      ],
+      "colors": ["Beyaz", "Mavi"],
       "otherSellers": [
         {
           "seller": "Arçelik",
           "price": 999,
           "rating": 9,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 20
         },
         {
@@ -446,11 +377,7 @@
           "answer": "2400W."
         }
       ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
       "fibabanka": true,
       "specialForYou": false,
       "newProduct": false,
@@ -467,17 +394,11 @@
       "configration": [
         {
           "title": "Renk",
-          "options": [
-            "Beyaz",
-            "Gri"
-          ]
+          "options": ["Beyaz", "Gri"]
         },
         {
           "title": "Kapasite",
-          "options": [
-            "500L",
-            "600L"
-          ]
+          "options": ["500L", "600L"]
         }
       ],
       "price": 14999,
@@ -485,34 +406,25 @@
       "installmentCount": 12,
       "installmentPrice": 1249,
       "limit": 1,
-      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "endOfDiscount": "2024-08-08T16:13",
       "discountPrice": 1999,
       "category": "Beyaz Eşya",
       "categoryUrl": "beyaz-esya",
       "subcategory": "Buzdolapları",
       "subcategoryUrl": "buzdolaplari",
       "images": [
-        {
-          "color": "Beyaz",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00HRNS/00HRNS-1/00HRNS-1_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/Cihaz/aksesuar/Samsung/rb50rs334ww-tr-543-l-no-frost-buzdolabi/cg/1/1_600x450.png?1720095274003"
-        }
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00HRNS/00HRNS-1/00HRNS-1_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/Cihaz/aksesuar/Samsung/rb50rs334ww-tr-543-l-no-frost-buzdolabi/cg/1/1_600x450.png?1720095274003"
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Beyaz",
-        "Gri"
-      ],
+      "colors": ["Beyaz", "Gri"],
       "otherSellers": [
         {
           "seller": "Arçelik",
           "price": 14999,
           "rating": 9,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 15
         },
         {
@@ -553,11 +465,7 @@
           "answer": "Evet, no-frost özelliği bulunmaktadır."
         }
       ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -574,18 +482,11 @@
       "configration": [
         {
           "title": "Renk",
-          "options": [
-            "Gri",
-            "Gümüş"
-          ]
+          "options": ["Gri", "Gümüş"]
         },
         {
           "title": "Hafıza",
-          "options": [
-            "256 GB",
-            "512 GB",
-            "1 TB"
-          ]
+          "options": ["256 GB", "512 GB", "1 TB"]
         }
       ],
       "price": 34999,
@@ -593,34 +494,25 @@
       "installmentCount": 6,
       "installmentPrice": 5833,
       "limit": 1,
-      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "endOfDiscount": "2024-08-08T16:13",
       "discountPrice": 3999,
       "category": "Bilgisayar",
       "categoryUrl": "bilgisayar",
       "subcategory": "Macbook",
       "subcategoryUrl": "macbook",
       "images": [
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gümüş",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Gri",
-        "Gümüş"
-      ],
+      "colors": ["Gri", "Gümüş"],
       "otherSellers": [
         {
           "seller": "Apple Store",
           "price": 34999,
           "rating": 10,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 15
         },
         {
@@ -667,11 +559,7 @@
           "answer": "20 saat."
         }
       ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -688,18 +576,11 @@
       "configration": [
         {
           "title": "Renk",
-          "options": [
-            "Beyaz",
-            "Gri"
-          ]
+          "options": ["Beyaz", "Gri"]
         },
         {
           "title": "Kapasite",
-          "options": [
-            "7 kg",
-            "9 kg",
-            "11 kg"
-          ]
+          "options": ["7 kg", "9 kg", "11 kg"]
         }
       ],
       "price": 7999,
@@ -707,34 +588,25 @@
       "installmentCount": 6,
       "installmentPrice": 1333,
       "limit": 2,
-      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "endOfDiscount": "2024-08-08T16:13",
       "discountPrice": 0,
       "category": "Beyaz Eşya",
       "categoryUrl": "beyaz-esya",
       "subcategory": "Çamaşır Makineleri",
       "subcategoryUrl": "camasir-makineleri",
       "images": [
-        {
-          "color": "Beyaz",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        },
-        {
-          "color": "Gri",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Beyaz",
-        "Gri"
-      ],
+      "colors": ["Beyaz", "Gri"],
       "otherSellers": [
         {
           "seller": "Bosch",
           "price": 7999,
           "rating": 9,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 10
         },
         {
@@ -779,11 +651,7 @@
           "answer": "A+++."
         }
       ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
@@ -800,18 +668,11 @@
       "configration": [
         {
           "title": "Renk",
-          "options": [
-            "Mavi",
-            "Siyah",
-            "Beyaz"
-          ]
+          "options": ["Mavi", "Siyah", "Beyaz"]
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
       "price": 12999,
@@ -819,39 +680,26 @@
       "installmentCount": 6,
       "installmentPrice": 2166,
       "limit": 2,
-      "endOfDiscount": "2024-8-31T23:59:59.999Z",
+      "endOfDiscount": "2024-08-08T16:13",
       "discountPrice": 999,
       "category": "Telefon",
       "categoryUrl": "telefon",
       "subcategory": "Android Telefonlar",
       "subcategoryUrl": "android-telefonlar",
       "images": [
-        {
-          "color": "Mavi",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        },
-        {
-          "color": "Siyah",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        },
-        {
-          "color": "Beyaz",
-          "url": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-        }
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Mavi",
-        "Siyah",
-        "Beyaz"
-      ],
+      "colors": ["Mavi", "Siyah", "Beyaz"],
       "otherSellers": [
         {
           "seller": "Mi Store",
           "price": 12999,
           "rating": 9,
-          "endOfDiscount": "2024-8-31T23:59:59.999Z",
+          "endOfDiscount": "2024-08-08T16:13",
           "stock": 20
         },
         {
@@ -892,15 +740,47 @@
           "answer": "5.020 mAh."
         }
       ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
+      "badges": ["Kampanyalı", "Ücretsiz Kargo", "Garantili"],
       "fibabanka": true,
       "specialForYou": true,
       "newProduct": true,
       "bestOffers": true
+    },
+    {
+      "title": "iphone 12",
+      "rating": 5,
+      "stock": 4,
+      "nofSales": 4,
+      "brand": "Apple",
+      "seller": "Apple",
+      "price": 30000,
+      "creditCard": true,
+      "installmentCount": 5,
+      "installmentPrice": 6000,
+      "limit": 4,
+      "endOfDiscount": "2024-08-08T16:13",
+      "discountPrice": 3000,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/141005-1_large.jpg",
+        "https://cdn.akakce.com/z/apple/iphone-11-64-gb-aksesuarsiz-kutu.jpg"
+      ],
+      "freeShipping": false,
+      "guarantee": false,
+      "description": "iphone 11",
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": true,
+      "bestOffers": true,
+      "configration": [],
+      "specifications": [],
+      "comments": [],
+      "qa": [],
+      "badges": [],
+      "id": 8
     }
   ],
   "popularCategories": [

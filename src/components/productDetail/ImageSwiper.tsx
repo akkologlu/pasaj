@@ -2,9 +2,8 @@ import { StyledSwiper } from "@/styles/styled";
 import { Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import CustomImage from "../common/CustomImage";
-import { Image } from "@/types/productType";
 type ImageSwiperProps = {
-  images: Image[];
+  images: string[];
 };
 const ImageSwiper: React.FC<ImageSwiperProps> = ({ images }) => {
   return (
@@ -19,9 +18,9 @@ const ImageSwiper: React.FC<ImageSwiperProps> = ({ images }) => {
       slidesPerView={1}
       navigation
     >
-      {images.map((image: Image, index: number) => (
+      {images.map((image: string, index: number) => (
         <SwiperSlide style={{ padding: "1rem 2rem" }} key={index}>
-          <CustomImage src={image.url} height={400} alt={image.color} />
+          <CustomImage src={image} height={400} alt="image" />
         </SwiperSlide>
       ))}
     </StyledSwiper>

@@ -2,9 +2,7 @@ import {
   SpaceEvenly,
   StyledCol,
   StyledContainer,
-  StyledDiv,
   StyledLoginModal,
-  StyledText,
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
 import Link from "next/link";

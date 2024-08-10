@@ -6,13 +6,8 @@ import "swiper/css/pagination";
 import CustomImage from "./CustomImage";
 import { StyledCardSwiper } from "@/styles/styled";
 
-type ImageType = {
-  color: string;
-  url: string;
-};
-
 type CardSwiperProps = {
-  image: ImageType[];
+  image: string[];
 };
 
 const CardSwiper: React.FC<CardSwiperProps> = ({ image }) => {
@@ -29,9 +24,9 @@ const CardSwiper: React.FC<CardSwiperProps> = ({ image }) => {
         style={{ height: "200px", width: "100%" }}
         spaceBetween={10}
       >
-        {image.map((img) => (
-          <SwiperSlide key={img.color}>
-            <CustomImage src={img.url} height={200} alt={img.url} />
+        {image.map((img, index) => (
+          <SwiperSlide key={index}>
+            <CustomImage src={img} height={200} alt={"cart image"} />
           </SwiperSlide>
         ))}
       </StyledCardSwiper>

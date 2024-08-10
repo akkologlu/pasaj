@@ -17,7 +17,7 @@ import {
   StyledText,
   SpaceBetween,
 } from "@/styles/styled";
-import type { Image, Product } from "@/types/productType";
+import type { Product } from "@/types/productType";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { GetServerSideProps } from "next";
 import { Session } from "next-auth";
@@ -63,7 +63,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
         <StyledContainer>
           <SpaceBetween $wrap={true}>
             <StyledCol $sizemd={6}>
-              <ImageSwiper images={data.images as Image[]} />
+              <ImageSwiper images={data.images as string[]} />
               <StyledLimitBadge
                 $padding="0.75rem 2rem"
                 $radius="0.5rem"

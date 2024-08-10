@@ -24,7 +24,7 @@ const CompareBanner = () => {
             <CompareBannerItem
               key={index}
               title={product?.title}
-              image={product?.images[0]?.url}
+              image={product?.images[0]}
               id={product?.id}
             />
           ))}

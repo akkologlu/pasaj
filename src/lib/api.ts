@@ -27,8 +27,30 @@ export const fetchSimilarProducts = async (category: string) => {
   }
   return res.json();
 };
-export const fetchProduct = async (id: string) => {
+export const fetchProduct = async (id: string | number) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`);
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
+export const deleteProduct = async (id: string | number) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
+export const createProduct = async (data: Product) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
   if (!res.ok) {
     throw new Error("Network response was not ok");
   }
@@ -81,7 +103,23 @@ export const fetchSearchProducts = async (search: string) => {
   }
   return res.json();
 };
-
+export const updateProduct = async (data: Product) => {
+  console.log(data);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_DB_URL}/products/${data.id}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
 export const addUser = async (data: User) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users`, {
     method: "POST",
@@ -96,7 +134,7 @@ export const addUser = async (data: User) => {
   return res.json();
 };
 
-export const getUser = async (id: string) => {
+export const getUser = async (id: string | number) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${id}`);
   if (!res.ok) {
     throw new Error("Network response was not ok");
@@ -104,7 +142,7 @@ export const getUser = async (id: string) => {
   return res.json();
 };
 
-export const fetchUserCart = async (id: string) => {
+export const fetchUserCart = async (id: string | number) => {
   const user = await getUser(id);
   return user.cart;
 };

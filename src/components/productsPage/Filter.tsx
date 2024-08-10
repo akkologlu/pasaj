@@ -18,7 +18,11 @@ const Filter: React.FC<FilterProps> = ({ data }) => {
   const brands = data.map((item: Product) => item.brand);
   const uniqueBrands = Array.from(new Set(brands));
   const sellers = data.flatMap((item: Product) =>
-    item.otherSellers.map((seller) => seller.seller)
+    item.otherSellers
+      ? item.otherSellers
+          .map((seller) => seller.seller)
+          .filter((seller) => seller !== undefined && seller !== null)
+      : []
   );
   const uniqueSellers = Array.from(new Set(sellers));
   const handlePriceRangeChange = (range: [number, number] | null) => {

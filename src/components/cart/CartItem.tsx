@@ -11,7 +11,6 @@ import {
 import CustomImage from "../common/CustomImage";
 import React, { useState } from "react";
 import { Cart } from "@/types/cartType";
-import { it } from "node:test";
 
 type CartItemProps = {
   item: Cart;

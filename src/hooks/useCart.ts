@@ -58,7 +58,7 @@ const useCart = (userId: string, cart: Cart[]) => {
         cartId: crypto.randomUUID(),
         productId: product.id,
         title: product.title,
-        image: product.images[0].url,
+        image: product.images[0],
         seller: product.seller,
         oldPrice: product.price,
         discount: product.discountPrice,

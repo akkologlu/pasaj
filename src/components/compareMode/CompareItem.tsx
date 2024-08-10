@@ -20,7 +20,7 @@ const CompareItem: React.FC<CompareItemProps> = ({ product }) => {
       <StyledRow>
         <StyledCol $sizemd={3}>
           <CustomImage
-            src={product.images[0].url}
+            src={product.images[0]}
             alt={product.title}
             height={75}
           />

@@ -105,7 +105,7 @@ const SearchForm = () => {
                         <StyledCol $sizemd={9}>
                           <StyledRow>
                             <CustomImage
-                              src={product.images[0].url}
+                              src={product.images[0]}
                               alt={product.title}
                               height={70}
                               width="70px"

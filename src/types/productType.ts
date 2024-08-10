@@ -2,12 +2,6 @@ export type Option = {
   title: string;
   options: string[];
 };
-
-export type Image = {
-  color: string;
-  url: string;
-};
-
 type Seller = {
   seller: string;
   price: number;
@@ -41,6 +35,9 @@ export type QA = {
     seller: string;
   };
 };
+export type Images = {
+  image: string;
+};
 
 export type Product = {
   id: number | string;
@@ -61,7 +58,7 @@ export type Product = {
   categoryUrl: string;
   subcategory: string;
   subcategoryUrl: string;
-  images: Image[];
+  images: string[];
   freeShipping: boolean;
   guarantee: boolean;
   colors: string[];
