@@ -9,7 +9,11 @@ import {
 import { deleteProduct, fetchAllProducts } from "@/lib/api";
 import Link from "next/link";
 import ProductList from "@/components/admin/ProductList";
-import { StyledContainer } from "@/styles/styled";
+import {
+  JustifyBetweenAlignCenter,
+  StyledContainer,
+  StyledPrimaryFormButton,
+} from "@/styles/styled";
 import toast from "react-hot-toast";
 
 interface AdminProps {
@@ -49,8 +53,14 @@ const Admin: React.FC<AdminProps> = () => {
   }
   return (
     <StyledContainer>
-      <h2>Product Management</h2>
-      <Link href="/admin/products/create">Create New Product</Link>
+      <JustifyBetweenAlignCenter $margin="2rem 0">
+        <h2>
+          Ürünler <span>({data.length})</span>{" "}
+        </h2>
+        <Link href="/admin/products/create">
+          <StyledPrimaryFormButton as="span">Ürün Ekle</StyledPrimaryFormButton>
+        </Link>
+      </JustifyBetweenAlignCenter>
       <ProductList products={data} onDelete={deleteMutation} />
     </StyledContainer>
   );

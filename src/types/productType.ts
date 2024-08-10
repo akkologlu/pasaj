@@ -60,7 +60,7 @@ export type Product = {
   categoryUrl: string;
   subcategory: string;
   subcategoryUrl: string;
-  images: Image[];
+  images: string[];
   freeShipping: boolean;
   guarantee: boolean;
   colors: string[];

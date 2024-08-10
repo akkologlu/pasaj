@@ -828,3 +828,11 @@ export const StyledCompareItem = styled(StyledDiv)`
     font-weight: 700;
   }
 `;
+export const StyledAdminList = styled(JustifyBetweenAlignCenter)`
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  padding: 1rem;
+`;
+export const StyledYellowButton = styled(StyledPrimaryFormButton)`
+  background-color: ${({ theme }) => theme.colors.yellow};
+  padding: 1rem;
+`;

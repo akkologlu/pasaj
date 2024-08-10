@@ -19,7 +19,6 @@ const ProductForm = ({
   const {
     register,
     handleSubmit,
-    watch,
     setValue,
     control,
     formState: { errors },
@@ -33,10 +32,7 @@ const ProductForm = ({
       setValue("subcategoryUrl", initialValues.subcategoryUrl || "");
     }
   }, [initialValues?.categoryUrl]);
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: "images",
-  });
+  const [images, setImages] = useState<string[]>(initialValues?.images || []);
   const {
     fields: configFields,
     append: appendConfig,
@@ -321,22 +317,33 @@ const ProductForm = ({
       </div>
       <div>
         <label>Images</label>
-        {fields.map((field, index) => (
-          <div key={field.id}>
+        {images.map((img, index) => (
+          <div key={index}>
             <input
               type="text"
-              {...register(`images.${index}` as const, { required: true })}
+              value={img}
+              onChange={(e) => {
+                const newImages = [...images];
+                newImages[index] = e.target.value;
+                setImages(newImages);
+              }}
+              required
             />
-            {errors.images?.[index] && <p>{errors.images[index]?.message}</p>}
-            <button type="button" onClick={() => remove(index)}>
+            <button
+              type="button"
+              onClick={() => {
+                setImages(images.filter((_, i) => i !== index));
+              }}
+            >
               Remove
             </button>
           </div>
         ))}
-        <button type="button" onClick={() => append({ image: "" })}>
+        <button type="button" onClick={() => setImages([...images, ""])}>
           Add Image
         </button>
       </div>
+
       <button type="submit">{submitText}</button>
     </form>
   );
