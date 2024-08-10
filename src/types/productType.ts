@@ -38,7 +38,9 @@ export type QA = {
 export type Images = {
   image: string;
 };
-
+export type Image = {
+  image: string;
+};
 export type Product = {
   id: number | string;
   title: string;
@@ -58,7 +60,7 @@ export type Product = {
   categoryUrl: string;
   subcategory: string;
   subcategoryUrl: string;
-  images: string[];
+  images: Image[];
   freeShipping: boolean;
   guarantee: boolean;
   colors: string[];

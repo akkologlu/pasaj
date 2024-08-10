@@ -1,9 +1,8 @@
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Product } from "@/types/productType";
 import { productSchema } from "@/validation/product";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 
 type ProductFormProps = {
   initialValues?: Product;
@@ -16,17 +15,17 @@ const ProductForm = ({
   onSubmit,
   submitText,
 }: ProductFormProps) => {
-  const [images, setImages] = useState<string[]>(initialValues?.images || []);
   const [subcategories, setSubcategories] = useState<Record<string, string>>();
   const {
     register,
     handleSubmit,
     watch,
     setValue,
+    control,
     formState: { errors },
   } = useForm<Product>({
     resolver: zodResolver(productSchema),
-    defaultValues: { ...initialValues, images },
+    defaultValues: { ...initialValues },
   });
   useEffect(() => {
     if (initialValues?.categoryUrl) {
@@ -34,21 +33,26 @@ const ProductForm = ({
       setValue("subcategoryUrl", initialValues.subcategoryUrl || "");
     }
   }, [initialValues?.categoryUrl]);
-  const handleAddImage = () => {
-    if (images[images.length - 1] !== "") {
-      setImages([...images, ""]);
-    }
-  };
-
-  const handleRemoveImage = (index: number) => {
-    setImages(images.filter((_, i) => i !== index));
-  };
-
-  const handleImageChange = (index: number, value: string) => {
-    const newImages = [...images];
-    newImages[index] = value;
-    setImages(newImages);
-  };
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "images",
+  });
+  const {
+    fields: configFields,
+    append: appendConfig,
+    remove: removeConfig,
+  } = useFieldArray({
+    control,
+    name: "configration",
+  });
+  const {
+    fields: specificationFields,
+    append: appendSpecification,
+    remove: removeSpecification,
+  } = useFieldArray({
+    control,
+    name: "specifications",
+  });
 
   const handleCategoryChange = (categoryUrl: string) => {
     switch (categoryUrl) {
@@ -94,22 +98,38 @@ const ProductForm = ({
     setValue("subcategory", subcategoryName || "");
   };
 
-  const onSubmitForm = (data: Product) => {
-    if (images[images.length - 1] !== "") {
-      onSubmit({ ...data, images });
-    } else {
-      toast.error("Please fill out the last image field before submitting.");
-    }
-  };
-
   return (
-    <form onSubmit={handleSubmit(onSubmitForm)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <label>Title</label>
         <input {...register("title")} />
         {errors.title && <p>{errors.title.message}</p>}
       </div>
-
+      <div>
+        <label>Configurations</label>
+        {configFields.map((configField, configIndex) => (
+          <div key={configField.id} style={{ marginBottom: "20px" }}>
+            <input
+              placeholder="Configuration Title"
+              {...register(`configration.${configIndex}.title` as const)}
+            />
+            <button type="button" onClick={() => removeConfig(configIndex)}>
+              Remove Configuration
+            </button>
+            <ConfigOptions
+              control={control}
+              configIndex={configIndex}
+              register={register}
+            />
+          </div>
+        ))}
+        <button
+          type="button"
+          onClick={() => appendConfig({ title: "", options: [""] })}
+        >
+          Add Configuration
+        </button>
+      </div>
       <div>
         <label>Rating</label>
         <input
@@ -185,8 +205,10 @@ const ProductForm = ({
       <div>
         <label>End of Discount</label>
         <input
-          type="datetime-local"
-          {...register("endOfDiscount", { valueAsDate: true })}
+          type="date"
+          {...register("endOfDiscount", {
+            valueAsDate: true,
+          })}
         />
         {errors.endOfDiscount && <p>{errors.endOfDiscount.message}</p>}
       </div>
@@ -260,32 +282,58 @@ const ProductForm = ({
         <label>New Product</label>
         <input type="checkbox" {...register("newProduct")} />
       </div>
-
       <div>
-        <label>Best Offers</label>
-        <input type="checkbox" {...register("bestOffers")} />
-      </div>
-      <div>
-        <label>Images</label>
-        {images.map((image, index) => (
-          <div key={index}>
+        <label>Specifications</label>
+        {specificationFields.map((field, index) => (
+          <div key={field.id}>
             <input
               type="text"
-              value={image}
-              onChange={(e) => handleImageChange(index, e.target.value)}
-              required
+              placeholder="Title"
+              {...register(`specifications.${index}.title` as const, {
+                required: true,
+              })}
             />
-            {errors.images?.[index] && <p>{errors.images[index]?.message}</p>}
-            <button type="button" onClick={() => handleRemoveImage(index)}>
+            <input
+              type="text"
+              placeholder="Value"
+              {...register(`specifications.${index}.value` as const, {
+                required: true,
+              })}
+            />
+            {errors.specifications?.[index] && (
+              <p>{errors.specifications[index]?.message}</p>
+            )}
+            <button type="button" onClick={() => removeSpecification(index)}>
               Remove
             </button>
           </div>
         ))}
         <button
           type="button"
-          onClick={handleAddImage}
-          disabled={images[images.length - 1] === ""}
+          onClick={() => appendSpecification({ title: "", value: "" })}
         >
+          Add Specification
+        </button>
+      </div>
+      <div>
+        <label>Best Offers</label>
+        <input type="checkbox" {...register("bestOffers")} />
+      </div>
+      <div>
+        <label>Images</label>
+        {fields.map((field, index) => (
+          <div key={field.id}>
+            <input
+              type="text"
+              {...register(`images.${index}` as const, { required: true })}
+            />
+            {errors.images?.[index] && <p>{errors.images[index]?.message}</p>}
+            <button type="button" onClick={() => remove(index)}>
+              Remove
+            </button>
+          </div>
+        ))}
+        <button type="button" onClick={() => append({ image: "" })}>
           Add Image
         </button>
       </div>
@@ -293,5 +341,46 @@ const ProductForm = ({
     </form>
   );
 };
+type ConfigOptionsProps = {
+  control: any;
+  configIndex: number;
+  register: any;
+};
 
+const ConfigOptions: React.FC<ConfigOptionsProps> = ({
+  control,
+  configIndex,
+  register,
+}) => {
+  const {
+    fields: optionFields,
+    append: appendOption,
+    remove: removeOption,
+  } = useFieldArray({
+    control,
+    name: `configration.${configIndex}.options`,
+  });
+
+  return (
+    <div>
+      <label>Options</label>
+      {optionFields.map((optionField, optionIndex) => (
+        <div key={optionField.id}>
+          <input
+            placeholder={`Option ${optionIndex + 1}`}
+            {...register(
+              `configration.${configIndex}.options.${optionIndex}` as const
+            )}
+          />
+          <button type="button" onClick={() => removeOption(optionIndex)}>
+            Remove Option
+          </button>
+        </div>
+      ))}
+      <button type="button" onClick={() => appendOption("")}>
+        Add Option
+      </button>
+    </div>
+  );
+};
 export default ProductForm;

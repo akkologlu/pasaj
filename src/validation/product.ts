@@ -24,7 +24,7 @@ export const productSchema = z.object({
     .number()
     .min(0, "Installment price must be a positive number"),
   limit: z.number().min(0, "Limit must be a positive number"),
-  endOfDiscount: z.string().optional(),
+  endOfDiscount: z.date().optional(),
   discountPrice: z.number().min(0, "Discount price must be a positive number"),
   category: z.string().min(1, "Category is required"),
   categoryUrl: z.string().min(1, "Category URL is required"),
