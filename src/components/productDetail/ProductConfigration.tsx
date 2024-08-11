@@ -1,6 +1,7 @@
 import useCart from "@/hooks/useCart";
 import { useFetchUserCart } from "@/hooks/useDataFetching";
 import useFavorite from "@/hooks/useFavorite";
+import { formatTimeDifference } from "@/lib/helpers";
 import {
   AlignCenter,
   JustifyBetweenAlignCenter,
@@ -31,6 +32,7 @@ const ProductConfigration: React.FC<ProductConfigrationProps> = ({
   session,
   data,
 }) => {
+  const { days, hours, minutes } = formatTimeDifference(data.endOfDiscount);
   const { data: cart } = useFetchUserCart(session?.user?.id);
   const { handleAddToCart } = useCart(session?.user?.id, cart);
   const { isFav, handleFav } = useFavorite(data);
@@ -97,7 +99,8 @@ const ProductConfigration: React.FC<ProductConfigrationProps> = ({
         <StyledText $fw="700">
           İndirim bitmesine{" "}
           <StyledCountDown as="span" $color="grey" $fs=".85rem">
-            <span>1</span> Gn <span>10</span> Sa <span>16</span> Dk
+            <span>{days}</span> Gn <span>{hours}</span> Sa{" "}
+            <span>{minutes}</span> Dk
           </StyledCountDown>{" "}
           kaldı.
         </StyledText>{" "}
