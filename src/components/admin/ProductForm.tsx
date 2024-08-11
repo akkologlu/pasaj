@@ -40,7 +40,9 @@ const ProductForm = ({
   useEffect(() => {
     if (initialValues?.categoryUrl) {
       handleCategoryChange(initialValues.categoryUrl);
-      setValue("subcategoryUrl", initialValues.subcategoryUrl || "");
+      setTimeout(() => {
+        setValue("subcategoryUrl", initialValues?.subcategoryUrl || "");
+      }, 0);
     }
   }, [initialValues?.categoryUrl]);
   const [images, setImages] = useState<string[]>(initialValues?.images || []);
@@ -74,14 +76,15 @@ const ProductForm = ({
           masaustu: "Masaüstü",
           dizustu: "Dizüstü",
           tablet: "Tablet",
+          macbook: "Macbook",
         });
         setValue("category", "Bilgisayar");
         break;
       case "beyaz-esya":
         setSubcategories({
-          buzdolabi: "Buzdolabı",
-          "camasir-makinesi": "Çamaşır Makinesi",
-          "bulasik-makinesi": "Bulaşık Makinesi",
+          buzdolaplari: "Buzdolabı",
+          "camasir-makineleri": "Çamaşır Makinesi",
+          "bulasik-makineleri": "Bulaşık Makinesi",
         });
         setValue("category", "Beyaz Eşya");
         break;
@@ -90,6 +93,7 @@ const ProductForm = ({
           supurge: "Süpürge",
           mikser: "Mikser",
           "kahve-makinesi": "Kahve Makinesi",
+          utuler: "Ütüler",
         });
         setValue("category", "Ev Aletleri");
         break;

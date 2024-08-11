@@ -171,7 +171,7 @@ export const addComment = async ({
   data,
 }: {
   id: string | number;
-  data: Comments;
+  data: Comments[];
 }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`, {
     method: "PATCH",

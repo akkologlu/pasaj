@@ -19,3 +19,10 @@ export type User = {
   cart: Cart[];
   fav: string[];
 };
+export type Fav = {
+  id: string | number;
+  title: string;
+  price: number;
+  discountPrice: number;
+  images: string[];
+};

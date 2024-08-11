@@ -22,7 +22,7 @@ interface AdminProps {
     id: string;
   };
 }
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
     queryKey: ["products"],

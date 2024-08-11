@@ -21,7 +21,7 @@ const DetailTabs: React.FC<DetailTabsProps> = ({ data }) => {
   const [activeTab, setActiveTab] = useState(tabOptions[0].url);
 
   const { mutate } = useMutation({
-    mutationFn: ({ id, data }: { id: string | number; data: any }) =>
+    mutationFn: ({ id, data }: { id: string | number; data: Comments[] }) =>
       addComment({ id, data }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["product"] });
@@ -35,7 +35,7 @@ const DetailTabs: React.FC<DetailTabsProps> = ({ data }) => {
       ...data.comments,
       {
         id: crypto.randomUUID(),
-        name: session?.data?.user?.email,
+        name: session?.data?.user?.email || "Anonymous",
         date: new Date().toISOString(),
         ...newComment,
       },

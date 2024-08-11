@@ -25,10 +25,10 @@ const ProductList: React.FC<ProductListProps> = ({ products, onDelete }) => (
             height={70}
           />
         </StyledCol>
-        <StyledCol $sizemd={2}>
+        <StyledCol $sizemd={3}>
           <h4>{product.title}</h4>
         </StyledCol>
-        <StyledCol $sizemd={2}>
+        <StyledCol $sizemd={1}>
           <p>{product.category}</p>
         </StyledCol>
         <StyledCol $sizemd={2}>

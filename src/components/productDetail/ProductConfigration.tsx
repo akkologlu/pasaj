@@ -15,7 +15,7 @@ import {
   StyledSelect,
   StyledText,
 } from "@/styles/styled";
-import { Product } from "@/types/productType";
+import { Option, Product } from "@/types/productType";
 import { Rating } from "@smastrom/react-rating";
 import { Session } from "next-auth";
 import { useState } from "react";
@@ -62,7 +62,7 @@ const ProductConfigration: React.FC<ProductConfigrationProps> = ({
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm({
+  } = useForm<Record<string, string | number>>({
     defaultValues: {
       price: defaultOption ? defaultOption.fullPrice : 0,
     },
@@ -106,7 +106,7 @@ const ProductConfigration: React.FC<ProductConfigrationProps> = ({
         </StyledText>
       </SpaceBetween>
       <SpaceBetween $gap="1rem">
-        {data.configration.map((config: any, index: number) => (
+        {data.configration.map((config: Option, index: number) => (
           <StyledSelect $sizemd={5.75} key={index}>
             <label htmlFor={config.title}>{config.title}</label>
             <select
@@ -114,7 +114,7 @@ const ProductConfigration: React.FC<ProductConfigrationProps> = ({
               name={config.title}
               id={config.title}
             >
-              {config.options.map((option: any, index: number) => (
+              {config.options.map((option: string, index: number) => (
                 <option key={index} value={option}>
                   {option}
                 </option>

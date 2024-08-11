@@ -12,6 +12,10 @@ import Link from "next/link";
 import { useFavStore } from "@/store/FavStore";
 import { useEffect } from "react";
 import { useFetchFavs, useFetchUserCart } from "@/hooks/useDataFetching";
+import { FaRegUserCircle } from "react-icons/fa";
+import { BsCart4 } from "react-icons/bs";
+import { IoIosArrowDown } from "react-icons/io";
+import { Fav } from "@/types/cartType";
 type NavbarProps = {
   loginModal: boolean;
   setloginModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
   const { data: favs, isSuccess } = useFetchFavs(session?.user?.id as string);
   useEffect(() => {
     if (isSuccess && favs) {
-      setFavs(favs.map((item: any) => item));
+      setFavs(favs.map((item: Fav) => item));
     }
   }, [favs]);
 
@@ -36,26 +40,14 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
           </Link>
         </StyledCol>
         <SearchForm />
-
         <StyledCol $sizemd={1.5}>
           <CustomButton
             bgcolor="white"
             onclick={() => setloginModal(!loginModal)}
           >
-            <CustomImage
-              src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
-              alt="icon"
-              height={20}
-              width="20px"
-            />
+            <FaRegUserCircle size={20} />
             <p>{session ? "Hesabım" : "Giriş Yap"}</p>
-
-            <CustomImage
-              src="https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png"
-              alt="icon"
-              height={14}
-              width="14px"
-            />
+            <IoIosArrowDown />
             {session && loginModal && (
               <StyledMyAccountModal $pos="absolute" $bgcolor="modal">
                 <button onClick={() => signOut({ callbackUrl: "/" })}>
@@ -67,12 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
         </StyledCol>
         <StyledCol $sizemd={1.5}>
           <CustomButton bgcolor="yellow" href="/cart">
-            <CustomImage
-              src="https://www.freeiconspng.com/thumbs/cart-icon/basket-cart-icon-27.png"
-              alt="icon"
-              height={20}
-              width="20px"
-            />
+            <BsCart4 size={20} />
             <p>Sepet</p>
             <StyledCartCount
               $bgcolor="red"
