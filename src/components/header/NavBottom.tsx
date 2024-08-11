@@ -5,6 +5,7 @@ import {
   StyledCol,
   StyledContainer,
   StyledDiv,
+  StyledHamburgerMenuIcon,
   StyledNavBottom,
   StyledNavBottomMobile,
   StyledRow,
@@ -69,14 +70,14 @@ const NavBottom: React.FC = () => {
           </StyledCol>
         ))}
       </StyledNavBottom>
-      <StyledDiv
+      <StyledHamburgerMenuIcon
         $display="flex"
         $justify="flex-end"
         $margin="1rem 0"
         onClick={() => setShowMobile(!showMobile)}
       >
         <GiHamburgerMenu size={30} color="#ffc900" />
-      </StyledDiv>
+      </StyledHamburgerMenuIcon>
       <StyledNavBottomMobile
         $gap="1rem"
         $padding="1rem .25rem"

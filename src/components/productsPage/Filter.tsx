@@ -9,6 +9,7 @@ import {
 } from "@/styles/styled";
 import { priceRanges, sortOptions } from "@/lib/mockData";
 import { FilterState } from "@/types/filterType";
+import Link from "next/link";
 
 interface FilterProps {
   data: Product[];
@@ -19,6 +20,11 @@ const Filter: React.FC<FilterProps> = ({ data }) => {
     useFormContext<FilterState>();
   const brands = data.map((item: Product) => item.brand);
   const uniqueBrands = Array.from(new Set(brands));
+  const subcategories = data.map((item: Product) => item.subcategory);
+  const uniqueSubcategories = Array.from(new Set(subcategories));
+  const subCategoryUrl = data.map((item: Product) => item.subcategoryUrl);
+  const uniqueSubCategoryUrl = Array.from(new Set(subCategoryUrl));
+
   const sellers = data.flatMap((item: Product) =>
     item.otherSellers
       ? item.otherSellers
@@ -46,6 +52,16 @@ const Filter: React.FC<FilterProps> = ({ data }) => {
 
   return (
     <div>
+      <FilterSection title={data[0].category} isOpen={true}>
+        {uniqueSubcategories.map((subcategory, index) => (
+          <Link
+            key={subcategory}
+            href={`/products/${data[0].categoryUrl}/${uniqueSubCategoryUrl[index]}`}
+          >
+            {subcategory} &gt;
+          </Link>
+        ))}
+      </FilterSection>
       <FilterSection title="Markalar" isOpen={true}>
         {uniqueBrands.map((brand) => (
           <StyledLabel as="label" key={brand}>

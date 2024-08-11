@@ -337,6 +337,12 @@ export const StyledNavBottomMobile = styled(
     display: ${(props) => (props.$active ? "flex" : "none")};
   }
 `;
+export const StyledHamburgerMenuIcon = styled(StyledDiv)`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
 export const StyledLoginModal = styled(StyledDiv)`
   top: 160px;
   left: 0;
