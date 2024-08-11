@@ -15,6 +15,7 @@ const Landing: React.FC = () => {
         <LandingSwiper
           landing={landing}
           height={500}
+          smheight={200}
           onSlideChange={handleSlideChange}
         />
       </StyledContainer>

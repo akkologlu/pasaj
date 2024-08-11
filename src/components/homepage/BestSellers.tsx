@@ -5,6 +5,7 @@ import {
   StyledRow,
   StyledText,
   FullCenterCol,
+  StyledBestSellerTab,
 } from "@/styles/styled";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
@@ -54,7 +55,13 @@ const BestSellers = () => {
             >
               <FullCenterCol $textAlign="center" $gap="1rem">
                 <CustomImage src={cat.image} alt={cat.title} height={30} />
-                <StyledText $center="center">{cat.title}</StyledText>
+                <StyledBestSellerTab
+                  $center="center"
+                  $color={activeTab === cat.productUrl ? "blue" : "grey"}
+                  $active={activeTab === cat.productUrl}
+                >
+                  {cat.title}
+                </StyledBestSellerTab>
               </FullCenterCol>
             </SwiperSlide>
           )

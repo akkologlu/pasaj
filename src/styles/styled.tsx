@@ -155,6 +155,7 @@ export const StyledBanner = styled(StyledDiv)`
 export const StyledAccountButton = styled(FullCenter)`
   border: 1px solid ${({ theme }) => theme.colors.border};
   cursor: pointer;
+  height: 2.85rem;
 `;
 type StyledImageProps = {
   $height?: number;
@@ -217,6 +218,15 @@ export const StyledSearchForm = styled(AlignCenter)`
       color: gray;
     }
   }
+`;
+type StyledBestSellerTabProps = {
+  $active?: boolean;
+};
+export const StyledBestSellerTab = styled(StyledText)<StyledBestSellerTabProps>`
+  cursor: pointer;
+  border-bottom: 2px solid
+    ${({ theme, $active }) => ($active ? theme.colors.blue : "transparent")};
+  height: 2.5rem;
 `;
 export const StyledCustomButton = styled(FullCenter)`
   width: 100%;
@@ -313,7 +323,18 @@ export const StyledNavBottom = styled(SpaceBetween)`
     }
   }
   @media (max-width: 768px) {
-    gap: 2rem;
+    display: none;
+  }
+`;
+type StyledNavBottomMobileProps = {
+  $active: boolean;
+};
+export const StyledNavBottomMobile = styled(
+  FlexCol
+)<StyledNavBottomMobileProps>`
+  display: none;
+  @media (max-width: 768px) {
+    display: ${(props) => (props.$active ? "flex" : "none")};
   }
 `;
 export const StyledLoginModal = styled(StyledDiv)`

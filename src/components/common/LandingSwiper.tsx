@@ -7,10 +7,12 @@ type LandingSwiperProps = {
   landing: string[];
   height: number;
   onSlideChange?: (swiper: Swiper) => void;
+  smheight?: number;
 };
 const LandingSwiper: React.FC<LandingSwiperProps> = ({
   landing,
   height,
+  smheight,
   onSlideChange,
 }) => {
   return (
@@ -28,7 +30,12 @@ const LandingSwiper: React.FC<LandingSwiperProps> = ({
     >
       {landing.map((logo, index) => (
         <SwiperSlide style={{ padding: "1rem 2rem" }} key={index}>
-          <CustomImage src={logo} height={height} alt={logo} />
+          <CustomImage
+            src={logo}
+            height={height}
+            smheight={smheight}
+            alt={logo}
+          />
         </SwiperSlide>
       ))}
     </StyledSwiper>

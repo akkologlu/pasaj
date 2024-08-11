@@ -174,7 +174,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
             </FormProvider>
           </StyledCol>
           <StyledCol $sizemd={9}>
-            <LandingSwiper landing={landing} height={350} />
+            <LandingSwiper landing={landing} height={350} smheight={150} />
             <StyledRow>
               {sortedData.map((product: Product) => (
                 <ProductCard key={product.id} product={product} size={3.75} />

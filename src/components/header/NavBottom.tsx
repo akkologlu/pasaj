@@ -4,7 +4,9 @@ import {
   StyledCategoryModal,
   StyledCol,
   StyledContainer,
+  StyledDiv,
   StyledNavBottom,
+  StyledNavBottomMobile,
   StyledRow,
   StyledText,
 } from "@/styles/styled";
@@ -17,6 +19,7 @@ import {
   useFetchAllProducts,
   useFetchNavBottomCategories,
 } from "@/hooks/useDataFetching";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const NavBottom: React.FC = () => {
   const { data: categories = [] } = useFetchNavBottomCategories();
@@ -51,7 +54,7 @@ const NavBottom: React.FC = () => {
     setShowProduct(option.url);
     setShowModal(true);
   };
-
+  const [showMobile, setShowMobile] = useState(false);
   return (
     <>
       <StyledNavBottom onMouseLeave={() => setShowModal(false)}>
@@ -66,6 +69,25 @@ const NavBottom: React.FC = () => {
           </StyledCol>
         ))}
       </StyledNavBottom>
+      <StyledDiv
+        $display="flex"
+        $justify="flex-end"
+        $margin="1rem 0"
+        onClick={() => setShowMobile(!showMobile)}
+      >
+        <GiHamburgerMenu size={30} color="#ffc900" />
+      </StyledDiv>
+      <StyledNavBottomMobile
+        $gap="1rem"
+        $padding="1rem .25rem"
+        $active={showMobile}
+      >
+        {categories.map((cat: Category) => (
+          <Link href={`/products/${cat.url}`} key={cat.title}>
+            {cat.title}
+          </Link>
+        ))}
+      </StyledNavBottomMobile>
       {showModal && modalContent && (
         <StyledCategoryModal
           $modal={showModal}
