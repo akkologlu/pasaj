@@ -341,7 +341,7 @@ export const StyledLoginModal = styled(StyledDiv)`
   top: 160px;
   left: 0;
   width: 100%;
-  height: 600px;
+  min-height: 600px;
   z-index: 2;
   a {
     background-color: ${({ theme }) => theme.colors.yellow};
@@ -352,6 +352,9 @@ export const StyledLoginModal = styled(StyledDiv)`
     text-align: center;
     font-weight: 600;
     margin-top: 1rem;
+  }
+  @media (max-width: 768px) {
+    top: 230px;
   }
 `;
 export const StyledBlueBanner = styled(SpaceEvenly)`

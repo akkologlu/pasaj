@@ -13,7 +13,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ setloginModal }) => {
   return (
     <StyledLoginModal $pos="absolute" $bgcolor="modal" $padding="4rem">
       <StyledContainer>
-        <SpaceEvenly>
+        <SpaceEvenly $wrap={true}>
           <StyledCol $sizemd={4}>
             <CustomImage src="/login-image.webp" alt="login" height={200} />
             <h3>Turkcell Pasaj’ın fırsatlarla dolu dünyasına hoş geldiniz!</h3>
