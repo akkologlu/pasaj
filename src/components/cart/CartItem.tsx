@@ -20,7 +20,7 @@ type CartItemProps = {
     quantity: number,
     productId: string | number,
     itemLimit: number
-  ) => void;
+  ) => boolean;
 };
 const CartItem: React.FC<CartItemProps> = ({
   item,
@@ -32,19 +32,16 @@ const CartItem: React.FC<CartItemProps> = ({
   const incrementQuantity = () => {
     setQuantity((prev) => {
       const newQuantity = prev + 1;
-      if (newQuantity > item.limit) {
-        alert("Alım limiti bitti.");
-        return prev;
-      }
       const isUpdated = updateQuantity(
         item.cartId,
         newQuantity,
         item.productId,
         item.limit
       );
-      return newQuantity;
+      return isUpdated ? newQuantity : prev;
     });
   };
+
   const decrementQuantity = () => {
     setQuantity((prev) => {
       if (prev > 1) {

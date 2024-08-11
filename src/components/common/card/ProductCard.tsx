@@ -19,6 +19,7 @@ import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import useFavorite from "@/hooks/useFavorite";
 import { useCompareModeStore } from "@/store/CompareModeStore";
+import toast from "react-hot-toast";
 
 type ProductCardProps = {
   product: Product;
@@ -55,7 +56,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 removeFromCompare(product.id);
               } else {
                 if (compareProducts.length >= 3) {
-                  alert("En fazla 3 ürün");
+                  toast.error("En fazla 3 ürün karşılaştırabilirsiniz!");
                   return;
                 }
                 addToCompare(product);

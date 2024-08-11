@@ -23,25 +23,19 @@ interface CartPageProps {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);
-  try {
-    await queryClient.prefetchQuery({
-      queryKey: ["cart"],
-      queryFn: () => fetchUserCart(session?.user?.id as string),
-    });
-    return {
-      props: {
-        dehydratedState: dehydrate(queryClient),
-        user: {
-          email: session?.user.email as string,
-          id: session?.user.id as string,
-        },
+  await queryClient.prefetchQuery({
+    queryKey: ["cart"],
+    queryFn: () => fetchUserCart(session?.user?.id as string),
+  });
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+      user: {
+        email: session?.user.email as string,
+        id: session?.user.id as string,
       },
-    };
-  } catch (error) {
-    return {
-      notFound: true,
-    };
-  }
+    },
+  };
 };
 
 const CartPage: React.FC<CartPageProps> = ({ user }) => {

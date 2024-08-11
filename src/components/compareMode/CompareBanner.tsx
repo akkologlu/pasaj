@@ -7,6 +7,7 @@ import {
 } from "@/styles/styled";
 import CompareBannerItem from "./CompareBannerItem";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const CompareBanner = () => {
   const { compareProducts, removeAllFromCompare } = useCompareModeStore();
@@ -34,7 +35,7 @@ const CompareBanner = () => {
             $radius="1.5rem"
             $padding=".75rem 1.5rem"
             onClick={() =>
-              compareProducts.length < 2 && alert("en az iki ürün")
+              compareProducts.length < 2 && toast.error("En az 2 ürün seçin!")
             }
           >
             {compareProducts.length > 1 ? (

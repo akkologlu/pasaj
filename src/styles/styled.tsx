@@ -154,6 +154,7 @@ export const StyledBanner = styled(StyledDiv)`
 `;
 export const StyledAccountButton = styled(FullCenter)`
   border: 1px solid ${({ theme }) => theme.colors.border};
+  cursor: pointer;
 `;
 type StyledImageProps = {
   $height?: number;

@@ -16,6 +16,7 @@ import Comment from "./Comment";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
+import toast from "react-hot-toast";
 
 type ReviewsProps = {
   reviews: Comments[];
@@ -92,7 +93,7 @@ const Reviews: React.FC<ReviewsProps> = ({
                   <StyledCommentButton
                     onClick={() => {
                       if (!session?.data?.user) {
-                        alert("login first");
+                        toast.error("Yorum yapabilmek için giriş yapınız.");
                         return;
                       }
                       setShowForm(true);

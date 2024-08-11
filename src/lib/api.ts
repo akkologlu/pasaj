@@ -104,7 +104,6 @@ export const fetchSearchProducts = async (search: string) => {
   return res.json();
 };
 export const updateProduct = async (data: Product) => {
-  console.log(data);
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DB_URL}/products/${data.id}`,
     {
