@@ -1,5 +1,6 @@
 import ProductForm from "@/components/admin/ProductForm";
 import { createProduct } from "@/lib/api";
+import { StyledDiv, StyledText } from "@/styles/styled";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
@@ -29,10 +30,12 @@ const CreateProduct = () => {
   };
 
   return (
-    <div>
-      <h1>Create Product</h1>
+    <StyledDiv $margin="1rem 0">
+      <StyledText as="h3" $center="center" $margin="2rem 0" $color="darkBlue">
+        Ürün Ekle
+      </StyledText>
       <ProductForm onSubmit={handleCreateProduct} submitText="Create" />
-    </div>
+    </StyledDiv>
   );
 };
 

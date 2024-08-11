@@ -1,12 +1,12 @@
 import { z } from "zod";
 
 export const productSchema = z.object({
-  title: z.string().min(1, "Title is required"),
-  rating: z.number().min(0).max(5, "Rating must be between 0 and 5"),
-  stock: z.number().min(0, "Stock must be a positive number"),
-  nofSales: z.number().min(0, "Number of sales must be a positive number"),
-  brand: z.string().min(1, "Brand is required"),
-  seller: z.string().min(1, "Seller is required"),
+  title: z.string().min(1, "Başlık zorunludur"),
+  rating: z.number().min(0).max(5, "Değerlendirme 0 ile 5 arasında olmalıdır"),
+  stock: z.number().min(0, "Stok pozitif bir sayı olmalıdır"),
+  nofSales: z.number().min(0, "Satış sayısı pozitif bir sayı olmalıdır"),
+  brand: z.string().min(1, "Marka zorunludur"),
+  seller: z.string().min(1, "Satıcı zorunludur"),
   configration: z
     .array(
       z.object({
@@ -15,22 +15,24 @@ export const productSchema = z.object({
       })
     )
     .optional(),
-  price: z.number().min(0, "Price must be a positive number"),
+  price: z.number().min(0, "Fiyat pozitif bir sayı olmalıdır"),
   creditCard: z.boolean().optional(),
   installmentCount: z
     .number()
-    .min(0, "Installment count must be a positive number"),
+    .min(0, "Taksit sayısı pozitif bir sayı olmalıdır"),
   installmentPrice: z
     .number()
-    .min(0, "Installment price must be a positive number"),
-  limit: z.number().min(0, "Limit must be a positive number"),
+    .min(0, "Taksit fiyatı pozitif bir sayı olmalıdır"),
+  limit: z.number().min(0, "Limit pozitif bir sayı olmalıdır"),
   endOfDiscount: z.date().optional(),
-  discountPrice: z.number().min(0, "Discount price must be a positive number"),
-  category: z.string().min(1, "Category is required"),
-  categoryUrl: z.string().min(1, "Category URL is required"),
-  subcategory: z.string().min(1, "Subcategory is required"),
-  subcategoryUrl: z.string().min(1, "Subcategory URL is required"),
-  images: z.array(z.string().min(1, "Image URL is required")).optional(),
+  discountPrice: z
+    .number()
+    .min(0, "İndirimli fiyat pozitif bir sayı olmalıdır"),
+  category: z.string().min(1, "Kategori zorunludur"),
+  categoryUrl: z.string().min(1, "Kategori URL'si zorunludur"),
+  subcategory: z.string().min(1, "Alt kategori zorunludur"),
+  subcategoryUrl: z.string().min(1, "Alt kategori URL'si zorunludur"),
+  images: z.array(z.string().min(1, "Resim URL'si zorunludur")).optional(),
   freeShipping: z.boolean().optional(),
   guarantee: z.boolean().optional(),
   colors: z.array(z.string()).optional(),
@@ -38,10 +40,13 @@ export const productSchema = z.object({
     .array(
       z.object({
         seller: z.string(),
-        price: z.number().min(0, "Price must be a positive number"),
-        rating: z.number().min(0).max(10, "Rating must be between 0 and 10"),
+        price: z.number().min(0, "Fiyat pozitif bir sayı olmalıdır"),
+        rating: z
+          .number()
+          .min(0)
+          .max(10, "Değerlendirme 0 ile 10 arasında olmalıdır"),
         endOfDiscount: z.string().optional(),
-        stock: z.number().min(0, "Stock must be a positive number"),
+        stock: z.number().min(0, "Stok pozitif bir sayı olmalıdır"),
       })
     )
     .optional(),
@@ -60,7 +65,10 @@ export const productSchema = z.object({
         id: z.string().uuid(),
         date: z.string(),
         comment: z.string(),
-        rating: z.number().min(0).max(5, "Rating must be between 0 and 5"),
+        rating: z
+          .number()
+          .min(0)
+          .max(5, "Değerlendirme 0 ile 5 arasında olmalıdır"),
       })
     )
     .optional(),

@@ -1,3 +1,4 @@
+import { Product } from "@/types/productType";
 import { MdPayments } from "react-icons/md";
 import { RiRefund2Fill } from "react-icons/ri";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -138,5 +139,93 @@ export const whyPasaj = [
     description:
       "Ürünlerinizi kolayca ve hiçbir ücret ödemeden iptal ve iade edebilirsiniz.",
     icon: RiRefund2Fill,
+  },
+];
+export const stringLabels: {
+  title: string;
+  db: keyof Product;
+}[] = [
+  {
+    title: "Ürün İsmi",
+    db: "title",
+  },
+  {
+    title: "Ürün Markası",
+    db: "brand",
+  },
+  {
+    title: "Satıcı",
+    db: "seller",
+  },
+  {
+    title: "Açıklama",
+    db: "description",
+  },
+];
+export const numberLabels: {
+  title: string;
+  db: keyof Product;
+}[] = [
+  {
+    title: "Fiyat",
+    db: "price",
+  },
+  {
+    title: "Puan",
+    db: "rating",
+  },
+  {
+    title: "Stok",
+    db: "stock",
+  },
+  {
+    title: "Satış Adedi",
+    db: "nofSales",
+  },
+  {
+    title: "Taksit Sayısı",
+    db: "installmentCount",
+  },
+  {
+    title: "Taksit Tutarı",
+    db: "installmentPrice",
+  },
+  {
+    title: "Limit",
+    db: "limit",
+  },
+  {
+    title: "İndirim Tutarı",
+    db: "discountPrice",
+  },
+];
+export const checkboxLabels: {
+  title: string;
+  db: keyof Product;
+}[] = [
+  {
+    title: "Kredi Kartına Taksit",
+    db: "creditCard",
+  },
+  {
+    title: "Ücretsiz Kargo",
+    db: "freeShipping",
+  },
+  {
+    title: "Garanli Ürünler",
+    db: "guarantee",
+  },
+  {
+    title: "Fibabanka Kampanyası",
+    db: "fibabanka",
+  },
+  { title: "Size Özel Kampanyalar", db: "specialForYou" },
+  {
+    title: "Yeni Ürünler",
+    db: "newProduct",
+  },
+  {
+    title: "En İyi Fiyat",
+    db: "bestOffers",
   },
 ];

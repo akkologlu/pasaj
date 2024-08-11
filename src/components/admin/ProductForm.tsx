@@ -1,15 +1,26 @@
-import { useFieldArray, useForm } from "react-hook-form";
+import { FieldError, useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Product } from "@/types/productType";
 import { productSchema } from "@/validation/product";
 import { useEffect, useState } from "react";
-
+import { checkboxLabels, numberLabels, stringLabels } from "@/lib/mockData";
+import {
+  FlexCol,
+  JustifyBetweenAlignCenter,
+  SpaceBetween,
+  StyledCol,
+  StyledContainer,
+  StyledFieldButton,
+  StyledInput,
+  StyledLabel,
+  StyledPrimaryFormButton,
+  StyledRemoveButton,
+} from "@/styles/styled";
 type ProductFormProps = {
   initialValues?: Product;
   onSubmit: (data: Product) => void;
   submitText: string;
 };
-
 const ProductForm = ({
   initialValues,
   onSubmit,
@@ -49,7 +60,6 @@ const ProductForm = ({
     control,
     name: "specifications",
   });
-
   const handleCategoryChange = (categoryUrl: string) => {
     switch (categoryUrl) {
       case "telefon":
@@ -88,264 +98,199 @@ const ProductForm = ({
         setValue("category", "");
     }
   };
-
   const handleSubcategoryChange = (subcategoryUrl: string) => {
     const subcategoryName = subcategories?.[subcategoryUrl];
     setValue("subcategory", subcategoryName || "");
   };
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>Title</label>
-        <input {...register("title")} />
-        {errors.title && <p>{errors.title.message}</p>}
-      </div>
-      <div>
-        <label>Configurations</label>
-        {configFields.map((configField, configIndex) => (
-          <div key={configField.id} style={{ marginBottom: "20px" }}>
-            <input
-              placeholder="Configuration Title"
-              {...register(`configration.${configIndex}.title` as const)}
-            />
-            <button type="button" onClick={() => removeConfig(configIndex)}>
-              Remove Configuration
-            </button>
-            <ConfigOptions
-              control={control}
-              configIndex={configIndex}
-              register={register}
-            />
-          </div>
-        ))}
-        <button
-          type="button"
-          onClick={() => appendConfig({ title: "", options: [""] })}
-        >
-          Add Configuration
-        </button>
-      </div>
-      <div>
-        <label>Rating</label>
-        <input
-          type="number"
-          step="0.1"
-          {...register("rating", { valueAsNumber: true })}
-        />
-        {errors.rating && <p>{errors.rating.message}</p>}
-      </div>
-
-      <div>
-        <label>Stock</label>
-        <input type="number" {...register("stock", { valueAsNumber: true })} />
-        {errors.stock && <p>{errors.stock.message}</p>}
-      </div>
-
-      <div>
-        <label>Number of Sales</label>
-        <input
-          type="number"
-          {...register("nofSales", { valueAsNumber: true })}
-        />
-        {errors.nofSales && <p>{errors.nofSales.message}</p>}
-      </div>
-
-      <div>
-        <label>Brand</label>
-        <input {...register("brand")} />
-        {errors.brand && <p>{errors.brand.message}</p>}
-      </div>
-
-      <div>
-        <label>Seller</label>
-        <input {...register("seller")} />
-        {errors.seller && <p>{errors.seller.message}</p>}
-      </div>
-
-      <div>
-        <label>Price</label>
-        <input type="number" {...register("price", { valueAsNumber: true })} />
-        {errors.price && <p>{errors.price.message}</p>}
-      </div>
-
-      <div>
-        <label>Credit Card Available</label>
-        <input type="checkbox" {...register("creditCard")} />
-      </div>
-
-      <div>
-        <label>Installment Count</label>
-        <input
-          type="number"
-          {...register("installmentCount", { valueAsNumber: true })}
-        />
-        {errors.installmentCount && <p>{errors.installmentCount.message}</p>}
-      </div>
-
-      <div>
-        <label>Installment Price</label>
-        <input
-          type="number"
-          {...register("installmentPrice", { valueAsNumber: true })}
-        />
-        {errors.installmentPrice && <p>{errors.installmentPrice.message}</p>}
-      </div>
-
-      <div>
-        <label>Limit</label>
-        <input type="number" {...register("limit", { valueAsNumber: true })} />
-        {errors.limit && <p>{errors.limit.message}</p>}
-      </div>
-
-      <div>
-        <label>End of Discount</label>
-        <input
-          type="date"
-          {...register("endOfDiscount", {
-            valueAsDate: true,
-          })}
-        />
-        {errors.endOfDiscount && <p>{errors.endOfDiscount.message}</p>}
-      </div>
-
-      <div>
-        <label>Discount Price</label>
-        <input
-          type="number"
-          {...register("discountPrice", { valueAsNumber: true })}
-        />
-        {errors.discountPrice && <p>{errors.discountPrice.message}</p>}
-      </div>
-      <div>
-        <label>Category</label>
-        <select
-          {...register("categoryUrl", {
-            onChange: (e) => handleCategoryChange(e.target.value),
-          })}
-        >
-          <option value="">Select a category</option>
-          <option value="telefon">Telefon</option>
-          <option value="bilgisayar">Bilgisayar</option>
-          <option value="beyaz-esya">Beyaz Eşya</option>
-          <option value="ev-aletleri">Ev Aletleri</option>
-        </select>
-        {errors.categoryUrl && <p>{errors.categoryUrl.message}</p>}
-      </div>
-
-      <div>
-        <label>Subcategory</label>
-        <select
-          {...register("subcategoryUrl", {
-            onChange: (e) => handleSubcategoryChange(e.target.value),
-          })}
-        >
-          <option value="">Select a subcategory</option>
-          {Object.entries(subcategories ?? {}).map(([url, name]) => (
-            <option key={url} value={url}>
-              {name}
-            </option>
+    <StyledContainer>
+      <SpaceBetween as="form" onSubmit={handleSubmit(onSubmit)}>
+        <StyledCol $sizemd={3.75}>
+          {stringLabels.map((label) => (
+            <FlexCol key={label.db}>
+              <label>{label.title}</label>
+              <StyledInput {...register(label.db)} />
+              {errors[label.db] && (
+                <p>{(errors[label.db] as FieldError)?.message}</p>
+              )}
+            </FlexCol>
           ))}
-        </select>
-        {errors.subcategoryUrl && <p>{errors.subcategoryUrl.message}</p>}
-      </div>
 
-      <div>
-        <label>Free Shipping</label>
-        <input type="checkbox" {...register("freeShipping")} />
-      </div>
-
-      <div>
-        <label>Guarantee Available</label>
-        <input type="checkbox" {...register("guarantee")} />
-      </div>
-      <div>
-        <label>Description</label>
-        <textarea {...register("description")} />
-        {errors.description && <p>{errors.description.message}</p>}
-      </div>
-      <div>
-        <label>Fibabanka Available</label>
-        <input type="checkbox" {...register("fibabanka")} />
-      </div>
-
-      <div>
-        <label>Special For You</label>
-        <input type="checkbox" {...register("specialForYou")} />
-      </div>
-
-      <div>
-        <label>New Product</label>
-        <input type="checkbox" {...register("newProduct")} />
-      </div>
-      <div>
-        <label>Specifications</label>
-        {specificationFields.map((field, index) => (
-          <div key={field.id}>
-            <input
-              type="text"
-              placeholder="Title"
-              {...register(`specifications.${index}.title` as const, {
-                required: true,
-              })}
-            />
-            <input
-              type="text"
-              placeholder="Value"
-              {...register(`specifications.${index}.value` as const, {
-                required: true,
-              })}
-            />
-            {errors.specifications?.[index] && (
-              <p>{errors.specifications[index]?.message}</p>
-            )}
-            <button type="button" onClick={() => removeSpecification(index)}>
-              Remove
-            </button>
-          </div>
-        ))}
-        <button
-          type="button"
-          onClick={() => appendSpecification({ title: "", value: "" })}
-        >
-          Add Specification
-        </button>
-      </div>
-      <div>
-        <label>Best Offers</label>
-        <input type="checkbox" {...register("bestOffers")} />
-      </div>
-      <div>
-        <label>Images</label>
-        {images.map((img, index) => (
-          <div key={index}>
-            <input
-              type="text"
-              value={img}
-              onChange={(e) => {
-                const newImages = [...images];
-                newImages[index] = e.target.value;
-                setImages(newImages);
-              }}
-              required
-            />
-            <button
+          <FlexCol>
+            <label>Konfigrasyon</label>
+            {configFields.map((configField, configIndex) => (
+              <div key={configField.id}>
+                <JustifyBetweenAlignCenter>
+                  <StyledInput
+                    placeholder="Configuration Title"
+                    {...register(`configration.${configIndex}.title` as const)}
+                  />
+                  <StyledRemoveButton
+                    type="button"
+                    onClick={() => removeConfig(configIndex)}
+                  >
+                    Kaldır
+                  </StyledRemoveButton>
+                </JustifyBetweenAlignCenter>
+                <ConfigOptions
+                  control={control}
+                  configIndex={configIndex}
+                  register={register}
+                />
+              </div>
+            ))}
+            <StyledFieldButton
               type="button"
-              onClick={() => {
-                setImages(images.filter((_, i) => i !== index));
-              }}
+              onClick={() => appendConfig({ title: "", options: [""] })}
             >
-              Remove
-            </button>
-          </div>
-        ))}
-        <button type="button" onClick={() => setImages([...images, ""])}>
-          Add Image
-        </button>
-      </div>
+              Konfigrasyon Ekle
+            </StyledFieldButton>
+          </FlexCol>
 
-      <button type="submit">{submitText}</button>
-    </form>
+          <FlexCol>
+            <label>Özellikler</label>
+            {specificationFields.map((field, index) => (
+              <JustifyBetweenAlignCenter $gap="1rem" key={field.id}>
+                <StyledInput
+                  type="text"
+                  placeholder="Title"
+                  {...register(`specifications.${index}.title` as const, {
+                    required: true,
+                  })}
+                />
+                <StyledInput
+                  type="text"
+                  placeholder="Value"
+                  {...register(`specifications.${index}.value` as const, {
+                    required: true,
+                  })}
+                />
+                {errors.specifications?.[index] && (
+                  <p>{errors.specifications[index]?.message}</p>
+                )}
+                <StyledRemoveButton
+                  type="button"
+                  onClick={() => removeSpecification(index)}
+                >
+                  Kaldır
+                </StyledRemoveButton>
+              </JustifyBetweenAlignCenter>
+            ))}
+            <StyledFieldButton
+              type="button"
+              onClick={() => appendSpecification({ title: "", value: "" })}
+            >
+              Özellik Ekle
+            </StyledFieldButton>
+          </FlexCol>
+
+          <FlexCol>
+            <label>Resimler</label>
+            {images.map((img, index) => (
+              <JustifyBetweenAlignCenter key={index}>
+                <StyledInput
+                  type="text"
+                  value={img}
+                  onChange={(e) => {
+                    const newImages = [...images];
+                    newImages[index] = e.target.value;
+                    setImages(newImages);
+                  }}
+                  required
+                />
+                <StyledRemoveButton
+                  type="button"
+                  onClick={() => {
+                    setImages(images.filter((_, i) => i !== index));
+                  }}
+                >
+                  Kaldır
+                </StyledRemoveButton>
+              </JustifyBetweenAlignCenter>
+            ))}
+            <StyledFieldButton
+              type="button"
+              onClick={() => setImages([...images, ""])}
+            >
+              Resim Ekle
+            </StyledFieldButton>
+          </FlexCol>
+          <FlexCol>
+            <label>End of Discount</label>
+            <StyledInput
+              type="date"
+              {...register("endOfDiscount", {
+                valueAsDate: true,
+              })}
+            />
+            {errors.endOfDiscount && <p>{errors.endOfDiscount.message}</p>}
+          </FlexCol>
+        </StyledCol>
+        <StyledCol $sizemd={3.75}>
+          {numberLabels.map((label) => (
+            <FlexCol key={label.db}>
+              <label>{label.title}</label>
+              <StyledInput
+                type="number"
+                {...register(label.db, { valueAsNumber: true })}
+              />
+              {errors[label.db] && (
+                <p>{(errors[label.db] as FieldError)?.message}</p>
+              )}
+            </FlexCol>
+          ))}
+        </StyledCol>
+        <StyledCol $sizemd={3.75}>
+          <FlexCol>
+            <label>Category</label>
+            <StyledInput
+              as="select"
+              {...register("categoryUrl", {
+                onChange: (e) => handleCategoryChange(e.target.value),
+              })}
+            >
+              <option value="">Select a category</option>
+              <option value="telefon">Telefon</option>
+              <option value="bilgisayar">Bilgisayar</option>
+              <option value="beyaz-esya">Beyaz Eşya</option>
+              <option value="ev-aletleri">Ev Aletleri</option>
+            </StyledInput>
+            {errors.categoryUrl && <p>{errors.categoryUrl.message}</p>}
+          </FlexCol>
+
+          <StyledCol>
+            <label>Subcategory</label>
+            <StyledInput
+              as="select"
+              {...register("subcategoryUrl", {
+                onChange: (e) => handleSubcategoryChange(e.target.value),
+              })}
+            >
+              <option value="">Select a subcategory</option>
+              {Object.entries(subcategories ?? {}).map(([url, name]) => (
+                <option key={url} value={url}>
+                  {name}
+                </option>
+              ))}
+            </StyledInput>
+            {errors.subcategoryUrl && <p>{errors.subcategoryUrl.message}</p>}
+          </StyledCol>
+
+          <FlexCol $gap="1rem">
+            {checkboxLabels.map((label) => (
+              <StyledLabel key={label.db}>
+                {label.title}
+                <input type="checkbox" {...register(label.db)} />
+              </StyledLabel>
+            ))}
+
+            <StyledPrimaryFormButton type="submit">
+              {submitText}
+            </StyledPrimaryFormButton>
+          </FlexCol>
+        </StyledCol>
+      </SpaceBetween>
+    </StyledContainer>
   );
 };
 type ConfigOptionsProps = {
@@ -369,25 +314,28 @@ const ConfigOptions: React.FC<ConfigOptionsProps> = ({
   });
 
   return (
-    <div>
-      <label>Options</label>
+    <FlexCol>
+      <label>Seçenek</label>
       {optionFields.map((optionField, optionIndex) => (
-        <div key={optionField.id}>
-          <input
+        <JustifyBetweenAlignCenter key={optionField.id}>
+          <StyledInput
             placeholder={`Option ${optionIndex + 1}`}
             {...register(
               `configration.${configIndex}.options.${optionIndex}` as const
             )}
           />
-          <button type="button" onClick={() => removeOption(optionIndex)}>
-            Remove Option
-          </button>
-        </div>
+          <StyledRemoveButton
+            type="button"
+            onClick={() => removeOption(optionIndex)}
+          >
+            Kaldır
+          </StyledRemoveButton>
+        </JustifyBetweenAlignCenter>
       ))}
-      <button type="button" onClick={() => appendOption("")}>
-        Add Option
-      </button>
-    </div>
+      <StyledFieldButton type="button" onClick={() => appendOption("")}>
+        Seçenek Ekle
+      </StyledFieldButton>
+    </FlexCol>
   );
 };
 export default ProductForm;

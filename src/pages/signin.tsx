@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import {
   FullCenterCol,
   StyledContainer,
+  StyledDiv,
   StyledInput,
   StyledPrimaryFormButton,
   StyledSecondaryFormButton,
@@ -54,18 +55,18 @@ export default function SignIn() {
         $gap=".5rem"
         $width="300px"
       >
-        <div>
+        <StyledDiv $width="100%">
           <StyledInput {...register("email")} placeholder="Email" />
           {errors.email && <span>{errors.email.message}</span>}
-        </div>
-        <div>
+        </StyledDiv>
+        <StyledDiv $width="100%">
           <StyledInput
             {...register("password")}
             type="password"
             placeholder="Password"
           />
           {errors.password && <span>{errors.password.message}</span>}
-        </div>
+        </StyledDiv>
         <StyledPrimaryFormButton type="submit">
           Giriş Yap
         </StyledPrimaryFormButton>

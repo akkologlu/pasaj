@@ -836,3 +836,15 @@ export const StyledYellowButton = styled(StyledPrimaryFormButton)`
   background-color: ${({ theme }) => theme.colors.yellow};
   padding: 1rem;
 `;
+export const StyledFieldButton = styled(StyledFormButton)`
+  width: 40%;
+  background-color: ${({ theme }) => theme.colors.darkBlue};
+  color: ${({ theme }) => theme.colors.white};
+  padding: 0.5rem;
+`;
+export const StyledRemoveButton = styled(StyledFieldButton)`
+  background-color: ${({ theme }) => theme.colors.red};
+  color: ${({ theme }) => theme.colors.white};
+  margin-left: 1rem;
+  height: 3rem;
+`;

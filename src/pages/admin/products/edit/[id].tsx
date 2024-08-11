@@ -4,6 +4,7 @@ import ProductForm from "@/components/admin/ProductForm";
 import { fetchProduct, updateProduct } from "@/lib/api";
 import toast from "react-hot-toast";
 import { Product } from "@/types/productType";
+import { StyledDiv, StyledText } from "@/styles/styled";
 
 const EditProduct = () => {
   const router = useRouter();
@@ -40,8 +41,10 @@ const EditProduct = () => {
   };
 
   return (
-    <div>
-      <h1>Edit Product</h1>
+    <StyledDiv $margin="1rem 0">
+      <StyledText as="h3" $center="center" $margin="2rem 0" $color="darkBlue">
+        Ürün Düzenle
+      </StyledText>
       {product && (
         <ProductForm
           initialValues={product}
@@ -49,7 +52,7 @@ const EditProduct = () => {
           submitText="Update"
         />
       )}
-    </div>
+    </StyledDiv>
   );
 };
 
