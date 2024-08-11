@@ -4,8 +4,9 @@ import { updateFavs } from "@/lib/api";
 import { useSession } from "next-auth/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import { Product } from "@/types/productType";
 
-const useFavorite = (product: any) => {
+const useFavorite = (product: Product) => {
   const { data: session } = useSession();
   const { favs, setFavs } = useFavStore();
   const [isFav, setIsFav] = useState(false);

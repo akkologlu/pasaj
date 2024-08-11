@@ -27,7 +27,7 @@ const useCart = (userId: string, cart: Cart[]) => {
   };
   const handleAddToCart = (
     product: Product,
-    formData: { [key: string]: any }
+    formData: { [key: string]: string | number }
   ) => {
     const quantity = calculateProductCount(product.id);
     if (quantity > product.limit) {
@@ -36,7 +36,7 @@ const useCart = (userId: string, cart: Cart[]) => {
       );
     }
     const config = product.configration.reduce(
-      (acc: { [key: string]: any }, config: { title: string }) => {
+      (acc: { [key: string]: string | number }, config: { title: string }) => {
         acc[config.title] = formData[config.title];
         return acc;
       },

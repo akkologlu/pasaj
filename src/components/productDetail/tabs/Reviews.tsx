@@ -20,7 +20,11 @@ import { useSession } from "next-auth/react";
 type ReviewsProps = {
   reviews: Comments[];
   onRating: number;
-  handleAddNewComment: (data: any) => void;
+  handleAddNewComment: (data: { rating: number; comment: string }) => void;
+};
+type FormData = {
+  rating: number;
+  comment: string;
 };
 const Reviews: React.FC<ReviewsProps> = ({
   reviews,
@@ -30,7 +34,7 @@ const Reviews: React.FC<ReviewsProps> = ({
   const session = useSession();
   const [showForm, setShowForm] = useState(false);
   const [sortedReviews, setSortedReviews] = useState<Comments[]>(reviews);
-  const { register, handleSubmit, reset, control } = useForm();
+  const { register, handleSubmit, reset, control } = useForm<FormData>();
   const { register: registerSort, watch } = useForm();
   const sortOption = watch("sort");
   useEffect(() => {
@@ -104,11 +108,13 @@ const Reviews: React.FC<ReviewsProps> = ({
               )}
               {showForm && (
                 <form
-                  onSubmit={handleSubmit((data) => {
-                    handleAddNewComment(data);
-                    setShowForm(false);
-                    reset({ rating: 0, comment: "" });
-                  })}
+                  onSubmit={handleSubmit(
+                    (data: { rating: number; comment: string }) => {
+                      handleAddNewComment(data);
+                      setShowForm(false);
+                      reset({ rating: 0, comment: "" });
+                    }
+                  )}
                 >
                   <Controller
                     name="rating"

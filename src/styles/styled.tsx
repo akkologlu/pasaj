@@ -152,6 +152,9 @@ export const StyledBanner = styled(StyledDiv)`
     display: none;
   }
 `;
+export const StyledAccountButton = styled(FullCenter)`
+  border: 1px solid ${({ theme }) => theme.colors.border};
+`;
 type StyledImageProps = {
   $height?: number;
   $width?: string;
@@ -341,7 +344,10 @@ export const StyledBlueBanner = styled(SpaceEvenly)`
     }
   }
 `;
-export const StyledCategoryModal = styled(StyledDiv)`
+type StyledCategoryModalProps = {
+  $modal: boolean;
+};
+export const StyledCategoryModal = styled(StyledDiv)<StyledCategoryModalProps>`
   top: 170px;
   left: 0;
   width: 100%;
@@ -404,11 +410,14 @@ export const StyledCardSwiper = styled(Swiper)`
     width: 16px;
   }
 `;
-export const StyledMyAccountModal = styled(StyledDiv)`
-  top: 40px;
+export const StyledMyAccountModal = styled(FlexCol)`
+  top: 45px;
   left: 0;
   width: 100%;
   z-index: 2;
+  padding: 1rem 0.25rem;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  gap: 0.5rem;
 `;
 
 export const StyledLimitBadge = styled(StyledDiv)`

@@ -1,6 +1,8 @@
 import {
+  StyledAccountButton,
   StyledCartCount,
   StyledCol,
+  StyledDiv,
   StyledMyAccountModal,
   StyledRow,
 } from "@/styles/styled";
@@ -41,21 +43,25 @@ const Navbar: React.FC<NavbarProps> = ({ loginModal, setloginModal }) => {
         </StyledCol>
         <SearchForm />
         <StyledCol $sizemd={1.5}>
-          <CustomButton
-            bgcolor="white"
-            onclick={() => setloginModal(!loginModal)}
+          <StyledAccountButton
+            $width="100%"
+            $height="100%"
+            $gap=".75rem"
+            $pos="relative"
+            onClick={() => setloginModal(!loginModal)}
           >
             <FaRegUserCircle size={20} />
             <p>{session ? "Hesabım" : "Giriş Yap"}</p>
             <IoIosArrowDown />
             {session && loginModal && (
-              <StyledMyAccountModal $pos="absolute" $bgcolor="modal">
-                <button onClick={() => signOut({ callbackUrl: "/" })}>
+              <StyledMyAccountModal $pos="absolute" $bgcolor="white">
+                <Link href="/favorites">Favorilerim</Link>
+                <span onClick={() => signOut({ callbackUrl: "/" })}>
                   Sign Out
-                </button>
+                </span>
               </StyledMyAccountModal>
             )}
-          </CustomButton>
+          </StyledAccountButton>
         </StyledCol>
         <StyledCol $sizemd={1.5}>
           <CustomButton bgcolor="yellow" href="/cart">

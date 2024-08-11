@@ -54,7 +54,7 @@ const NavBottom: React.FC = () => {
 
   return (
     <>
-      <StyledNavBottom>
+      <StyledNavBottom onMouseLeave={() => setShowModal(false)}>
         {categories.map((cat: Category) => (
           <StyledCol
             $sizemd={1}
@@ -68,6 +68,7 @@ const NavBottom: React.FC = () => {
       </StyledNavBottom>
       {showModal && modalContent && (
         <StyledCategoryModal
+          $modal={showModal}
           $pos="absolute"
           $bgcolor="modal"
           $padding="4rem"

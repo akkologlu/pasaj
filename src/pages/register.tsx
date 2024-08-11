@@ -48,8 +48,12 @@ export default function Register() {
       toast.success("Hesabınız oluşturuldu.");
       await addUser({ id: user.uid, email: data.email, cart: [], fav: [] });
       router.push("/signin");
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("Beklenmedik bir hata oluştu.");
+      }
     }
   };
 

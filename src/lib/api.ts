@@ -1,4 +1,4 @@
-import { Cart, User } from "@/types/cartType";
+import { Cart, Fav, User } from "@/types/cartType";
 import { Comments, Product } from "@/types/productType";
 
 export const fetchProducts = async (slug: string[]) => {
@@ -194,7 +194,7 @@ export const updateFavs = async ({
   favData,
 }: {
   userId: string;
-  favData: any;
+  favData: { fav: Fav[] };
 }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users/${userId}`, {
     method: "PATCH",

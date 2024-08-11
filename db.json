@@ -1205,7 +1205,7 @@
       "email": "admin@admin.com",
       "cart": [
         {
-          "cartId": "820bd6fa-f39a-416c-9e31-eb183e10829b",
+          "cartId": "0d69898a-1bc4-4bb3-b25c-d109b6dcb6d3",
           "productId": 1,
           "title": "iPhone 15 Pro Max 256 GB",
           "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
@@ -1214,8 +1214,8 @@
           "discount": 7999,
           "limit": 1,
           "quantity": 1,
-          "Renk": "Gri",
-          "Hafıza": "256 GB"
+          "Renk": "Mavi",
+          "Hafıza": "128 GB"
         }
       ],
       "fav": [
