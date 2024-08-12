@@ -1,6 +1,7 @@
 import ProductForm from "@/components/admin/ProductForm";
 import { createProduct } from "@/lib/api";
 import { StyledDiv, StyledText } from "@/styles/styled";
+import { Product } from "@/types/productType";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
@@ -19,7 +20,7 @@ const CreateProduct = () => {
       toast.error("Ürün oluşturulurken bir hata oluştu.");
     },
   });
-  const handleCreateProduct = async (data: any) => {
+  const handleCreateProduct = async (data: Product) => {
     const newProduct = {
       ...data,
       comments: [],

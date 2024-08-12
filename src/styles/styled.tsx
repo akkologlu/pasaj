@@ -894,3 +894,7 @@ export const StyledQuestionForm = styled(StyledDiv)`
   padding: 3rem;
   margin-top: 1rem;
 `;
+export const StyledError = styled(StyledText)`
+  color: ${({ theme }) => theme.colors.red};
+  font-size: 0.9rem;
+`;

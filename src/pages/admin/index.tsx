@@ -1,12 +1,7 @@
 import { GetServerSideProps } from "next";
 import { useFetchAllProducts } from "@/hooks/useDataFetching";
-import {
-  dehydrate,
-  QueryClient,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
-import { deleteProduct, fetchAllProducts } from "@/lib/api";
+import { dehydrate, QueryClient, useQueryClient } from "@tanstack/react-query";
+import { fetchAllProducts } from "@/lib/api";
 import Link from "next/link";
 import ProductList from "@/components/admin/ProductList";
 import {
@@ -14,7 +9,6 @@ import {
   StyledContainer,
   StyledPrimaryFormButton,
 } from "@/styles/styled";
-import toast from "react-hot-toast";
 
 interface AdminProps {
   user: {
@@ -36,18 +30,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 const Admin: React.FC<AdminProps> = () => {
-  const queryClient = useQueryClient();
   const { data, isLoading } = useFetchAllProducts();
-  const { mutate: deleteMutation } = useMutation({
-    mutationFn: deleteProduct,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["products"] });
-      toast.success("Ürün başarıyla silindi");
-    },
-    onError: () => {
-      toast.error("Ürün silinirken bir hata oluştu");
-    },
-  });
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -61,7 +45,7 @@ const Admin: React.FC<AdminProps> = () => {
           <StyledPrimaryFormButton as="span">Ürün Ekle</StyledPrimaryFormButton>
         </Link>
       </JustifyBetweenAlignCenter>
-      <ProductList products={data} onDelete={deleteMutation} />
+      <ProductList products={data} />
     </StyledContainer>
   );
 };

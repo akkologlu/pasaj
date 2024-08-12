@@ -42,15 +42,15 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 const CategoryPage = ({ slug }: { slug: string[] }) => {
   const { data, isLoading } = useFetchProducts(slug);
   const { compareMode, setCompareMode } = useCompareModeStore();
-
+  const defaultValues = {
+    brands: [],
+    priceRange: null,
+    inStock: false,
+    sellers: [],
+    sortBy: "initial",
+  };
   const { watch, reset, register, setValue, getValues } = useForm<FilterState>({
-    defaultValues: {
-      brands: [],
-      priceRange: null,
-      inStock: false,
-      sellers: [],
-      sortBy: "initial",
-    },
+    defaultValues: defaultValues,
   });
 
   const filters = watch();
@@ -96,13 +96,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
     }
   });
   useEffect(() => {
-    reset({
-      brands: [],
-      priceRange: null,
-      inStock: false,
-      sellers: [],
-      sortBy: "initial",
-    });
+    reset(defaultValues);
   }, [slug]);
   if (isLoading) return <div>Loading...</div>;
 

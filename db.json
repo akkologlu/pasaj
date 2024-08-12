@@ -866,59 +866,6 @@
       "specialForYou": true,
       "newProduct": true,
       "bestOffers": true
-    },
-    {
-      "title": "iPad Pro",
-      "rating": 5,
-      "stock": 50,
-      "nofSales": 200,
-      "brand": "Apple",
-      "seller": "Apple",
-      "configration": [
-        {
-          "title": "Hafıza",
-          "options": [
-            "128GB",
-            "256GB"
-          ]
-        }
-      ],
-      "price": 25000,
-      "creditCard": false,
-      "installmentCount": 5,
-      "installmentPrice": 6000,
-      "limit": 2,
-      "endOfDiscount": "2024-08-15T00:00:00.000Z",
-      "discountPrice": 3000,
-      "category": "Bilgisayar",
-      "categoryUrl": "bilgisayar",
-      "subcategory": "Tablet",
-      "subcategoryUrl": "tablet",
-      "images": [
-        "https://m.media-amazon.com/images/I/81c+9BOQNWL._AC_UF1000,1000_QL80_.jpg",
-        "https://cdn.akakce.com/z/apple/ipad-pro-4-nesil-wi-fi-cellular-128-gb-11.jpg"
-      ],
-      "freeShipping": true,
-      "guarantee": true,
-      "description": "ipad",
-      "specifications": [
-        {
-          "title": "Hafıza",
-          "value": "128GB"
-        },
-        {
-          "title": "Renk",
-          "value": "Siyah"
-        }
-      ],
-      "fibabanka": false,
-      "specialForYou": false,
-      "newProduct": false,
-      "bestOffers": false,
-      "comments": [],
-      "qa": [],
-      "badges": [],
-      "id": 8
     }
   ],
   "popularCategories": [

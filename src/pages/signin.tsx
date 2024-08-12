@@ -8,6 +8,7 @@ import {
   FullCenterCol,
   StyledContainer,
   StyledDiv,
+  StyledError,
   StyledInput,
   StyledPrimaryFormButton,
   StyledSecondaryFormButton,
@@ -16,13 +17,11 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 
 const schema = z.object({
-  email: z.string().email(),
-  password: z.string().min(6),
+  email: z.string().email("Geçerli bir email giriniz."),
+  password: z.string().min(6, "Şifre en az 6 karakter olmalı."),
 });
-interface FormData {
-  email: string;
-  password: string;
-}
+
+type FormData = z.infer<typeof schema>;
 export default function SignIn() {
   const {
     register,
@@ -57,7 +56,7 @@ export default function SignIn() {
       >
         <StyledDiv $width="100%">
           <StyledInput {...register("email")} placeholder="Email" />
-          {errors.email && <span>{errors.email.message}</span>}
+          {errors.email && <StyledError>* {errors.email.message}</StyledError>}
         </StyledDiv>
         <StyledDiv $width="100%">
           <StyledInput
@@ -65,7 +64,9 @@ export default function SignIn() {
             type="password"
             placeholder="Password"
           />
-          {errors.password && <span>{errors.password.message}</span>}
+          {errors.password && (
+            <StyledError>* {errors.password.message}</StyledError>
+          )}
         </StyledDiv>
         <StyledPrimaryFormButton type="submit">
           Giriş Yap
