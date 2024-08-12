@@ -24,7 +24,7 @@ export const productSchema = z.object({
     .number()
     .min(0, "Taksit fiyatı pozitif bir sayı olmalıdır"),
   limit: z.number().min(0, "Limit pozitif bir sayı olmalıdır"),
-  endOfDiscount: z.date().optional(),
+  endOfDiscount: z.string().optional(),
   discountPrice: z
     .number()
     .min(0, "İndirimli fiyat pozitif bir sayı olmalıdır"),

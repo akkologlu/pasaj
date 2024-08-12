@@ -221,12 +221,7 @@ const ProductForm = ({
           </FlexCol>
           <FlexCol>
             <label>End of Discount</label>
-            <StyledInput
-              type="date"
-              {...register("endOfDiscount", {
-                valueAsDate: true,
-              })}
-            />
+            <StyledInput type="date" {...register("endOfDiscount")} />
             {errors.endOfDiscount && <p>{errors.endOfDiscount.message}</p>}
           </FlexCol>
         </StyledCol>
@@ -235,6 +230,7 @@ const ProductForm = ({
             <FlexCol key={label.db}>
               <label>{label.title}</label>
               <StyledInput
+                step={label.db === "rating" ? "0.1" : "1"}
                 type="number"
                 {...register(label.db, { valueAsNumber: true })}
               />
