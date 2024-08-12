@@ -81,7 +81,7 @@ const Questions: React.FC<DetailTabsProps> = ({
         <StyledQuestionForm as="form" onSubmit={handleSubmit(onSubmit)}>
           <StyledInput as="select" {...register("seller")}>
             <option value={seller}>{seller}</option>
-            {otherSellers.map((seller) => (
+            {otherSellers?.map((seller) => (
               <option key={seller.seller} value={seller.seller}>
                 {seller.seller}
               </option>

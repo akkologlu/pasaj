@@ -16,6 +16,7 @@ import {
   StyledPrimaryFormButton,
   StyledRemoveButton,
 } from "@/styles/styled";
+import { uploadImage } from "@/lib/cloudinary";
 type ProductFormProps = {
   initialValues?: Product;
   onSubmit: (data: Product) => void;
@@ -46,6 +47,20 @@ const ProductForm = ({
     }
   }, [initialValues?.categoryUrl]);
   const [images, setImages] = useState<string[]>(initialValues?.images || []);
+  const handleFileUpload = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      try {
+        const url = await uploadImage(file);
+        setImages([...images, url]);
+        setValue("images", [...images, url]);
+      } catch (error) {
+        console.error("Image upload failed:", error);
+      }
+    }
+  };
   const {
     fields: configFields,
     append: appendConfig,
@@ -62,6 +77,7 @@ const ProductForm = ({
     control,
     name: "specifications",
   });
+
   const handleCategoryChange = (categoryUrl: string) => {
     switch (categoryUrl) {
       case "telefon":
@@ -111,7 +127,7 @@ const ProductForm = ({
       <SpaceBetween as="form" onSubmit={handleSubmit(onSubmit)}>
         <StyledCol $sizemd={3.75}>
           {stringLabels.map((label) => (
-            <FlexCol key={label.db}>
+            <FlexCol key={label.db} $margin="1rem 0">
               <label>{label.title}</label>
               <StyledInput {...register(label.db)} />
               {errors[label.db] && (
@@ -150,84 +166,10 @@ const ProductForm = ({
               Konfigrasyon Ekle
             </StyledFieldButton>
           </FlexCol>
-
-          <FlexCol>
-            <label>Özellikler</label>
-            {specificationFields.map((field, index) => (
-              <JustifyBetweenAlignCenter $gap="1rem" key={field.id}>
-                <StyledInput
-                  type="text"
-                  placeholder="Title"
-                  {...register(`specifications.${index}.title` as const, {
-                    required: true,
-                  })}
-                />
-                <StyledInput
-                  type="text"
-                  placeholder="Value"
-                  {...register(`specifications.${index}.value` as const, {
-                    required: true,
-                  })}
-                />
-                {errors.specifications?.[index] && (
-                  <p>{errors.specifications[index]?.message}</p>
-                )}
-                <StyledRemoveButton
-                  type="button"
-                  onClick={() => removeSpecification(index)}
-                >
-                  Kaldır
-                </StyledRemoveButton>
-              </JustifyBetweenAlignCenter>
-            ))}
-            <StyledFieldButton
-              type="button"
-              onClick={() => appendSpecification({ title: "", value: "" })}
-            >
-              Özellik Ekle
-            </StyledFieldButton>
-          </FlexCol>
-
-          <FlexCol>
-            <label>Resimler</label>
-            {images.map((img, index) => (
-              <JustifyBetweenAlignCenter key={index}>
-                <StyledInput
-                  type="text"
-                  value={img}
-                  onChange={(e) => {
-                    const newImages = [...images];
-                    newImages[index] = e.target.value;
-                    setImages(newImages);
-                  }}
-                  required
-                />
-                <StyledRemoveButton
-                  type="button"
-                  onClick={() => {
-                    setImages(images.filter((_, i) => i !== index));
-                  }}
-                >
-                  Kaldır
-                </StyledRemoveButton>
-              </JustifyBetweenAlignCenter>
-            ))}
-            <StyledFieldButton
-              type="button"
-              onClick={() => setImages([...images, ""])}
-            >
-              Resim Ekle
-            </StyledFieldButton>
-          </FlexCol>
-          <FlexCol>
-            <label>End of Discount</label>
-            <StyledInput type="date" {...register("endOfDiscount")} />
-            {errors.endOfDiscount && <p>{errors.endOfDiscount.message}</p>}
-          </FlexCol>
         </StyledCol>
         <StyledCol $sizemd={3.75}>
           {numberLabels.map((label) => (
-            <FlexCol key={label.db}>
+            <FlexCol key={label.db} $margin="1rem 0">
               <label>{label.title}</label>
               <StyledInput
                 step={label.db === "rating" ? "0.1" : "1"}
@@ -239,6 +181,32 @@ const ProductForm = ({
               )}
             </FlexCol>
           ))}
+          <FlexCol>
+            <label>İndirim Bitiş Tarihi</label>
+            <StyledInput type="date" {...register("endOfDiscount")} />
+            {errors.endOfDiscount && <p>{errors.endOfDiscount.message}</p>}
+          </FlexCol>
+          <FlexCol>
+            <label>Resimler</label>
+            {images.map((img, index) => (
+              <JustifyBetweenAlignCenter key={index}>
+                <StyledInput type="text" value={img} readOnly />
+                <StyledRemoveButton
+                  type="button"
+                  onClick={() => {
+                    setImages(images.filter((_, i) => i !== index));
+                    setValue(
+                      "images",
+                      images.filter((_, i) => i !== index)
+                    );
+                  }}
+                >
+                  Kaldır
+                </StyledRemoveButton>
+              </JustifyBetweenAlignCenter>
+            ))}
+            <input type="file" onChange={handleFileUpload} accept="image/*" />
+          </FlexCol>
         </StyledCol>
         <StyledCol $sizemd={3.75}>
           <FlexCol>
@@ -284,6 +252,42 @@ const ProductForm = ({
               </StyledLabel>
             ))}
 
+            <FlexCol>
+              <label>Özellikler</label>
+              {specificationFields.map((field, index) => (
+                <JustifyBetweenAlignCenter $gap="1rem" key={field.id}>
+                  <StyledInput
+                    type="text"
+                    placeholder="Title"
+                    {...register(`specifications.${index}.title` as const, {
+                      required: true,
+                    })}
+                  />
+                  <StyledInput
+                    type="text"
+                    placeholder="Value"
+                    {...register(`specifications.${index}.value` as const, {
+                      required: true,
+                    })}
+                  />
+                  {errors.specifications?.[index] && (
+                    <p>{errors.specifications[index]?.message}</p>
+                  )}
+                  <StyledRemoveButton
+                    type="button"
+                    onClick={() => removeSpecification(index)}
+                  >
+                    Kaldır
+                  </StyledRemoveButton>
+                </JustifyBetweenAlignCenter>
+              ))}
+              <StyledFieldButton
+                type="button"
+                onClick={() => appendSpecification({ title: "", value: "" })}
+              >
+                Özellik Ekle
+              </StyledFieldButton>
+            </FlexCol>
             <StyledPrimaryFormButton type="submit">
               {submitText}
             </StyledPrimaryFormButton>

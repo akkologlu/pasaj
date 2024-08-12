@@ -866,6 +866,67 @@
       "specialForYou": true,
       "newProduct": true,
       "bestOffers": true
+    },
+    {
+      "title": "iPad Pro",
+      "rating": 4.5,
+      "stock": 50,
+      "nofSales": 5,
+      "brand": "Apple",
+      "seller": "Apple",
+      "configration": [
+        {
+          "title": "Hafıza",
+          "options": [
+            "256GB",
+            "512GB"
+          ]
+        },
+        {
+          "title": "Renk",
+          "options": [
+            "Beyaz",
+            "Gri",
+            "Siyah"
+          ]
+        }
+      ],
+      "price": 45999,
+      "creditCard": true,
+      "installmentCount": 5,
+      "installmentPrice": 11000,
+      "limit": 2,
+      "endOfDiscount": "2024-08-23",
+      "discountPrice": 3000,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Tablet",
+      "subcategoryUrl": "tablet",
+      "images": [
+        "https://res.cloudinary.com/duxun1rjp/image/upload/v1723486371/otnc1n01mwhktay5o7m6.jpg",
+        "https://res.cloudinary.com/duxun1rjp/image/upload/v1723486414/pjmj6maj3btmjtvkywac.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": false,
+      "description": "Yepyeni bir Pro tasarımı. İnanılmaz kolay taşınabilirlik. Şimdiye kadarki en ince Apple ürünü.",
+      "specifications": [
+        {
+          "title": "Cam",
+          "value": "Nano-Texture"
+        },
+        {
+          "title": "Kalınlık",
+          "value": "5.1mm"
+        }
+      ],
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": true,
+      "bestOffers": false,
+      "comments": [],
+      "qa": [],
+      "badges": [],
+      "id": 8
     }
   ],
   "popularCategories": [
