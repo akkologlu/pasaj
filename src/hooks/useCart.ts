@@ -50,26 +50,38 @@ const useCart = (userId: string, cart: Cart[]) => {
       return acc;
     }, {} as { [key: string]: string | number });
 
-    let updatedCartItems = cart.map((item) =>
-      item.productId === product.id &&
-      Object.keys(config).every((key) => item[key] === config[key])
-        ? { ...item, quantity: item.quantity + 1 }
-        : item
+    // Check if the exact product with the same configuration exists in the cart
+    const existingItem = cart.find(
+      (item) =>
+        item.productId === product.id &&
+        Object.keys(config).every((key) => item[key] === config[key])
     );
 
-    if (!cart.some((item) => item.productId === product.id)) {
-      updatedCartItems.push({
-        cartId: crypto.randomUUID(),
-        productId: product.id,
-        title: product.title,
-        image: product.images[0],
-        seller: product.seller,
-        oldPrice: product.price,
-        discount: product.discountPrice,
-        limit: product.limit,
-        quantity: 1,
-        ...config,
-      });
+    let updatedCartItems;
+    if (existingItem) {
+      // If the item exists, update its quantity
+      updatedCartItems = cart.map((item) =>
+        item.cartId === existingItem.cartId
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    } else {
+      // If the item doesn't exist, add it as a new entry
+      updatedCartItems = [
+        ...cart,
+        {
+          cartId: crypto.randomUUID(),
+          productId: product.id,
+          title: product.title,
+          image: product.images[0],
+          seller: product.seller,
+          oldPrice: product.price,
+          discount: product.discountPrice,
+          limit: product.limit,
+          quantity: 1,
+          ...config,
+        },
+      ];
     }
 
     toast.success("Ürün sepete eklendi!");

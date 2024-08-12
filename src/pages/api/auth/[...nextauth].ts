@@ -29,9 +29,6 @@ const options: NextAuthOptions = {
       },
     }),
   ],
-  pages: {
-    signIn: "/auth/signin",
-  },
   callbacks: {
     async session({ session, token }) {
       if (token && token.user) {

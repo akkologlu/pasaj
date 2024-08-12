@@ -1177,33 +1177,45 @@
       "email": "abdullah@gmail.com",
       "cart": [
         {
-          "cartId": "ad64a34c-520b-4fa0-ac20-c59f3c24a2dc",
-          "productId": 7,
-          "title": "Xiaomi Redmi Note 11 Pro 128 GB",
+          "cartId": "680c8e89-05da-472d-b1cd-81bced0b9a92",
+          "productId": 3,
+          "title": "Ütü",
           "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
           "seller": "Turkcell Satış A.Ş.",
-          "oldPrice": 12999,
-          "discount": 999,
+          "oldPrice": 999,
+          "discount": 99,
           "limit": 2,
           "quantity": 1,
-          "Renk": "Mavi",
-          "Hafıza": "128 GB"
+          "Renk": "Beyaz",
+          "Güç": "2400W"
         },
         {
-          "cartId": "68bd50d0-97c3-4c75-ab30-8c86106876f8",
-          "productId": 7,
-          "title": "Xiaomi Redmi Note 11 Pro 128 GB",
+          "cartId": "bb0981a4-0e86-4532-91ad-daecc26be41a",
+          "productId": 3,
+          "title": "Ütü",
           "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
           "seller": "Turkcell Satış A.Ş.",
-          "oldPrice": 12999,
-          "discount": 999,
+          "oldPrice": 999,
+          "discount": 99,
           "limit": 2,
           "quantity": 1,
           "Renk": "Mavi",
-          "Hafıza": "256 GB"
+          "Güç": "2000W"
         }
       ],
-      "fav": []
+      "fav": [
+        {
+          "id": 1,
+          "title": "iPhone 15 Pro Max 256 GB",
+          "price": 89999,
+          "discountPrice": 7999,
+          "images": [
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003",
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+          ]
+        }
+      ]
     },
     {
       "id": "f1oETlSzDGQG9zk3QDFR70MZLmD3",
@@ -1220,34 +1232,7 @@
     {
       "id": "knlV2nhLQVN3edp9Bv9eySUXZg13",
       "email": "admin@admin.com",
-      "cart": [
-        {
-          "cartId": "0d69898a-1bc4-4bb3-b25c-d109b6dcb6d3",
-          "productId": 1,
-          "title": "iPhone 15 Pro Max 256 GB",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
-          "seller": "Terminal İletişim - Turkcell Mağazası",
-          "oldPrice": 89999,
-          "discount": 7999,
-          "limit": 1,
-          "quantity": 1,
-          "Renk": "Mavi",
-          "Hafıza": "128 GB"
-        },
-        {
-          "cartId": "95a2bfd3-3813-4f1a-8fac-63535dc8211a",
-          "productId": 7,
-          "title": "Xiaomi Redmi Note 11 Pro 128 GB",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Turkcell Satış A.Ş.",
-          "oldPrice": 12999,
-          "discount": 999,
-          "limit": 2,
-          "quantity": 1,
-          "Renk": "Mavi",
-          "Hafıza": "128 GB"
-        }
-      ],
+      "cart": [],
       "fav": [
         {
           "id": 1,
