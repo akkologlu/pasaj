@@ -1175,34 +1175,7 @@
     {
       "id": "dqXZJbDFQCM0XbzGu4qTj4KDSzi1",
       "email": "abdullah@gmail.com",
-      "cart": [
-        {
-          "cartId": "680c8e89-05da-472d-b1cd-81bced0b9a92",
-          "productId": 3,
-          "title": "Ütü",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Turkcell Satış A.Ş.",
-          "oldPrice": 999,
-          "discount": 99,
-          "limit": 2,
-          "quantity": 1,
-          "Renk": "Beyaz",
-          "Güç": "2400W"
-        },
-        {
-          "cartId": "bb0981a4-0e86-4532-91ad-daecc26be41a",
-          "productId": 3,
-          "title": "Ütü",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Turkcell Satış A.Ş.",
-          "oldPrice": 999,
-          "discount": 99,
-          "limit": 2,
-          "quantity": 1,
-          "Renk": "Mavi",
-          "Güç": "2000W"
-        }
-      ],
+      "cart": [],
       "fav": [
         {
           "id": 1,
