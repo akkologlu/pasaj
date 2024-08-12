@@ -1,5 +1,10 @@
 import React from "react";
-import { useFormContext } from "react-hook-form";
+import {
+  UseFormGetValues,
+  UseFormRegister,
+  UseFormSetValue,
+  UseFormWatch,
+} from "react-hook-form";
 import { Product } from "@/types/productType";
 import FilterSection from "./FilterSection";
 import {
@@ -13,11 +18,19 @@ import Link from "next/link";
 
 interface FilterProps {
   data: Product[];
+  register: UseFormRegister<FilterState>;
+  setValue: UseFormSetValue<FilterState>;
+  getValues: UseFormGetValues<FilterState>;
+  watch: UseFormWatch<FilterState>;
 }
 
-const Filter: React.FC<FilterProps> = ({ data }) => {
-  const { register, getValues, setValue, watch } =
-    useFormContext<FilterState>();
+const Filter: React.FC<FilterProps> = ({
+  data,
+  register,
+  watch,
+  getValues,
+  setValue,
+}) => {
   const brands = data.map((item: Product) => item.brand);
   const uniqueBrands = Array.from(new Set(brands));
   const subcategories = data.map((item: Product) => item.subcategory);
@@ -70,7 +83,7 @@ const Filter: React.FC<FilterProps> = ({ data }) => {
               value={brand}
               {...register("brands")}
               checked={selectedBrands.includes(brand)}
-              onChange={(e) => {
+              onChange={() => {
                 const valueArray = selectedBrands.includes(brand)
                   ? selectedBrands.filter((b) => b !== brand)
                   : [...selectedBrands, brand];
@@ -132,7 +145,7 @@ const Filter: React.FC<FilterProps> = ({ data }) => {
               value={seller}
               {...register("sellers")}
               checked={selectedSellers.includes(seller)}
-              onChange={(e) => {
+              onChange={() => {
                 const valueArray = selectedSellers.includes(seller)
                   ? selectedSellers.filter((s) => s !== seller)
                   : [...selectedSellers, seller];

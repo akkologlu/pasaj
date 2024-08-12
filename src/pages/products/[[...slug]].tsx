@@ -1,5 +1,5 @@
-import React, { use, useEffect } from "react";
-import { useForm, FormProvider } from "react-hook-form";
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { GetServerSideProps } from "next";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { fetchProducts } from "@/lib/api";
@@ -15,7 +15,7 @@ import {
   StyledComporeModeSwitch,
 } from "@/styles/styled";
 import Filter from "@/components/productsPage/Filter";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { landing } from "@/lib/mockData";
 import { SwiperSlide } from "swiper/react";
 import Breadcrumb from "@/components/common/Breadcrumb";
@@ -43,7 +43,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
   const { data, isLoading } = useFetchProducts(slug);
   const { compareMode, setCompareMode } = useCompareModeStore();
 
-  const methods = useForm<FilterState>({
+  const { watch, reset, register, setValue, getValues } = useForm<FilterState>({
     defaultValues: {
       brands: [],
       priceRange: null,
@@ -53,7 +53,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
     },
   });
 
-  const filters = methods.watch();
+  const filters = watch();
 
   const popularProducts = data.sort(
     (a: Product, b: Product) => b.nofSales - a.nofSales
@@ -96,7 +96,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
     }
   });
   useEffect(() => {
-    methods.reset({
+    reset({
       brands: [],
       priceRange: null,
       inStock: false,
@@ -169,9 +169,13 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
         </StyledComporeModeSwitch>
         <SpaceBetween $wrap={true}>
           <StyledCol $sizemd={2.75}>
-            <FormProvider {...methods}>
-              <Filter data={data} />
-            </FormProvider>
+            <Filter
+              data={data}
+              register={register}
+              setValue={setValue}
+              getValues={getValues}
+              watch={watch}
+            />
           </StyledCol>
           <StyledCol $sizemd={9}>
             <LandingSwiper landing={landing} height={350} smheight={150} />

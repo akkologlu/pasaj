@@ -59,12 +59,9 @@ const ProductConfigration: React.FC<ProductConfigrationProps> = ({
     },
   ];
   const defaultOption = options.find((option) => option.id === selectedOption);
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm<Record<string, string | number>>({
+  const { register, handleSubmit, setValue } = useForm<
+    Record<string, string | number>
+  >({
     defaultValues: {
       price: defaultOption ? defaultOption.fullPrice : 0,
     },
