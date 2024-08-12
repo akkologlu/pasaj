@@ -1175,7 +1175,34 @@
     {
       "id": "dqXZJbDFQCM0XbzGu4qTj4KDSzi1",
       "email": "abdullah@gmail.com",
-      "cart": [],
+      "cart": [
+        {
+          "cartId": "55583a5a-e9f9-4896-9373-a9fdf07e7bcf",
+          "productId": 2,
+          "title": "Samsung Galaxy S22 Ultra 256 GB",
+          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+          "seller": "Köroğlu İletişim - Turkcell Mağazası",
+          "oldPrice": 79999,
+          "discount": 7999,
+          "limit": 2,
+          "quantity": 1,
+          "Renk": "Beyaz",
+          "Hafıza": "128 GB"
+        },
+        {
+          "cartId": "f0b0039c-4773-4f8b-af08-c5a3e7b1be8d",
+          "productId": 3,
+          "title": "Ütü",
+          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+          "seller": "Turkcell Satış A.Ş.",
+          "oldPrice": 999,
+          "discount": 99,
+          "limit": 2,
+          "quantity": 1,
+          "Renk": "Beyaz",
+          "Güç": "2000W"
+        }
+      ],
       "fav": [
         {
           "id": 1,

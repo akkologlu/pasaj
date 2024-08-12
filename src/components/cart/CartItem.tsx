@@ -27,7 +27,20 @@ const CartItem: React.FC<CartItemProps> = ({
   handleDelete,
   updateQuantity,
 }) => {
-  const [quantity, setQuantity] = useState(item.quantity);
+  const {
+    cartId,
+    productId,
+    title,
+    image,
+    discount,
+    seller,
+    oldPrice,
+    limit,
+    quantity,
+    ...config
+  } = item;
+
+  const [quantityLocal, setQuantity] = useState(item.quantity);
   const price = item.oldPrice - item.discount;
   const incrementQuantity = () => {
     setQuantity((prev) => {
@@ -63,7 +76,16 @@ const CartItem: React.FC<CartItemProps> = ({
         </StyledCol>
         <StyledCol $sizemd={2} $sizesm={6} className="top">
           <p>{item.title}</p>
-          <StyledText $color="light">{item.Renk}</StyledText>
+          {Object.keys(config).map((key) => (
+            <StyledText
+              as="span"
+              $padding="0 .25rem 0 0"
+              $color="light"
+              key={key}
+            >
+              {config[key]}
+            </StyledText>
+          ))}
         </StyledCol>
         <StyledCol $sizemd={2} $sizesm={3.5}>
           <StyledText $color="light">Birim Fiyat</StyledText>
@@ -89,7 +111,7 @@ const CartItem: React.FC<CartItemProps> = ({
             <StyledDiv as="button" onClick={decrementQuantity}>
               &ndash;
             </StyledDiv>
-            <StyledText $fs="14px">{quantity}</StyledText>
+            <StyledText $fs="14px">{quantityLocal}</StyledText>
             <StyledDiv as="button" onClick={incrementQuantity}>
               +
             </StyledDiv>
@@ -100,7 +122,7 @@ const CartItem: React.FC<CartItemProps> = ({
             Tutar
           </StyledText>
           <StyledText $align="right" as="h4">
-            {(price * quantity).toLocaleString("tr-TR")}
+            {(price * quantityLocal).toLocaleString("tr-TR")}
             <sup>TL</sup>
           </StyledText>
         </StyledCol>
