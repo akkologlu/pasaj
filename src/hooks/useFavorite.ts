@@ -21,6 +21,9 @@ const useFavorite = (product: Product) => {
       setFavs(favData.fav);
       return { prevFavs };
     },
+    onError: () => {
+      toast.error("Favoriler güncellenirken bir hata oluştu!");
+    },
   });
   useEffect(() => {
     const favStatus = favs.some((fav) => fav.id === product.id);
@@ -47,16 +50,10 @@ const useFavorite = (product: Product) => {
         ];
     setFavs(updatedFavs);
     setIsFav(!isFav);
-    try {
-      mutate({
-        userId: session.user.id,
-        favData: { fav: updatedFavs },
-      });
-    } catch (error) {
-      console.error("Failed to update favorites on server:", error);
-      setFavs(isFav ? [...favs, { ...product }] : updatedFavs);
-      setIsFav(isFav);
-    }
+    mutate({
+      userId: session.user.id,
+      favData: { fav: updatedFavs },
+    });
   };
 
   return {
