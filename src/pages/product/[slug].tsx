@@ -84,7 +84,11 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
           </StyledCol>
         </StyledContainer>
         <OtherSellers data={data.otherSellers} />
-        <DetailTabs data={data} />
+        <DetailTabs
+          data={data}
+          otherSellers={data.otherSellers}
+          seller={data.seller}
+        />
       </StyledDiv>
     </>
   );

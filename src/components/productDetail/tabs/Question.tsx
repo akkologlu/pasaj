@@ -18,13 +18,15 @@ const Question: React.FC<QuestionProps> = ({ qa }) => {
         <StyledDate>{convertDates(qa.question.date)}</StyledDate>
       </h5>
       <StyledText $margin=".5rem 0">{qa.question.content}</StyledText>
-      <StyledQuestionSection>
-        <h6>
-          <StyledSellerText>{qa.answer.seller}</StyledSellerText> yanıtladı
-          <StyledDate>{convertDates(qa.question.date)}</StyledDate>
-        </h6>
-        <StyledText $margin=".5rem 0">{qa.answer.content}</StyledText>
-      </StyledQuestionSection>
+      {qa.answer.content && (
+        <StyledQuestionSection>
+          <h6>
+            <StyledSellerText>{qa.answer.seller}</StyledSellerText> yanıtladı
+            <StyledDate>{convertDates(qa.question.date)}</StyledDate>
+          </h6>
+          <StyledText $margin=".5rem 0">{qa.answer.content}</StyledText>
+        </StyledQuestionSection>
+      )}
     </StyledQuestionCard>
   );
 };

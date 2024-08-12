@@ -184,6 +184,25 @@ export const addComment = async ({
   }
   return res.json();
 };
+export const addQuestion = async ({
+  id,
+  data,
+}: {
+  id: string | number;
+  data: any;
+}) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ qa: data }),
+  });
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
 export const fetchFavs = async (id: string) => {
   const user = await getUser(id);
   return user.fav;

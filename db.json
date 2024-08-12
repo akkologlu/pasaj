@@ -200,6 +200,18 @@
             "date": "2024-08-05T10:57:19.475Z",
             "seller": "Terminal İletişim - Turkcell Mağazası"
           }
+        },
+        {
+          "id": "69ef726f-ab6d-4a48-a088-ab3591cb63a2",
+          "question": {
+            "content": "Merhaba, indirim olacak mı?",
+            "date": "2024-08-12T10:13:09.384Z"
+          },
+          "answer": {
+            "content": "",
+            "date": "",
+            "seller": "Terminal İletişim - Turkcell Mağazası"
+          }
         }
       ],
       "badges": [

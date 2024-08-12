@@ -2,7 +2,7 @@ export type Option = {
   title: string;
   options: string[];
 };
-type Seller = {
+export type Seller = {
   seller: string;
   price: number;
   rating: number;

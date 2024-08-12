@@ -888,3 +888,9 @@ export const StyledRemoveButton = styled(StyledFieldButton)`
   margin-left: 1rem;
   height: 3rem;
 `;
+export const StyledQuestionForm = styled(StyledDiv)`
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  margin-top: 1rem;
+`;

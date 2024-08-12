@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import Description from "./tabs/Description";
-import { Comments, Product } from "@/types/productType";
+import { Comments, Product, Seller } from "@/types/productType";
 import { tabOptions } from "@/lib/mockData";
 import Reviews from "./tabs/Reviews";
 import { useSession } from "next-auth/react";
@@ -11,11 +11,16 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addComment } from "@/lib/api";
 import Questions from "./tabs/Questions";
 import Specifications from "./tabs/Specifications";
-import { Rating } from "@smastrom/react-rating";
 type DetailTabsProps = {
   data: Product;
+  otherSellers: Seller[];
+  seller: string;
 };
-const DetailTabs: React.FC<DetailTabsProps> = ({ data }) => {
+const DetailTabs: React.FC<DetailTabsProps> = ({
+  data,
+  seller,
+  otherSellers,
+}) => {
   const queryClient = useQueryClient();
   const session = useSession();
   const [activeTab, setActiveTab] = useState(tabOptions[0].url);
@@ -91,7 +96,14 @@ const DetailTabs: React.FC<DetailTabsProps> = ({ data }) => {
             handleAddNewComment={handleAddNewComment}
           />
         )}
-        {activeTab === "sorular" && <Questions qas={data.qa} />}
+        {activeTab === "sorular" && (
+          <Questions
+            qas={data.qa}
+            seller={seller}
+            otherSellers={otherSellers}
+            id={data.id}
+          />
+        )}
         {activeTab === "urun-ozellikleri" && (
           <Specifications specs={data.specifications} />
         )}
