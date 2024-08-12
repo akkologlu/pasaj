@@ -17,6 +17,8 @@ import {
   StyledRemoveButton,
 } from "@/styles/styled";
 import { uploadImage } from "@/lib/cloudinary";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 type ProductFormProps = {
   initialValues?: Product;
   onSubmit: (data: Product) => void;
@@ -47,18 +49,22 @@ const ProductForm = ({
     }
   }, [initialValues?.categoryUrl]);
   const [images, setImages] = useState<string[]>(initialValues?.images || []);
+  const { mutate, isPending: imageLoading } = useMutation({
+    mutationFn: uploadImage,
+    onSuccess: (url) => {
+      setImages([...images, url]);
+      setValue("images", [...images, url]);
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
   const handleFileUpload = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = event.target.files?.[0];
     if (file) {
-      try {
-        const url = await uploadImage(file);
-        setImages([...images, url]);
-        setValue("images", [...images, url]);
-      } catch (error) {
-        console.error("Image upload failed:", error);
-      }
+      mutate(file);
     }
   };
   const {
@@ -205,7 +211,15 @@ const ProductForm = ({
                 </StyledRemoveButton>
               </JustifyBetweenAlignCenter>
             ))}
-            <input type="file" onChange={handleFileUpload} accept="image/*" />
+            {imageLoading ? (
+              <p>Fotoğraf yükleniyor. Lütfen bekleyiniz...</p>
+            ) : (
+              <StyledInput
+                type="file"
+                onChange={handleFileUpload}
+                accept="image/*"
+              />
+            )}
           </FlexCol>
         </StyledCol>
         <StyledCol $sizemd={3.75}>
