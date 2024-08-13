@@ -14,6 +14,7 @@ import { Cart } from "@/types/cartType";
 import { useFetchUserCart } from "@/hooks/useDataFetching";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
+import Loading from "@/components/common/Loading";
 interface CartPageProps {
   user: {
     email: string;
@@ -42,7 +43,7 @@ const CartPage: React.FC<CartPageProps> = ({ user }) => {
   const { data: cart, isLoading } = useFetchUserCart(user.id);
   const { handleUpdateQuantity, handleDelete } = useCart(user.id, cart);
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   return (
     <StyledContainer $padding="0 0 5rem 0">

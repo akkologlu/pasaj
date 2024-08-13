@@ -23,6 +23,7 @@ import { FilterState } from "@/types/filterType";
 import { useFetchProducts } from "@/hooks/useDataFetching";
 import { useCompareModeStore } from "@/store/CompareModeStore";
 import LandingSwiper from "@/components/common/LandingSwiper";
+import Loading from "@/components/common/Loading";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params as { slug: string[] };
@@ -98,7 +99,7 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
   useEffect(() => {
     reset(defaultValues);
   }, [slug]);
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
 
   return (
     <>

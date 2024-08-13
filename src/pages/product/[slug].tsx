@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/common/Breadcrumb";
+import Loading from "@/components/common/Loading";
 import DetailTabs from "@/components/productDetail/DetailTabs";
 import ImageSwiper from "@/components/productDetail/ImageSwiper";
 import OtherSellers from "@/components/productDetail/OtherSellers";
@@ -40,7 +41,7 @@ const Product = ({ slug, session }: { slug: string; session: Session }) => {
   const { data: similarProducts, isLoading } = useFetchSimilarProducts(
     data.categoryUrl
   );
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
   return (
     <>
       <Breadcrumb

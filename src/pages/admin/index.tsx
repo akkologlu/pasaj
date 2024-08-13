@@ -9,6 +9,7 @@ import {
   StyledContainer,
   StyledPrimaryFormButton,
 } from "@/styles/styled";
+import Loading from "@/components/common/Loading";
 
 interface AdminProps {
   user: {
@@ -33,7 +34,7 @@ const Admin: React.FC<AdminProps> = () => {
   const { data, isLoading } = useFetchAllProducts();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   return (
     <StyledContainer>

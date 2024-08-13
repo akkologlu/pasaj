@@ -5,6 +5,7 @@ import { fetchProduct, updateProduct } from "@/lib/api";
 import toast from "react-hot-toast";
 import { Product } from "@/types/productType";
 import { StyledDiv, StyledText } from "@/styles/styled";
+import Loading from "@/components/common/Loading";
 
 const EditProduct = () => {
   const router = useRouter();
@@ -33,7 +34,7 @@ const EditProduct = () => {
     },
   });
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loading />;
   if (isError) return <p>Product could not be fetched</p>;
 
   const handleUpdateProduct = async (data: Product) => {
