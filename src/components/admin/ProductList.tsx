@@ -34,7 +34,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
         <StyledAdminList as="li" key={product.id}>
           <StyledCol $sizemd={1}>
             <CustomImage
-              src={product.images[0]}
+              src={product.images?.[0]}
               alt={product.title}
               height={70}
             />

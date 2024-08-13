@@ -31,7 +31,7 @@
       "installmentCount": 3,
       "installmentPrice": 26333,
       "limit": 1,
-      "endOfDiscount": "2024-08-16",
+      "endOfDiscount": "2024-08-23",
       "discountPrice": 7999,
       "category": "Telefon",
       "categoryUrl": "telefon",
@@ -54,7 +54,7 @@
           "seller": "Vatan Bilgisayar",
           "price": 89999,
           "rating": 10,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 50
         },
         {
@@ -67,7 +67,7 @@
           "seller": "MediaMarkt",
           "price": 89999,
           "rating": 9.5,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 2
         }
       ],
@@ -260,7 +260,7 @@
       "installmentCount": 6,
       "installmentPrice": 13333,
       "limit": 2,
-      "endOfDiscount": "2024-08-08T16:13",
+      "endOfDiscount": "2024-08-23",
       "discountPrice": 7999,
       "category": "Telefon",
       "categoryUrl": "telefon",
@@ -283,7 +283,7 @@
           "seller": "Teknosa",
           "price": 79999,
           "rating": 9.5,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 40
         },
         {
@@ -296,7 +296,7 @@
           "seller": "MediaMarkt",
           "price": 79999,
           "rating": 9,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 3
         }
       ],
@@ -369,7 +369,7 @@
       "installmentCount": 3,
       "installmentPrice": 333,
       "limit": 2,
-      "endOfDiscount": "2024-08-08T16:13",
+      "endOfDiscount": "2024-08-23",
       "discountPrice": 99,
       "category": "Ev Aletleri",
       "categoryUrl": "ev-aletleri",
@@ -390,7 +390,7 @@
           "seller": "Arçelik",
           "price": 999,
           "rating": 9,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 20
         },
         {
@@ -477,7 +477,7 @@
       "installmentCount": 12,
       "installmentPrice": 1249,
       "limit": 1,
-      "endOfDiscount": "2024-08-08T16:13",
+      "endOfDiscount": "2024-08-23",
       "discountPrice": 1999,
       "category": "Beyaz Eşya",
       "categoryUrl": "beyaz-esya",
@@ -498,7 +498,7 @@
           "seller": "Arçelik",
           "price": 14999,
           "rating": 9,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 15
         },
         {
@@ -579,7 +579,7 @@
       "installmentCount": 6,
       "installmentPrice": 5833,
       "limit": 1,
-      "endOfDiscount": "2024-08-08T16:13",
+      "endOfDiscount": "2024-08-23",
       "discountPrice": 3999,
       "category": "Bilgisayar",
       "categoryUrl": "bilgisayar",
@@ -600,7 +600,7 @@
           "seller": "Apple Store",
           "price": 34999,
           "rating": 10,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 15
         },
         {
@@ -687,7 +687,7 @@
       "installmentCount": 6,
       "installmentPrice": 1333,
       "limit": 2,
-      "endOfDiscount": "2024-08-08T16:13",
+      "endOfDiscount": "2024-08-23",
       "discountPrice": 0,
       "category": "Beyaz Eşya",
       "categoryUrl": "beyaz-esya",
@@ -708,7 +708,7 @@
           "seller": "Bosch",
           "price": 7999,
           "rating": 9,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 10
         },
         {
@@ -793,7 +793,7 @@
       "installmentCount": 6,
       "installmentPrice": 2166,
       "limit": 2,
-      "endOfDiscount": "2024-08-08T16:13",
+      "endOfDiscount": "2024-08-23",
       "discountPrice": 999,
       "category": "Telefon",
       "categoryUrl": "telefon",
@@ -816,7 +816,7 @@
           "seller": "Mi Store",
           "price": 12999,
           "rating": 9,
-          "endOfDiscount": "2024-08-08T16:13",
+          "endOfDiscount": "2024-08-23",
           "stock": 20
         },
         {
@@ -927,6 +927,72 @@
       "qa": [],
       "badges": [],
       "id": 8
+    },
+    {
+      "title": "iPhone 15 Pro Max",
+      "rating": 5,
+      "stock": 50,
+      "nofSales": 200,
+      "brand": "Apple",
+      "seller": "Terminal İletişim - Turkcell Mağazası",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Beyaz",
+            "Siyah",
+            "Bordo"
+          ]
+        },
+        {
+          "title": "Hafıza",
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
+        }
+      ],
+      "price": 89999,
+      "creditCard": true,
+      "installmentCount": 5,
+      "installmentPrice": 12000,
+      "limit": 1,
+      "endOfDiscount": "2024-08-25",
+      "discountPrice": 6999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        "https://res.cloudinary.com/duxun1rjp/image/upload/v1723493236/ipklozn7ffbeqgfqlf8y.jpg",
+        "https://res.cloudinary.com/duxun1rjp/image/upload/v1723493240/gpnongqyixkisgbpirft.avif"
+      ],
+      "freeShipping": true,
+      "guarantee": false,
+      "description": "iPhone 15 Pro Max 256 GB, 6.7 inç Super Retina XDR ekran, 5G desteği, A15 Bionic çip, 256 GB depolama alanı, 12 MP geniş, ultra geniş ve telefoto kameralar, 4K Dolby Vision HDR kayıt, 12 MP TrueDepth ön kamera, Face ID, iOS 15 işletim sistemi, 5G desteği, 4.352 mAh batarya kapasitesi, 20W hızlı şarj, 15W kablosuz şarj, 7.4 mm kalınlık, 238 gram ağırlık, IP68 su ve toz dayanıklılık.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "6.7 inç Super Retina XDR ekran"
+        },
+        {
+          "title": "Kamera",
+          "value": "12 MP geniş, ultra geniş ve telefoto kameralar"
+        },
+        {
+          "title": "Kayıt",
+          "value": "4K Dolby Vision HDR kayıt"
+        }
+      ],
+      "fibabanka": false,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": false,
+      "comments": [],
+      "qa": [],
+      "badges": [],
+      "id": 9
     }
   ],
   "popularCategories": [

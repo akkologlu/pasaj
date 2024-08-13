@@ -307,6 +307,7 @@ const ProductForm = ({
             </StyledPrimaryFormButton>
           </FlexCol>
         </StyledCol>
+        {errors.root && <p>{errors.root.message}</p>}
       </SpaceBetween>
     </StyledContainer>
   );
