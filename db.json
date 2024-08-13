@@ -1262,7 +1262,34 @@
     {
       "id": "knlV2nhLQVN3edp9Bv9eySUXZg13",
       "email": "admin@admin.com",
-      "cart": [],
+      "cart": [
+        {
+          "cartId": "f0dc7c97-1e85-4aba-8f83-aa35631408f0",
+          "productId": 1,
+          "title": "iPhone 15 Pro Max 256 GB",
+          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
+          "seller": "Terminal İletişim - Turkcell Mağazası",
+          "oldPrice": 89999,
+          "discount": 7999,
+          "limit": 1,
+          "quantity": 1,
+          "Renk": "Mavi",
+          "Hafıza": "128 GB"
+        },
+        {
+          "cartId": "9712d05d-d7ff-4898-98a8-abd86a96dd77",
+          "productId": 2,
+          "title": "Samsung Galaxy S22 Ultra 256 GB",
+          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
+          "seller": "Köroğlu İletişim - Turkcell Mağazası",
+          "oldPrice": 79999,
+          "discount": 7999,
+          "limit": 2,
+          "quantity": 1,
+          "Renk": "Mavi",
+          "Hafıza": "128 GB"
+        }
+      ],
       "fav": [
         {
           "id": 1,

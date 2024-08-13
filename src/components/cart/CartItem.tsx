@@ -42,29 +42,23 @@ const CartItem: React.FC<CartItemProps> = ({
 
   const [quantityLocal, setQuantity] = useState(item.quantity);
   const price = item.oldPrice - item.discount;
-  const incrementQuantity = () => {
+  const adjustQuantity = (adjustment: 1 | -1) => {
     setQuantity((prev) => {
-      const newQuantity = prev + 1;
-      const isUpdated = updateQuantity(
-        item.cartId,
-        newQuantity,
-        item.productId,
-        item.limit
-      );
-      return isUpdated ? newQuantity : prev;
-    });
-  };
-
-  const decrementQuantity = () => {
-    setQuantity((prev) => {
-      if (prev > 1) {
-        const newQuantity = prev - 1;
-        updateQuantity(item.cartId, newQuantity, item.productId, item.limit);
-        return newQuantity;
+      const newQuantity = prev + adjustment;
+      if (adjustment === 1 || (adjustment === -1 && prev > 1)) {
+        const isUpdated = updateQuantity(
+          item.cartId,
+          newQuantity,
+          item.productId,
+          item.limit
+        );
+        return isUpdated ? newQuantity : prev;
       }
       return prev;
     });
   };
+  const incrementQuantity = () => adjustQuantity(1);
+  const decrementQuantity = () => adjustQuantity(-1);
   return (
     <StyledCartItem $radius="1rem" $pos="relative">
       <StyledTimes onClick={() => handleDelete(item.cartId)}>
