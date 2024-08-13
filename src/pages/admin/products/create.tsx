@@ -26,6 +26,7 @@ const CreateProduct = () => {
       comments: [],
       qa: [],
       badges: [],
+      otherSellers: [],
     };
     mutate(newProduct);
   };

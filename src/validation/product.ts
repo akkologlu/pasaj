@@ -35,7 +35,6 @@ export const productSchema = z.object({
   images: z.array(z.string().min(1, "Resim URL'si zorunludur")).optional(),
   freeShipping: z.boolean().optional(),
   guarantee: z.boolean().optional(),
-  colors: z.array(z.string()).optional(),
   otherSellers: z
     .array(
       z.object({
@@ -56,35 +55,6 @@ export const productSchema = z.object({
       z.object({
         title: z.string(),
         value: z.string(),
-      })
-    )
-    .optional(),
-  comments: z
-    .array(
-      z.object({
-        id: z.string().uuid(),
-        date: z.string(),
-        comment: z.string(),
-        rating: z
-          .number()
-          .min(0)
-          .max(5, "Değerlendirme 0 ile 5 arasında olmalıdır"),
-      })
-    )
-    .optional(),
-  qa: z
-    .array(
-      z.object({
-        id: z.number(),
-        question: z.object({
-          content: z.string(),
-          date: z.string(),
-        }),
-        answer: z.object({
-          content: z.string(),
-          date: z.string(),
-          seller: z.string(),
-        }),
       })
     )
     .optional(),

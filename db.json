@@ -44,11 +44,6 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Mavi",
-        "Siyah",
-        "Gri"
-      ],
       "otherSellers": [
         {
           "seller": "Vatan Bilgisayar",
@@ -239,11 +234,6 @@
             "Beyaz",
             "Siyah",
             "Bordo"
-          ],
-          "colorCodes": [
-            "#ffffff",
-            "#000000",
-            "#800000"
           ]
         },
         {
@@ -273,11 +263,6 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Beyaz",
-        "Siyah",
-        "Bordo"
-      ],
       "otherSellers": [
         {
           "seller": "Teknosa",
@@ -381,10 +366,6 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Beyaz",
-        "Mavi"
-      ],
       "otherSellers": [
         {
           "seller": "Arçelik",
@@ -489,10 +470,6 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Beyaz",
-        "Gri"
-      ],
       "otherSellers": [
         {
           "seller": "Arçelik",
@@ -591,10 +568,6 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Gri",
-        "Gümüş"
-      ],
       "otherSellers": [
         {
           "seller": "Apple Store",
@@ -699,10 +672,6 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Beyaz",
-        "Gri"
-      ],
       "otherSellers": [
         {
           "seller": "Bosch",
@@ -806,11 +775,6 @@
       ],
       "freeShipping": true,
       "guarantee": true,
-      "colors": [
-        "Mavi",
-        "Siyah",
-        "Beyaz"
-      ],
       "otherSellers": [
         {
           "seller": "Mi Store",
