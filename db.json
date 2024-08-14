@@ -2034,8 +2034,42 @@
     {
       "id": "knlV2nhLQVN3edp9Bv9eySUXZg13",
       "email": "admin@admin.com",
-      "cart": [],
-      "fav": []
+      "cart": [
+        {
+          "cartId": "7eff4f23-99be-4834-b45c-52add35835fb",
+          "productId": 125,
+          "title": "iPhone 14 Pro",
+          "image": "https://cdn.cimri.io/pictures/article/original/38/38036.jpg",
+          "seller": "Hepsiburada",
+          "oldPrice": 49999,
+          "discount": 3999,
+          "limit": 1,
+          "quantity": 1,
+          "Renk": "Altın",
+          "Hafıza": "128 GB"
+        }
+      ],
+      "fav": [
+        {
+          "id": 38,
+          "title": "Samsung Galaxy S23",
+          "price": 39999,
+          "discountPrice": 2999,
+          "images": [
+            "https://cdn.cimri.io/image/1200x1200/samsung-galaxy-s23-fe-5g-128gb-8gb-ram_865273874.jpg"
+          ]
+        },
+        {
+          "id": 125,
+          "title": "iPhone 14 Pro",
+          "price": 49999,
+          "discountPrice": 3999,
+          "images": [
+            "https://cdn.cimri.io/pictures/article/original/38/38036.jpg",
+            "https://cdn.cimri.io/pictures/article/original/46/46166.jpg"
+          ]
+        }
+      ]
     },
     {
       "id": "hOSi88mjsqeupKhMtqvzqYqff0L2",
