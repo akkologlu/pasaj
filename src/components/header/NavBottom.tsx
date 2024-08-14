@@ -4,7 +4,6 @@ import {
   StyledCategoryModal,
   StyledCol,
   StyledContainer,
-  StyledDiv,
   StyledHamburgerMenuIcon,
   StyledNavBottom,
   StyledNavBottomMobile,

@@ -29,9 +29,9 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
     },
   });
   return (
-    <FlexCol as="ul" $gap="1.5rem">
+    <FlexCol as="ul" $gap="1.5rem" $margin="0 0 3rem 0">
       {products.map((product) => (
-        <StyledAdminList as="li" key={product.id}>
+        <StyledAdminList as="li" key={product.id} $wrap={true}>
           <StyledCol $sizemd={1}>
             <CustomImage
               src={product.images?.[0]}

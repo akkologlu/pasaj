@@ -107,7 +107,7 @@ const CartItem: React.FC<CartItemProps> = ({
             </StyledDiv>
             <StyledText $fs="14px">{quantityLocal}</StyledText>
             <StyledDiv as="button" onClick={incrementQuantity}>
-              +
+              &#43;
             </StyledDiv>
           </StyledCounter>
         </StyledCol>

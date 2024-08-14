@@ -871,6 +871,11 @@ export const StyledCompareItem = styled(StyledDiv)`
 export const StyledAdminList = styled(JustifyBetweenAlignCenter)`
   border: 1px solid ${({ theme }) => theme.colors.border};
   padding: 1rem;
+  @media (max-width: 768px) {
+    * {
+      text-align: center;
+    }
+  }
 `;
 export const StyledYellowButton = styled(StyledPrimaryFormButton)`
   background-color: ${({ theme }) => theme.colors.yellow};

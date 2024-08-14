@@ -130,7 +130,7 @@ const ProductForm = ({
   };
   return (
     <StyledContainer>
-      <SpaceBetween as="form" onSubmit={handleSubmit(onSubmit)}>
+      <SpaceBetween as="form" onSubmit={handleSubmit(onSubmit)} $wrap={true}>
         <StyledCol $sizemd={3.75}>
           {stringLabels.map((label) => (
             <FlexCol key={label.db} $margin="1rem 0">

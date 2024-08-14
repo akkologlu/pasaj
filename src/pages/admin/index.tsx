@@ -39,6 +39,7 @@ const Admin: React.FC<AdminProps> = () => {
   return (
     <StyledContainer>
       <JustifyBetweenAlignCenter $margin="2rem 0">
+        <Link href="/admin/questions">Sorulara Git</Link>
         <h2>
           Ürünler <span>({data.length})</span>{" "}
         </h2>

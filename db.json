@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "title": "iPhone 15 Pro Max 256 GB",
+      "title": "iPhone 15 Pro Max ",
       "rating": 4.8,
       "stock": 45,
       "nofSales": 100,
@@ -123,48 +123,6 @@
       ],
       "comments": [
         {
-          "id": "f8b60531-b5ae-4f03-af96-d79696f81f1a",
-          "date": "2024-08-05T10:57:19.475Z",
-          "comment": "comment 1",
-          "rating": 4
-        },
-        {
-          "id": "fbc29bc8-7367-4699-a737-fae8a408fd83",
-          "date": "2024-08-05T10:57:25.254Z",
-          "comment": "comment 2",
-          "rating": 2
-        },
-        {
-          "id": "fab03fe5-6881-4a64-8859-a01309be1724",
-          "date": "2024-08-05T10:57:29.553Z",
-          "comment": "comment 3",
-          "rating": 5
-        },
-        {
-          "id": "e213528b-b55f-4ba6-b0b1-53684ae72564",
-          "date": "2024-08-05T10:57:41.352Z",
-          "comment": "comment 0",
-          "rating": 5
-        },
-        {
-          "id": "2a04faee-7742-45db-99c4-ac0e3b36a6f3",
-          "date": "2024-08-05T11:19:58.043Z",
-          "comment": "new com",
-          "rating": 4
-        },
-        {
-          "id": "91b4c8ad-64a0-453f-80ee-bf808588902e",
-          "date": "2024-08-05T11:27:18.089Z",
-          "comment": "asdasd",
-          "rating": 4
-        },
-        {
-          "id": "875279fe-0670-4385-ba5f-e093a6f7664c",
-          "date": "2024-08-08T16:21:25.588Z",
-          "comment": "com15",
-          "rating": 4
-        },
-        {
           "id": "ed1e0c4b-74d4-4032-afc5-8cd3fa3100d5",
           "date": "2024-08-11T13:54:10.688Z",
           "comment": "iyi ürün",
@@ -195,18 +153,6 @@
             "date": "2024-08-05T10:57:19.475Z",
             "seller": "Terminal İletişim - Turkcell Mağazası"
           }
-        },
-        {
-          "id": "69ef726f-ab6d-4a48-a088-ab3591cb63a2",
-          "question": {
-            "content": "Merhaba, indirim olacak mı?",
-            "date": "2024-08-12T10:13:09.384Z"
-          },
-          "answer": {
-            "content": "",
-            "date": "",
-            "seller": "Terminal İletişim - Turkcell Mağazası"
-          }
         }
       ],
       "badges": [
@@ -220,8 +166,147 @@
       "bestOffers": true
     },
     {
+      "id": 125,
+      "title": "iPhone 14 Pro",
+      "rating": 4.7,
+      "stock": 30,
+      "nofSales": 150,
+      "brand": "Apple",
+      "seller": "Hepsiburada",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Altın",
+            "Beyaz",
+            "Mor"
+          ]
+        },
+        {
+          "title": "Hafıza",
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
+        }
+      ],
+      "price": 49999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 13333,
+      "limit": 1,
+      "endOfDiscount": "2024-08-30",
+      "discountPrice": 3999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        "https://cdn.cimri.io/pictures/article/original/38/38036.jpg",
+        "https://cdn.cimri.io/pictures/article/original/46/46166.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "MediaMarkt",
+          "price": 49999,
+          "rating": 9.5,
+          "stock": 10
+        }
+      ],
+      "description": "iPhone 14 Pro Max, 6.5 inç Super Retina XDR ekran, 5G desteği, A14 Bionic çip, 256 GB depolama alanı, 12 MP geniş ve ultra geniş kameralar, 4K HDR kayıt, 12 MP TrueDepth ön kamera, Face ID, iOS 14 işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "6.5 inç Super Retina XDR ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "A14 Bionic çip"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo"
+      ],
+      "fibabanka": true,
+      "specialForYou": false,
+      "newProduct": true,
+      "bestOffers": false
+    },
+    {
+      "id": 126,
+      "title": "iPhone 13 Mini",
+      "rating": 4.6,
+      "stock": 25,
+      "nofSales": 120,
+      "brand": "Apple",
+      "seller": "Vatan Bilgisayar",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Kırmızı",
+            "Mavi",
+            "Beyaz"
+          ]
+        },
+        {
+          "title": "Hafıza",
+          "options": [
+            "64 GB",
+            "128 GB",
+            "256 GB"
+          ]
+        }
+      ],
+      "price": 39999,
+      "creditCard": true,
+      "installmentCount": 9,
+      "installmentPrice": 6666,
+      "limit": 1,
+      "endOfDiscount": "2024-09-01",
+      "discountPrice": 2499,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "IOS Telefonlar",
+      "subcategoryUrl": "ios-telefonlar",
+      "images": [
+        "https://cdn.akakce.com/z/apple/iphone-13-mini-128-gb-mavi.jpg",
+        "https://cdn.akakce.com/z/apple/iphone-13-mini.jpg"
+      ],
+      "freeShipping": false,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "iPhone 13 Mini 128 GB, 5.4 inç Super Retina XDR ekran, 5G desteği, A13 Bionic çip, 128 GB depolama alanı, 12 MP geniş ve ultra geniş kameralar, 4K HDR kayıt, 12 MP TrueDepth ön kamera, Face ID, iOS 13 işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "5.4 inç Super Retina XDR ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "A13 Bionic çip"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": true,
+      "newProduct": false,
+      "bestOffers": true
+    },
+    {
       "id": 2,
-      "title": "Samsung Galaxy S22 Ultra 256 GB",
+      "title": "Samsung Galaxy S22 Ultra",
       "rating": 4.7,
       "stock": 50,
       "nofSales": 90,
@@ -245,41 +330,40 @@
           ]
         }
       ],
-      "price": 79999,
+      "price": 29999,
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 13333,
       "limit": 2,
       "endOfDiscount": "2024-08-23",
-      "discountPrice": 7999,
+      "discountPrice": 799,
       "category": "Telefon",
       "categoryUrl": "telefon",
       "subcategory": "Android Telefonlar",
       "subcategoryUrl": "android-telefonlar",
       "images": [
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        "https://cdn.akakce.com/z/samsung/samsung-galaxy-s22-ultra-5g-256-gb.jpg",
+        "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/600/600/productimage/125078457/125078457_0_MC/60699744.jpg"
       ],
       "freeShipping": true,
       "guarantee": true,
       "otherSellers": [
         {
           "seller": "Teknosa",
-          "price": 79999,
+          "price": 29999,
           "rating": 9.5,
           "endOfDiscount": "2024-08-23",
           "stock": 40
         },
         {
           "seller": "Hepsiburada",
-          "price": 79999,
+          "price": 32999,
           "rating": 9,
           "stock": 5
         },
         {
           "seller": "MediaMarkt",
-          "price": 79999,
+          "price": 35999,
           "rating": 9,
           "endOfDiscount": "2024-08-23",
           "stock": 3
@@ -308,13 +392,7 @@
           "comment": "Mükemmel kamera kalitesi."
         }
       ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Kamerası kaç MP?",
-          "answer": "108 MP geniş, ultra geniş ve telefoto kameralar."
-        }
-      ],
+      "qa": [],
       "badges": [
         "Kampanyalı",
         "Ücretsiz Kargo",
@@ -326,196 +404,69 @@
       "bestOffers": true
     },
     {
-      "id": 3,
-      "title": "Ütü",
-      "rating": 4.5,
-      "stock": 30,
-      "nofSales": 30,
-      "brand": "Philips",
-      "seller": "Turkcell Satış A.Ş.",
-      "configration": [
-        {
-          "title": "Renk",
-          "options": [
-            "Beyaz",
-            "Mavi"
-          ]
-        },
-        {
-          "title": "Güç",
-          "options": [
-            "2000W",
-            "2400W"
-          ]
-        }
-      ],
-      "price": 999,
-      "creditCard": true,
-      "installmentCount": 3,
-      "installmentPrice": 333,
-      "limit": 2,
-      "endOfDiscount": "2024-08-23",
-      "discountPrice": 99,
-      "category": "Ev Aletleri",
-      "categoryUrl": "ev-aletleri",
-      "subcategory": "Ütüler",
-      "subcategoryUrl": "utuler",
-      "images": [
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-      ],
-      "freeShipping": true,
-      "guarantee": true,
-      "otherSellers": [
-        {
-          "seller": "Arçelik",
-          "price": 999,
-          "rating": 9,
-          "endOfDiscount": "2024-08-23",
-          "stock": 20
-        },
-        {
-          "seller": "Beko",
-          "price": 999,
-          "rating": 8.5,
-          "stock": 10
-        }
-      ],
-      "description": "Ütü, 2400W gücünde, seramik tabanlı, buhar çıkışı, otomatik kapanma özelliği ile güvenli ve pratik kullanım sunar.",
-      "specifications": [
-        {
-          "title": "Güç",
-          "value": "2400W"
-        },
-        {
-          "title": "Taban",
-          "value": "Seramik"
-        },
-        {
-          "title": "Buhar Çıkışı",
-          "value": "50 g/dk"
-        },
-        {
-          "title": "Otomatik Kapanma",
-          "value": "Evet"
-        },
-        {
-          "title": "Su Kapasitesi",
-          "value": "300 ml"
-        }
-      ],
-      "comments": [
-        {
-          "id": 1,
-          "name": "Zeynep",
-          "rating": 5,
-          "comment": "Ütü yapmak artık daha kolay."
-        }
-      ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Gücü ne kadar?",
-          "answer": "2400W."
-        }
-      ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
-      "fibabanka": true,
-      "specialForYou": false,
-      "newProduct": false,
-      "bestOffers": true
-    },
-    {
-      "id": 4,
-      "title": "Buzdolabı",
-      "rating": 4.6,
-      "stock": 25,
-      "nofSales": 50,
+      "id": 38,
+      "title": "Samsung Galaxy S23",
+      "rating": 4.9,
+      "stock": 40,
+      "nofSales": 200,
       "brand": "Samsung",
-      "seller": "Ayaz İletişim - Turkcell Mağazası",
+      "seller": "Samsung Türkiye",
       "configration": [
         {
           "title": "Renk",
           "options": [
             "Beyaz",
+            "Siyah",
             "Gri"
           ]
         },
         {
-          "title": "Kapasite",
+          "title": "Hafıza",
           "options": [
-            "500L",
-            "600L"
+            "128 GB",
+            "256 GB",
+            "512 GB"
           ]
         }
       ],
-      "price": 14999,
+      "price": 39999,
       "creditCard": true,
       "installmentCount": 12,
-      "installmentPrice": 1249,
+      "installmentPrice": 8333,
       "limit": 1,
-      "endOfDiscount": "2024-08-23",
-      "discountPrice": 1999,
-      "category": "Beyaz Eşya",
-      "categoryUrl": "beyaz-esya",
-      "subcategory": "Buzdolapları",
-      "subcategoryUrl": "buzdolaplari",
+      "endOfDiscount": "2024-08-31",
+      "discountPrice": 2999,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "Android Telefonlar",
+      "subcategoryUrl": "android-telefonlar",
       "images": [
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00HRNS/00HRNS-1/00HRNS-1_600x450.png?1720095274003",
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/Cihaz/aksesuar/Samsung/rb50rs334ww-tr-543-l-no-frost-buzdolabi/cg/1/1_600x450.png?1720095274003"
+        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/137192-1_large.jpg",
+        "https://cdn.cimri.io/image/1200x1200/samsung-galaxy-s23-fe-5g-128gb-8gb-ram_865273874.jpg"
       ],
       "freeShipping": true,
       "guarantee": true,
       "otherSellers": [
         {
-          "seller": "Arçelik",
-          "price": 14999,
-          "rating": 9,
-          "endOfDiscount": "2024-08-23",
-          "stock": 15
-        },
-        {
-          "seller": "Vestel",
-          "price": 14999,
-          "rating": 8.5,
-          "stock": 10
+          "seller": "Hepsiburada",
+          "price": 44999,
+          "rating": 10,
+          "stock": 50
         }
       ],
-      "description": "Buzdolabı, 600L kapasitesi, no-frost özelliği, enerji tasarruflu, hızlı soğutma ve dondurma özellikleri ile pratik ve verimli bir kullanım sunar.",
+      "description": "Samsung Galaxy S23, 6.8 inç Dynamic AMOLED ekran, Exynos 2200 işlemci, 256 GB depolama, 108 MP kamera, 5000 mAh batarya, Android 13.",
       "specifications": [
         {
-          "title": "Kapasite",
-          "value": "600L"
+          "title": "Ekran",
+          "value": "6.8 inç Dynamic AMOLED ekran"
         },
         {
-          "title": "Özellik",
-          "value": "No-frost"
+          "title": "İşlemci",
+          "value": "Exynos 2200"
         }
       ],
-      "comments": [
-        {
-          "id": 1,
-          "name": "Selin",
-          "rating": 5,
-          "comment": "Çok geniş ve kullanışlı."
-        }
-      ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Kapasitesi ne kadar?",
-          "answer": "600L."
-        },
-        {
-          "id": 2,
-          "question": "No-frost özelliği var mı?",
-          "answer": "Evet, no-frost özelliği bulunmaktadır."
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "badges": [
         "Kampanyalı",
         "Ücretsiz Kargo",
@@ -527,8 +478,1082 @@
       "bestOffers": true
     },
     {
+      "id": 37,
+      "title": "Samsung Galaxy S22",
+      "rating": 4.7,
+      "stock": 35,
+      "nofSales": 180,
+      "brand": "Samsung",
+      "seller": "Samsung Türkiye",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Mavi",
+            "Siyah",
+            "Gri"
+          ]
+        },
+        {
+          "title": "Hafıza",
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
+        }
+      ],
+      "price": 29999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 13333,
+      "limit": 1,
+      "endOfDiscount": "2024-08-29",
+      "discountPrice": 2499,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "Android Telefonlar",
+      "subcategoryUrl": "android-telefonlar",
+      "images": [
+        "https://cdn.cimri.io/pictures/article/original/46/46114.jpg",
+        "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/600/600/productimage/125078436/125078436_0_MC/60698823.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Samsung Galaxy S22, 6.6 inç Dynamic AMOLED ekran, Snapdragon 888 işlemci, 256 GB depolama, 64 MP kamera, 4500 mAh batarya, Android 12.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "6.6 inç Dynamic AMOLED ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Snapdragon 888"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": false,
+      "bestOffers": true
+    },
+    {
+      "id": 36,
+      "title": "Samsung Galaxy Note 20",
+      "rating": 4.5,
+      "stock": 20,
+      "nofSales": 100,
+      "brand": "Samsung",
+      "seller": "Hepsiburada",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Yeşil",
+            "Siyah",
+            "Bronz"
+          ]
+        },
+        {
+          "title": "Hafıza",
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
+        }
+      ],
+      "price": 25999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 11666,
+      "limit": 1,
+      "endOfDiscount": "2024-08-28",
+      "discountPrice": 1499,
+      "category": "Telefon",
+      "categoryUrl": "telefon",
+      "subcategory": "Android Telefonlar",
+      "subcategoryUrl": "android-telefonlar",
+      "images": [
+        "https://cdn.akakce.com/samsung/samsung-galaxy-note-20-ultra-256-gb-z.jpg",
+        "https://cdn.akakce.com/samsung/samsung-galaxy-note-20-256-gb-mistik-yesil-z.jpg"
+      ],
+      "freeShipping": false,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Vatan Bilgisayar",
+          "price": 26999,
+          "rating": 9,
+          "stock": 10
+        }
+      ],
+      "description": "Samsung Galaxy Note 20, 6.7 inç Super AMOLED ekran, Exynos 990 işlemci, 256 GB depolama, 64 MP kamera, 4500 mAh batarya, Android 11.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "6.7 inç Super AMOLED ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Exynos 990"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": false,
+      "bestOffers": false
+    },
+    {
+      "id": 47,
+      "title": "MacBook Air M2",
+      "rating": 4.9,
+      "stock": 30,
+      "nofSales": 80,
+      "brand": "Apple",
+      "seller": "Apple Store",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Gümüş",
+            "Uzay Grisi",
+            "Altın"
+          ]
+        },
+        {
+          "title": "RAM",
+          "options": [
+            "8 GB",
+            "16 GB"
+          ]
+        },
+        {
+          "title": "Depolama",
+          "options": [
+            "256 GB",
+            "512 GB",
+            "1 TB"
+          ]
+        }
+      ],
+      "price": 149999,
+      "creditCard": true,
+      "installmentCount": 12,
+      "installmentPrice": 12499,
+      "limit": 1,
+      "endOfDiscount": "2024-08-31",
+      "discountPrice": 13999,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Macbook",
+      "subcategoryUrl": "macbook",
+      "images": [
+        "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-midnight-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1708367688034",
+        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/134041-1_large.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 149999,
+          "rating": 9.5,
+          "stock": 10
+        }
+      ],
+      "description": "MacBook Air M2, 13.3 inç Retina ekran, Apple M2 çip, 8 GB RAM, 256 GB SSD, macOS işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "13.3 inç Retina ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Apple M2"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 48,
+      "title": "MacBook Pro M2",
+      "rating": 4.8,
+      "stock": 25,
+      "nofSales": 60,
+      "brand": "Apple",
+      "seller": "Apple Store",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Gümüş",
+            "Uzay Grisi"
+          ]
+        },
+        {
+          "title": "RAM",
+          "options": [
+            "8 GB",
+            "16 GB"
+          ]
+        },
+        {
+          "title": "Depolama",
+          "options": [
+            "512 GB",
+            "1 TB",
+            "2 TB"
+          ]
+        }
+      ],
+      "price": 179999,
+      "creditCard": true,
+      "installmentCount": 12,
+      "installmentPrice": 14999,
+      "limit": 1,
+      "endOfDiscount": "2024-08-30",
+      "discountPrice": 16999,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Macbook",
+      "subcategoryUrl": "macbook",
+      "images": [
+        "https://productimages.hepsiburada.net/s/237/375-375/110000220868824.jpg",
+        "https://www.jebinde.com/Content/ProductImage/Original/638291668811667764-Macbook-Pro-M2-8-GB-512-GB-SSD-13.3-MNEQ3TUA-Gumus-.png?width=1000&height=1000&bgcolor=white"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "MacBook Pro M2, 14 inç Liquid Retina XDR ekran, Apple M2 çip, 16 GB RAM, 512 GB SSD, macOS işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "14 inç Liquid Retina XDR ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Apple M2"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 49,
+      "title": "MacBook Air M1",
+      "rating": 4.7,
+      "stock": 40,
+      "nofSales": 90,
+      "brand": "Apple",
+      "seller": "Vatan Bilgisayar",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Gümüş",
+            "Uzay Grisi",
+            "Altın"
+          ]
+        },
+        {
+          "title": "RAM",
+          "options": [
+            "8 GB",
+            "16 GB"
+          ]
+        },
+        {
+          "title": "Depolama",
+          "options": [
+            "256 GB",
+            "512 GB"
+          ]
+        }
+      ],
+      "price": 119999,
+      "creditCard": true,
+      "installmentCount": 9,
+      "installmentPrice": 13333,
+      "limit": 1,
+      "endOfDiscount": "2024-09-01",
+      "discountPrice": 10999,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Macbook",
+      "subcategoryUrl": "macbook",
+      "images": [
+        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/114754-1-2_large.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-g6ZWExP8t8Xl2bG0E4cM4mxjJYZ525ZrLQ&s"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "MacBook Air M1, 13.3 inç Retina ekran, Apple M1 çip, 8 GB RAM, 256 GB SSD, macOS işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "13.3 inç Retina ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Apple M1"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": true,
+      "newProduct": false,
+      "bestOffers": true
+    },
+    {
+      "id": 60,
+      "title": "iPad Pro 11",
+      "rating": 4.9,
+      "stock": 50,
+      "nofSales": 200,
+      "brand": "Apple",
+      "seller": "Apple Store",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Gümüş",
+            "Uzay Grisi"
+          ]
+        },
+        {
+          "title": "Depolama",
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
+        }
+      ],
+      "price": 39999,
+      "creditCard": true,
+      "installmentCount": 12,
+      "installmentPrice": 9166,
+      "limit": 1,
+      "endOfDiscount": "2024-08-31",
+      "discountPrice": 1999,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Tablet",
+      "subcategoryUrl": "tablet",
+      "images": [
+        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mnxf3tua-apple-11-inc-ipad-pro-wi-fi-256gb-uzay-grisi-mnxf3tua-638024012164116553.jpg",
+        "https://www.pt.com.tr/wp-content/uploads/2024/06/JeCYu0hyybOySyWnPa4aKeDRsQW5QL1JJvhYG56m-2.webp"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 45999,
+          "rating": 9.5,
+          "stock": 20
+        }
+      ],
+      "description": "iPad Pro 11 inç, Apple M1 çip, 128 GB depolama, 12 MP geniş kamera, 11 inç Liquid Retina XDR ekran, iPadOS işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "11 inç Liquid Retina XDR ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Apple M1"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 61,
+      "title": "iPad Air",
+      "rating": 4.7,
+      "stock": 35,
+      "nofSales": 120,
+      "brand": "Apple",
+      "seller": "Vatan Bilgisayar",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Mavi",
+            "Pembe",
+            "Gri"
+          ]
+        },
+        {
+          "title": "Depolama",
+          "options": [
+            "64 GB",
+            "128 GB"
+          ]
+        }
+      ],
+      "price": 29999,
+      "creditCard": true,
+      "installmentCount": 9,
+      "installmentPrice": 8888,
+      "limit": 1,
+      "endOfDiscount": "2024-08-30",
+      "discountPrice": 2499,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Tablet",
+      "subcategoryUrl": "tablet",
+      "images": [
+        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/132830-1-2_large.jpg",
+        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mme23tua-apple-ipad-air-109-inc-wi-fi-64gb-mor-mme23tua-637835538163205462.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 30999,
+          "rating": 9,
+          "stock": 15
+        }
+      ],
+      "description": "iPad Air, 10.9 inç Liquid Retina ekran, Apple M1 çip, 64 GB depolama, 12 MP geniş kamera, iPadOS işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "10.9 inç Liquid Retina ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Apple M1"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": false,
+      "bestOffers": false
+    },
+    {
+      "id": 62,
+      "title": "Samsung Galaxy Tab S8",
+      "rating": 4.8,
+      "stock": 40,
+      "nofSales": 180,
+      "brand": "Samsung",
+      "seller": "Samsung Türkiye",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Gümüş",
+            "Siyah"
+          ]
+        },
+        {
+          "title": "Depolama",
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
+        }
+      ],
+      "price": 19999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 11666,
+      "limit": 1,
+      "endOfDiscount": "2024-08-29",
+      "discountPrice": 1499,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Tablet",
+      "subcategoryUrl": "tablet",
+      "images": [
+        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/131961-1-1_large.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Samsung Galaxy Tab S8, 11 inç TFT ekran, Snapdragon 8 Gen 1 işlemci, 128 GB depolama, 13 MP kamera, Android 12.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "11 inç TFT ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Snapdragon 8 Gen 1"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 83,
+      "title": "HP Pavilion 15",
+      "rating": 4.7,
+      "stock": 30,
+      "nofSales": 140,
+      "brand": "HP",
+      "seller": "Vatan Bilgisayar",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Gümüş",
+            "Siyah"
+          ]
+        },
+        {
+          "title": "RAM",
+          "options": [
+            "8 GB",
+            "16 GB"
+          ]
+        },
+        {
+          "title": "Depolama",
+          "options": [
+            "256 GB",
+            "512 GB",
+            "1 TB"
+          ]
+        }
+      ],
+      "price": 49999,
+      "creditCard": true,
+      "installmentCount": 9,
+      "installmentPrice": 12222,
+      "limit": 1,
+      "endOfDiscount": "2024-09-01",
+      "discountPrice": 2999,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Dizüstü",
+      "subcategoryUrl": "dizustu",
+      "images": [
+        "https://cdn.akakce.com/z/hp/hp-pavilion-15-ec2059nt-68n74ea-r5-5600h-8-gb-512-gb-ssd-gtx1650-144hz-15-6-dos-fhd-dizustu-bilgisayar.jpg",
+        "https://premiumtech.pl/images/premiumtech/152000-153000/HP-Pavilion-Gaming-15-FullHD-IPS-AMD-Ryzen-5-5600H-6-rdzeni-8GB-DDR4-512GB-SSD-NVMe-NVIDIA-GeForce-RT-3050-4GB-Windows-10_%5B152740%5D_480.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 52999,
+          "rating": 9,
+          "stock": 20
+        }
+      ],
+      "description": "HP Pavilion 15, 15.6 inç Full HD ekran, Intel Core i7 işlemci, 16 GB RAM, 512 GB SSD, Windows 11 işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "15.6 inç Full HD ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Intel Core i7"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 84,
+      "title": "Dell XPS 13",
+      "rating": 4.9,
+      "stock": 20,
+      "nofSales": 100,
+      "brand": "Dell",
+      "seller": "MediaMarkt",
+      "configration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Gümüş",
+            "Siyah"
+          ]
+        },
+        {
+          "title": "RAM",
+          "options": [
+            "16 GB",
+            "32 GB"
+          ]
+        },
+        {
+          "title": "Depolama",
+          "options": [
+            "512 GB",
+            "1 TB"
+          ]
+        }
+      ],
+      "price": 39999,
+      "creditCard": true,
+      "installmentCount": 12,
+      "installmentPrice": 13333,
+      "limit": 1,
+      "endOfDiscount": "2024-08-31",
+      "discountPrice": 3999,
+      "category": "Bilgisayar",
+      "categoryUrl": "bilgisayar",
+      "subcategory": "Dizüstü",
+      "subcategoryUrl": "dizustu",
+      "images": [
+        "https://media.harcialem.com/photos/product/000/092/015/117196-w700h584.jpg",
+        "https://platincdn.com/466/pictures/ZRDMXBKUCV3222024164817_dell-xps-13-9340-6.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Dell XPS 13, 13.4 inç UHD+ ekran, Intel Core i7 işlemci, 16 GB RAM, 512 GB SSD, Windows 11 işletim sistemi.",
+      "specifications": [
+        {
+          "title": "Ekran",
+          "value": "13.4 inç UHD+ ekran"
+        },
+        {
+          "title": "İşlemci",
+          "value": "Intel Core i7"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 90,
+      "title": "Samsung WW80J5555FX",
+      "rating": 4.6,
+      "stock": 15,
+      "nofSales": 50,
+      "brand": "Samsung",
+      "seller": "Vatan Bilgisayar",
+      "configration": [],
+      "price": 49999,
+      "creditCard": true,
+      "installmentCount": 9,
+      "installmentPrice": 5555,
+      "limit": 1,
+      "endOfDiscount": "2024-09-01",
+      "discountPrice": 4499,
+      "category": "Beyaz Eşya",
+      "categoryUrl": "beyaz-esya",
+      "subcategory": "Çamaşır Makinesi",
+      "subcategoryUrl": "camasir-makineleri",
+      "images": [
+        "https://brain-images-ssl.cdn.dixons.com/9/4/10163049/l_10163049_008.jpg",
+        "https://brain-images-ssl.cdn.dixons.com/9/4/10163049/l_10163049_010.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Samsung WW80J5555FX, 8 kg yıkama kapasitesi, 1400 devir, EcoBubble teknolojisi, A+++ enerji sınıfı.",
+      "specifications": [
+        {
+          "title": "Yıkama Kapasitesi",
+          "value": "8 kg"
+        },
+        {
+          "title": "Devir",
+          "value": "1400"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 91,
+      "title": "Bosch Serie 6 WAT28460TR",
+      "rating": 4.7,
+      "stock": 10,
+      "nofSales": 30,
+      "brand": "Bosch",
+      "seller": "MediaMarkt",
+      "configration": [],
+      "price": 59999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 9999,
+      "limit": 1,
+      "endOfDiscount": "2024-08-31",
+      "discountPrice": 5499,
+      "category": "Beyaz Eşya",
+      "categoryUrl": "beyaz-esya",
+      "subcategory": "Çamaşır Makinesi",
+      "subcategoryUrl": "camasir-makineleri",
+      "images": [
+        "https://media3.bosch-home.com/3D_Asset/MC3D360_03200832_360_WAT24480TR/Lv1/round900x506/img01.jpg",
+        "https://cdn.akakce.com/bosch/bosch-wat28460tr-a-1400-devir-8-kg-z.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Bosch Serie 6 WAT28460TR, 9 kg yıkama kapasitesi, 1400 devir, EcoSilence Drive motor, A+++ enerji sınıfı.",
+      "specifications": [
+        {
+          "title": "Yıkama Kapasitesi",
+          "value": "9 kg"
+        },
+        {
+          "title": "Devir",
+          "value": "1400"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": true,
+      "newProduct": false,
+      "bestOffers": true
+    },
+    {
+      "id": 92,
+      "title": "Vestel Buzdolabı EKO NF4501",
+      "rating": 4.5,
+      "stock": 20,
+      "nofSales": 60,
+      "brand": "Vestel",
+      "seller": "Hepsiburada",
+      "configration": [],
+      "price": 89999,
+      "creditCard": true,
+      "installmentCount": 9,
+      "installmentPrice": 9999,
+      "limit": 1,
+      "endOfDiscount": "2024-09-01",
+      "discountPrice": 8499,
+      "category": "Beyaz Eşya",
+      "categoryUrl": "beyaz-esya",
+      "subcategory": "Buzdolabı",
+      "subcategoryUrl": "buzdolaplari",
+      "images": [
+        "https://statics.vestel.com.tr/productimages/20263686_r1_1000_1000.jpg",
+        "https://static.ticimax.cloud/51553/uploads/urunresimleri/buyuk/vestel-eko-nf480-480-lt-cift-kapili-bu-83668a.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Vestel Buzdolabı EKO NF4501, 450 L brüt hacim, No-Frost, A++ enerji sınıfı, LED aydınlatma.",
+      "specifications": [
+        {
+          "title": "Hacim",
+          "value": "450 L"
+        },
+        {
+          "title": "Enerji Sınıfı",
+          "value": "A++"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 93,
+      "title": "Arçelik Buzdolabı 2486 CEI",
+      "rating": 4.6,
+      "stock": 15,
+      "nofSales": 40,
+      "brand": "Arçelik",
+      "seller": "Vatan Bilgisayar",
+      "configration": [],
+      "price": 109999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 18333,
+      "limit": 1,
+      "endOfDiscount": "2024-08-31",
+      "discountPrice": 10499,
+      "category": "Beyaz Eşya",
+      "categoryUrl": "beyaz-esya",
+      "subcategory": "Buzdolabı",
+      "subcategoryUrl": "buzdolaplari",
+      "images": [
+        "https://cdn.akakce.com/arcelik/arcelik-2486-cei-a-kombi-no-frost-buzdolabi-z.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Arçelik Buzdolabı 2486 CEI, 530 L brüt hacim, No-Frost, A+++ enerji sınıfı, LED aydınlatma.",
+      "specifications": [
+        {
+          "title": "Hacim",
+          "value": "530 L"
+        },
+        {
+          "title": "Enerji Sınıfı",
+          "value": "A+++"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 94,
+      "title": "Bosch Bulaşık Makinesi SMS46MW10T",
+      "rating": 4.8,
+      "stock": 10,
+      "nofSales": 30,
+      "brand": "Bosch",
+      "seller": "Hepsiburada",
+      "configration": [],
+      "price": 79999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 13333,
+      "limit": 1,
+      "endOfDiscount": "2024-08-31",
+      "discountPrice": 7499,
+      "category": "Beyaz Eşya",
+      "categoryUrl": "beyaz-esya",
+      "subcategory": "Bulaşık Makinesi",
+      "subcategoryUrl": "bulasik-makineleri",
+      "images": [
+        "https://media3.bosch-home.com/Product_Shots/435x515/MCSA02651575_i7273_2007950_SMS46MW00T_CMYK_def.png"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Bosch Bulaşık Makinesi SMS46MW10T, 12 kişilik yıkama kapasitesi, A++ enerji sınıfı, 44 dB ses seviyesi, EcoSilence Drive motor.",
+      "specifications": [
+        {
+          "title": "Yıkama Kapasitesi",
+          "value": "12 kişilik"
+        },
+        {
+          "title": "Enerji Sınıfı",
+          "value": "A++"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 95,
+      "title": "Dyson V11 Absolute",
+      "rating": 4.9,
+      "stock": 25,
+      "nofSales": 50,
+      "brand": "Dyson",
+      "seller": "Vatan Bilgisayar",
+      "configration": [],
+      "price": 3999,
+      "creditCard": true,
+      "installmentCount": 9,
+      "installmentPrice": 14444,
+      "limit": 1,
+      "endOfDiscount": "2024-09-01",
+      "discountPrice": 3499,
+      "category": "Ev Aletleri",
+      "categoryUrl": "ev-aletleri",
+      "subcategory": "Süpürge",
+      "subcategoryUrl": "supurge",
+      "images": [
+        "https://cdn.akakce.com/dyson/dyson-v11-absolute-pro-gold-z.jpg",
+        "https://productimages.hepsiburada.net/s/63/375-375/110000004613126.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Dyson V11 Absolute, kablosuz elektrikli süpürge, 60 dakika çalışma süresi, 185 AW emiş gücü, 3 farklı mod.",
+      "specifications": [
+        {
+          "title": "Çalışma Süresi",
+          "value": "60 dakika"
+        },
+        {
+          "title": "Emiş Gücü",
+          "value": "185 AW"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": true,
+      "specialForYou": true,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
+      "id": 96,
+      "title": "Philips Kahve Makinesi EP2231/40",
+      "rating": 4.8,
+      "stock": 20,
+      "nofSales": 40,
+      "brand": "Philips",
+      "seller": "Hepsiburada",
+      "configration": [],
+      "price": 59999,
+      "creditCard": true,
+      "installmentCount": 6,
+      "installmentPrice": 9999,
+      "limit": 1,
+      "endOfDiscount": "2024-08-31",
+      "discountPrice": 5499,
+      "category": "Ev Aletleri",
+      "categoryUrl": "ev-aletleri",
+      "subcategory": "Kahve Makinesi",
+      "subcategoryUrl": "kahve-makinesi",
+      "images": [
+        "https://cdn.akakce.com/z/philips/philips-2200-serisi-ep2231-40-tam-otomatik-kahve-makinesi.jpg",
+        "https://productimages.hepsiburada.net/s/544/375-375/110000603969837.jpg"
+      ],
+      "freeShipping": true,
+      "guarantee": true,
+      "otherSellers": [],
+      "description": "Philips Kahve Makinesi EP2231/40, tam otomatik kahve makinesi, LatteGo süt köpürtücü, AquaClean su filtresi, 3 farklı kahve seçeneği.",
+      "specifications": [
+        {
+          "title": "Kahve Türleri",
+          "value": "Espresso, Cappuccino, Latte Macchiato"
+        },
+        {
+          "title": "Su Filtresi",
+          "value": "AquaClean"
+        }
+      ],
+      "comments": [],
+      "qa": [],
+      "badges": [
+        "Kampanyalı",
+        "Ücretsiz Kargo",
+        "Garantili"
+      ],
+      "fibabanka": false,
+      "specialForYou": false,
+      "newProduct": true,
+      "bestOffers": true
+    },
+    {
       "id": 5,
-      "title": "Macbook Pro 2022 512 GB",
+      "title": "Macbook Pro 2022 ",
       "rating": 4.9,
       "stock": 20,
       "nofSales": 120,
@@ -563,8 +1588,8 @@
       "subcategory": "Macbook",
       "subcategoryUrl": "macbook",
       "images": [
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        "https://productimages.hepsiburada.net/s/260/375-375/110000243848359.jpg",
+        "https://m.media-amazon.com/images/I/71an9eiBxpL._AC_UF1000,1000_QL80_.jpg"
       ],
       "freeShipping": true,
       "guarantee": true,
@@ -608,18 +1633,7 @@
           "comment": "Fiyatı biraz yüksek ama değer."
         }
       ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Depolama alanı ne kadar?",
-          "answer": "512 GB."
-        },
-        {
-          "id": 2,
-          "question": "Pil ömrü ne kadar?",
-          "answer": "20 saat."
-        }
-      ],
+      "qa": [],
       "badges": [
         "Kampanyalı",
         "Ücretsiz Kargo",
@@ -631,110 +1645,8 @@
       "bestOffers": false
     },
     {
-      "id": 6,
-      "title": "Çamaşır Makinesi",
-      "rating": 4.7,
-      "stock": 15,
-      "nofSales": 40,
-      "brand": "Arçelik",
-      "seller": "Gürsoylar İletişim - Turkcell Mağazası",
-      "configration": [
-        {
-          "title": "Renk",
-          "options": [
-            "Beyaz",
-            "Gri"
-          ]
-        },
-        {
-          "title": "Kapasite",
-          "options": [
-            "7 kg",
-            "9 kg",
-            "11 kg"
-          ]
-        }
-      ],
-      "price": 7999,
-      "creditCard": true,
-      "installmentCount": 6,
-      "installmentPrice": 1333,
-      "limit": 2,
-      "endOfDiscount": "2024-08-23",
-      "discountPrice": 0,
-      "category": "Beyaz Eşya",
-      "categoryUrl": "beyaz-esya",
-      "subcategory": "Çamaşır Makineleri",
-      "subcategoryUrl": "camasir-makineleri",
-      "images": [
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-      ],
-      "freeShipping": true,
-      "guarantee": true,
-      "otherSellers": [
-        {
-          "seller": "Bosch",
-          "price": 7999,
-          "rating": 9,
-          "endOfDiscount": "2024-08-23",
-          "stock": 10
-        },
-        {
-          "seller": "Siemens",
-          "price": 7999,
-          "rating": 8.5,
-          "stock": 5
-        }
-      ],
-      "description": "Çamaşır Makinesi, 11 kg kapasite, 1400 devir, A+++ enerji sınıfı, kısa programlar ve akıllı sensörler ile etkili ve enerji tasarruflu bir yıkama sunar.",
-      "specifications": [
-        {
-          "title": "Kapasite",
-          "value": "11 kg"
-        },
-        {
-          "title": "Devir",
-          "value": "1400"
-        },
-        {
-          "title": "Enerji Sınıfı",
-          "value": "A+++"
-        }
-      ],
-      "comments": [
-        {
-          "id": 1,
-          "name": "Burak",
-          "rating": 5,
-          "comment": "Çok sessiz çalışıyor, memnun kaldım."
-        }
-      ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Kapasitesi ne kadar?",
-          "answer": "11 kg."
-        },
-        {
-          "id": 2,
-          "question": "Enerji sınıfı nedir?",
-          "answer": "A+++."
-        }
-      ],
-      "badges": [
-        "Kampanyalı",
-        "Ücretsiz Kargo",
-        "Garantili"
-      ],
-      "fibabanka": true,
-      "specialForYou": true,
-      "newProduct": true,
-      "bestOffers": true
-    },
-    {
       "id": 7,
-      "title": "Xiaomi Redmi Note 11 Pro 128 GB",
+      "title": "Xiaomi Redmi Note 11 Pro",
       "rating": 4.6,
       "stock": 35,
       "brand": "Xiaomi",
@@ -769,9 +1681,8 @@
       "subcategory": "Android Telefonlar",
       "subcategoryUrl": "android-telefonlar",
       "images": [
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+        "https://cdn.akakce.com/z/xiaomi/xiaomi-redmi-note-11-pro-128-gb-8-gb-gri.jpg",
+        "https://cdn.cimri.io/image/860x860/xiaomi-redmi-note-11-pro-128gb-8gb-ram-667-inc-108mp-akilli-cep-telefonu_654298438.jpg"
       ],
       "freeShipping": true,
       "guarantee": true,
@@ -809,18 +1720,7 @@
           "comment": "Fiyat performans ürünü, tavsiye ederim."
         }
       ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Kamerası kaç MP?",
-          "answer": "108 MP geniş, ultra geniş ve makro kameralar."
-        },
-        {
-          "id": 2,
-          "question": "Batarya kapasitesi ne kadar?",
-          "answer": "5.020 mAh."
-        }
-      ],
+      "qa": [],
       "badges": [
         "Kampanyalı",
         "Ücretsiz Kargo",
@@ -830,133 +1730,6 @@
       "specialForYou": true,
       "newProduct": true,
       "bestOffers": true
-    },
-    {
-      "title": "iPad Pro",
-      "rating": 4.5,
-      "stock": 50,
-      "nofSales": 5,
-      "brand": "Apple",
-      "seller": "Apple",
-      "configration": [
-        {
-          "title": "Hafıza",
-          "options": [
-            "256GB",
-            "512GB"
-          ]
-        },
-        {
-          "title": "Renk",
-          "options": [
-            "Beyaz",
-            "Gri",
-            "Siyah"
-          ]
-        }
-      ],
-      "price": 45999,
-      "creditCard": true,
-      "installmentCount": 5,
-      "installmentPrice": 11000,
-      "limit": 2,
-      "endOfDiscount": "2024-08-23",
-      "discountPrice": 3000,
-      "category": "Bilgisayar",
-      "categoryUrl": "bilgisayar",
-      "subcategory": "Tablet",
-      "subcategoryUrl": "tablet",
-      "images": [
-        "https://res.cloudinary.com/duxun1rjp/image/upload/v1723486371/otnc1n01mwhktay5o7m6.jpg",
-        "https://res.cloudinary.com/duxun1rjp/image/upload/v1723486414/pjmj6maj3btmjtvkywac.jpg"
-      ],
-      "freeShipping": true,
-      "guarantee": false,
-      "description": "Yepyeni bir Pro tasarımı. İnanılmaz kolay taşınabilirlik. Şimdiye kadarki en ince Apple ürünü.",
-      "specifications": [
-        {
-          "title": "Cam",
-          "value": "Nano-Texture"
-        },
-        {
-          "title": "Kalınlık",
-          "value": "5.1mm"
-        }
-      ],
-      "fibabanka": false,
-      "specialForYou": false,
-      "newProduct": true,
-      "bestOffers": false,
-      "comments": [],
-      "qa": [],
-      "badges": [],
-      "id": 8
-    },
-    {
-      "title": "iPhone 15 Pro Max",
-      "rating": 5,
-      "stock": 50,
-      "nofSales": 200,
-      "brand": "Apple",
-      "seller": "Terminal İletişim - Turkcell Mağazası",
-      "configration": [
-        {
-          "title": "Renk",
-          "options": [
-            "Beyaz",
-            "Siyah",
-            "Bordo"
-          ]
-        },
-        {
-          "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB",
-            "512 GB"
-          ]
-        }
-      ],
-      "price": 89999,
-      "creditCard": true,
-      "installmentCount": 5,
-      "installmentPrice": 12000,
-      "limit": 1,
-      "endOfDiscount": "2024-08-25",
-      "discountPrice": 6999,
-      "category": "Telefon",
-      "categoryUrl": "telefon",
-      "subcategory": "IOS Telefonlar",
-      "subcategoryUrl": "ios-telefonlar",
-      "images": [
-        "https://res.cloudinary.com/duxun1rjp/image/upload/v1723493236/ipklozn7ffbeqgfqlf8y.jpg",
-        "https://res.cloudinary.com/duxun1rjp/image/upload/v1723493240/gpnongqyixkisgbpirft.avif"
-      ],
-      "freeShipping": true,
-      "guarantee": false,
-      "description": "iPhone 15 Pro Max 256 GB, 6.7 inç Super Retina XDR ekran, 5G desteği, A15 Bionic çip, 256 GB depolama alanı, 12 MP geniş, ultra geniş ve telefoto kameralar, 4K Dolby Vision HDR kayıt, 12 MP TrueDepth ön kamera, Face ID, iOS 15 işletim sistemi, 5G desteği, 4.352 mAh batarya kapasitesi, 20W hızlı şarj, 15W kablosuz şarj, 7.4 mm kalınlık, 238 gram ağırlık, IP68 su ve toz dayanıklılık.",
-      "specifications": [
-        {
-          "title": "Ekran",
-          "value": "6.7 inç Super Retina XDR ekran"
-        },
-        {
-          "title": "Kamera",
-          "value": "12 MP geniş, ultra geniş ve telefoto kameralar"
-        },
-        {
-          "title": "Kayıt",
-          "value": "4K Dolby Vision HDR kayıt"
-        }
-      ],
-      "fibabanka": false,
-      "specialForYou": true,
-      "newProduct": true,
-      "bestOffers": false,
-      "comments": [],
-      "qa": [],
-      "badges": [],
-      "id": 9
     }
   ],
   "popularCategories": [
@@ -1032,45 +1805,33 @@
     },
     {
       "id": 4,
-      "title": "Sağlık - Kişsel Bakım",
-      "productUrl": "telefon",
-      "image": "/bssaglik.webp"
-    },
-    {
-      "id": 5,
       "title": "Beyaz Eşya",
       "productUrl": "beyaz-esya",
       "image": "/bsbeyazesya.webp"
     },
     {
+      "id": 5,
+      "title": "Hobi Oyun",
+      "productUrl": "hubi",
+      "image": "/bssaglik.webp"
+    },
+    {
       "id": 6,
-      "title": "Cep Telefonu - Aksesuar",
-      "productUrl": "telefon",
+      "title": "TV Sistemleri",
+      "productUrl": "tv",
       "image": "/bstelefon.webp"
     },
     {
-      "id": 7,
-      "title": "Bilgisayar - Tablet",
-      "productUrl": "bilgisayar",
-      "image": "/bsbilgisayar.webp"
-    },
-    {
       "id": 8,
-      "title": "Elektrikli Ev Aletleri",
-      "productUrl": "ev-aletleri",
+      "title": "Ev Yaşam",
+      "productUrl": "ev-yasam",
       "image": "/bsevaletleri.webp"
     },
     {
       "id": 9,
-      "title": "Sağlık - Kişsel Bakım",
-      "productUrl": "telefon",
+      "title": "Anne - Bebek",
+      "productUrl": "anne-bebek",
       "image": "/bssaglik.webp"
-    },
-    {
-      "id": 10,
-      "title": "Beyaz Eşya",
-      "productUrl": "beyaz-esya",
-      "image": "/bsbeyazesya.webp"
     }
   ],
   "navBottomCategories": [
@@ -1097,8 +1858,8 @@
           "subUrl": "macbook"
         },
         {
-          "subTitle": "İpad",
-          "subUrl": "ipad"
+          "subTitle": "Tablet",
+          "subUrl": "tablet"
         }
       ]
     },
@@ -1205,47 +1966,8 @@
     {
       "id": "dqXZJbDFQCM0XbzGu4qTj4KDSzi1",
       "email": "abdullah@gmail.com",
-      "cart": [
-        {
-          "cartId": "55583a5a-e9f9-4896-9373-a9fdf07e7bcf",
-          "productId": 2,
-          "title": "Samsung Galaxy S22 Ultra 256 GB",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Köroğlu İletişim - Turkcell Mağazası",
-          "oldPrice": 79999,
-          "discount": 7999,
-          "limit": 2,
-          "quantity": 1,
-          "Renk": "Beyaz",
-          "Hafıza": "128 GB"
-        },
-        {
-          "cartId": "f0b0039c-4773-4f8b-af08-c5a3e7b1be8d",
-          "productId": 3,
-          "title": "Ütü",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Turkcell Satış A.Ş.",
-          "oldPrice": 999,
-          "discount": 99,
-          "limit": 2,
-          "quantity": 1,
-          "Renk": "Beyaz",
-          "Güç": "2000W"
-        }
-      ],
-      "fav": [
-        {
-          "id": 1,
-          "title": "iPhone 15 Pro Max 256 GB",
-          "price": 89999,
-          "discountPrice": 7999,
-          "images": [
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003",
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-          ]
-        }
-      ]
+      "cart": [],
+      "fav": []
     },
     {
       "id": "f1oETlSzDGQG9zk3QDFR70MZLmD3",
@@ -1262,47 +1984,8 @@
     {
       "id": "knlV2nhLQVN3edp9Bv9eySUXZg13",
       "email": "admin@admin.com",
-      "cart": [
-        {
-          "cartId": "f0dc7c97-1e85-4aba-8f83-aa35631408f0",
-          "productId": 1,
-          "title": "iPhone 15 Pro Max 256 GB",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
-          "seller": "Terminal İletişim - Turkcell Mağazası",
-          "oldPrice": 89999,
-          "discount": 7999,
-          "limit": 1,
-          "quantity": 1,
-          "Renk": "Mavi",
-          "Hafıza": "128 GB"
-        },
-        {
-          "cartId": "9712d05d-d7ff-4898-98a8-abd86a96dd77",
-          "productId": 2,
-          "title": "Samsung Galaxy S22 Ultra 256 GB",
-          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003",
-          "seller": "Köroğlu İletişim - Turkcell Mağazası",
-          "oldPrice": 79999,
-          "discount": 7999,
-          "limit": 2,
-          "quantity": 1,
-          "Renk": "Mavi",
-          "Hafıza": "128 GB"
-        }
-      ],
-      "fav": [
-        {
-          "id": 1,
-          "title": "iPhone 15 Pro Max 256 GB",
-          "price": 89999,
-          "discountPrice": 7999,
-          "images": [
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003",
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-          ]
-        }
-      ]
+      "cart": [],
+      "fav": []
     },
     {
       "id": "hOSi88mjsqeupKhMtqvzqYqff0L2",

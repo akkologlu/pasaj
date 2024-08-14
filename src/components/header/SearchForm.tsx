@@ -3,13 +3,11 @@ import {
   StyledCol,
   StyledDiv,
   StyledSwiper,
-  StyledRow,
   StyledSearchBadge,
   StyledSearchForm,
   StyledShowArea,
   StyledText,
   SpaceBetween,
-  AlignCenter,
   Flex,
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";

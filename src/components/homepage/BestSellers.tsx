@@ -3,7 +3,6 @@ import {
   StyledDiv,
   StyledSwiper,
   StyledRow,
-  StyledText,
   FullCenterCol,
   StyledBestSellerTab,
 } from "@/styles/styled";
@@ -72,7 +71,7 @@ const BestSellers = () => {
           .filter((product: Product) => product.categoryUrl === activeTab)
           .slice(0, 8)
           .map((product: Product) => (
-            <StyledCol key={product.id} $sizemd={3}>
+            <StyledCol key={product.id} $sizemd={2.8}>
               <ProductCard product={product} size={12} />
             </StyledCol>
           ))}

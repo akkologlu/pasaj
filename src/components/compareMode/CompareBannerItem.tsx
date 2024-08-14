@@ -1,7 +1,6 @@
 import {
   StyledCol,
   StyledCompareBannerItem,
-  StyledTimes,
   StyledTimesCompare,
 } from "@/styles/styled";
 import CustomImage from "../common/CustomImage";
