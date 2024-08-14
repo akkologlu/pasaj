@@ -3,7 +3,7 @@ import { create } from "zustand";
 
 type FavStore = {
   id: string | number;
-  favs: any[];
+  favs: Fav[];
   setFavs: (favs: Fav[]) => void;
 };
 

@@ -189,7 +189,7 @@ export const addQuestion = async ({
   data,
 }: {
   id: string | number;
-  data: any;
+  data: QA[];
 }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`, {
     method: "PATCH",

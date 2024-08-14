@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import { addQuestion } from "@/lib/api";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import { useSession } from "next-auth/react";
 
 type DetailTabsProps = {
   qas: QA[];
@@ -29,8 +30,14 @@ const Questions: React.FC<DetailTabsProps> = ({
   otherSellers,
   id,
 }) => {
+  interface FormData {
+    content: string;
+    seller: string;
+    criteria: boolean;
+  }
+  const { data: session } = useSession();
   const queryClient = useQueryClient();
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm<FormData>();
   const { mutate } = useMutation({
     mutationFn: ({ id, data }: { id: string | number; data: QA[] }) =>
       addQuestion({ id, data }),
@@ -43,7 +50,14 @@ const Questions: React.FC<DetailTabsProps> = ({
       toast.error("Sorunuz gönderilemedi");
     },
   });
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: {
+    content: string;
+    seller: string;
+    criteria: boolean;
+  }) => {
+    if (!session?.user?.id) {
+      return toast.error("Lütfen giriş yapınız");
+    }
     if (!data.criteria) {
       return toast.error("Lütfen yayınlama kriterlerini kabul edin");
     }

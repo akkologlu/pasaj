@@ -153,6 +153,18 @@
             "date": "2024-08-05T10:57:19.475Z",
             "seller": "Terminal İletişim - Turkcell Mağazası"
           }
+        },
+        {
+          "id": "a7d853e9-a7cf-4e8b-bd7b-9aba07560813",
+          "question": {
+            "content": "Merhaba, ürünün kutu içeriği nedir?",
+            "date": "2024-08-14T10:01:08.566Z"
+          },
+          "answer": {
+            "content": "kutu içeriği yalnızca telefondur.",
+            "date": "2024-08-14T10:20:08.657Z",
+            "seller": "Terminal İletişim - Turkcell Mağazası"
+          }
         }
       ],
       "badges": [
@@ -228,7 +240,20 @@
         }
       ],
       "comments": [],
-      "qa": [],
+      "qa": [
+        {
+          "id": "63559609-c84a-4e20-811b-31fcc94ec86d",
+          "question": {
+            "content": "ilk soru",
+            "date": "2024-08-14T10:23:22.850Z"
+          },
+          "answer": {
+            "content": "ilk cevap",
+            "date": "2024-08-14T10:31:56.805Z",
+            "seller": "Hepsiburada"
+          }
+        }
+      ],
       "badges": [
         "Kampanyalı",
         "Ücretsiz Kargo"
@@ -392,7 +417,20 @@
           "comment": "Mükemmel kamera kalitesi."
         }
       ],
-      "qa": [],
+      "qa": [
+        {
+          "id": "a39a2e38-a8e6-4514-8b42-7bacbe709fb5",
+          "question": {
+            "content": "üçüncü soru",
+            "date": "2024-08-14T10:23:44.719Z"
+          },
+          "answer": {
+            "content": "üçüncü cevap",
+            "date": "2024-08-14T10:32:04.285Z",
+            "seller": "Köroğlu İletişim - Turkcell Mağazası"
+          }
+        }
+      ],
       "badges": [
         "Kampanyalı",
         "Ücretsiz Kargo",
@@ -441,7 +479,6 @@
       "subcategory": "Android Telefonlar",
       "subcategoryUrl": "android-telefonlar",
       "images": [
-        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/137192-1_large.jpg",
         "https://cdn.cimri.io/image/1200x1200/samsung-galaxy-s23-fe-5g-128gb-8gb-ram_865273874.jpg"
       ],
       "freeShipping": true,
@@ -466,7 +503,20 @@
         }
       ],
       "comments": [],
-      "qa": [],
+      "qa": [
+        {
+          "id": "a4513c1f-ab99-4946-b2dc-cba6ef54524a",
+          "question": {
+            "content": "ikinci soru",
+            "date": "2024-08-14T10:23:32.763Z"
+          },
+          "answer": {
+            "content": "ikinci cevap",
+            "date": "2024-08-14T10:32:08.587Z",
+            "seller": "Samsung Türkiye"
+          }
+        }
+      ],
       "badges": [
         "Kampanyalı",
         "Ücretsiz Kargo",
@@ -661,7 +711,7 @@
       "subcategoryUrl": "macbook",
       "images": [
         "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-midnight-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1708367688034",
-        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/134041-1_large.jpg"
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-macbook-air-m2-silver-202208?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1659114467665"
       ],
       "freeShipping": true,
       "guarantee": true,
@@ -813,7 +863,7 @@
       "subcategory": "Macbook",
       "subcategoryUrl": "macbook",
       "images": [
-        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/114754-1-2_large.jpg",
+        "https://cdn.akakce.com/z/apple/macbook-air-mgnd3tu-a-apple-m1-8-gb-256-gb-ssd-13-3-notebook.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-g6ZWExP8t8Xl2bG0E4cM4mxjJYZ525ZrLQ&s"
       ],
       "freeShipping": true,
@@ -951,7 +1001,7 @@
       "subcategory": "Tablet",
       "subcategoryUrl": "tablet",
       "images": [
-        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/132830-1-2_large.jpg",
+        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mv273tua-apple-13-inc-ipad-air-m2-wi-fi-128gb-uzay-grisi-mv273tua-638509387093020539.jpg",
         "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mme23tua-apple-ipad-air-109-inc-wi-fi-64gb-mor-mme23tua-637835538163205462.jpg"
       ],
       "freeShipping": true,
@@ -1023,7 +1073,7 @@
       "subcategory": "Tablet",
       "subcategoryUrl": "tablet",
       "images": [
-        "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/131961-1-1_large.jpg"
+        "https://productimages.hepsiburada.net/s/162/375-375/110000120864788.jpg"
       ],
       "freeShipping": true,
       "guarantee": true,
