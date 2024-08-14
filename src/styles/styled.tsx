@@ -898,6 +898,9 @@ export const StyledQuestionForm = styled(StyledDiv)`
   border-radius: 0.5rem;
   padding: 3rem;
   margin-top: 1rem;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 export const StyledError = styled(StyledText)`
   color: ${({ theme }) => theme.colors.red};

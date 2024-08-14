@@ -3,12 +3,9 @@ import { useState } from "react";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import Description from "./tabs/Description";
-import { Comments, Product, Seller } from "@/types/productType";
+import { Product, Seller } from "@/types/productType";
 import { tabOptions } from "@/lib/mockData";
 import Reviews from "./tabs/Reviews";
-import { useSession } from "next-auth/react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addComment } from "@/lib/api";
 import Questions from "./tabs/Questions";
 import Specifications from "./tabs/Specifications";
 type DetailTabsProps = {
@@ -21,33 +18,7 @@ const DetailTabs: React.FC<DetailTabsProps> = ({
   seller,
   otherSellers,
 }) => {
-  const queryClient = useQueryClient();
-  const session = useSession();
   const [activeTab, setActiveTab] = useState(tabOptions[0].url);
-
-  const { mutate } = useMutation({
-    mutationFn: ({ id, data }: { id: string | number; data: Comments[] }) =>
-      addComment({ id, data }),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["product"] });
-    },
-  });
-  const handleAddNewComment = (newComment: {
-    rating: number;
-    comment: string;
-  }) => {
-    const newComments = [
-      ...data.comments,
-      {
-        id: crypto.randomUUID(),
-        name: session?.data?.user?.email || "Anonymous",
-        date: new Date().toISOString(),
-        ...newComment,
-      },
-    ];
-
-    mutate({ id: data.id, data: newComments });
-  };
   return (
     <StyledContainer>
       <StyledSwiper
@@ -93,7 +64,7 @@ const DetailTabs: React.FC<DetailTabsProps> = ({
           <Reviews
             reviews={data.comments}
             onRating={data.rating}
-            handleAddNewComment={handleAddNewComment}
+            onId={data.id}
           />
         )}
         {activeTab === "sorular" && (

@@ -17,26 +17,55 @@ import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { addComment } from "@/lib/api";
 
 type ReviewsProps = {
   reviews: Comments[];
   onRating: number;
-  handleAddNewComment: (data: { rating: number; comment: string }) => void;
+  onId: string | number;
 };
 type FormData = {
   rating: number;
   comment: string;
 };
-const Reviews: React.FC<ReviewsProps> = ({
-  reviews,
-  onRating,
-  handleAddNewComment,
-}) => {
+const Reviews: React.FC<ReviewsProps> = ({ reviews, onRating, onId }) => {
   const session = useSession();
+  const queryClient = useQueryClient();
   const [showForm, setShowForm] = useState(false);
   const [sortedReviews, setSortedReviews] = useState<Comments[]>(reviews);
   const { register, handleSubmit, reset, control } = useForm<FormData>();
   const { register: registerSort, watch } = useForm();
+
+  const { mutate } = useMutation({
+    mutationFn: ({ id, data }: { id: string | number; data: Comments[] }) =>
+      addComment({ id, data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["product"] });
+      setShowForm(false);
+      reset({ rating: 0, comment: "" });
+      toast.success("Yorumunuz başarıyla gönderildi");
+    },
+  });
+  const handleAddNewComment = (newComment: {
+    rating: number;
+    comment: string;
+  }) => {
+    if (newComment.comment.length < 1 || !newComment.rating)
+      return toast.error("Yorum alanı ve puanlama boş bırakılamaz.");
+
+    const newComments = [
+      ...reviews,
+      {
+        id: crypto.randomUUID(),
+        name: session?.data?.user?.email || "Anonymous",
+        date: new Date().toISOString(),
+        ...newComment,
+      },
+    ];
+    mutate({ id: onId, data: newComments });
+  };
+
   const sortOption = watch("sort");
   useEffect(() => {
     if (sortOption) {
@@ -112,8 +141,6 @@ const Reviews: React.FC<ReviewsProps> = ({
                   onSubmit={handleSubmit(
                     (data: { rating: number; comment: string }) => {
                       handleAddNewComment(data);
-                      setShowForm(false);
-                      reset({ rating: 0, comment: "" });
                     }
                   )}
                 >

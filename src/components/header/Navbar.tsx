@@ -2,7 +2,6 @@ import {
   StyledAccountButton,
   StyledCartCount,
   StyledCol,
-  StyledDiv,
   StyledMyAccountModal,
   StyledRow,
 } from "@/styles/styled";

@@ -10,32 +10,26 @@ import { getSession } from "next-auth/react";
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);
-  try {
-    await queryClient.prefetchQuery({
-      queryKey: ["favs"],
-      queryFn: () => fetchFavs(session?.user?.id as string),
-    });
-    return {
-      props: {
-        dehydratedState: dehydrate(queryClient),
-        user: {
-          email: session?.user.email as string,
-          id: session?.user.id as string,
-        },
+  await queryClient.prefetchQuery({
+    queryKey: ["favs"],
+    queryFn: () => fetchFavs(session?.user?.id as string),
+  });
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+      user: {
+        email: session?.user.email as string,
+        id: session?.user.id as string,
       },
-    };
-  } catch (error) {
-    return {
-      notFound: true,
-    };
-  }
+    },
+  };
 };
-interface FavoritesProps {
+type FavoritesProps = {
   user: {
     email: string;
     id: string;
   };
-}
+};
 const Favorites: React.FC<FavoritesProps> = ({ user }) => {
   const { data } = useFetchFavs(user.id);
   return (

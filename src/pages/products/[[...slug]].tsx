@@ -96,9 +96,11 @@ const CategoryPage = ({ slug }: { slug: string[] }) => {
         return 0;
     }
   });
+
   useEffect(() => {
     reset(defaultValues);
   }, [slug]);
+
   if (isLoading) return <Loading />;
 
   return (

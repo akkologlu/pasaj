@@ -38,7 +38,6 @@ const EditProduct = () => {
   if (isError) return <p>Product could not be fetched</p>;
 
   const handleUpdateProduct = async (data: Product) => {
-    console.log(data);
     mutate({ ...data, id: product.id });
   };
 

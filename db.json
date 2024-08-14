@@ -121,48 +121,53 @@
           "value": "IP68 su ve toz dayanıklılık"
         }
       ],
-      "comments": [
-        {
-          "id": "ed1e0c4b-74d4-4032-afc5-8cd3fa3100d5",
-          "date": "2024-08-11T13:54:10.688Z",
-          "comment": "iyi ürün",
-          "rating": 4
-        }
-      ],
+      "comments": [],
       "qa": [
         {
-          "id": 1,
+          "id": "aae3656f-b7e5-4fdf-8d7c-61859f822457",
           "question": {
-            "content": "Kamerası kaç MP?",
-            "date": "2024-08-05T10:57:19.475Z"
+            "content": "asdas",
+            "date": "2024-08-14T16:51:43.587Z"
           },
           "answer": {
-            "content": "12 MP geniş, ultra geniş ve telefoto kameralar",
-            "date": "2024-08-05T10:57:19.475Z",
+            "content": "sdfsdf",
+            "date": "2024-08-14T16:51:49.871Z",
             "seller": "Terminal İletişim - Turkcell Mağazası"
           }
         },
         {
-          "id": 2,
+          "id": "a323ced6-bb51-4168-a2b2-727c03b130f4",
           "question": {
-            "content": "Hafızası ne kadar",
-            "date": "2024-08-05T10:57:19.475Z"
+            "content": "soru 2",
+            "date": "2024-08-14T16:56:15.434Z"
           },
           "answer": {
-            "content": "256GB",
-            "date": "2024-08-05T10:57:19.475Z",
+            "content": "cevap 3",
+            "date": "2024-08-14T16:58:21.495Z",
             "seller": "Terminal İletişim - Turkcell Mağazası"
           }
         },
         {
-          "id": "a7d853e9-a7cf-4e8b-bd7b-9aba07560813",
+          "id": "a323ced6-bb51-4168-a2b2-727c03b130f4",
           "question": {
-            "content": "Merhaba, ürünün kutu içeriği nedir?",
-            "date": "2024-08-14T10:01:08.566Z"
+            "content": "soru 2",
+            "date": "2024-08-14T16:56:15.434Z"
           },
           "answer": {
-            "content": "kutu içeriği yalnızca telefondur.",
-            "date": "2024-08-14T10:20:08.657Z",
+            "content": "cevap 3",
+            "date": "2024-08-14T16:58:21.495Z",
+            "seller": "Terminal İletişim - Turkcell Mağazası"
+          }
+        },
+        {
+          "id": "1483b981-80e8-4606-bbde-4548be83fbf8",
+          "question": {
+            "content": "soru 5",
+            "date": "2024-08-14T16:58:32.012Z"
+          },
+          "answer": {
+            "content": "cevap 5",
+            "date": "2024-08-14T16:58:36.772Z",
             "seller": "Terminal İletişim - Turkcell Mağazası"
           }
         }
@@ -2076,6 +2081,24 @@
       "email": "talha@gmail.com",
       "cart": [],
       "fav": []
+    },
+    {
+      "id": "vrsuQJ15bEg7eOoa1aC7CoLxz6z2",
+      "email": "ahmet@gmail.com",
+      "cart": [],
+      "fav": [
+        {
+          "id": 1,
+          "title": "iPhone 15 Pro Max ",
+          "price": 89999,
+          "discountPrice": 7999,
+          "images": [
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003",
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+          ]
+        }
+      ]
     }
   ]
 }

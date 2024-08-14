@@ -4,12 +4,17 @@ import { RiRefund2Fill } from "react-icons/ri";
 import { TbTruckDelivery } from "react-icons/tb";
 
 export const bannerLinks = [
-  "Favorilerim",
   "Kampanyalar",
   "Yardım",
   "Neden Pasaj",
   "Pasaj Blog",
   "Sipariş Sorgulama",
+];
+export const searchBadges = [
+  "6 Taksit + 0 Faiz",
+  " Hediye Çeklerim",
+  "Faizsiz 25.000 TL",
+  "Faturaya Ek Telefonlar",
 ];
 export const opps = [
   {

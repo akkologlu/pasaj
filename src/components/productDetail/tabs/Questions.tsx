@@ -30,11 +30,11 @@ const Questions: React.FC<DetailTabsProps> = ({
   otherSellers,
   id,
 }) => {
-  interface FormData {
+  type FormData = {
     content: string;
     seller: string;
     criteria: boolean;
-  }
+  };
   const { data: session } = useSession();
   const queryClient = useQueryClient();
   const { register, handleSubmit, reset } = useForm<FormData>();
@@ -55,12 +55,10 @@ const Questions: React.FC<DetailTabsProps> = ({
     seller: string;
     criteria: boolean;
   }) => {
-    if (!session?.user?.id) {
-      return toast.error("Lütfen giriş yapınız");
-    }
-    if (!data.criteria) {
+    if (!session?.user?.id) return toast.error("Lütfen giriş yapınız");
+    if (!data.criteria)
       return toast.error("Lütfen yayınlama kriterlerini kabul edin");
-    }
+
     const newQuestion = {
       question: {
         content: data.content,
@@ -107,7 +105,7 @@ const Questions: React.FC<DetailTabsProps> = ({
             rows={10}
             {...register("content")}
           />
-          <JustifyBetweenAlignCenter>
+          <JustifyBetweenAlignCenter $wrap={true}>
             <StyledLabel>
               <input type="checkbox" {...register("criteria")} />
               <span>

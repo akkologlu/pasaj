@@ -16,13 +16,13 @@ import { priceRanges, sortOptions } from "@/lib/mockData";
 import { FilterState } from "@/types/filterType";
 import Link from "next/link";
 
-interface FilterProps {
+type FilterProps = {
   data: Product[];
   register: UseFormRegister<FilterState>;
   setValue: UseFormSetValue<FilterState>;
   getValues: UseFormGetValues<FilterState>;
   watch: UseFormWatch<FilterState>;
-}
+};
 
 const Filter: React.FC<FilterProps> = ({
   data,
@@ -37,7 +37,6 @@ const Filter: React.FC<FilterProps> = ({
   const uniqueSubcategories = Array.from(new Set(subcategories));
   const subCategoryUrl = data.map((item: Product) => item.subcategoryUrl);
   const uniqueSubCategoryUrl = Array.from(new Set(subCategoryUrl));
-
   const sellers = data.flatMap((item: Product) =>
     item.otherSellers
       ? item.otherSellers
@@ -103,7 +102,6 @@ const Filter: React.FC<FilterProps> = ({
               value={value}
               {...register("sortBy")}
               checked={selectedSortBy === value}
-              onChange={() => setValue("sortBy", value)}
             />
             {label}
           </StyledRadioLabel>

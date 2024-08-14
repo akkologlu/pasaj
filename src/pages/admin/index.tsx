@@ -10,13 +10,12 @@ import {
   StyledPrimaryFormButton,
 } from "@/styles/styled";
 import Loading from "@/components/common/Loading";
-
-interface AdminProps {
+type AdminProps = {
   user: {
     email: string;
     id: string;
   };
-}
+};
 export const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
@@ -32,7 +31,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const Admin: React.FC<AdminProps> = () => {
   const { data, isLoading } = useFetchAllProducts();
-
   if (isLoading) {
     return <Loading />;
   }

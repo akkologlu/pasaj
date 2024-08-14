@@ -4,13 +4,13 @@ import { Comments, Product, QA } from "@/types/productType";
 export const fetchProducts = async (slug: string[]) => {
   const baseUrl = `${process.env.NEXT_PUBLIC_DB_URL}/products?categoryUrl=${slug[0]}`;
   const url = slug[1] ? `${baseUrl}&subcategoryUrl=${slug[1]}` : baseUrl;
-
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error("Network response was not ok");
   }
   return res.json();
 };
+
 export const fetchAllProducts = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products`);
   if (!res.ok) {
@@ -18,6 +18,7 @@ export const fetchAllProducts = async () => {
   }
   return res.json();
 };
+
 export const fetchSimilarProducts = async (category: string) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DB_URL}/products?categoryUrl=${category}`
@@ -27,6 +28,7 @@ export const fetchSimilarProducts = async (category: string) => {
   }
   return res.json();
 };
+
 export const fetchProduct = async (id: string | number) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`);
   if (!res.ok) {
@@ -34,6 +36,7 @@ export const fetchProduct = async (id: string | number) => {
   }
   return res.json();
 };
+
 export const deleteProduct = async (id: string | number) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products/${id}`, {
     method: "DELETE",
@@ -43,6 +46,7 @@ export const deleteProduct = async (id: string | number) => {
   }
   return res.json();
 };
+
 export const createProduct = async (data: Product) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/products`, {
     method: "POST",
@@ -56,6 +60,7 @@ export const createProduct = async (data: Product) => {
   }
   return res.json();
 };
+
 export const fetchPopularCategories = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DB_URL}/popularCategories`
@@ -103,6 +108,7 @@ export const fetchSearchProducts = async (search: string) => {
   }
   return res.json();
 };
+
 export const updateProduct = async (data: Product) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DB_URL}/products/${data.id}`,
@@ -119,6 +125,7 @@ export const updateProduct = async (data: Product) => {
   }
   return res.json();
 };
+
 export const addUser = async (data: User) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/users`, {
     method: "POST",
@@ -165,6 +172,7 @@ export const addToCart = async ({
   }
   return res.json();
 };
+
 export const addComment = async ({
   id,
   data,
@@ -184,6 +192,7 @@ export const addComment = async ({
   }
   return res.json();
 };
+
 export const addQuestion = async ({
   id,
   data,
@@ -203,10 +212,12 @@ export const addQuestion = async ({
   }
   return res.json();
 };
+
 export const fetchFavs = async (id: string) => {
   const user = await getUser(id);
   return user.fav;
 };
+
 export const updateFavs = async ({
   userId,
   favData,
@@ -226,13 +237,18 @@ export const updateFavs = async ({
   }
   return res.json();
 };
+
 export const answerQuestion = async ({
   productId,
   qa,
 }: {
   productId: number | string;
-  qa: QA[];
+  qa: QA;
 }) => {
+  const product = await fetchProduct(productId);
+  const updatedQA = product.qa.map((question: QA) =>
+    question.id === qa.id ? qa : question
+  );
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DB_URL}/products/${productId}`,
     {
@@ -240,7 +256,7 @@ export const answerQuestion = async ({
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ qa: qa }),
+      body: JSON.stringify({ qa: updatedQA }),
     }
   );
   if (!res.ok) {

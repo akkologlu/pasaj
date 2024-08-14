@@ -16,7 +16,7 @@ const useFavorite = (product: Product) => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["favs"] });
     },
-    onMutate: async ({ favData }) => {
+    onMutate: ({ favData }) => {
       const prevFavs = favs;
       setFavs(favData.fav);
       return { prevFavs };
@@ -30,7 +30,7 @@ const useFavorite = (product: Product) => {
     setIsFav(favStatus);
   }, [favs, product.id]);
 
-  const handleFav = async () => {
+  const handleFav = () => {
     if (!session) {
       return toast.error(
         "Favorilere ekleme yapabilmek için giriş yapmalısınız."

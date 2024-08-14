@@ -16,8 +16,9 @@ import { SwiperSlide } from "swiper/react";
 import { Product } from "@/types/productType";
 import Link from "next/link";
 import { useState } from "react";
-import { popularSearches } from "@/lib/mockData";
+import { popularSearches, searchBadges } from "@/lib/mockData";
 import { useFetchAllProducts } from "@/hooks/useDataFetching";
+import { CiSearch } from "react-icons/ci";
 
 const SearchForm = () => {
   const [showSearchArea, setShowSearchArea] = useState(false);
@@ -35,7 +36,6 @@ const SearchForm = () => {
     );
     setSearchedProducts(res);
   };
-
   return (
     <StyledCol $sizemd={7}>
       {showSearchArea && (
@@ -50,12 +50,7 @@ const SearchForm = () => {
         $radius="0.5rem"
         $pos="relative"
       >
-        <CustomImage
-          src={"https://cdn.hugeicons.com/icons/search-01-stroke-rounded.svg"}
-          alt="search"
-          height={20}
-          width="20px"
-        />
+        <CiSearch />
         <input
           type="text"
           placeholder="Ürün, marka veya kategori ara"
@@ -67,18 +62,11 @@ const SearchForm = () => {
             <StyledDiv $bgcolor="form" $padding="1rem">
               <small>Sana Özel Kategoriler</small>
               <SpaceBetween $wrap={true}>
-                <StyledSearchBadge $fs="14px" $margin="1rem 0">
-                  6 Taksit + 0 Faiz
-                </StyledSearchBadge>
-                <StyledSearchBadge $fs="14px" $margin="1rem 0">
-                  Hediye Çeklerim
-                </StyledSearchBadge>
-                <StyledSearchBadge $fs="14px" $margin="1rem 0">
-                  Faizsiz 25.000 TL
-                </StyledSearchBadge>
-                <StyledSearchBadge $fs="14px" $margin="1rem 0">
-                  Faturaya Ek Telefonlar
-                </StyledSearchBadge>
+                {searchBadges.map((badge, index) => (
+                  <StyledSearchBadge $fs="14px" $margin="1rem 0" key={index}>
+                    {badge}
+                  </StyledSearchBadge>
+                ))}
               </SpaceBetween>
             </StyledDiv>
             <StyledDiv $bgcolor="white" $padding="1rem">

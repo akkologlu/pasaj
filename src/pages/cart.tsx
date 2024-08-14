@@ -15,12 +15,12 @@ import { useFetchUserCart } from "@/hooks/useDataFetching";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import Loading from "@/components/common/Loading";
-interface CartPageProps {
+type CartPageProps = {
   user: {
     email: string;
     id: string;
   };
-}
+};
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);

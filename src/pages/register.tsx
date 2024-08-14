@@ -21,12 +21,10 @@ const schema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
 });
-
-interface FormData {
+type FormData = {
   email: string;
   password: string;
-}
-
+};
 export default function Register() {
   const {
     register,

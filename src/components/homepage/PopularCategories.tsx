@@ -13,7 +13,7 @@ type PopularCategoriesProps = {
 const PopularCategories = () => {
   const { data } = useFetchPopularCategories();
   return (
-    <StyledDiv $padding="5rem 0">
+    <StyledDiv $padding="5rem 0 0 0">
       <StyledText as="h2" $fs="24px" $fw="700">
         Popüler Kategoriler
       </StyledText>

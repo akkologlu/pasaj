@@ -17,7 +17,7 @@ const QuestionAnswerForm: React.FC<{
   const { register, handleSubmit, reset } = useForm<{ answer: string }>();
 
   const mutation = useMutation({
-    mutationFn: ({ productId, qa }: { productId: number | string; qa: QA[] }) =>
+    mutationFn: ({ productId, qa }: { productId: number | string; qa: QA }) =>
       answerQuestion({ productId, qa }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
@@ -36,7 +36,7 @@ const QuestionAnswerForm: React.FC<{
         date: new Date().toISOString(),
       },
     };
-    mutation.mutate({ productId, qa: [updatedQA] });
+    mutation.mutate({ productId, qa: updatedQA });
     reset();
   };
   return (
@@ -48,7 +48,7 @@ const QuestionAnswerForm: React.FC<{
         {...register("answer")}
       />
       <JustifyBetweenAlignCenter>
-        <StyledCommentButton type="submit">Güncelle</StyledCommentButton>
+        <StyledCommentButton type="submit">Cevapla</StyledCommentButton>
       </JustifyBetweenAlignCenter>
     </StyledQuestionForm>
   );
