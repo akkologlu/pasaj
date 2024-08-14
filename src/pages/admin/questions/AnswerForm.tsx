@@ -28,6 +28,7 @@ const QuestionAnswerForm: React.FC<{
     },
   });
   const onSubmit = (data: { answer: string }) => {
+    if (!data.answer) return toast.error("Lütfen cevap yazınız");
     const updatedQA = {
       ...qa,
       answer: {

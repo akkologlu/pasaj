@@ -121,16 +121,45 @@
           "value": "IP68 su ve toz dayanıklılık"
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "id": "f7caa760-ba81-456a-bc3b-f84c221cafd0",
+          "name": "admin@admin.com",
+          "date": "2024-08-14T18:20:25.520Z",
+          "comment": "Gerçekten çok güzel bir telefon.",
+          "rating": 5
+        },
+        {
+          "id": "f7caa760-ba81-456a-bc3b-f84c221cafd1",
+          "name": "abdullah",
+          "date": "2024-08-14T18:20:25.520Z",
+          "comment": "Kamerası çok iyi.",
+          "rating": 5
+        },
+        {
+          "id": "f7caa760-ba81-456a-bc3b-f84c221cafd2",
+          "name": "mehmet",
+          "date": "2024-08-14T18:20:25.520Z",
+          "comment": "Fiyatı çok yüksek.",
+          "rating": 3
+        },
+        {
+          "id": "f7caa760-ba81-456a-bc3b-f84c221cafd3",
+          "name": "ahmet",
+          "date": "2024-08-14T17:20:25.520Z",
+          "comment": "Kullanışlı bir telefon.",
+          "rating": 4
+        }
+      ],
       "qa": [
         {
           "id": "aae3656f-b7e5-4fdf-8d7c-61859f822457",
           "question": {
-            "content": "asdas",
+            "content": "Kamerası kaç MP?",
             "date": "2024-08-14T16:51:43.587Z"
           },
           "answer": {
-            "content": "sdfsdf",
+            "content": "12 MP geniş, ultra geniş ve telefoto kameralar",
             "date": "2024-08-14T16:51:49.871Z",
             "seller": "Terminal İletişim - Turkcell Mağazası"
           }
@@ -138,36 +167,12 @@
         {
           "id": "a323ced6-bb51-4168-a2b2-727c03b130f4",
           "question": {
-            "content": "soru 2",
+            "content": "Ekranı kaç inç?",
             "date": "2024-08-14T16:56:15.434Z"
           },
           "answer": {
-            "content": "cevap 3",
+            "content": "6.7 inç Super Retina XDR ekran",
             "date": "2024-08-14T16:58:21.495Z",
-            "seller": "Terminal İletişim - Turkcell Mağazası"
-          }
-        },
-        {
-          "id": "a323ced6-bb51-4168-a2b2-727c03b130f4",
-          "question": {
-            "content": "soru 2",
-            "date": "2024-08-14T16:56:15.434Z"
-          },
-          "answer": {
-            "content": "cevap 3",
-            "date": "2024-08-14T16:58:21.495Z",
-            "seller": "Terminal İletişim - Turkcell Mağazası"
-          }
-        },
-        {
-          "id": "1483b981-80e8-4606-bbde-4548be83fbf8",
-          "question": {
-            "content": "soru 5",
-            "date": "2024-08-14T16:58:32.012Z"
-          },
-          "answer": {
-            "content": "cevap 5",
-            "date": "2024-08-14T16:58:36.772Z",
             "seller": "Terminal İletişim - Turkcell Mağazası"
           }
         }
@@ -212,7 +217,7 @@
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 13333,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-08-30",
       "discountPrice": 3999,
       "category": "Telefon",
@@ -249,11 +254,11 @@
         {
           "id": "63559609-c84a-4e20-811b-31fcc94ec86d",
           "question": {
-            "content": "ilk soru",
+            "content": "Kaç adet kamera var?",
             "date": "2024-08-14T10:23:22.850Z"
           },
           "answer": {
-            "content": "ilk cevap",
+            "content": "12 MP geniş ve ultra geniş kameralar",
             "date": "2024-08-14T10:31:56.805Z",
             "seller": "Hepsiburada"
           }
@@ -298,7 +303,7 @@
       "creditCard": true,
       "installmentCount": 9,
       "installmentPrice": 6666,
-      "limit": 1,
+      "limit": 3,
       "endOfDiscount": "2024-09-01",
       "discountPrice": 2499,
       "category": "Telefon",
@@ -426,11 +431,11 @@
         {
           "id": "a39a2e38-a8e6-4514-8b42-7bacbe709fb5",
           "question": {
-            "content": "üçüncü soru",
+            "content": "S23'ten farkı nedir?",
             "date": "2024-08-14T10:23:44.719Z"
           },
           "answer": {
-            "content": "üçüncü cevap",
+            "content": "S22 Ultra'da 108 MP kamera var.",
             "date": "2024-08-14T10:32:04.285Z",
             "seller": "Köroğlu İletişim - Turkcell Mağazası"
           }
@@ -512,11 +517,11 @@
         {
           "id": "a4513c1f-ab99-4946-b2dc-cba6ef54524a",
           "question": {
-            "content": "ikinci soru",
+            "content": "Kampanya var mı?",
             "date": "2024-08-14T10:23:32.763Z"
           },
           "answer": {
-            "content": "ikinci cevap",
+            "content": "Evet, kampanyalı.",
             "date": "2024-08-14T10:32:08.587Z",
             "seller": "Samsung Türkiye"
           }
@@ -561,7 +566,7 @@
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 13333,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-08-29",
       "discountPrice": 2499,
       "category": "Telefon",
@@ -627,7 +632,7 @@
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 11666,
-      "limit": 1,
+      "limit": 3,
       "endOfDiscount": "2024-08-28",
       "discountPrice": 1499,
       "category": "Telefon",
@@ -707,7 +712,7 @@
       "creditCard": true,
       "installmentCount": 12,
       "installmentPrice": 12499,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-08-31",
       "discountPrice": 13999,
       "category": "Bilgisayar",
@@ -860,7 +865,7 @@
       "creditCard": true,
       "installmentCount": 9,
       "installmentPrice": 13333,
-      "limit": 1,
+      "limit": 3,
       "endOfDiscount": "2024-09-01",
       "discountPrice": 10999,
       "category": "Bilgisayar",
@@ -925,7 +930,7 @@
       "creditCard": true,
       "installmentCount": 12,
       "installmentPrice": 9166,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-08-31",
       "discountPrice": 1999,
       "category": "Bilgisayar",
@@ -998,7 +1003,7 @@
       "creditCard": true,
       "installmentCount": 9,
       "installmentPrice": 8888,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-08-30",
       "discountPrice": 2499,
       "category": "Bilgisayar",
@@ -1070,7 +1075,7 @@
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 11666,
-      "limit": 1,
+      "limit": 3,
       "endOfDiscount": "2024-08-29",
       "discountPrice": 1499,
       "category": "Bilgisayar",
@@ -1142,7 +1147,7 @@
       "creditCard": true,
       "installmentCount": 9,
       "installmentPrice": 12222,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-09-01",
       "discountPrice": 2999,
       "category": "Bilgisayar",
@@ -1221,7 +1226,7 @@
       "creditCard": true,
       "installmentCount": 12,
       "installmentPrice": 13333,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-08-31",
       "discountPrice": 3999,
       "category": "Bilgisayar",
@@ -1271,7 +1276,7 @@
       "creditCard": true,
       "installmentCount": 9,
       "installmentPrice": 5555,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-09-01",
       "discountPrice": 4499,
       "category": "Beyaz Eşya",
@@ -1321,7 +1326,7 @@
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 9999,
-      "limit": 1,
+      "limit": 3,
       "endOfDiscount": "2024-08-31",
       "discountPrice": 5499,
       "category": "Beyaz Eşya",
@@ -1371,7 +1376,7 @@
       "creditCard": true,
       "installmentCount": 9,
       "installmentPrice": 9999,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-09-01",
       "discountPrice": 8499,
       "category": "Beyaz Eşya",
@@ -1421,7 +1426,7 @@
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 18333,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-08-31",
       "discountPrice": 10499,
       "category": "Beyaz Eşya",
@@ -1470,7 +1475,7 @@
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 13333,
-      "limit": 1,
+      "limit": 3,
       "endOfDiscount": "2024-08-31",
       "discountPrice": 7499,
       "category": "Beyaz Eşya",
@@ -1635,7 +1640,7 @@
       "creditCard": true,
       "installmentCount": 6,
       "installmentPrice": 5833,
-      "limit": 1,
+      "limit": 2,
       "endOfDiscount": "2024-08-23",
       "discountPrice": 3999,
       "category": "Bilgisayar",
@@ -2021,8 +2026,89 @@
     {
       "id": "dqXZJbDFQCM0XbzGu4qTj4KDSzi1",
       "email": "abdullah@gmail.com",
-      "cart": [],
-      "fav": []
+      "cart": [
+        {
+          "cartId": "d3ceb4db-b56c-4f91-a647-e3debf7e83a2",
+          "productId": 125,
+          "title": "iPhone 14 Pro",
+          "image": "https://cdn.cimri.io/pictures/article/original/38/38036.jpg",
+          "seller": "Hepsiburada",
+          "oldPrice": 49999,
+          "discount": 3999,
+          "limit": 2,
+          "quantity": 1,
+          "Renk": "Altın",
+          "Hafıza": "128 GB"
+        },
+        {
+          "cartId": "ead77b91-cdc4-43ff-ad74-9c8f53439078",
+          "productId": 125,
+          "title": "iPhone 14 Pro",
+          "image": "https://cdn.cimri.io/pictures/article/original/38/38036.jpg",
+          "seller": "Hepsiburada",
+          "oldPrice": 49999,
+          "discount": 3999,
+          "limit": 2,
+          "quantity": 1,
+          "Renk": "Beyaz",
+          "Hafıza": "128 GB"
+        },
+        {
+          "cartId": "644e7b6c-c29b-4885-bb4f-504c4bd0cb13",
+          "productId": 96,
+          "title": "Philips Kahve Makinesi EP2231/40",
+          "image": "https://cdn.akakce.com/z/philips/philips-2200-serisi-ep2231-40-tam-otomatik-kahve-makinesi.jpg",
+          "seller": "Hepsiburada",
+          "oldPrice": 59999,
+          "discount": 5499,
+          "limit": 1,
+          "quantity": 1
+        },
+        {
+          "cartId": "1d725855-933c-4f18-a79d-4ae2e7fe7b03",
+          "productId": 90,
+          "title": "Samsung WW80J5555FX",
+          "image": "https://brain-images-ssl.cdn.dixons.com/9/4/10163049/l_10163049_008.jpg",
+          "seller": "Vatan Bilgisayar",
+          "oldPrice": 49999,
+          "discount": 4499,
+          "limit": 2,
+          "quantity": 1
+        }
+      ],
+      "fav": [
+        {
+          "id": 1,
+          "title": "iPhone 15 Pro Max ",
+          "price": 89999,
+          "discountPrice": 7999,
+          "images": [
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003",
+            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Samsung Galaxy S22 Ultra",
+          "price": 29999,
+          "discountPrice": 799,
+          "images": [
+            "https://cdn.akakce.com/z/samsung/samsung-galaxy-s22-ultra-5g-256-gb.jpg",
+            "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/600/600/productimage/125078457/125078457_0_MC/60699744.jpg"
+          ]
+        },
+        {
+          "id": 96,
+          "title": "Philips Kahve Makinesi EP2231/40",
+          "price": 59999,
+          "discountPrice": 5499,
+          "images": [
+            "https://cdn.akakce.com/z/philips/philips-2200-serisi-ep2231-40-tam-otomatik-kahve-makinesi.jpg",
+            "https://productimages.hepsiburada.net/s/544/375-375/110000603969837.jpg"
+          ]
+        }
+      ]
     },
     {
       "id": "f1oETlSzDGQG9zk3QDFR70MZLmD3",
@@ -2039,42 +2125,8 @@
     {
       "id": "knlV2nhLQVN3edp9Bv9eySUXZg13",
       "email": "admin@admin.com",
-      "cart": [
-        {
-          "cartId": "7eff4f23-99be-4834-b45c-52add35835fb",
-          "productId": 125,
-          "title": "iPhone 14 Pro",
-          "image": "https://cdn.cimri.io/pictures/article/original/38/38036.jpg",
-          "seller": "Hepsiburada",
-          "oldPrice": 49999,
-          "discount": 3999,
-          "limit": 1,
-          "quantity": 1,
-          "Renk": "Altın",
-          "Hafıza": "128 GB"
-        }
-      ],
-      "fav": [
-        {
-          "id": 38,
-          "title": "Samsung Galaxy S23",
-          "price": 39999,
-          "discountPrice": 2999,
-          "images": [
-            "https://cdn.cimri.io/image/1200x1200/samsung-galaxy-s23-fe-5g-128gb-8gb-ram_865273874.jpg"
-          ]
-        },
-        {
-          "id": 125,
-          "title": "iPhone 14 Pro",
-          "price": 49999,
-          "discountPrice": 3999,
-          "images": [
-            "https://cdn.cimri.io/pictures/article/original/38/38036.jpg",
-            "https://cdn.cimri.io/pictures/article/original/46/46166.jpg"
-          ]
-        }
-      ]
+      "cart": [],
+      "fav": []
     },
     {
       "id": "hOSi88mjsqeupKhMtqvzqYqff0L2",
@@ -2086,19 +2138,7 @@
       "id": "vrsuQJ15bEg7eOoa1aC7CoLxz6z2",
       "email": "ahmet@gmail.com",
       "cart": [],
-      "fav": [
-        {
-          "id": 1,
-          "title": "iPhone 15 Pro Max ",
-          "price": 89999,
-          "discountPrice": 7999,
-          "images": [
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698312385020/1698312393141/1698312393141_600x450.png?1720095274003",
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698310630203/1698310637001/1698310637001_600x450.png?1720095274003",
-            "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313125949/1698313132371/1698313132371_600x450.png?1720095274003"
-          ]
-        }
-      ]
+      "fav": []
     }
   ]
 }

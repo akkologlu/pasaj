@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 import { useFetchAllProducts } from "@/hooks/useDataFetching";
-import { dehydrate, QueryClient, useQueryClient } from "@tanstack/react-query";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { fetchAllProducts } from "@/lib/api";
 import Link from "next/link";
 import ProductList from "@/components/admin/ProductList";
